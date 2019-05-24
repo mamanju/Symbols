@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 57a4f1c0aac06c046a1d7f2167cf8dec
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
+  - spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
+  - axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
+  - shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
