@@ -22,6 +22,9 @@ public class PlayerCtrl : MonoBehaviour
     private Vector3 speedForce;
     private float rotateSpeed = 0.628319f;
 
+    Vector3 horizontalForce;
+    Vector3 verticalForce;
+
     //playerのrigidbody
     private Rigidbody playerRb;
 
@@ -72,6 +75,19 @@ public class PlayerCtrl : MonoBehaviour
         //addする値を0にリセット
         speedForce = Vector3.zero;
 
+        //ダッシュ
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speedMax = 10.0f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speedMax = 5.0f;
+        }
+
+        horizontalForce = new Vector3(transform.right.x, 0.0f, transform.right.z);
+        verticalForce = new Vector3(transform.forward.x, 0.0f, transform.forward.z);
+
         //キー入力
         _horizontal = Input.GetAxis("Horizontal");
         _vertical = Input.GetAxis("Vertical");
@@ -89,19 +105,13 @@ public class PlayerCtrl : MonoBehaviour
         else if (_horizontal != 0 || _vertical != 0)
         {
             speed = 50.0f;
+        }
+        else
+        {
             stopFlag = true;
         }
-        //ダッシュ
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speedMax = 10.0f;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            speedMax = 5.0f;
-        }
 
-        speedForce = new Vector3(speed * _horizontal, 0.0f, speed * _vertical);
+        speedForce = horizontalForce * speed * _horizontal + verticalForce * speed * _vertical;
         playerRb.AddForce(forceMgmt * (speedForce - playerRb.velocity));
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -142,7 +152,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, -transform.up);
         RaycastHit hit;
-        float distance = 0.5f;
+        float distance = 1.5f;
 
         Debug.DrawRay(ray.origin, ray.direction, Color.red, 1.0f);
 
