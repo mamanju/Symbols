@@ -123,5 +123,6 @@ public class CamerCtrl : MonoBehaviour
         Vector3 offsetQ = lookPos - transform.position;
         Quaternion rotationQ = Quaternion.LookRotation(offsetQ);
         transform.rotation = rotationQ;
+        player.rotation = rotationQ;
     }
 }
