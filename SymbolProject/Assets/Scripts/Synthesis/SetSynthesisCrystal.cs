@@ -23,7 +23,7 @@ public class SetSynthesisCrystal : MonoBehaviour
     void Update()
     {
         if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.sword)  { return; }
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             for (int i = 0; i < weaponBoxCount; i++)
             {

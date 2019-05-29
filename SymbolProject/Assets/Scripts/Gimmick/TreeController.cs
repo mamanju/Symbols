@@ -14,7 +14,7 @@ public class TreeController : MonoBehaviour
 
     private void Update() {
         step = speed * Time.deltaTime;
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetKeyDown(KeyCode.M)) {
             Cut();
         }
     }
