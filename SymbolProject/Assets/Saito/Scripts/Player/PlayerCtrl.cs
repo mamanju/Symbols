@@ -6,8 +6,13 @@ public class PlayerCtrl : MonoBehaviour
 {
     //ジャンプ用変数
     private bool groundFlag;
+    public bool GroundFlag
+    {
+        get { return groundFlag; }
+        set { groundFlag = value; }
+    }
     private bool downFlag;
-    private float jumpForce = 5.0f;
+    private float jumpForce = 4.0f;
     private float downSpeed;
 
     private float nowPlayerY;
@@ -28,7 +33,6 @@ public class PlayerCtrl : MonoBehaviour
     private float lastVertical;
 
     private float lastSelect;
-    private bool lastJump;
 
     Vector3 horizontalForce;
     Vector3 verticalForce;
@@ -51,7 +55,6 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
-        JumpRay();
         matlBoxes = synthesisGUI.transform.GetChild(1).gameObject;
         synthesisBoxes = synthesisGUI.transform.GetChild(2).gameObject;
         synthesisCrystal = synthesisGUI.transform.GetChild(3).gameObject;
@@ -88,9 +91,10 @@ public class PlayerCtrl : MonoBehaviour
             {
                synthesisBoxes.GetComponent<SynthesisCtrl>().StartSynthesis = true;            
             }
-            if (Input.GetButtonDown("Attack") && lastJump == false)
+            if (Input.GetButtonDown("Attack") && synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == true)
             {
                 synthesisCrystal.GetComponent<SetSynthesisCrystal>().WeaponMove = true;
+                synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag = false;
             }
             if (Input.GetButtonDown("Fire1"))
             {
@@ -99,18 +103,15 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         lastSelect = Input.GetAxisRaw("Dpad_H");
-        lastJump = Input.GetButtonDown("Jump");
     }
 
     void FixedUpdate()
     {
-        if (Mathf.Abs(_horizontal) + Mathf.Abs(_vertical) < 1
-            && lastHorizontal + lastVertical > Mathf.Abs(_horizontal) + Mathf.Abs(_vertical)
-            && groundFlag != false)
+        Debug.Log(groundFlag);
+        if ( lastHorizontal + lastVertical == 0 && stopFlag == true && groundFlag == true)
         {
             StopMove();
         }
-
         cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
         //現在のplayerの速度の取得
         playerVelocity = playerRb.velocity.magnitude;
@@ -153,18 +154,17 @@ public class PlayerCtrl : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(speedForce);
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (groundFlag == true)
         {
-            if (groundFlag == true)
+            downFlag = false;
+            downSpeed = -1.3f;
+            if (Input.GetButtonDown("Jump"))
             {
                 nowPlayerY = transform.position.y + 3.0f;
-                groundFlag = false;
                 playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);
                 downFlag = true;
             }
         }
-
-        if (groundFlag == false) { JumpRay(); }
 
         //落下を自然にする処理
         if (downFlag == true)
@@ -188,25 +188,6 @@ public class PlayerCtrl : MonoBehaviour
     {
         stopFlag = false;
         playerRb.velocity = Vector3.zero;
-    }
-
-    public void JumpRay()
-    {
-        Ray ray = new Ray(transform.position, -transform.up);
-        RaycastHit hit;
-        float distance = 1.2f;
-    
-        Debug.DrawRay(ray.origin, ray.direction, Color.red, 1.0f);
-    
-        if (Physics.Raycast(ray, out hit, distance))
-        {
-            if (hit.collider.tag == "Ground")
-            {
-                groundFlag = true;
-                downFlag = false;
-                downSpeed = -1.3f;
-            }
-        }
     }
 
     private void OnTriggerEnter(Collider other)

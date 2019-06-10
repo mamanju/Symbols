@@ -28,8 +28,7 @@ public class MatlManager : MonoBehaviour
             matlBox[i] = matlBoxes.transform.GetChild(i).gameObject;
         }
         //Debug用
-        nowMatl = new int[] { 20, 1, 1, 0 };
-        //nowMatlList = new List<int> { 1, 1, 1, 1, 1, 1, 2, 3, };
+        nowMatl = new int[] { 20, 1, 6, 2 };
     }
 
     void Update()

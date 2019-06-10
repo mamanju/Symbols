@@ -15,6 +15,13 @@ public class SynthesisCtrl : MonoBehaviour
         set { startSynthesis = value; }
     }
 
+    private bool endFlag = false;
+    public bool EndFlag
+    {
+        get { return endFlag; }
+        set { endFlag = value; }
+    }
+
     //レシピリスト
     //槍
     private readonly int[] spear = { -1, -1, -1, 0, 1 };
@@ -22,6 +29,14 @@ public class SynthesisCtrl : MonoBehaviour
     private readonly int[] ax = { -1, -1, -1, 0, 2 };
     //盾
     private readonly int[] shield = { -1, 0, 0, 0, 0 };
+    //双剣
+    private readonly int[] twinSword = { -1, -1, -1, 0, 0 };
+    //シンバル
+    private readonly int[] cymbal = { -1, -1, 0, 3, 3 };
+    //ハンマー
+    private readonly int[] hammer = { -1, -1, 0, 0, 0 };
+    //メテオ
+    private readonly int[] meteo = { 2, 2, 2, 2, 2 };
 
     //入力された素材(配列)
     private int matlCount = 0;
@@ -152,7 +167,6 @@ public class SynthesisCtrl : MonoBehaviour
         }
         else if (a == shield[0] && b == shield[1] && c == shield[2] && d == shield[3] && e == shield[4])
         {
-            Debug.Log(player.GetComponent<WeaponManager>().NowWeapon[2]);
             if (player.GetComponent<WeaponManager>().NowWeapon[2] >= 5)
             {   
                 Debug.Log("所持上限を超えています");
@@ -160,6 +174,46 @@ public class SynthesisCtrl : MonoBehaviour
             }
             Debug.Log("盾");
             synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.shield;
+        }
+        else if (a == twinSword[0] && b == twinSword[1] && c == twinSword[2] && d == twinSword[3] && e == twinSword[4])
+        {
+            if (player.GetComponent<WeaponManager>().NowWeapon[3] >= 5)
+            {
+                Debug.Log("所持上限を超えています");
+                return;
+            }
+            Debug.Log("双剣");
+            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.twinSword;
+        }
+        else if (a == cymbal[0] && b == cymbal[1] && c == cymbal[2] && d == cymbal[3] && e == cymbal[4])
+        {
+            if (player.GetComponent<WeaponManager>().NowWeapon[4] >= 5)
+            {
+                Debug.Log("所持上限を超えています");
+                return;
+            }
+            Debug.Log("シンバル");
+            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.cymbal;
+        }
+        else if (a == hammer[0] && b == hammer[1] && c == hammer[2] && d == hammer[3] && e == hammer[4])
+        {
+            if (player.GetComponent<WeaponManager>().NowWeapon[5] >= 5)
+            {
+                Debug.Log("所持上限を超えています");
+                return;
+            }
+            Debug.Log("ハンマー");
+            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.hammer;
+        }
+        else if (a == meteo[0] && b == meteo[1] && c == meteo[2] && d == meteo[3] && e == meteo[4])
+        {
+            if (player.GetComponent<WeaponManager>().NowWeapon[6] >= 5)
+            {
+                Debug.Log("所持上限を超えています");
+                return;
+            }
+            Debug.Log("メテオ");
+            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.meteo;
         }
         //レシピNo.0は失敗
         else
@@ -178,5 +232,7 @@ public class SynthesisCtrl : MonoBehaviour
         }
         changeFin = false;
         startSynthesis = false;
+        endFlag = true;
     }
 }
+ 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,8 @@ public class SetSynthesisCrystal : MonoBehaviour
         set { weponMove = value; }
     }
 
+    private bool endWeaponMove;
+
     void Start()
     {
         weaponBoxCount = weaponBoxes.transform.childCount;
@@ -36,13 +39,23 @@ public class SetSynthesisCrystal : MonoBehaviour
         {
             for (int i = 0; i < weaponBoxCount; i++)
             {
-                if ((int)this.GetComponent<WeaponInfo>().weaponList == i)
+                if ((int)this.GetComponent<WeaponInfo>().weaponList == i && endWeaponMove == false)
                 {
                     player.GetComponent<WeaponManager>().NowWeapon[i]++;
+                    endWeaponMove = true;
+                    weaponBox[i].GetComponent<WeaponInfo>().weaponList
+                        = ((WeaponInfo.WeaponList)Enum.ToObject(typeof(WeaponInfo.WeaponList), i));
+                    Debug.Log(player.GetComponent<WeaponManager>().NowWeapon[i]);
+                    Debug.Log(endWeaponMove);
+                    break;
                 }
             }
-            weponMove = false;
-            this.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.sword;
+            if (endWeaponMove == true)
+            {
+                this.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.sword;
+                weponMove = false;
+                endWeaponMove = false;
+            }
         }
     }
 }
