@@ -5,13 +5,27 @@ using UnityEngine.UI;
 
 public class MatlBox : MonoBehaviour
 {
-    private List<GameObject> itemBoxList = new List<GameObject>();
+    private GameObject[] itemBox = new GameObject[4];
     private int itemBoxCount;
     private int selectNum;
-    private int mobeCtrl = 15;
+    private int mobeCtrl = 4;
 
     [SerializeField]
-    private GameObject playerItem;
+    private GameObject player;
+
+    private bool moveRightFlag;
+    public bool MoveRightFlag
+    {
+        get { return moveRightFlag; }
+        set { moveRightFlag = value; }
+    }
+
+    private bool moveLeftFlag;
+    public bool MoveLeftFlag
+    {
+        get { return moveLeftFlag; }
+        set { moveLeftFlag = value; }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,55 +33,40 @@ public class MatlBox : MonoBehaviour
         itemBoxCount = this.transform.childCount;
         for (int i = 0; i < itemBoxCount; i++)
         {
-            itemBoxList.Add(transform.GetChild(i).gameObject);
+            itemBox[i] = transform.GetChild(i).gameObject;
         }
-
-        itemBoxList[0].GetComponent<Button>().Select();
-        selectNum = 0;
+        itemBox[0].GetComponent<Button>().Select();
+        selectNum = 2;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (moveRightFlag == true && selectNum < mobeCtrl)
         {
-            if (selectNum != mobeCtrl - 1 && selectNum != itemBoxCount - 1)
+            if (selectNum != mobeCtrl - 1)
             {
                 selectNum++;
             }
+            else
+            {
+                selectNum = 3;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (moveLeftFlag == true && selectNum >= 0)
         {
-            if (selectNum != 0 && selectNum != mobeCtrl)
+            if (selectNum != 0)
             {
                 selectNum--;
             }
-     
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            if (selectNum - mobeCtrl >= 0)
+            else
             {
-                selectNum -= mobeCtrl;
+                selectNum = 0;
             }
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (selectNum + mobeCtrl < itemBoxCount)
-            {
-                selectNum += mobeCtrl;
-            }
-        }
-        itemBoxList[selectNum].GetComponent<Button>().Select();
-    }
-    
-    public void ReturnCrystals()
-    {
-        for (int i = 0; i < itemBoxCount; i++)
-        {
-            playerItem.GetComponent<MatlManager>().AddCrystal(
-                (int)itemBoxList[i].GetComponent<MatlInfo>().matlList);
-            itemBoxList[i].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
-        }
+        itemBox[selectNum].GetComponent<Button>().Select();
+        
+        moveRightFlag = false;
+        moveLeftFlag = false;
     }
 }

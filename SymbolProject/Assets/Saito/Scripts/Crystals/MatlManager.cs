@@ -2,15 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MatlManager : MonoBehaviour
 {
-    private List<int> nowMatlList = new List<int>(30);
+    private int[] nowMatl = new int[4];
+    public int[] NowMatl
+    {
+        get { return nowMatl; }
+        set { nowMatl = value; }
+    }
 
     [SerializeField]
     private GameObject matlBoxes;
 
-    private GameObject[] matlBox = new GameObject[30];
+    private GameObject[] matlBox = new GameObject[4];
 
     private int matlCount;
 
@@ -22,17 +28,17 @@ public class MatlManager : MonoBehaviour
             matlBox[i] = matlBoxes.transform.GetChild(i).gameObject;
         }
         //Debug用
+        nowMatl = new int[] { 20, 1, 1, 0 };
         //nowMatlList = new List<int> { 1, 1, 1, 1, 1, 1, 2, 3, };
     }
 
-    //0を消す処理➤要らないかも
     void Update()
     {
-        for (int i = 0; i < nowMatlList.Count; i++)
+        for (int i = 0; i < nowMatl.Length; i++)
         {
-            if ( nowMatlList[i] == 0)
+            if (nowMatl[i] == 0)
             {
-                nowMatlList.RemoveAt(i);
+                matlBox[i].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
             }
         }
     }
@@ -42,38 +48,33 @@ public class MatlManager : MonoBehaviour
     {
         if (other.tag == ("Crystal"))
         {
-            matlCount = 0;
-            for (int i = 0; i < nowMatlList.Count; i++)
-            {
-                if (nowMatlList[i] == (int)other.GetComponent<MatlInfo>().matlList)
-                {
-                    matlCount++;
-                }
-            }
-            if (matlCount >= 10)
+            if (nowMatl[(int)other.GetComponent<MatlInfo>().matlList] >= 10)
             {
                 Debug.Log("所持上限を超えています");
                 return;
             }
-            nowMatlList.Add((int)other.GetComponent<MatlInfo>().matlList);
+            else
+            {
+                nowMatl[(int)other.GetComponent<MatlInfo>().matlList]++;
+            }
         }
     }
 
-    public void AddCrystal(int i)
-    {
-        nowMatlList.Add(i);
-    }
-
-    //今持っている素材クリスタを合成画面の選択画面に送る
     public void HaveCrystal()
     {
-        //リストの中身全部
-        for (int i = 0; i < nowMatlList.Count; i++)
+        for(int i = 0; i < matlBox.Length; i++)
         {
-            //素材ボックスのmatlListをリストの中の値に変更する
-            matlBox[i].GetComponent<MatlInfo>().matlList
-                = ((MatlInfo.MatlList)Enum.ToObject(typeof(MatlInfo.MatlList), nowMatlList[i]));
+            Debug.Log(nowMatl[i]);
+            if(nowMatl[i] != 0)
+            {
+                matlBox[i].GetComponent<MatlInfo>().matlList
+                    = ((MatlInfo.MatlList)Enum.ToObject(typeof(MatlInfo.MatlList), i));
+            }
+            else
+            {
+                matlBox[i].GetComponent<MatlInfo>().matlList
+                    = MatlInfo.MatlList.empty;
+            }
         }
-        nowMatlList.Clear();
     }
 }

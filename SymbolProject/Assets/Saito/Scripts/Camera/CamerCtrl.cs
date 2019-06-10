@@ -42,7 +42,7 @@ public class CamerCtrl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
         lookPos = player.position + new Vector3(0, 1, 0);
 
@@ -71,6 +71,7 @@ public class CamerCtrl : MonoBehaviour
             distance = distanceT;
             rayJudg = false;
         }
+
 
         //右に回転
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -123,6 +124,5 @@ public class CamerCtrl : MonoBehaviour
         Vector3 offsetQ = lookPos - transform.position;
         Quaternion rotationQ = Quaternion.LookRotation(offsetQ);
         transform.rotation = rotationQ;
-        player.rotation = rotationQ;
     }
 }

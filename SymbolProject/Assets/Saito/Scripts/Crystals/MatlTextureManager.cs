@@ -9,8 +9,7 @@ public class MatlTextureManager : MonoBehaviour
     public Sprite stickSprite;
     public Sprite triangleSprite;
     public Sprite lessThanSprite;
-    //public Sprite circleSprite;
-    //public Sprite plusSprite;
+    public Sprite circleSprite;
 
     private void Start()
     {
@@ -36,6 +35,10 @@ public class MatlTextureManager : MonoBehaviour
         else if (GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.lessThan)
         {
             gameObject.GetComponent<Image>().sprite = lessThanSprite;
+        }
+        else if (GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.circle)
+        {
+            gameObject.GetComponent<Image>().sprite = circleSprite;
         }
         else
         {

@@ -9,14 +9,19 @@ public class SynthesisCtrl : MonoBehaviour
 
     //合成中フラッグ
     private bool startSynthesis = false;
+    public bool StartSynthesis
+    {
+        get { return startSynthesis; }
+        set { startSynthesis = value; }
+    }
 
     //レシピリスト
     //槍
-    private readonly int[] spear = { 0, 0, 0, 1, 2 };
+    private readonly int[] spear = { -1, -1, -1, 0, 1 };
     //斧
-    private readonly int[] ax = { 0, 0, 0, 1, 3 };
+    private readonly int[] ax = { -1, -1, -1, 0, 2 };
     //盾
-    private readonly int[] shield = { 0, 1, 1, 1, 1 };
+    private readonly int[] shield = { -1, 0, 0, 0, 0 };
 
     //入力された素材(配列)
     private int matlCount = 0;
@@ -24,54 +29,81 @@ public class SynthesisCtrl : MonoBehaviour
     private int changeFlag = 0;
     private bool changeFin = false;
 
-    //なぜかfor文抜けるので対策用
-    private bool setFlag = false;
+    //リセット用
+    private bool resetFlag = false;
+    public bool ResetFlag
+    {
+        get { return resetFlag; }
+        set { resetFlag = value; }
+    }
+
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private GameObject matlBoxes;
+    private GameObject[] matlBox = new GameObject[4];
 
     //合成成功した際の送り先
     [SerializeField]
     private GameObject synthesisCrystal;
 
-    //個数管理用のオブジェクト
-    [SerializeField]
-    private GameObject weaponBoxes;
-    private GameObject[] weaponBox;
-    private int weaponBoxCount;
-
-    private int synthesisCount;
-
     // Start is called before the first frame update
     void Start()
     {
-        weaponBoxCount = weaponBoxes.transform.childCount;
-        weaponBox = new GameObject[weaponBoxCount];
-        for (int i = 0; i < weaponBoxCount; i++)
+        for (int i = 0; i < matlBox.Length; i++)
         {
-            weaponBox[i] = weaponBoxes.transform.GetChild(i).gameObject;
+            matlBox[i] = matlBoxes.transform.GetChild(i).gameObject;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            startSynthesis = true;
-        }
-
         //入力された素材クリスタルの取得
-        if (!startSynthesis) { return; }
 
         matlCount = this.transform.childCount;
-
-
+        
         for (int i = 0; i < matlCount; i++)
         {
             matlCrystals[i] = transform.GetChild(i).gameObject;
             inputMatl[i] = (int)matlCrystals[i].GetComponent<MatlInfo>().matlList;
-            setFlag = true;
         }
 
-        if (!setFlag) { return; }
+        if (resetFlag == true)
+        {
+            for (int i = 0; i < inputMatl.Length; i++)
+            {
+                if (inputMatl[i] == 0)
+                {
+                    player.GetComponent<MatlManager>().NowMatl[0]++;
+                    matlBox[0].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.stick;
+                }
+                else if (inputMatl[i] == 1)
+                {
+                    player.GetComponent<MatlManager>().NowMatl[1]++;
+                    matlBox[1].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.triangle;
+                }
+                else if (inputMatl[i] == 2)
+                {
+                    player.GetComponent<MatlManager>().NowMatl[2]++;
+                    matlBox[2].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.lessThan;
+                }
+                else if (inputMatl[i] == 3)
+                {
+                    player.GetComponent<MatlManager>().NowMatl[3]++;
+                    matlBox[3].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.circle;
+                }
+                else
+                {
+                    return;
+                }
+                matlCrystals[i].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
+                resetFlag = false;
+            }
+        }
+
+        if (!startSynthesis) { return; }
         
         //素材クリスタルの並び替え(昇順)
         while (changeFin == false)
@@ -100,9 +132,8 @@ public class SynthesisCtrl : MonoBehaviour
         if (a == spear[0] && b == spear[1] &&
             c == spear[2] && d == spear[3] && e == spear[4])
         {
-            SynthesisCount((int)WeaponInfo.WeaponList.spear);
-            if (synthesisCount >= 5)
-            {
+            if (player.GetComponent<WeaponManager>().NowWeapon[0] >= 5)
+            {   
                 Debug.Log("所持上限を超えています");
                 return;
             }
@@ -111,8 +142,7 @@ public class SynthesisCtrl : MonoBehaviour
         }
         else if (a == ax[0] && b == ax[1] && c == ax[2] && d == ax[3] && e == ax[4])
         {
-            SynthesisCount((int)WeaponInfo.WeaponList.ax);
-            if (synthesisCount >= 5)
+            if (player.GetComponent<WeaponManager>().NowWeapon[1] >= 5)
             {
                 Debug.Log("所持上限を超えています");
                 return;
@@ -122,9 +152,9 @@ public class SynthesisCtrl : MonoBehaviour
         }
         else if (a == shield[0] && b == shield[1] && c == shield[2] && d == shield[3] && e == shield[4])
         {
-            SynthesisCount((int)WeaponInfo.WeaponList.shield);
-            if (synthesisCount >= 5)
-            {
+            Debug.Log(player.GetComponent<WeaponManager>().NowWeapon[2]);
+            if (player.GetComponent<WeaponManager>().NowWeapon[2] >= 5)
+            {   
                 Debug.Log("所持上限を超えています");
                 return;
             }
@@ -138,17 +168,6 @@ public class SynthesisCtrl : MonoBehaviour
         }
     }
 
-    public void SynthesisCount(int a)
-    {
-        for (int i = 0; i < weaponBox.Length; i++)
-        {
-            if ((int)weaponBox[i].GetComponent<WeaponInfo>().weaponList == a)
-            {
-                synthesisCount++;
-            }
-        }
-    }
-
     //ゲームオブジェクトの削除
     public void EndSynthesis()
     {
@@ -159,6 +178,5 @@ public class SynthesisCtrl : MonoBehaviour
         }
         changeFin = false;
         startSynthesis = false;
-        synthesisCount = 0;
     }
 }

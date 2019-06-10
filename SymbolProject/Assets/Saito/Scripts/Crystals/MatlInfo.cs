@@ -7,15 +7,12 @@ public class MatlInfo : MonoBehaviour
     [SerializeField]
     public enum MatlList
     {
-        empty,
+        empty = -1,
         stick,
         triangle,
         lessThan,
         circle,
-        plus,
-        noCrystal,
     };
 
-    public MatlList matlList;
-   
+    public MatlList matlList;  
 }
