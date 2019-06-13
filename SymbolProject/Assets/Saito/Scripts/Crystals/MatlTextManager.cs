@@ -22,9 +22,13 @@ public class MatlTextManager : MonoBehaviour
         nowMatl = player.GetComponent<MatlManager>().NowMatl;
         for (int i = 0; i < nowMatl.Length; i++)
         {
-            if ( i == (int)this.GetComponent<MatlInfo>().matlList || this.GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.empty)
+            if ( i == (int)this.GetComponent<MatlInfo>().matlList)
             {
                 childText.GetComponent<Text>().text = "×" + nowMatl[i].ToString();
+            }
+            else if (this.GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.empty)
+            {
+                childText.GetComponent<Text>().text = "×0";
             }
         }
     }

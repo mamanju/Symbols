@@ -13,11 +13,11 @@ public class SetSynthesisCrystal : MonoBehaviour
     private GameObject player;
 
     private int weaponBoxCount;
-    private bool weponMove;
+    private bool weaponMove;
     public bool WeaponMove
     {
-        get { return weponMove; }
-        set { weponMove = value; }
+        get { return weaponMove; }
+        set { weaponMove = value; }
     }
 
     private bool endWeaponMove;
@@ -35,7 +35,8 @@ public class SetSynthesisCrystal : MonoBehaviour
     void Update()
     {
         if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.sword)  { return; }
-        if (weponMove == true)
+        Debug.Log(weaponMove);
+        if (weaponMove == true)
         {
             for (int i = 0; i < weaponBoxCount; i++)
             {
@@ -53,7 +54,7 @@ public class SetSynthesisCrystal : MonoBehaviour
             if (endWeaponMove == true)
             {
                 this.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.sword;
-                weponMove = false;
+                weaponMove = false;
                 endWeaponMove = false;
             }
         }

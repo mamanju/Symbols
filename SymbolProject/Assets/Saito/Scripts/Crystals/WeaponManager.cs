@@ -43,7 +43,6 @@ public class WeaponManager : MonoBehaviour
     {
         for (int i = 0; i < weaponBox.Length; i++)
         {
-            Debug.Log(nowWeapon[i]);
             if (nowWeapon[i] >= 0)
             {
                 weaponBox[i].GetComponent<WeaponInfo>().weaponList

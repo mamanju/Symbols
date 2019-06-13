@@ -153,8 +153,8 @@ InputManager:
     m_Name: Dpad_H
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
+    negativeButton: left
+    positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
@@ -199,7 +199,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Synthesis
-    descriptiveName: 
+    descriptiveName: tab
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 3
@@ -297,8 +297,8 @@ InputManager:
     m_Name: Horizontal_R
     descriptiveName: Stick R left
     descriptiveNegativeName: Stick R right
-    negativeButton: 
-    positiveButton: 
+    negativeButton: left
+    positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
@@ -313,8 +313,8 @@ InputManager:
     m_Name: Vertical_R
     descriptiveName: Stick R up
     descriptiveNegativeName: Stick R down
-    negativeButton: 
-    positiveButton: 
+    negativeButton: up
+    positiveButton: down
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
