@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 8218042491835387723}
   - component: {fileID: 8218042491835387722}
   - component: {fileID: 8218042491835387720}
-  - component: {fileID: 8218042491835387733}
   m_Layer: 0
   m_Name: FireTrap
   m_TagString: Untagged
@@ -199,20 +198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firecol: {fileID: 2145118681377168226}
---- !u!114 &8218042491835387733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8218042491835387721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004bd61727f8ec743a90da791b32cd9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireEffect: {fileID: 7515888993088715070}
-  sec: 2
 --- !u!1 &8735775038987613176
 GameObject:
   m_ObjectHideFlags: 0

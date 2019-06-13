@@ -6,6 +6,16 @@ public class PlayerStatus : MonoBehaviour
 {
 
 
+    // 武器のストック(Weaponと同じ配置)
+    private int[] weaponStock = { 1, 0, 0, 0 };
+
+    private int hp = 10;
+    private int max_hp = 10;
+    private int attack = 1;
+
+    /// <summary>
+    /// 武器リスト
+    /// </summary>
     public enum Weapon {
         Sword,
         Spear,
@@ -13,16 +23,8 @@ public class PlayerStatus : MonoBehaviour
         Shield
     }
 
-
-
     public Weapon nowWeapon;
 
-    // 武器のストック(Weaponと同じ配置)
-    private int[] weaponStock = { 1,0,0,0 };
-
-    private int hp = 10;
-    private int max_hp = 10;
-    private int attack = 1;
 
     public int PlayerHp
     {
@@ -30,14 +32,14 @@ public class PlayerStatus : MonoBehaviour
         set { hp = value; }
     }
 
-    public int PlayerMax_Hp()
+    public int PlayerMax_Hp
     {
-        return max_hp;
+        get { return max_hp; }
     }
 
-    public int PlayerAttack()
+    public int PlayerAttack
     {
-        return attack;
+        get { return attack; }
     }
 
     public int[] WeaponStock

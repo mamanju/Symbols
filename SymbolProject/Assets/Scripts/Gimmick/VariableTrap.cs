@@ -6,7 +6,6 @@ using UnityEngine;
 public class VariableTrap : MonoBehaviour
 {
     private VariableTrap vTrap;
-    private VariableTrapTimer vTrapTimer;
     [SerializeField]
     private Collider firecol;
 
@@ -19,7 +18,6 @@ public class VariableTrap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vTrapTimer = GetComponent<VariableTrapTimer>();
         firecol = this.GetComponent<Collider>();
     }
     public void FireOn()
@@ -30,7 +28,7 @@ public class VariableTrap : MonoBehaviour
 
     public void FireOff()
     {
-        firecol.enabled = false;
+        firecol.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)

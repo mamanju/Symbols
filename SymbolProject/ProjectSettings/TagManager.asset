@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Ground
   - FireSwitch
+  - Fire
+  - Tree
+  - Enemy
+  - TrapSwitch
+  - Axe
+  - FireTrap
   layers:
   - Default
   - TransparentFX
