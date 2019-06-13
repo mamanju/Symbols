@@ -27,6 +27,10 @@ public class PlayerCtrl : MonoBehaviour
     private float speedMax = 2.0f;
     private float forceMgmt = 2.0f;
     private float playerVelocity;
+
+    //横移動用変数
+    private float angle;
+    private Vector3 moveForceH;
     private Vector3 speedForce;
 
     private float lastHorizontal;
@@ -107,7 +111,6 @@ public class PlayerCtrl : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(groundFlag);
         if ( lastHorizontal + lastVertical == 0 && stopFlag == true && groundFlag == true)
         {
             StopMove();
@@ -117,6 +120,8 @@ public class PlayerCtrl : MonoBehaviour
         playerVelocity = playerRb.velocity.magnitude;
         //addする値を0にリセット
         speedForce = Vector3.zero;
+        moveForceH = Vector3.zero;
+        angle = 0;
         
         horizontalForce = new Vector3(transform.right.x, 0.0f, transform.right.z);
         verticalForce = new Vector3(transform.forward.x, 0.0f, transform.forward.z);
@@ -134,6 +139,7 @@ public class PlayerCtrl : MonoBehaviour
         {
             speed = 10.0f;
             stopFlag = true;
+
             if (Mathf.Abs(_horizontal ) + Mathf.Abs(_vertical) >= 1.0f)
             {
                 speedMax = 5.0f;
@@ -143,17 +149,19 @@ public class PlayerCtrl : MonoBehaviour
                 speedMax = 2.0f;
             }
         }
-
+        
         lastHorizontal = Mathf.Abs(_horizontal);
         lastVertical = Mathf.Abs(_vertical);
-        speedForce += cameraForward * _vertical * speed + Camera.main.transform.right * _horizontal * speed;
-        playerRb.AddForce(forceMgmt * speedForce);
 
+        speedForce += cameraForward * _vertical * speed + Camera.main.transform.right * speed * _horizontal;
+        playerRb.AddForce(forceMgmt * speedForce);
+        
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
         {
             transform.rotation = Quaternion.LookRotation(speedForce);
         }
 
+        //ジャンプ
         if (groundFlag == true)
         {
             downFlag = false;
@@ -184,12 +192,14 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
    
+    //移動ストップ
     public void StopMove()
     {
         stopFlag = false;
         playerRb.velocity = Vector3.zero;
     }
 
+    //攻撃用
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
