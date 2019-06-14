@@ -12,6 +12,12 @@ public class SetSynthesisCrystal : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+    [SerializeField]
+    private GameObject synthesisBoxes;
+
+    [SerializeField]
+    private float timeCount = 1;
+
     private int weaponBoxCount;
     private bool weaponMove;
     public bool WeaponMove
@@ -34,8 +40,20 @@ public class SetSynthesisCrystal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.sword)  { return; }
-        Debug.Log(weaponMove);
+        if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.sword) { return; }
+
+        Debug.Log(synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag);
+        if (synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == true)
+        {
+            timeCount -= Time.unscaledDeltaTime;
+            Debug.Log(timeCount);
+            if (timeCount <= 0)
+            {
+                weaponMove = true;
+                timeCount = 1.0f;
+            }
+        }
+
         if (weaponMove == true)
         {
             for (int i = 0; i < weaponBoxCount; i++)
@@ -56,6 +74,7 @@ public class SetSynthesisCrystal : MonoBehaviour
                 this.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.sword;
                 weaponMove = false;
                 endWeaponMove = false;
+                synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag = false;
             }
         }
     }

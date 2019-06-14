@@ -85,11 +85,11 @@ public class PlayerCtrl : MonoBehaviour
 
         if (synthesisGUI.activeSelf == true)
         {
-            if (Input.GetAxisRaw("Dpad_H") == 1 && lastSelect == 0)
+            if (Input.GetAxisRaw("Dpad_H") == 1 && lastSelect == 0 && synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == false)
             {
                 matlBoxes.GetComponent<MatlBox>().MoveRightFlag = true;
             }
-            if (Input.GetAxisRaw("Dpad_H") == -1 && lastSelect == 0)
+            if (Input.GetAxisRaw("Dpad_H") == -1 && lastSelect == 0 && synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == false)
             {
                 matlBoxes.GetComponent<MatlBox>().MoveLeftFlag = true;
             }
@@ -97,11 +97,6 @@ public class PlayerCtrl : MonoBehaviour
             {
                 synthesisBoxes.GetComponent<SynthesisCtrl>().StartSynthesis = true;
                 synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag = true;
-            }
-            if (Input.GetButtonDown("Attack") && synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == true)
-            {
-                synthesisCrystal.GetComponent<SetSynthesisCrystal>().WeaponMove = true;
-                synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag = false;
             }
             if (Input.GetButtonDown("Fire1"))
             {

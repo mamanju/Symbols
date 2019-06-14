@@ -4,16 +4,16 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  - spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  - axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  - shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  - twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  - cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  - hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  - meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  - questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  - exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  - emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  - spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  - axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  - shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  - twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  - cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  - hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  - meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  - questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  - exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -321,10 +321,10 @@ RectTransform:
   m_Father: {fileID: 973275680}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -320}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174555638
 MonoBehaviour:
@@ -346,8 +346,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -375,16 +375,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &174555641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -694,7 +694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -10, y: 10}
+  m_AnchoredPosition: {x: -17, y: 25}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &304443418
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -751,8 +751,8 @@ GameObject:
   - component: {fileID: 329163824}
   - component: {fileID: 329163823}
   - component: {fileID: 329163827}
-  - component: {fileID: 329163826}
   - component: {fileID: 329163825}
+  - component: {fileID: 329163826}
   m_Layer: 5
   m_Name: SynthesisCrystal
   m_TagString: Untagged
@@ -776,8 +776,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: 160}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: -431, y: 81}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329163823
 MonoBehaviour:
@@ -799,8 +799,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -830,6 +830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponBoxes: {fileID: 973275679}
   player: {fileID: 1511328005}
+  synthesisBoxes: {fileID: 381506607}
 --- !u!114 &329163826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,16 +843,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &329163827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,8 +902,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: 20}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 281, y: 49}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337071931
 MonoBehaviour:
@@ -924,7 +925,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -953,11 +954,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c27f2731559d60489ba0c06ac8fce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
 --- !u!114 &337071934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,7 +1022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1088,7 +1089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: 170}
+  m_AnchoredPosition: {x: -430, y: 107}
   m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &381506609
@@ -1142,10 +1143,10 @@ RectTransform:
   m_Father: {fileID: 973275680}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -540}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &487746982
 MonoBehaviour:
@@ -1167,8 +1168,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1196,16 +1197,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &487746985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,10 +1366,10 @@ RectTransform:
   m_Father: {fileID: 973275680}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -540}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &560261530
 MonoBehaviour:
@@ -1390,8 +1391,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1419,16 +1420,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &560261533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,10 +1492,10 @@ RectTransform:
   m_Father: {fileID: 973275680}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 320, y: -540}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &621302048
 MonoBehaviour:
@@ -1516,8 +1517,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1545,16 +1546,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &621302051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1615,7 +1616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -10, y: 10}
+  m_AnchoredPosition: {x: -17, y: 25}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &625780876
@@ -1631,7 +1632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1694,7 +1695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -10, y: 10}
+  m_AnchoredPosition: {x: -17, y: 25}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &730883732
@@ -1710,7 +1711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1753,8 +1754,8 @@ GameObject:
   - component: {fileID: 779185927}
   - component: {fileID: 779185935}
   - component: {fileID: 779185934}
-  - component: {fileID: 779185931}
   - component: {fileID: 779185930}
+  - component: {fileID: 779185931}
   m_Layer: 5
   m_Name: MatlBox
   m_TagString: Untagged
@@ -1777,10 +1778,10 @@ RectTransform:
   m_Father: {fileID: 1360735694}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 755, y: -150}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &779185927
 MonoBehaviour:
@@ -1855,8 +1856,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1897,11 +1898,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c27f2731559d60489ba0c06ac8fce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
 --- !u!114 &779185934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1965,8 +1966,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -270, y: 20}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: -280, y: 49}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &961878102
 MonoBehaviour:
@@ -1988,7 +1989,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2017,11 +2018,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c27f2731559d60489ba0c06ac8fce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
 --- !u!114 &961878105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2077,8 +2078,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: 0}
-  m_SizeDelta: {x: 640, y: 640}
+  m_AnchoredPosition: {x: 420, y: 103}
+  m_SizeDelta: {x: 680, y: 680}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &973275683
 MonoBehaviour:
@@ -2100,8 +2101,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 200}
-  m_Spacing: {x: 20, y: 20}
+  m_CellSize: {x: 190, y: 190}
+  m_Spacing: {x: 55, y: 53}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1029258650
@@ -2152,10 +2153,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2172,7 +2173,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 534669904}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2237,7 +2238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -10, y: 10}
+  m_AnchoredPosition: {x: -17, y: 25}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031694129
@@ -2253,7 +2254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2454,8 +2455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140, y: -260}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: -172, y: -279}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1070867673
 MonoBehaviour:
@@ -2477,7 +2478,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2506,11 +2507,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c27f2731559d60489ba0c06ac8fce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
 --- !u!114 &1070867676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2574,7 +2575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2708,8 +2709,8 @@ GameObject:
   - component: {fileID: 1159756137}
   - component: {fileID: 1159756145}
   - component: {fileID: 1159756144}
-  - component: {fileID: 1159756141}
   - component: {fileID: 1159756140}
+  - component: {fileID: 1159756141}
   m_Layer: 5
   m_Name: MatlBox
   m_TagString: Untagged
@@ -2732,10 +2733,10 @@ RectTransform:
   m_Father: {fileID: 1360735694}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 415, y: -150}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159756137
 MonoBehaviour:
@@ -2810,8 +2811,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2852,11 +2853,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c27f2731559d60489ba0c06ac8fce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
 --- !u!114 &1159756144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3000,7 +3001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3065,8 +3066,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: -260}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 175, y: -279}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326633511
 MonoBehaviour:
@@ -3088,7 +3089,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3117,11 +3118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c27f2731559d60489ba0c06ac8fce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
 --- !u!114 &1326633514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3150,7 +3151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1348130501
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3162,7 +3163,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1729981411}
+  - {fileID: 1660164191}
   - {fileID: 1360735694}
   - {fileID: 381506608}
   - {fileID: 329163822}
@@ -3213,7 +3214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: -339}
+  m_AnchoredPosition: {x: -437, y: -385}
   m_SizeDelta: {x: 1000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360735695
@@ -3237,7 +3238,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 150, y: 150}
-  m_Spacing: {x: 20, y: 20}
+  m_Spacing: {x: 42, y: 20}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &1360735696
@@ -3289,10 +3290,10 @@ RectTransform:
   m_Father: {fileID: 973275680}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -320}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1403614927
 MonoBehaviour:
@@ -3314,8 +3315,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3343,16 +3344,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &1403614930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3550,10 +3551,10 @@ RectTransform:
   m_Father: {fileID: 973275680}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 320, y: -320}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1424474247
 MonoBehaviour:
@@ -3575,8 +3576,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3604,16 +3605,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &1424474250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3808,8 +3809,8 @@ GameObject:
   - component: {fileID: 1543694762}
   - component: {fileID: 1543694768}
   - component: {fileID: 1543694766}
-  - component: {fileID: 1543694765}
   - component: {fileID: 1543694767}
+  - component: {fileID: 1543694765}
   m_Layer: 5
   m_Name: MatlBox
   m_TagString: Untagged
@@ -3832,10 +3833,10 @@ RectTransform:
   m_Father: {fileID: 1360735694}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 245, y: -150}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1543694762
 MonoBehaviour:
@@ -3910,8 +3911,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3939,11 +3940,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c27f2731559d60489ba0c06ac8fce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
 --- !u!114 &1543694766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4020,10 +4021,10 @@ RectTransform:
   m_Father: {fileID: 973275680}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 320, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1549490800
 MonoBehaviour:
@@ -4045,8 +4046,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4074,16 +4075,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &1549490803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4201,6 +4202,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552879749}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1660164190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660164191}
+  - component: {fileID: 1660164193}
+  - component: {fileID: 1660164192}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1660164191
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660164190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1348130501}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1660164192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660164190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: c789ef21466aa854e8d3a78db9c9cfdc, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1660164193
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660164190}
+  m_CullTransparentMesh: 0
 --- !u!1 &1677490837
 GameObject:
   m_ObjectHideFlags: 0
@@ -4251,7 +4326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4371,80 +4446,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695378634}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1729981410
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1729981411}
-  - component: {fileID: 1729981413}
-  - component: {fileID: 1729981412}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1729981411
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729981410}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1348130501}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1820, y: 980}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1729981412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729981410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9905195, b: 0.9009434, a: 0.9372549}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1729981413
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729981410}
-  m_CullTransparentMesh: 0
 --- !u!1 &1767104903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4481,8 +4482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 0, y: 250}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767104905
 MonoBehaviour:
@@ -4504,7 +4505,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4533,11 +4534,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c27f2731559d60489ba0c06ac8fce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
 --- !u!114 &1767104908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4601,7 +4602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4644,8 +4645,8 @@ GameObject:
   - component: {fileID: 1983752864}
   - component: {fileID: 1983752872}
   - component: {fileID: 1983752871}
-  - component: {fileID: 1983752868}
   - component: {fileID: 1983752867}
+  - component: {fileID: 1983752868}
   m_Layer: 5
   m_Name: MatlBox
   m_TagString: Untagged
@@ -4668,10 +4669,10 @@ RectTransform:
   m_Father: {fileID: 1360735694}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 585, y: -150}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1983752864
 MonoBehaviour:
@@ -4746,8 +4747,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4788,11 +4789,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c27f2731559d60489ba0c06ac8fce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
 --- !u!114 &1983752871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4870,7 +4871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4949,7 +4950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5014,10 +5015,10 @@ RectTransform:
   m_Father: {fileID: 973275680}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2095069400
 MonoBehaviour:
@@ -5039,8 +5040,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5068,16 +5069,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &2095069403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5140,10 +5141,10 @@ RectTransform:
   m_Father: {fileID: 973275680}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126355634
 MonoBehaviour:
@@ -5165,8 +5166,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5194,16 +5195,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  spearSprite: {fileID: 21300000, guid: 6acef1bc6070f5345b3a5cfbe5d87b9f, type: 3}
-  axSprite: {fileID: 21300000, guid: 516686dc62388d54bb9e1f91690ed882, type: 3}
-  shieldSprite: {fileID: 21300000, guid: ec80c5a4de6f5e943a54ddae19e3b504, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  cymbalSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  questionSprite: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
-  exclamation: {fileID: 21300000, guid: 663bc7d75d39aa0489ab71cd54550956, type: 3}
+  emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
+  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
+  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
+  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
+  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
+  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!114 &2126355637
 MonoBehaviour:
   m_ObjectHideFlags: 0
