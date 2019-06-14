@@ -93,7 +93,8 @@ public class PlayerCtrl : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Jump"))
             {
-               synthesisBoxes.GetComponent<SynthesisCtrl>().StartSynthesis = true;            
+                synthesisBoxes.GetComponent<SynthesisCtrl>().StartSynthesis = true;
+                synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag = true;
             }
             if (Input.GetButtonDown("Attack") && synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == true)
             {

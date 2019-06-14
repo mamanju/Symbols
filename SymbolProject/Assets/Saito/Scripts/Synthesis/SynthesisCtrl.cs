@@ -219,6 +219,7 @@ public class SynthesisCtrl : MonoBehaviour
         else
         {
             Debug.Log("失敗");
+            endFlag = false;
         }
     }
 
@@ -232,7 +233,6 @@ public class SynthesisCtrl : MonoBehaviour
         }
         changeFin = false;
         startSynthesis = false;
-        endFlag = true;
     }
 }
  
