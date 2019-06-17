@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class WeaponTextureManager : MonoBehaviour
 {
-    public Sprite emptySprite;
     public Sprite spearSprite;
     public Sprite axSprite;
     public Sprite shieldSprite;
@@ -18,7 +17,7 @@ public class WeaponTextureManager : MonoBehaviour
 
     private void Start()
     {
-        gameObject.GetComponent<Image>().sprite = emptySprite;
+        gameObject.GetComponent<Image>().color = Color.clear;
     }
 
     private void Update()
@@ -28,6 +27,10 @@ public class WeaponTextureManager : MonoBehaviour
 
     public void WeaponChange()
     {
+        if (GetComponent<WeaponInfo>().weaponList != WeaponInfo.WeaponList.sword)
+        {
+            gameObject.GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        }
         if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.spear)
         {
             gameObject.GetComponent<Image>().sprite = spearSprite;
@@ -66,7 +69,7 @@ public class WeaponTextureManager : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<Image>().sprite = emptySprite;
+            gameObject.GetComponent<Image>().color = Color.clear;
         }
 
     }

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MatlTextureManager : MonoBehaviour
 {
-    public Sprite emptySprite;
     public Sprite stickSprite;
     public Sprite triangleSprite;
     public Sprite lessThanSprite;
@@ -13,7 +12,7 @@ public class MatlTextureManager : MonoBehaviour
 
     private void Start()
     {
-        gameObject.GetComponent<Image>().sprite = emptySprite;
+        gameObject.GetComponent<Image>().color = Color.clear;
     }
 
     private void Update()
@@ -23,7 +22,10 @@ public class MatlTextureManager : MonoBehaviour
 
     public void MatlChange()
     {
-
+        if (GetComponent<MatlInfo>().matlList != MatlInfo.MatlList.empty)
+        {
+            gameObject.GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        }
         if (GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.stick)
         {
             gameObject.GetComponent<Image>().sprite = stickSprite;
@@ -42,7 +44,7 @@ public class MatlTextureManager : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<Image>().sprite = emptySprite;
+            gameObject.GetComponent<Image>().color = Color.clear;
         }
 
     }

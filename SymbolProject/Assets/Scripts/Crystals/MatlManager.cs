@@ -63,7 +63,6 @@ public class MatlManager : MonoBehaviour
     {
         for(int i = 0; i < matlBox.Length; i++)
         {
-            Debug.Log(nowMatl[i]);
             if(nowMatl[i] != 0)
             {
                 matlBox[i].GetComponent<MatlInfo>().matlList

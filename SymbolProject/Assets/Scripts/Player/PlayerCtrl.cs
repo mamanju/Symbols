@@ -49,6 +49,7 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]
     private GameObject synthesisGUI;
     private GameObject matlBoxes;
+    private GameObject matlButton;
     private GameObject synthesisBoxes;
     private GameObject synthesisCrystal;
 
@@ -56,14 +57,20 @@ public class PlayerCtrl : MonoBehaviour
     private Vector3 cameraForward;
 
     private bool attackFlag;
+    public bool AttackFlag
+    {
+        get { return attackFlag; }
+        set { attackFlag = value; }
+    }
 
     void Start()
     {
         synthesisGUI.SetActive(false);
         playerRb = GetComponent<Rigidbody>();
         matlBoxes = synthesisGUI.transform.GetChild(1).gameObject;
-        synthesisBoxes = synthesisGUI.transform.GetChild(2).gameObject;
-        synthesisCrystal = synthesisGUI.transform.GetChild(3).gameObject;
+        matlButton = synthesisGUI.transform.GetChild(2).gameObject;
+        synthesisBoxes = synthesisGUI.transform.GetChild(3).gameObject;
+        synthesisCrystal = synthesisGUI.transform.GetChild(4).gameObject;
     }
 
     void Update()
@@ -87,11 +94,11 @@ public class PlayerCtrl : MonoBehaviour
         {
             if (Input.GetAxisRaw("Dpad_H") == 1 && lastSelect == 0 && synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == false)
             {
-                matlBoxes.GetComponent<MatlBox>().MoveRightFlag = true;
+                matlButton.GetComponent<MatlBox>().MoveRightFlag = true;
             }
             if (Input.GetAxisRaw("Dpad_H") == -1 && lastSelect == 0 && synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == false)
             {
-                matlBoxes.GetComponent<MatlBox>().MoveLeftFlag = true;
+                matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;
             }
             if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Jump"))
             {
@@ -179,6 +186,15 @@ public class PlayerCtrl : MonoBehaviour
             playerRb.AddForce(0.0f, downSpeed, 0.0f);
         }
 
+        //武器切り替え
+        if (Input.GetButtonDown("TriggerButtonL"))
+        {
+
+        }
+        if (Input.GetButtonDown("TriggerButtonR"))
+        {
+
+        }
 
         //攻撃
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Attack"))
@@ -188,6 +204,48 @@ public class PlayerCtrl : MonoBehaviour
 
             }
         }
+
+        //Debug用
+        //if (Input.GetKeyDown("joystick button 0"))
+        //{
+        //    Debug.Log("button0");
+        //}
+        //if (Input.GetKeyDown("joystick button 1"))
+        //{
+        //    Debug.Log("button1");
+        //}
+        //if (Input.GetKeyDown("joystick button 2"))
+        //{
+        //    Debug.Log("button2");
+        //}
+        //if (Input.GetKeyDown("joystick button 3"))
+        //{
+        //    Debug.Log("button3");
+        //}
+        //if (Input.GetKeyDown("joystick button 4"))
+        //{
+        //    Debug.Log("button4");
+        //}
+        //if (Input.GetKeyDown("joystick button 5"))
+        //{
+        //    Debug.Log("button5");
+        //}
+        //if (Input.GetKeyDown("joystick button 6"))
+        //{
+        //    Debug.Log("button6");
+        //}
+        //if (Input.GetKeyDown("joystick button 7"))
+        //{
+        //    Debug.Log("button7");
+        //}
+        //if (Input.GetKeyDown("joystick button 8"))
+        //{
+        //    Debug.Log("button8");
+        //}
+        //if (Input.GetKeyDown("joystick button 9"))
+        //{
+        //    Debug.Log("button9");
+        //}
     }
    
     //移動ストップ
@@ -195,18 +253,5 @@ public class PlayerCtrl : MonoBehaviour
     {
         stopFlag = false;
         playerRb.velocity = Vector3.zero;
-    }
-
-    //攻撃用
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            attackFlag = true;
-        }
-        else
-        {
-            attackFlag = false;
-        }
     }
 }

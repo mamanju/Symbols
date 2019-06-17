@@ -12,6 +12,7 @@ TagManager:
   - TrapSwitch
   - Axe
   - FireTrap
+  - Crystal
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - 
   - PostProcessing
   - Player
-  - 
-  - 
+  - Enemy
+  - Search
   - 
   - 
   - 
