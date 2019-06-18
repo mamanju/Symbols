@@ -92,22 +92,25 @@ public class PlayerCtrl : MonoBehaviour
 
         if (synthesisGUI.activeSelf == true)
         {
-            if (Input.GetAxisRaw("Dpad_H") == 1 && lastSelect == 0 && synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == false)
+            SynthesisCtrl synthesisCtrl = synthesisBoxes.GetComponent<SynthesisCtrl>();
+            if (Input.GetAxisRaw("Dpad_H") == 1 && lastSelect == 0 && synthesisCtrl.EndFlag == false
+                || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveRightFlag = true;
             }
-            if (Input.GetAxisRaw("Dpad_H") == -1 && lastSelect == 0 && synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == false)
+            if (Input.GetAxisRaw("Dpad_H") == -1 && lastSelect == 0 && synthesisCtrl.EndFlag == false
+                || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;
             }
             if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Jump"))
             {
-                synthesisBoxes.GetComponent<SynthesisCtrl>().StartSynthesis = true;
-                synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag = true;
+                synthesisCtrl.StartSynthesis = true;
+                synthesisCtrl.EndFlag = true;
             }
             if (Input.GetButtonDown("Fire1"))
             {
-                synthesisBoxes.GetComponent<SynthesisCtrl>().ResetFlag = true;
+                synthesisCtrl.ResetFlag = true;
             }
         }
 

@@ -28,43 +28,45 @@ public class MatlSet : MonoBehaviour
     public void OnSelect()
     {
         if (setMatls.GetComponent<SynthesisCtrl>().EndFlag == true) { return; }
-        if (this.GetComponent<MatlInfo>().matlList != MatlInfo.MatlList.empty)
+        MatlInfo thisMatlInfo = this.GetComponent<MatlInfo>();
+        MatlManager plyerMatlManager = player.GetComponent<MatlManager>();
+        if (thisMatlInfo.matlList != MatlInfo.MatlList.empty)
         {
             for (int i = 0; i < 5; i++)
             {
                 if (setMatl[i].GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.empty)
                 {
-                    setMatl[i].GetComponent<MatlInfo>().matlList = this.GetComponent<MatlInfo>().matlList;
-                    if (this.GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.stick)
+                    setMatl[i].GetComponent<MatlInfo>().matlList = thisMatlInfo.matlList;
+                    if (thisMatlInfo.matlList == MatlInfo.MatlList.stick)
                     {
-                        player.GetComponent<MatlManager>().NowMatl[0] -= 1;
-                        if (player.GetComponent<MatlManager>().NowMatl[0] == 0)
+                        plyerMatlManager.NowMatl[0] -= 1;
+                        if (plyerMatlManager.NowMatl[0] == 0)
                         {
-                            this.GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
+                            thisMatlInfo.matlList = MatlInfo.MatlList.empty;
                         }
                     }
-                    if (this.GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.triangle)
+                    if (thisMatlInfo.matlList == MatlInfo.MatlList.triangle)
                     {
-                        player.GetComponent<MatlManager>().NowMatl[1] -= 1;
-                        if (player.GetComponent<MatlManager>().NowMatl[1] == 0)
+                        plyerMatlManager.NowMatl[1] -= 1;
+                        if (plyerMatlManager.NowMatl[1] == 0)
                         {
-                            this.GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
+                            thisMatlInfo.matlList = MatlInfo.MatlList.empty;
                         }
                     }
-                    if (this.GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.lessThan)
+                    if (thisMatlInfo.matlList == MatlInfo.MatlList.lessThan)
                     {
-                        player.GetComponent<MatlManager>().NowMatl[2] -= 1;
-                        if (player.GetComponent<MatlManager>().NowMatl[2] == 0)
+                        plyerMatlManager.NowMatl[2] -= 1;
+                        if (plyerMatlManager.NowMatl[2] == 0)
                         {
-                            this.GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
+                            thisMatlInfo.matlList = MatlInfo.MatlList.empty;
                         }
                     }
-                    if (this.GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.circle)
+                    if (thisMatlInfo.matlList == MatlInfo.MatlList.circle)
                     {
-                        player.GetComponent<MatlManager>().NowMatl[3] -= 1;
-                        if (player.GetComponent<MatlManager>().NowMatl[3] == 0)
+                        plyerMatlManager.NowMatl[3] -= 1;
+                        if (plyerMatlManager.NowMatl[3] == 0)
                         {
-                            this.GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
+                            thisMatlInfo.matlList = MatlInfo.MatlList.empty;
                         }
                     }
                     break;
