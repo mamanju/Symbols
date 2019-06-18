@@ -4,18 +4,9 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
+    [SerializeField]
+    private Sprite[] HpSprites;
 
-
-    // 武器のストック(Weaponと同じ配置)
-    private int[] weaponStock = { 1, 0, 0, 0 };
-
-    private int hp = 10;
-    private int max_hp = 10;
-    private int attack = 1;
-
-    /// <summary>
-    /// 武器リスト
-    /// </summary>
     public enum Weapon {
         Sword,
         Spear,
@@ -23,8 +14,16 @@ public class PlayerStatus : MonoBehaviour
         Shield
     }
 
+
+
     public Weapon nowWeapon;
 
+    // 武器のストック(Weaponと同じ配置)
+    private int[] weaponStock = { 1,0,0,0 };
+
+    private int hp = 20;
+    private int max_hp = 20;
+    private int attack = 1;
 
     public int PlayerHp
     {
@@ -32,14 +31,14 @@ public class PlayerStatus : MonoBehaviour
         set { hp = value; }
     }
 
-    public int PlayerMax_Hp
+    public int PlayerMax_Hp()
     {
-        get { return max_hp; }
+        return max_hp;
     }
 
-    public int PlayerAttack
+    public int PlayerAttack()
     {
-        get { return attack; }
+        return attack;
     }
 
     public int[] WeaponStock
@@ -62,5 +61,11 @@ public class PlayerStatus : MonoBehaviour
         Debug.Log("斧の攻撃力:" + axPower);
 
 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

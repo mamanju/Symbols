@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerControl : MonoBehaviour
 {
     private int weaponNumber;
     private int weaponLength;
     private PlayerStatus pStatus;
-    [SerializeField]
-    private GameObject spear_p;
+    private float invincibleTime = 1.0f;
+
+    private bool invincibleFlag = false;
 
     SpriteRenderer MainSpriteRenderer;
 
@@ -20,10 +22,6 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     Sprite[] WeaponSprites;
 
-    [SerializeField]
-    private Transform spearPos;
-
-    private Vector3 playerPosition;
 
     
 
@@ -36,13 +34,13 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             weaponNumber = (weaponNumber + 1) % weaponLength;
             ChangeWeapon(weaponNumber);
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             weaponNumber -= 1;
             if (weaponNumber < 0)
@@ -52,15 +50,14 @@ public class PlayerControl : MonoBehaviour
             ChangeWeapon(weaponNumber);
         }
 
-        if (Input.GetKeyDown(KeyCode.E)) {
-            if(pStatus.nowWeapon == PlayerStatus.Weapon.Spear) {
-                playerPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                var spear = Instantiate(spear_p);
-                
-                spear.transform.position = spearPos.transform.position;
-                Debug.Log(transform.rotation);
-                spear.transform.rotation = transform.rotation;
-                spear.transform.GetChild(0).GetComponent<ArrowAction>().Shot(transform.forward);
+        Debug.Log(invincibleTime);
+        if(invincibleFlag == true)
+        { 
+            invincibleTime -= Time.deltaTime;
+            if (invincibleTime <= 0)
+            {
+                invincibleTime = 1;
+                invincibleFlag = false;
             }
         }
     }
@@ -91,8 +88,12 @@ public class PlayerControl : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("ダメージを受けた！");
-            Debug.Log(pStatus.PlayerHp -= 1);        }
+            if(pStatus.PlayerHp == 0 || invincibleFlag == true) { return; }
+            invincibleFlag = true;
+            pStatus.PlayerHp -= 1;
+            Debug.Log("ダメージを受けたよ！");
+            Debug.Log(pStatus.PlayerHp);
+        }
     }
 
 }
