@@ -11,6 +11,9 @@ public class MatlBox : MonoBehaviour
     private int mobeCtrl = 4;
 
     [SerializeField]
+    private Sprite selectImage;
+
+    [SerializeField]
     private GameObject player;
 
     private bool moveRightFlag;
@@ -48,10 +51,12 @@ public class MatlBox : MonoBehaviour
             if (player.GetComponent<MatlManager>().NowMatl[i] == 0)
             {
                 button.interactable = false;
+                itemBox[i].GetComponent<Image>().color = Color.clear;
             }
             else
             {
                 button.interactable = true;
+                itemBox[i].GetComponent<Image>().color = Color.white;
             }
         }
         if (moveRightFlag == true && selectNum < mobeCtrl)
@@ -86,6 +91,7 @@ public class MatlBox : MonoBehaviour
             }
         }
         itemBox[selectNum].GetComponent<Button>().Select();
+        itemBox[selectNum].GetComponent<Image>().sprite = selectImage;
         
         moveRightFlag = false;
         moveLeftFlag = false;

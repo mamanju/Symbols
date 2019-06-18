@@ -26,6 +26,10 @@ public class CamerCtrl : MonoBehaviour
 
     private Vector3 lookPos;
 
+    private void Awake()
+    {
+        transform.position = player.transform.forward * -8;
+    }
     // Usve this for initialization
     void Start()
     {
