@@ -66,7 +66,7 @@ public class WeaponTextureManager : MonoBehaviour
         {
             thisImage.sprite = hammerSprite;
         }
-        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.meteo)
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.meteor)
         {
             thisImage.sprite = meteoSprite;
         }

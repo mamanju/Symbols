@@ -97,18 +97,6 @@ public class CamerCtrl : MonoBehaviour
             if (angle1 < 0.1f && cameraDown == true) { angle1 = 0.1f; cameraDown = false; }
             else if (angle1 >= 0.1f) { angle1 -= Time.deltaTime * speed; cameraUp = true; }
         }
-        //ズームイン
-        if (Input.GetKey(KeyCode.K))
-        {
-            if (distance <= 2) { distance = 2; }
-            else if (distance > 2) { distance -= 0.1f; }
-        }
-        //ズームアウト
-        if (Input.GetKey(KeyCode.L))
-        {
-            if (distance >= 7) { distance = 7; }
-            else if (distance < 7) { distance += 0.1f; }
-        }
         //リセット
         if (Input.GetKeyDown(KeyCode.P))
         {

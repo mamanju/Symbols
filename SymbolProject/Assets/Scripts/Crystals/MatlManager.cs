@@ -42,23 +42,6 @@ public class MatlManager : MonoBehaviour
         }
     }
 
-    //プレイヤーにぶつかったものがCrystalだったら10個まで取得
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == ("Crystal"))
-        {
-            if (nowMatl[(int)other.GetComponent<MatlInfo>().matlList] >= 10)
-            {
-                Debug.Log("所持上限を超えています");
-                return;
-            }
-            else
-            {
-                nowMatl[(int)other.GetComponent<MatlInfo>().matlList]++;
-            }
-        }
-    }
-
     public void HaveCrystal()
     {
         for(int i = 0; i < matlBox.Length; i++)

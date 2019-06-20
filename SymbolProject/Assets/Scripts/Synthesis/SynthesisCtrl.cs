@@ -216,7 +216,7 @@ public class SynthesisCtrl : MonoBehaviour
                 return;
             }
             Debug.Log("メテオ");
-            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.meteo;
+            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.meteor;
         }
         //レシピNo.0は失敗
         else
