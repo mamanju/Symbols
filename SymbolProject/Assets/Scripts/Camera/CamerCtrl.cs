@@ -66,6 +66,7 @@ public class CamerCtrl : MonoBehaviour
         }
         if (Physics.Raycast(ray, out hit, distanceR))
         {
+            
             if (rayJudg == true)
             {
                 distance = Vector3.Distance(hit.point, lookPos);
