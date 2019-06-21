@@ -79,6 +79,7 @@ public class CamerCtrl : MonoBehaviour
 
         float _horizontalR = Input.GetAxisRaw("Horizontal_R");
         float _verticalR = Input.GetAxisRaw("Vertical_R");
+        //左右移動
         if (_horizontalR != 0)
         {
             angle2 += Time.deltaTime * speed * _horizontalR;

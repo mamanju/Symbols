@@ -142,13 +142,13 @@ public class SynthesisCtrl : MonoBehaviour
         EndSynthesis();
     }
 
-    public void Synthesis(int a, int b, int c, int d, int e)
+    public void Synthesis(int _a, int _b, int _c, int _d, int _e)
     {
         WeaponManager playerWeaponManager = player.GetComponent<WeaponManager>();
         WeaponInfo synthesisWeaponInfo = synthesisCrystal.GetComponent<WeaponInfo>();
         //レシピNo.1
-        if (a == spear[0] && b == spear[1] &&
-            c == spear[2] && d == spear[3] && e == spear[4])
+        if (_a == spear[0] && _b == spear[1] &&
+            _c == spear[2] && _d == spear[3] && _e == spear[4])
         {
             if (playerWeaponManager.NowWeapon[0] >= 5)
             {   
@@ -158,7 +158,7 @@ public class SynthesisCtrl : MonoBehaviour
             Debug.Log("槍");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.spear;
         }
-        else if (a == ax[0] && b == ax[1] && c == ax[2] && d == ax[3] && e == ax[4])
+        else if (_a == ax[0] && _b == ax[1] && _c == ax[2] && _d == ax[3] && _e == ax[4])
         {
             if (playerWeaponManager.NowWeapon[1] >= 5)
             {
@@ -168,7 +168,7 @@ public class SynthesisCtrl : MonoBehaviour
             Debug.Log("斧");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.ax;
         }
-        else if (a == shield[0] && b == shield[1] && c == shield[2] && d == shield[3] && e == shield[4])
+        else if (_a == shield[0] && _b == shield[1] && _c == shield[2] && _d == shield[3] && _e == shield[4])
         {
             if (playerWeaponManager.NowWeapon[2] >= 5)
             {   
@@ -178,7 +178,7 @@ public class SynthesisCtrl : MonoBehaviour
             Debug.Log("盾");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.shield;
         }
-        else if (a == twinSword[0] && b == twinSword[1] && c == twinSword[2] && d == twinSword[3] && e == twinSword[4])
+        else if (_a == twinSword[0] && _b == twinSword[1] && _c == twinSword[2] && _d == twinSword[3] && _e == twinSword[4])
         {
             if (playerWeaponManager.NowWeapon[3] >= 5)
             {
@@ -188,7 +188,7 @@ public class SynthesisCtrl : MonoBehaviour
             Debug.Log("双剣");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.twinSword;
         }
-        else if (a == cymbal[0] && b == cymbal[1] && c == cymbal[2] && d == cymbal[3] && e == cymbal[4])
+        else if (_a == cymbal[0] && _b == cymbal[1] && _c == cymbal[2] && _d == cymbal[3] && _e == cymbal[4])
         {
             if (playerWeaponManager.NowWeapon[4] >= 5)
             {
@@ -198,7 +198,7 @@ public class SynthesisCtrl : MonoBehaviour
             Debug.Log("シンバル");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.cymbal;
         }
-        else if (a == hammer[0] && b == hammer[1] && c == hammer[2] && d == hammer[3] && e == hammer[4])
+        else if (_a == hammer[0] && _b == hammer[1] && _c == hammer[2] && _d == hammer[3] && _e == hammer[4])
         {
             if (playerWeaponManager.NowWeapon[5] >= 5)
             {
@@ -208,7 +208,7 @@ public class SynthesisCtrl : MonoBehaviour
             Debug.Log("ハンマー");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.hammer;
         }
-        else if (a == meteo[0] && b == meteo[1] && c == meteo[2] && d == meteo[3] && e == meteo[4])
+        else if (_a == meteo[0] && _b == meteo[1] && _c == meteo[2] && _d == meteo[3] && _e == meteo[4])
         {
             if (playerWeaponManager.NowWeapon[6] >= 5)
             {
