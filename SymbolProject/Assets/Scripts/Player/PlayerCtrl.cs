@@ -92,6 +92,7 @@ public class PlayerCtrl : MonoBehaviour
         _horizontal = Input.GetAxis("Horizontal");
         _vertical = Input.GetAxis("Vertical");
 
+        Debug.Log(_horizontal);
         //ピタッと止まる処理
         if (_horizontal + _vertical == 0)
         {
