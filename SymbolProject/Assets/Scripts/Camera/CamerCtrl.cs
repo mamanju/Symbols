@@ -29,11 +29,12 @@ public class CamerCtrl : MonoBehaviour
     // Usve this for initialization
     void Start()
     {
+        Debug.Log("pForward=" + player.transform.forward);
         lookPos = player.transform.position + new Vector3(0, 1, 0);
 
         offset = transform.position - lookPos;
 
-        distance = Vector3.Distance(lookPos, player.transform.forward * -5);
+        distance = 5.0f; //Vector3.Distance(lookPos, player.transform.forward * -1);
 
         angle1 = Mathf.Acos(Vector3.Dot(player.transform.forward * -1, offset.normalized));
         angle2 = 3.14174f;
