@@ -26,10 +26,6 @@ public class CamerCtrl : MonoBehaviour
 
     private Vector3 lookPos;
 
-    private void Awake()
-    {
-        transform.position = player.transform.forward * -8;
-    }
     // Usve this for initialization
     void Start()
     {
@@ -37,8 +33,7 @@ public class CamerCtrl : MonoBehaviour
 
         offset = transform.position - lookPos;
 
-
-        distance = Vector3.Distance(lookPos, transform.position);
+        distance = Vector3.Distance(lookPos, player.transform.forward * -5);
 
         angle1 = Mathf.Acos(Vector3.Dot(player.transform.forward * -1, offset.normalized));
         angle2 = 3.14174f;
@@ -53,7 +48,7 @@ public class CamerCtrl : MonoBehaviour
         
         radianP = player.transform.eulerAngles.y * (Mathf.PI / 180.0f) + 3.14174f;
         
-        Ray ray = new Ray(lookPos, offset);
+        Ray ray = new Ray(lookPos, transform.position);
         RaycastHit hit;
         int distanceR = 10;
         //Rayの可視化
@@ -66,7 +61,6 @@ public class CamerCtrl : MonoBehaviour
         }
         if (Physics.Raycast(ray, out hit, distanceR))
         {
-            
             if (rayJudg == true)
             {
                 distance = Vector3.Distance(hit.point, lookPos);
