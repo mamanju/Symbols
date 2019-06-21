@@ -135,9 +135,15 @@ public class PlayerCtrl : MonoBehaviour
         verticalForce = new Vector3(transform.forward.x, 0.0f, transform.forward.z);
         
         //キー入力
-        _horizontal = Input.GetAxisRaw("Horizontal_L");
-        _vertical = Input.GetAxisRaw("Vertical");
-        
+        _horizontal = Input.GetAxis("Horizontal");
+        _vertical = Input.GetAxis("Vertical");
+
+        Debug.Log(_horizontal);
+        //ピタッと止まる処理
+        if (_horizontal + _vertical == 0)
+        {
+            if (stopFlag == true) { StopMove(); }
+        }
         //スピード制御と、静止状態の維持
         if (playerVelocity >= speedMax)
         {
