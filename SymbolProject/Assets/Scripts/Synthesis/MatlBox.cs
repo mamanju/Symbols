@@ -11,6 +11,9 @@ public class MatlBox : MonoBehaviour
     private int mobeCtrl = 4;
 
     [SerializeField]
+    private Sprite selectImage;
+
+    [SerializeField]
     private GameObject player;
 
     private bool moveRightFlag;
@@ -36,35 +39,59 @@ public class MatlBox : MonoBehaviour
             itemBox[i] = transform.GetChild(i).gameObject;
         }
         itemBox[0].GetComponent<Button>().Select();
-        selectNum = 2;
+        selectNum = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (moveRightFlag == true && selectNum < mobeCtrl)
+        for (int i = 0; i < itemBox.Length; i++)
         {
-            if (selectNum != mobeCtrl - 1)
+            Button button = itemBox[i].GetComponent<Button>();
+            if (player.GetComponent<MatlManager>().NowMatl[i] == 0)
             {
-                selectNum++;
+                button.interactable = false;
+                itemBox[i].GetComponent<Image>().color = Color.clear;
             }
             else
             {
-                selectNum = 3;
+                button.interactable = true;
+                itemBox[i].GetComponent<Image>().color = Color.white;
+            }
+        }
+        if (moveRightFlag == true && selectNum < mobeCtrl)
+        {
+            if (selectNum == mobeCtrl - 1)
+            {
+                selectNum = mobeCtrl - 1;
+            }
+            for (int i = selectNum; i < mobeCtrl -1; i++)
+            {
+                if(itemBox[i + 1].GetComponent<Button>().interactable == true)
+                {
+                    selectNum = i + 1;
+                    break;
+                }
             }
         }
         if (moveLeftFlag == true && selectNum >= 0)
         {
-            if (selectNum != 0)
-            {
-                selectNum--;
-            }
-            else
+            if (selectNum == 0)
             {
                 selectNum = 0;
+                return;
+            }
+            for (int i = selectNum; i > 0; i--)
+            {
+                if(itemBox[i - 1].GetComponent<Button>().interactable == true)
+                {
+                    selectNum = i - 1;
+                    break;
+                }
             }
         }
         itemBox[selectNum].GetComponent<Button>().Select();
+        itemBox[selectNum].GetComponent<Image>().sprite = selectImage;
         
         moveRightFlag = false;
         moveLeftFlag = false;

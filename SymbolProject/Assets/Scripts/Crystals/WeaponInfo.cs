@@ -14,7 +14,7 @@ public class WeaponInfo : MonoBehaviour
         twinSword,
         cymbal,
         hammer,
-        meteo,
+        meteor,
         question,
         exclamation,
     };

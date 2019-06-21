@@ -26,6 +26,10 @@ public class CamerCtrl : MonoBehaviour
 
     private Vector3 lookPos;
 
+    private void Awake()
+    {
+        transform.position = player.transform.forward * -8;
+    }
     // Usve this for initialization
     void Start()
     {
@@ -75,6 +79,7 @@ public class CamerCtrl : MonoBehaviour
 
         float _horizontalR = Input.GetAxisRaw("Horizontal_R");
         float _verticalR = Input.GetAxisRaw("Vertical_R");
+        //左右移動
         if (_horizontalR != 0)
         {
             angle2 += Time.deltaTime * speed * _horizontalR;
@@ -92,18 +97,6 @@ public class CamerCtrl : MonoBehaviour
         {
             if (angle1 < 0.1f && cameraDown == true) { angle1 = 0.1f; cameraDown = false; }
             else if (angle1 >= 0.1f) { angle1 -= Time.deltaTime * speed; cameraUp = true; }
-        }
-        //ズームイン
-        if (Input.GetKey(KeyCode.K))
-        {
-            if (distance <= 2) { distance = 2; }
-            else if (distance > 2) { distance -= 0.1f; }
-        }
-        //ズームアウト
-        if (Input.GetKey(KeyCode.L))
-        {
-            if (distance >= 7) { distance = 7; }
-            else if (distance < 7) { distance += 0.1f; }
         }
         //リセット
         if (Input.GetKeyDown(KeyCode.P))

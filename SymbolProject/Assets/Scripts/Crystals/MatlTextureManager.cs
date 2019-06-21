@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class MatlTextureManager : MonoBehaviour
 {
-    public Sprite emptySprite;
-    public Sprite stickSprite;
-    public Sprite triangleSprite;
-    public Sprite lessThanSprite;
-    public Sprite circleSprite;
+    [SerializeField]
+    private Sprite stickSprite;
+    [SerializeField]
+    private Sprite triangleSprite;
+    [SerializeField]
+    private Sprite lessThanSprite;
+    [SerializeField]
+    private Sprite circleSprite;
 
     private void Start()
     {
-        gameObject.GetComponent<Image>().sprite = emptySprite;
+        this.GetComponent<Image>().color = Color.clear;
     }
 
     private void Update()
@@ -23,26 +26,31 @@ public class MatlTextureManager : MonoBehaviour
 
     public void MatlChange()
     {
-
-        if (GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.stick)
+        MatlInfo matlInfo = this.GetComponent<MatlInfo>();
+        Image image = this.GetComponent<Image>();
+        if (matlInfo.matlList != MatlInfo.MatlList.empty)
         {
-            gameObject.GetComponent<Image>().sprite = stickSprite;
+            image.color = new Color(255, 255, 255, 255);
         }
-        else if (GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.triangle)
+        if (matlInfo.matlList == MatlInfo.MatlList.stick)
         {
-            gameObject.GetComponent<Image>().sprite = triangleSprite;
+            image.sprite = stickSprite;
         }
-        else if (GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.lessThan)
+        else if (matlInfo.matlList == MatlInfo.MatlList.triangle)
         {
-            gameObject.GetComponent<Image>().sprite = lessThanSprite;
+            image.sprite = triangleSprite;
         }
-        else if (GetComponent<MatlInfo>().matlList == MatlInfo.MatlList.circle)
+        else if (matlInfo.matlList == MatlInfo.MatlList.lessThan)
         {
-            gameObject.GetComponent<Image>().sprite = circleSprite;
+            image.sprite = lessThanSprite;
+        }
+        else if (matlInfo.matlList == MatlInfo.MatlList.circle)
+        {
+            image.sprite = circleSprite;
         }
         else
         {
-            gameObject.GetComponent<Image>().sprite = emptySprite;
+            image.color = Color.clear;
         }
 
     }

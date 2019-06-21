@@ -87,26 +87,27 @@ public class SynthesisCtrl : MonoBehaviour
 
         if (resetFlag == true)
         {
+            MatlManager playerMatlManager = player.GetComponent<MatlManager>();
             for (int i = 0; i < inputMatl.Length; i++)
             {
                 if (inputMatl[i] == 0)
                 {
-                    player.GetComponent<MatlManager>().NowMatl[0]++;
+                    playerMatlManager.NowMatl[0]++;
                     matlBox[0].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.stick;
                 }
                 else if (inputMatl[i] == 1)
                 {
-                    player.GetComponent<MatlManager>().NowMatl[1]++;
+                    playerMatlManager.NowMatl[1]++;
                     matlBox[1].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.triangle;
                 }
                 else if (inputMatl[i] == 2)
                 {
-                    player.GetComponent<MatlManager>().NowMatl[2]++;
+                    playerMatlManager.NowMatl[2]++;
                     matlBox[2].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.lessThan;
                 }
                 else if (inputMatl[i] == 3)
                 {
-                    player.GetComponent<MatlManager>().NowMatl[3]++;
+                    playerMatlManager.NowMatl[3]++;
                     matlBox[3].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.circle;
                 }
                 else
@@ -141,79 +142,81 @@ public class SynthesisCtrl : MonoBehaviour
         EndSynthesis();
     }
 
-    public void Synthesis(int a, int b, int c, int d, int e)
+    public void Synthesis(int _a, int _b, int _c, int _d, int _e)
     {
+        WeaponManager playerWeaponManager = player.GetComponent<WeaponManager>();
+        WeaponInfo synthesisWeaponInfo = synthesisCrystal.GetComponent<WeaponInfo>();
         //レシピNo.1
-        if (a == spear[0] && b == spear[1] &&
-            c == spear[2] && d == spear[3] && e == spear[4])
+        if (_a == spear[0] && _b == spear[1] &&
+            _c == spear[2] && _d == spear[3] && _e == spear[4])
         {
-            if (player.GetComponent<WeaponManager>().NowWeapon[0] >= 5)
+            if (playerWeaponManager.NowWeapon[0] >= 5)
             {   
                 Debug.Log("所持上限を超えています");
                 return;
             }
             Debug.Log("槍");
-            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.spear;
+            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.spear;
         }
-        else if (a == ax[0] && b == ax[1] && c == ax[2] && d == ax[3] && e == ax[4])
+        else if (_a == ax[0] && _b == ax[1] && _c == ax[2] && _d == ax[3] && _e == ax[4])
         {
-            if (player.GetComponent<WeaponManager>().NowWeapon[1] >= 5)
+            if (playerWeaponManager.NowWeapon[1] >= 5)
             {
                 Debug.Log("所持上限を超えています");
                 return;
             }
             Debug.Log("斧");
-            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.ax;
+            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.ax;
         }
-        else if (a == shield[0] && b == shield[1] && c == shield[2] && d == shield[3] && e == shield[4])
+        else if (_a == shield[0] && _b == shield[1] && _c == shield[2] && _d == shield[3] && _e == shield[4])
         {
-            if (player.GetComponent<WeaponManager>().NowWeapon[2] >= 5)
+            if (playerWeaponManager.NowWeapon[2] >= 5)
             {   
                 Debug.Log("所持上限を超えています");
                 return;
             }
             Debug.Log("盾");
-            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.shield;
+            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.shield;
         }
-        else if (a == twinSword[0] && b == twinSword[1] && c == twinSword[2] && d == twinSword[3] && e == twinSword[4])
+        else if (_a == twinSword[0] && _b == twinSword[1] && _c == twinSword[2] && _d == twinSword[3] && _e == twinSword[4])
         {
-            if (player.GetComponent<WeaponManager>().NowWeapon[3] >= 5)
+            if (playerWeaponManager.NowWeapon[3] >= 5)
             {
                 Debug.Log("所持上限を超えています");
                 return;
             }
             Debug.Log("双剣");
-            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.twinSword;
+            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.twinSword;
         }
-        else if (a == cymbal[0] && b == cymbal[1] && c == cymbal[2] && d == cymbal[3] && e == cymbal[4])
+        else if (_a == cymbal[0] && _b == cymbal[1] && _c == cymbal[2] && _d == cymbal[3] && _e == cymbal[4])
         {
-            if (player.GetComponent<WeaponManager>().NowWeapon[4] >= 5)
+            if (playerWeaponManager.NowWeapon[4] >= 5)
             {
                 Debug.Log("所持上限を超えています");
                 return;
             }
             Debug.Log("シンバル");
-            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.cymbal;
+            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.cymbal;
         }
-        else if (a == hammer[0] && b == hammer[1] && c == hammer[2] && d == hammer[3] && e == hammer[4])
+        else if (_a == hammer[0] && _b == hammer[1] && _c == hammer[2] && _d == hammer[3] && _e == hammer[4])
         {
-            if (player.GetComponent<WeaponManager>().NowWeapon[5] >= 5)
+            if (playerWeaponManager.NowWeapon[5] >= 5)
             {
                 Debug.Log("所持上限を超えています");
                 return;
             }
             Debug.Log("ハンマー");
-            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.hammer;
+            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.hammer;
         }
-        else if (a == meteo[0] && b == meteo[1] && c == meteo[2] && d == meteo[3] && e == meteo[4])
+        else if (_a == meteo[0] && _b == meteo[1] && _c == meteo[2] && _d == meteo[3] && _e == meteo[4])
         {
-            if (player.GetComponent<WeaponManager>().NowWeapon[6] >= 5)
+            if (playerWeaponManager.NowWeapon[6] >= 5)
             {
                 Debug.Log("所持上限を超えています");
                 return;
             }
             Debug.Log("メテオ");
-            synthesisCrystal.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.meteo;
+            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.meteor;
         }
         //レシピNo.0は失敗
         else

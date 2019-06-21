@@ -4,12 +4,11 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - emptySprite: {fileID: 21300000, guid: db1090e91ce17464a83eab5c6a53a2bf, type: 3}
-  - stickSprite: {fileID: 21300000, guid: 33c371d96d16daa45816903bb61285d0, type: 3}
-  - triangleSprite: {fileID: 21300000, guid: 08eb7f4d3597ff645816ada60b661a94, type: 3}
-  - lessThanSprite: {fileID: 21300000, guid: 875e26658ac472048afd11dfb0c81851, type: 3}
-  - circleSprite: {fileID: 21300000, guid: cf71cfbdf6555874a8957ce1b3b4349d, type: 3}
-  - player: {instanceID: 0}
+  - emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  - stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  - triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  - lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  - circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

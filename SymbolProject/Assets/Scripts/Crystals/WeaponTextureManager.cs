@@ -5,20 +5,28 @@ using UnityEngine.UI;
 
 public class WeaponTextureManager : MonoBehaviour
 {
-    public Sprite emptySprite;
-    public Sprite spearSprite;
-    public Sprite axSprite;
-    public Sprite shieldSprite;
-    public Sprite twinSwordSprite;
-    public Sprite cymbalSprite;
-    public Sprite hammerSprite;
-    public Sprite meteoSprite;
-    public Sprite questionSprite;
-    public Sprite exclamation;
+    [SerializeField]
+    private Sprite spearSprite;
+    [SerializeField]
+    private Sprite axSprite;
+    [SerializeField]
+    private Sprite shieldSprite;
+    [SerializeField]
+    private Sprite twinSwordSprite;
+    [SerializeField]
+    private Sprite cymbalSprite;
+    [SerializeField]
+    private Sprite hammerSprite;
+    [SerializeField]
+    private Sprite meteoSprite;
+    [SerializeField]
+    private Sprite questionSprite;
+    [SerializeField]
+    private Sprite exclamation;
 
     private void Start()
     {
-        gameObject.GetComponent<Image>().sprite = emptySprite;
+        this.GetComponent<Image>().color = Color.clear;
     }
 
     private void Update()
@@ -28,45 +36,51 @@ public class WeaponTextureManager : MonoBehaviour
 
     public void WeaponChange()
     {
-        if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.spear)
+        WeaponInfo thisWeaponInfo = this.GetComponent<WeaponInfo>();
+        Image thisImage = this.GetComponent<Image>();
+        if (thisWeaponInfo.weaponList != WeaponInfo.WeaponList.sword)
         {
-            gameObject.GetComponent<Image>().sprite = spearSprite;
+            thisImage.color = new Color(255, 255, 255, 255);
         }
-        else if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.ax)
+        if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.spear)
         {
-            gameObject.GetComponent<Image>().sprite = axSprite;
+            thisImage.sprite = spearSprite;
         }
-        else if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.shield)
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.ax)
         {
-            gameObject.GetComponent<Image>().sprite = shieldSprite;
+            thisImage.sprite = axSprite;
         }
-        else if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.twinSword)
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.shield)
         {
-            gameObject.GetComponent<Image>().sprite = twinSwordSprite;
+            thisImage.sprite = shieldSprite;
         }
-        else if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.cymbal)
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.twinSword)
         {
-            gameObject.GetComponent<Image>().sprite = cymbalSprite;
+            thisImage.sprite = twinSwordSprite;
         }
-        else if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.hammer)
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.cymbal)
         {
-            gameObject.GetComponent<Image>().sprite = hammerSprite;
+            thisImage.sprite = cymbalSprite;
         }
-        else if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.meteo)
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.hammer)
         {
-            gameObject.GetComponent<Image>().sprite = meteoSprite;
+            thisImage.sprite = hammerSprite;
         }
-        else if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.question)
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.meteor)
         {
-            gameObject.GetComponent<Image>().sprite = questionSprite;
+            thisImage.sprite = meteoSprite;
         }
-        else if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.exclamation)
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.question)
         {
-            gameObject.GetComponent<Image>().sprite = exclamation;
+            thisImage.sprite = questionSprite;
+        }
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.exclamation)
+        {
+            thisImage.sprite = exclamation;
         }
         else
         {
-            gameObject.GetComponent<Image>().sprite = emptySprite;
+            thisImage.color = Color.clear;
         }
 
     }
