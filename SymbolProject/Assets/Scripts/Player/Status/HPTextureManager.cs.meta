@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8a0ff302538beb1499daae90912b8fe2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fullHpSprites: {fileID: 21300000, guid: 3f351c40d825899458779a99193bf659, type: 3}
+  - halfHpSprites: {fileID: 21300000, guid: 271c74f59a53fd04898a0f21e2e2e6a3, type: 3}
+  - notHpSprites: {fileID: 21300000, guid: cf3e6fbe9f3661545b277f82674a13ee, type: 3}
+  - player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

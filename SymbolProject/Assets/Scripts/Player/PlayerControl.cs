@@ -9,40 +9,66 @@ public class PlayerControl : MonoBehaviour
     private int weaponLength;
     private PlayerStatus pStatus;
     [SerializeField]
-    private GameObject spear_p;
+    private float invincibleTime = 0.5f;
+    [SerializeField]
+    private float knockbackTime = 0.05f;
+    private bool invincibleFlag = false;
+    private bool ctrlFlag = false;
+    private bool knockbackFlag = false;
+
+    private float invincibleTimeReset;
+    private float knockbackTimeReset;
+    
+
 
     SpriteRenderer MainSpriteRenderer;
 
     [SerializeField]
     private Image nowWeapon_S;
-
+    
 
     [SerializeField]
     Sprite[] WeaponSprites;
 
-    [SerializeField]
-    private Transform spearPos;
+    Rigidbody playerRb;
 
-    private Vector3 playerPosition;
+    //キー入力（WASD）
+    private float _horizontal;
+    private float _vertical;
 
-    
+    //移動用変数
+    private bool stopFlag;
+    private float speed;
+    private float speedMax = 5.0f;
+    private float forceMgmt = 2.0f;
+    private float playerVelocity;
+    private Vector3 speedForce;
+    private float rotateSpeed = 0.628319f;
+
+    Vector3 horizontalForce;
+    Vector3 verticalForce;
+
+
 
     void Start()
     {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         pStatus = GetComponent<PlayerStatus>();
         weaponLength = PlayerStatus.Weapon.GetValues(typeof(PlayerStatus.Weapon)).Length;
+        playerRb = GetComponent<Rigidbody>();
+        invincibleTimeReset = invincibleTime;
+        knockbackTimeReset = knockbackTime;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             weaponNumber = (weaponNumber + 1) % weaponLength;
             ChangeWeapon(weaponNumber);
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             weaponNumber -= 1;
             if (weaponNumber < 0)
@@ -52,16 +78,53 @@ public class PlayerControl : MonoBehaviour
             ChangeWeapon(weaponNumber);
         }
 
-        if (Input.GetKeyDown(KeyCode.E)) {
-            if(pStatus.nowWeapon == PlayerStatus.Weapon.Spear) {
-                playerPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                var spear = Instantiate(spear_p);
-                
-                spear.transform.position = spearPos.transform.position;
-                Debug.Log(transform.rotation);
-                spear.transform.rotation = transform.rotation;
-                spear.transform.GetChild(0).GetComponent<ArrowAction>().Shot(transform.forward);
+        //Debug.Log(invincibleTime);
+        if(invincibleFlag == true)
+        { 
+            invincibleTime -= Time.deltaTime;
+            if (invincibleTime <= 0)
+            {
+                invincibleTime = 0.5f;
+                invincibleFlag = false;
             }
+            if (knockbackFlag == true)
+            {
+                knockbackTime -= Time.deltaTime;
+                if (knockbackTime <= 0)
+                {
+                    knockbackTime = 0.05f;
+                    knockbackFlag = false;
+                }
+            }
+        }
+
+        speedForce = Vector3.zero;
+
+        horizontalForce = new Vector3(transform.right.x, 0.0f, transform.right.z);
+        verticalForce = new Vector3(transform.forward.x, 0.0f, transform.forward.z);
+
+        //キー入力
+        _horizontal = Input.GetAxis("Horizontal");
+        _vertical = Input.GetAxis("Vertical");
+
+        //スピード制御と、静止状態の維持
+        if (playerVelocity >= speedMax || _horizontal + _vertical == 0)
+        {
+            speed = 0.0f;
+        }
+        else if (_horizontal != 0 || _vertical != 0)
+        {
+            speed = 50.0f;
+        }
+        else
+        {
+            stopFlag = true;
+        }
+
+        speedForce = horizontalForce * speed * _horizontal + verticalForce * speed * _vertical;
+        if (ctrlFlag != true && knockbackFlag != true)
+        {
+            playerRb.AddForce(forceMgmt * (speedForce - playerRb.velocity));
         }
     }
 
@@ -91,8 +154,23 @@ public class PlayerControl : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("ダメージを受けた！");
-            Debug.Log(pStatus.PlayerHp -= 1);        }
-    }
+            if(pStatus.PlayerHp == 0 || invincibleFlag == true) { return; }
+            invincibleFlag = true;
+            ctrlFlag = true;
+            knockbackFlag = true;
 
+            pStatus.PlayerHp -= 1;
+            Debug.Log("ダメージを受けたよ！");
+            Debug.Log(pStatus.PlayerHp);
+
+            Vector3 knockback = new Vector3(-transform.forward.x,0,-transform.forward.z);
+            
+             playerRb.AddForce(knockback * 10,ForceMode.Impulse);
+
+            ctrlFlag = false;
+            playerRb.velocity = Vector3.zero;
+
+           
+        }
+    }
 }
