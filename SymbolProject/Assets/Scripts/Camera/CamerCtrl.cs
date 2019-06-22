@@ -8,7 +8,7 @@ public class CamerCtrl : MonoBehaviour
     private GameObject player;
     private Vector3 offset;
 
-    private float distance;
+    private float distance = 7.0f;
     private float angle1;
     private float angle2;
 
@@ -29,15 +29,13 @@ public class CamerCtrl : MonoBehaviour
     // Usve this for initialization
     void Start()
     {
-        Debug.Log("pForward=" + player.transform.forward);
         lookPos = player.transform.position + new Vector3(0, 1, 0);
 
         offset = transform.position - lookPos;
-
-        distance = 5.0f; //Vector3.Distance(lookPos, player.transform.forward * -1);
-
-        angle1 = Mathf.Acos(Vector3.Dot(player.transform.forward * -1, offset.normalized));
-        angle2 = 3.14174f;
+        
+        angle1 = Mathf.Acos(Vector3.Dot(player.transform.forward, offset.normalized));
+        radianP = player.transform.eulerAngles.y * (Mathf.PI / 180.0f) + 3.14174f;
+        angle2 = radianP;
 
         rayJudg = false;
     }
@@ -49,28 +47,24 @@ public class CamerCtrl : MonoBehaviour
         
         radianP = player.transform.eulerAngles.y * (Mathf.PI / 180.0f) + 3.14174f;
         
-        Ray ray = new Ray(lookPos, transform.position);
+        Ray ray = new Ray(lookPos, offset);
         RaycastHit hit;
-        int distanceR = 10;
-        //Rayの可視化
-        Debug.DrawLine(ray.origin, ray.direction * distanceR, Color.red);
+        int distanceR = 7;
         
-        if (rayJudg == false)
-        {
-            distanceT = distance;
-            rayJudg = true;
-        }
+        //Rayの可視化
+        Debug.DrawLine(ray.origin, ray.direction, Color.red);
+       
         if (Physics.Raycast(ray, out hit, distanceR))
         {
-            if (rayJudg == true)
+            if (hit.transform.tag == "Terrain")
             {
+                Debug.Log(hit.transform.name + "とぶつかった");
                 distance = Vector3.Distance(hit.point, lookPos);
             }
         }
         else
         {
-            distance = distanceT;
-            rayJudg = false;
+            distance = 5.0f;
         }
 
         float _horizontalR = Input.GetAxisRaw("Horizontal_R");
@@ -105,6 +99,7 @@ public class CamerCtrl : MonoBehaviour
         offset.x = (Mathf.Cos(angle1) * distance) * Mathf.Sin(angle2);
         offset.y = Mathf.Sin(angle1) * distance;
         offset.z = (Mathf.Cos(angle1) * distance) * Mathf.Cos(angle2);
+
         Vector3 offsetQ = lookPos - transform.position;
         Quaternion rotationQ = Quaternion.LookRotation(offsetQ);
         transform.rotation = rotationQ;
