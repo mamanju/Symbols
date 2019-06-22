@@ -14,6 +14,7 @@ TagManager:
   - FireTrap
   - Crystal
   - WeaponCrystal
+  - Terrain
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - Player
   - Enemy
   - Search
-  - Camera
-  - Terrain
+  - 
+  - 
   - 
   - 
   - 

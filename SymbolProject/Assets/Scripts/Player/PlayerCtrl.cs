@@ -67,8 +67,8 @@ public class PlayerCtrl : MonoBehaviour
     {
         synthesisGUI.SetActive(false);
         playerRb = GetComponent<Rigidbody>();
-        matlBoxes = synthesisGUI.transform.GetChild(1).gameObject;
-        matlButton = synthesisGUI.transform.GetChild(2).gameObject;
+        matlButton = synthesisGUI.transform.GetChild(1).gameObject;
+        matlBoxes = synthesisGUI.transform.GetChild(2).gameObject;
         synthesisBoxes = synthesisGUI.transform.GetChild(3).gameObject;
         synthesisCrystal = synthesisGUI.transform.GetChild(4).gameObject;
     }
