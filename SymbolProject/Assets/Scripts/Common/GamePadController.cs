@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ゲームパッドの入力信号を発信するクラス
+/// ゲームパッドの情報一覧
 /// </summary>
 public static class GamePadManager
 {
@@ -36,20 +36,11 @@ public static class GamePadManager
         PSButton,
         TrackPad,
     }
-
-    /// <summary>
-    /// ジョイスティック(Axis)
-    /// </summary>
-    //public static Dictionary<JoySticks, float> JoyStickAxis = new Dictionary<JoySticks, float>()
-    //{
-    //    { JoySticks.Horizontal_L,0 },
-    //    { JoySticks.Horizontal_R,0 },
-    //    { JoySticks.Vertical_L,0 },
-    //    { JoySticks.Vertical_R,0 },
-    //};
-
 }
 
+/// <summary>
+/// キー全般の入力
+/// </summary>
 public class GamePadController : MonoBehaviour {
     /// <summary>
     /// ジョイスティック(Axis)
@@ -61,6 +52,22 @@ public class GamePadController : MonoBehaviour {
         { GamePadManager.JoySticks.Vertical_L,0 },
         { GamePadManager.JoySticks.Vertical_R,0 },
     };
+
+    /// <summary>
+    /// 十字キー上下
+    /// </summary>
+    /// <returns></returns>
+    public float CrossHorizontal() {
+        return Input.GetAxis("CrossKey_H");
+    }
+
+    /// <summary>
+    /// 十字キー左右
+    /// </summary>
+    /// <returns></returns>
+    public float CrossVertical() {
+        return Input.GetAxis("CrossKey_V");
+    }
 
     /// <summary>
     /// Horizontalの値変更と保持
@@ -76,7 +83,7 @@ public class GamePadController : MonoBehaviour {
     /// <summary>
     /// Verticalの値変更と保持
     /// </summary>
-    public void SetVirtical() {
+    public void SetVertical() {
         JoyStickAxis[GamePadManager.JoySticks.Vertical_L] = Input.GetAxis("Vertical_L");
         JoyStickAxis[GamePadManager.JoySticks.Vertical_R] = Input.GetAxis("Vertical_R");
         Debug.Log("Vertical_L" + JoyStickAxis[GamePadManager.JoySticks.Vertical_L]);
@@ -126,7 +133,7 @@ public class GamePadController : MonoBehaviour {
 
     void Update() {
         SetHorizontal();
-        SetVirtical();
+        SetVertical();
         Debug.Log(ButtonPush());
     }
 }
