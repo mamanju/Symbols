@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour
     private float invincibleTime = 0.5f;
     [SerializeField]
     private float knockbackTime = 0.05f;
+    [SerializeField]
+    private float hitJump = 0.0f;
     private bool invincibleFlag = false;
     private bool ctrlFlag = false;
     private bool knockbackFlag = false;
@@ -84,7 +86,7 @@ public class PlayerControl : MonoBehaviour
             invincibleTime -= Time.deltaTime;
             if (invincibleTime <= 0)
             {
-                invincibleTime = 0.5f;
+                invincibleTime = invincibleTimeReset;
                 invincibleFlag = false;
             }
             if (knockbackFlag == true)
@@ -92,7 +94,7 @@ public class PlayerControl : MonoBehaviour
                 knockbackTime -= Time.deltaTime;
                 if (knockbackTime <= 0)
                 {
-                    knockbackTime = 0.05f;
+                    knockbackTime = knockbackTimeReset;
                     knockbackFlag = false;
                 }
             }
@@ -160,10 +162,8 @@ public class PlayerControl : MonoBehaviour
             knockbackFlag = true;
 
             pStatus.PlayerHp -= 1;
-            Debug.Log("ダメージを受けたよ！");
-            Debug.Log(pStatus.PlayerHp);
 
-            Vector3 knockback = new Vector3(-transform.forward.x,0,-transform.forward.z);
+            Vector3 knockback = new Vector3(-transform.forward.x, hitJump, -transform.forward.z);
             
              playerRb.AddForce(knockback * 10,ForceMode.Impulse);
 

@@ -52,14 +52,8 @@ public class PlayerStatus : MonoBehaviour
     void Start()
     {
         int swordPower = SwordInfo.attack + attack;
-        Debug.Log("剣の攻撃力:"+ swordPower);
-
         int spearPower = SpearInfo.attack + attack;
-        Debug.Log("槍の攻撃力:" + spearPower);
-
         int axPower = AxInfo.attack + attack;
-        Debug.Log("斧の攻撃力:" + axPower);
-
 
     }
 
