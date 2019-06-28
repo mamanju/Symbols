@@ -8,7 +8,7 @@ public class PlayerStatus : MonoBehaviour
     private Sprite[] HpSprites;
 
     public enum Weapon {
-        Sword,
+        Sword = -1,
         Spear,
         Ax,
         Shield
