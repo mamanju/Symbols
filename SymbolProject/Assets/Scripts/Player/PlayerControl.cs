@@ -80,7 +80,6 @@ public class PlayerControl : MonoBehaviour
             ChangeWeapon(weaponNumber);
         }
 
-        //Debug.Log(invincibleTime);
         if(invincibleFlag == true)
         { 
             invincibleTime -= Time.deltaTime;
@@ -152,6 +151,9 @@ public class PlayerControl : MonoBehaviour
         pStatus.WeaponStock[wNum] += addNum;
     }
 
+
+
+    // コライダーじゃなくて攻撃で減るようにしてね！
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -165,12 +167,11 @@ public class PlayerControl : MonoBehaviour
 
             Vector3 knockback = new Vector3(-transform.forward.x, hitJump, -transform.forward.z);
             
-             playerRb.AddForce(knockback * 10,ForceMode.Impulse);
+            playerRb.AddForce(knockback * 10,ForceMode.Impulse);
 
             ctrlFlag = false;
             playerRb.velocity = Vector3.zero;
 
-           
         }
     }
 }

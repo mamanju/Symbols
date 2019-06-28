@@ -63,6 +63,11 @@ public class PlayerCtrl : MonoBehaviour
         set { attackFlag = value; }
     }
 
+    //武器の切り替えの処理
+    //ノックバック
+    //無敵時間
+    //HPが減る処理
+
     void Start()
     {
         synthesisGUI.SetActive(false);
