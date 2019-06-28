@@ -41,7 +41,7 @@ public static class GamePadManager
 /// <summary>
 /// キー全般の入力
 /// </summary>
-public class GamePadController : MonoBehaviour {
+public class GamePadController : SingletonMonoBehaviour<GamePadController> {
     /// <summary>
     /// ジョイスティック(Axis)
     /// </summary>
