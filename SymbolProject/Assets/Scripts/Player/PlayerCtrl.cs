@@ -201,11 +201,11 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         //武器切り替え
-        if (Input.GetButtonDown("TriggerButtonL"))
+        if (Input.GetButtonDown("TriggerButtonR"))
         {
 
         }
-        if (Input.GetButtonDown("TriggerButtonR"))
+        if (Input.GetButtonDown("TriggerButtonL"))
         {
 
         }
@@ -218,50 +218,8 @@ public class PlayerCtrl : MonoBehaviour
 
             }
         }
-
-        //Debug用
-        //if (Input.GetKeyDown("joystick button 0"))
-        //{
-        //    Debug.Log("button0");
-        //}
-        //if (Input.GetKeyDown("joystick button 1"))
-        //{
-        //    Debug.Log("button1");
-        //}
-        //if (Input.GetKeyDown("joystick button 2"))
-        //{
-        //    Debug.Log("button2");
-        //}
-        //if (Input.GetKeyDown("joystick button 3"))
-        //{
-        //    Debug.Log("button3");
-        //}
-        //if (Input.GetKeyDown("joystick button 4"))
-        //{
-        //    Debug.Log("button4");
-        //}
-        //if (Input.GetKeyDown("joystick button 5"))
-        //{
-        //    Debug.Log("button5");
-        //}
-        //if (Input.GetKeyDown("joystick button 6"))
-        //{
-        //    Debug.Log("button6");
-        //}
-        //if (Input.GetKeyDown("joystick button 7"))
-        //{
-        //    Debug.Log("button7");
-        //}
-        //if (Input.GetKeyDown("joystick button 8"))
-        //{
-        //    Debug.Log("button8");
-        //}
-        //if (Input.GetKeyDown("joystick button 9"))
-        //{
-        //    Debug.Log("button9");
-        //}
     }
-   
+
     //移動ストップ
     public void StopMove()
     {
