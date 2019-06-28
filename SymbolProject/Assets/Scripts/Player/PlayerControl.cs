@@ -136,7 +136,7 @@ public class PlayerControl : MonoBehaviour
     public void ChangeWeapon(int num)
     {
         weaponNumber = num;
-        pStatus.nowWeapon = (PlayerStatus.Weapon)(num);
+        pStatus.nowWeapon = (PlayerStatus.Weapon)(num) - 1;
         Debug.Log(pStatus.nowWeapon);
         nowWeapon_S.sprite = WeaponSprites[num];
     }
