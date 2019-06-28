@@ -11,15 +11,15 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private float invincibleTime = 0.5f;
     [SerializeField]
-    private float knockbackTime = 0.05f;
+    private float knockbackTime = 0.05f;        //
     [SerializeField]
     private float hitJump = 0.0f;
     private bool invincibleFlag = false;
     private bool ctrlFlag = false;
-    private bool knockbackFlag = false;
+    private bool knockbackFlag = false;         //
 
     private float invincibleTimeReset;
-    private float knockbackTimeReset;
+    private float knockbackTimeReset;       //
     
 
 
@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     Sprite[] WeaponSprites;
 
-    Rigidbody playerRb;
+    Rigidbody playerRb;     //
 
     //キー入力（WASD）
     private float _horizontal;
@@ -57,9 +57,9 @@ public class PlayerControl : MonoBehaviour
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         pStatus = GetComponent<PlayerStatus>();
         weaponLength = PlayerStatus.Weapon.GetValues(typeof(PlayerStatus.Weapon)).Length;
-        playerRb = GetComponent<Rigidbody>();
+        playerRb = GetComponent<Rigidbody>();       //
         invincibleTimeReset = invincibleTime;
-        knockbackTimeReset = knockbackTime;
+        knockbackTimeReset = knockbackTime;      //
     }
 
     void Update()
@@ -88,7 +88,7 @@ public class PlayerControl : MonoBehaviour
                 invincibleTime = invincibleTimeReset;
                 invincibleFlag = false;
             }
-            if (knockbackFlag == true)
+            if (knockbackFlag == true)  //
             {
                 knockbackTime -= Time.deltaTime;
                 if (knockbackTime <= 0)
@@ -136,7 +136,7 @@ public class PlayerControl : MonoBehaviour
     public void ChangeWeapon(int num)
     {
         weaponNumber = num;
-        pStatus.nowWeapon = (PlayerStatus.Weapon)(num);
+        pStatus.nowWeapon = (PlayerStatus.Weapon)(num) - 1;
         Debug.Log(pStatus.nowWeapon);
         nowWeapon_S.sprite = WeaponSprites[num];
     }
