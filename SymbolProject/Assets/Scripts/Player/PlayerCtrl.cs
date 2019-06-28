@@ -140,8 +140,8 @@ public class PlayerCtrl : MonoBehaviour
         verticalForce = new Vector3(transform.forward.x, 0.0f, transform.forward.z);
         
         //キー入力
-        _horizontal = Input.GetAxis("Horizontal");
-        _vertical = Input.GetAxis("Vertical");
+        _horizontal = Input.GetAxis("Horizontal_L");
+        _vertical = Input.GetAxis("Vertical_L");
 
         Debug.Log(_horizontal);
         //ピタッと止まる処理
