@@ -98,7 +98,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("Synthesis"))
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("Triangle"))
         {
             synthesisGUI.SetActive(!synthesisGUI.activeSelf);
             if (synthesisGUI.activeSelf == true)
@@ -116,12 +116,12 @@ public class PlayerCtrl : MonoBehaviour
         if (synthesisGUI.activeSelf == true)
         {
             SynthesisCtrl synthesisCtrl = synthesisBoxes.GetComponent<SynthesisCtrl>();
-            if (Input.GetAxisRaw("Dpad_H") == 1 && lastSelect == 0 && synthesisCtrl.EndFlag == false
+            if (Input.GetAxisRaw("R2") == 1 && lastSelect == 0 && synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveRightFlag = true;
             }
-            if (Input.GetAxisRaw("Dpad_H") == -1 && lastSelect == 0 && synthesisCtrl.EndFlag == false
+            if (Input.GetAxisRaw("R2") == -1 && lastSelect == 0 && synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;
@@ -205,7 +205,7 @@ public class PlayerCtrl : MonoBehaviour
         {
             downFlag = false;
             downSpeed = -1.3f;
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Cross"))
             {
                 nowPlayerY = transform.position.y + 3.0f;
                 playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);
@@ -221,12 +221,12 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         //武器切り替え
-        if (Input.GetButtonDown("TriggerButtonR"))
+        if (Input.GetButtonDown("L1"))
         {
             weaponNumber = (weaponNumber + 1) % weaponLength;
             ChangeWeapon(weaponNumber);
         }
-        if (Input.GetButtonDown("TriggerButtonL"))
+        if (Input.GetButtonDown("R1"))
         {
             weaponNumber -= 1;
             if (weaponNumber < 0)
@@ -237,7 +237,7 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         //攻撃
-        if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Attack"))
+        if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
             if (attackFlag == true)
             {
