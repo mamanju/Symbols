@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -76,12 +75,6 @@ public class PlayerCtrl : MonoBehaviour
 
     //ノックバック
     //無敵時間
-    private bool knockbackFlag = false;
-    public bool KnockBackFlag
-    {
-        get { return knockbackFlag; }
-        set { knockbackFlag = value; }
-    }
     //HPが減る処理
 
     void Start()
@@ -129,7 +122,7 @@ public class PlayerCtrl : MonoBehaviour
             {
                 matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;
             }
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Jump"))
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Cross"))
             {
                 synthesisCtrl.StartSynthesis = true;
                 synthesisCtrl.EndFlag = true;
@@ -164,6 +157,7 @@ public class PlayerCtrl : MonoBehaviour
         _horizontal = Input.GetAxis("Horizontal_L");
         _vertical = Input.GetAxis("Vertical_L");
 
+        Debug.Log(_horizontal);
         //ピタッと止まる処理
         if (_horizontal + _vertical == 0)
         {
@@ -191,12 +185,9 @@ public class PlayerCtrl : MonoBehaviour
         
         lastHorizontal = Mathf.Abs(_horizontal);
         lastVertical = Mathf.Abs(_vertical);
-        speedForce += cameraForward * _vertical * speed + Camera.main.transform.right * speed * _horizontal;
 
-        if (knockbackFlag != true)
-        {
-            playerRb.AddForce(forceMgmt * speedForce);
-        }
+        speedForce += cameraForward * _vertical * speed + Camera.main.transform.right * speed * _horizontal;
+        playerRb.AddForce(forceMgmt * speedForce);
         
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
         {
