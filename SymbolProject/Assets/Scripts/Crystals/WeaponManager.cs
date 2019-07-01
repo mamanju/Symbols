@@ -34,7 +34,7 @@ public class WeaponManager : MonoBehaviour
         {
             if (nowWeapon[i] == 0)
             {
-                weaponBox[i].GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.sword;
+                weaponBox[i].GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.empty;
             }
         }
     }
@@ -46,12 +46,12 @@ public class WeaponManager : MonoBehaviour
             if (nowWeapon[i] >= 0)
             {
                 weaponBox[i].GetComponent<WeaponInfo>().weaponList
-                    = ((WeaponInfo.WeaponList)Enum.ToObject(typeof(WeaponInfo.WeaponList), i));
+                    = ((WeaponInfo.WeaponList)Enum.ToObject(typeof(WeaponInfo.WeaponList), i + 1));
             }
             else
             {
                 weaponBox[i].GetComponent<WeaponInfo>().weaponList
-                    = WeaponInfo.WeaponList.sword;
+                    = WeaponInfo.WeaponList.empty;
             }
         }
     }

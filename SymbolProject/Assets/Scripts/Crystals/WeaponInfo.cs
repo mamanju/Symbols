@@ -7,7 +7,8 @@ public class WeaponInfo : MonoBehaviour
     [SerializeField]
     public enum WeaponList
     {
-        sword = -1,
+        empty = -1,
+        sword,
         spear,
         ax,
         shield,

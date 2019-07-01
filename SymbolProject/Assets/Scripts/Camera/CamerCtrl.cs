@@ -58,7 +58,6 @@ public class CamerCtrl : MonoBehaviour
         {
             if (hit.transform.tag == "Terrain")
             {
-                Debug.Log(hit.transform.name + "とぶつかった");
                 distance = Vector3.Distance(hit.point, lookPos);
             }
         }

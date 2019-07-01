@@ -67,12 +67,12 @@ public class PlayerCtrl : MonoBehaviour
     //武器の切り替えの処理
     private WeaponInfo nowWeapon;
     private WeaponManager weaponManager;
-    private int weaponNumber;
+    private int weaponNumber = 0;
     private int weaponLength;
     [SerializeField]
     private Image nowWeapon_S;
-    [SerializeField]
-    Sprite[] WeaponSprites;
+    //[SerializeField]
+    //Sprite[] WeaponSprites;
 
     //ノックバック
     //無敵時間
@@ -93,7 +93,10 @@ public class PlayerCtrl : MonoBehaviour
         synthesisBoxes = synthesisGUI.transform.GetChild(3).gameObject;
         synthesisCrystal = synthesisGUI.transform.GetChild(4).gameObject;
 
-        weaponLength = WeaponInfo.WeaponList.GetValues(typeof(PlayerStatus.Weapon)).Length;
+        nowWeapon = nowWeapon_S.gameObject.GetComponent<WeaponInfo>();
+        nowWeapon.weaponList = WeaponInfo.WeaponList.sword;
+        weaponManager = this.gameObject.GetComponent<WeaponManager>();
+        weaponLength = weaponManager.NowWeapon.Length;
     }
 
     void Update()
@@ -221,17 +224,33 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         //武器切り替え
-        if (Input.GetButtonDown("L1"))
+        if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.L))
         {
-            weaponNumber = (weaponNumber + 1) % weaponLength;
+            weaponNumber = (weaponNumber + 1) % (weaponLength + 1);
+            while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
+            {
+                weaponNumber++;
+                if (weaponNumber >= weaponLength)
+                {
+                    weaponNumber = 0;
+                }
+            }
             ChangeWeapon(weaponNumber);
         }
-        if (Input.GetButtonDown("R1"))
+        if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.K))
         {
             weaponNumber -= 1;
             if (weaponNumber < 0)
             {
-                weaponNumber = weaponLength - 1;
+                weaponNumber = weaponLength;
+            }
+            while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
+            {
+                weaponNumber--;
+                if (weaponNumber <= 0)
+                {
+                    weaponNumber = 0;
+                }
             }
             ChangeWeapon(weaponNumber);
         }
@@ -260,9 +279,7 @@ public class PlayerCtrl : MonoBehaviour
     public void ChangeWeapon(int num)
     {
         weaponNumber = num;
-        nowWeapon.weaponList = (WeaponInfo.WeaponList)(num) - 1;
-        Debug.Log(nowWeapon.weaponList);
-        nowWeapon_S.sprite = WeaponSprites[num];
+        nowWeapon.weaponList = (WeaponInfo.WeaponList)(num);
     }
 
     /// <summary>

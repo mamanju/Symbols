@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3838743764724194141}
   - component: {fileID: 3838743764724194140}
   m_Layer: 5
-  m_Name: Image (8)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3838743764967829619}
   - component: {fileID: 3838743764967829618}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 3838743765000685831}
   - component: {fileID: 3838743765000685830}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 3838743765122847306}
   - component: {fileID: 3838743765122847305}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 3838743765745227673}
   - component: {fileID: 3838743765745227672}
   m_Layer: 5
-  m_Name: Image (5)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 3838743765765885830}
   - component: {fileID: 3838743765765885829}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 3838743765857891782}
   - component: {fileID: 3838743765857891781}
   m_Layer: 5
-  m_Name: Image (7)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 3838743765918981042}
   - component: {fileID: 3838743765918981041}
   m_Layer: 5
-  m_Name: Image (6)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 3838743766546578899}
   - component: {fileID: 3838743766546578898}
   m_Layer: 5
-  m_Name: Image (9)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 3838743766553798343}
   - component: {fileID: 3838743766553798342}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
