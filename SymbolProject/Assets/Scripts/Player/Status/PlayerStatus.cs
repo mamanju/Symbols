@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    //public enum Weapon {
-    //    Sword = -1,
-    //    Spear,
-    //    Ax,
-    //    Shield
-    //}
+    [SerializeField]
+    private Sprite[] HpSprites;
+
+    public enum Weapon {
+        Sword = -1,
+        Spear,
+        Ax,
+        Shield
+    }
 
 
 
-    //public Weapon nowWeapon;
+    public Weapon nowWeapon;
 
     // 武器のストック(Weaponと同じ配置)
-    private int[] weaponStock = { 1, 0, 0, 0 };
+    private int[] weaponStock = { 1,0,0,0 };
 
     private int hp = 20;
     private int max_hp = 20;
@@ -52,5 +55,11 @@ public class PlayerStatus : MonoBehaviour
         int spearPower = SpearInfo.attack + attack;
         int axPower = AxInfo.attack + attack;
 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
