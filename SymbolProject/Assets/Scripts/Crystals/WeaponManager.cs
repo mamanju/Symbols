@@ -55,4 +55,10 @@ public class WeaponManager : MonoBehaviour
             }
         }
     }
+
+    public void DeleteWeapon(int _num)
+    {
+        if(nowWeapon[_num] == 0) { return; }
+        nowWeapon[_num]--;
+    }
 }

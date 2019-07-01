@@ -52,8 +52,5 @@ public class MatlTextureManager : MonoBehaviour
         {
             image.color = Color.clear;
         }
-
-    }
-
-   
+    } 
 }
