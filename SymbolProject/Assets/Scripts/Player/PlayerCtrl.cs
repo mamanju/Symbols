@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -64,8 +65,23 @@ public class PlayerCtrl : MonoBehaviour
     }
 
     //武器の切り替えの処理
+    private WeaponInfo nowWeapon;
+    private WeaponManager weaponManager;
+    private int weaponNumber;
+    private int weaponLength;
+    [SerializeField]
+    private Image nowWeapon_S;
+    [SerializeField]
+    Sprite[] WeaponSprites;
+
     //ノックバック
     //無敵時間
+    private bool knockbackFlag = false;
+    public bool KnockBackFlag
+    {
+        get { return knockbackFlag; }
+        set { knockbackFlag = value; }
+    }
     //HPが減る処理
 
     void Start()
@@ -76,6 +92,8 @@ public class PlayerCtrl : MonoBehaviour
         matlBoxes = synthesisGUI.transform.GetChild(2).gameObject;
         synthesisBoxes = synthesisGUI.transform.GetChild(3).gameObject;
         synthesisCrystal = synthesisGUI.transform.GetChild(4).gameObject;
+
+        weaponLength = WeaponInfo.WeaponList.GetValues(typeof(PlayerStatus.Weapon)).Length;
     }
 
     void Update()
@@ -143,7 +161,6 @@ public class PlayerCtrl : MonoBehaviour
         _horizontal = Input.GetAxis("Horizontal_L");
         _vertical = Input.GetAxis("Vertical_L");
 
-        Debug.Log(_horizontal);
         //ピタッと止まる処理
         if (_horizontal + _vertical == 0)
         {
@@ -171,9 +188,12 @@ public class PlayerCtrl : MonoBehaviour
         
         lastHorizontal = Mathf.Abs(_horizontal);
         lastVertical = Mathf.Abs(_vertical);
-
         speedForce += cameraForward * _vertical * speed + Camera.main.transform.right * speed * _horizontal;
-        playerRb.AddForce(forceMgmt * speedForce);
+
+        if (knockbackFlag != true)
+        {
+            playerRb.AddForce(forceMgmt * speedForce);
+        }
         
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
         {
@@ -203,11 +223,17 @@ public class PlayerCtrl : MonoBehaviour
         //武器切り替え
         if (Input.GetButtonDown("L1"))
         {
-
+            weaponNumber = (weaponNumber + 1) % weaponLength;
+            ChangeWeapon(weaponNumber);
         }
         if (Input.GetButtonDown("R1"))
         {
-
+            weaponNumber -= 1;
+            if (weaponNumber < 0)
+            {
+                weaponNumber = weaponLength - 1;
+            }
+            ChangeWeapon(weaponNumber);
         }
 
         //攻撃
@@ -225,5 +251,27 @@ public class PlayerCtrl : MonoBehaviour
     {
         stopFlag = false;
         playerRb.velocity = Vector3.zero;
+    }
+
+    /// <summary>
+    /// 武器切り替え処理
+    /// </summary>
+    /// <param name="num">切り替える武器が何番目か</param>
+    public void ChangeWeapon(int num)
+    {
+        weaponNumber = num;
+        nowWeapon.weaponList = (WeaponInfo.WeaponList)(num) - 1;
+        Debug.Log(nowWeapon.weaponList);
+        nowWeapon_S.sprite = WeaponSprites[num];
+    }
+
+    /// <summary>
+    /// 武器増減処理
+    /// </summary>
+    /// <param name="addNum">増減する値</param>
+    /// <param name="wNum">何の武器が増減するか</param>
+    public void AddWeaponStock(int addNum, int wNum)
+    {
+        weaponManager.NowWeapon[wNum] += addNum;
     }
 }

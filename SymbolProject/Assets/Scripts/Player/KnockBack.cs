@@ -12,6 +12,11 @@ public class KnockBack : MonoBehaviour
 
     Rigidbody playerRb;
 
+
+    private float forceMgmt = 2.0f;
+    private Vector3 speedForce;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +36,6 @@ public class KnockBack : MonoBehaviour
                 knockbackFlag = false;
             }
         }
+
     }
 }
