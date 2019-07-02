@@ -6,6 +6,10 @@ public class Finder : MonoBehaviour
 {
     private Renderer m_renderer = null;
     private List<GameObject> m_targets = new List<GameObject>();
+    public List<GameObject> M_targets
+    {
+        get { return m_targets; }
+    }
 
     private void Awake()
     {
@@ -21,7 +25,6 @@ public class Finder : MonoBehaviour
         m_targets.Add(i_foundObject);
         Debug.Log("敵発見！");
         //攻撃可能
-        this.GetComponent<PlayerCtrl>().AttackFlag = true;
     }
 
     private void OnList( GameObject i_lostObject)
@@ -30,7 +33,6 @@ public class Finder : MonoBehaviour
         if(m_targets.Count == 0)
         {
             Debug.Log("敵がいないぞ");
-            this.GetComponent<PlayerCtrl>().AttackFlag = false;
         }
     }
 }// class Finder

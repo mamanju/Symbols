@@ -11,12 +11,10 @@ public class PlayerStatus : MonoBehaviour
     //    Shield
     //}
 
-
-
     //public Weapon nowWeapon;
 
     // 武器のストック(Weaponと同じ配置)
-    private int[] weaponStock = { 1, 0, 0, 0 };
+    //private int[] weaponStock = { 1, 0, 0, 0 };
 
     private int hp = 20;
     private int max_hp = 20;
@@ -38,12 +36,11 @@ public class PlayerStatus : MonoBehaviour
         return attack;
     }
 
-    public int[] WeaponStock
-    {
-        get { return weaponStock; }
-        set { weaponStock = value; }
-    }
-
+    //public int[] WeaponStock
+    //{
+    //    get { return weaponStock; }
+    //    set { weaponStock = value; }
+    //}
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +48,10 @@ public class PlayerStatus : MonoBehaviour
         int swordPower = SwordInfo.attack + attack;
         int spearPower = SpearInfo.attack + attack;
         int axPower = AxInfo.attack + attack;
+    }
 
+    private void Update()
+    {
+        
     }
 }

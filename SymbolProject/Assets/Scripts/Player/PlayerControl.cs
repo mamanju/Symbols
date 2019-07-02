@@ -148,7 +148,7 @@ public class PlayerControl : MonoBehaviour
     /// <param name="wNum">何の武器が増減するか</param>
     public void AddWeaponStock(int addNum, int wNum)
     {
-        pStatus.WeaponStock[wNum] += addNum;
+        //pStatus.WeaponStock[wNum] += addNum;
     }
 
 

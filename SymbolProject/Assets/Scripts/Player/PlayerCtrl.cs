@@ -57,22 +57,23 @@ public class PlayerCtrl : MonoBehaviour
     //カメラの向きを取得
     private Vector3 cameraForward;
 
-    private bool attackFlag;
-    public bool AttackFlag
-    {
-        get { return attackFlag; }
-        set { attackFlag = value; }
-    }
-
     //武器の切り替えの処理
     private WeaponInfo nowWeapon;
+    [SerializeField]
     private WeaponManager weaponManager;
+    [SerializeField]
+    private PlayerWeaponManager playerWeaponManager;
     private int weaponNumber = 0;
     private int weaponLength;
     [SerializeField]
     private Image nowWeapon_S;
-    //[SerializeField]
-    //Sprite[] WeaponSprites;
+
+    //武器切り替えによるコライダーの範囲の変更
+    [SerializeField]
+    private SearchingBehavior searchingBehavior;
+    //敵のオブジェクト
+    [SerializeField]
+    private Finder finder;
 
     //ノックバック
     //無敵時間
@@ -95,7 +96,6 @@ public class PlayerCtrl : MonoBehaviour
 
         nowWeapon = nowWeapon_S.gameObject.GetComponent<WeaponInfo>();
         nowWeapon.weaponList = WeaponInfo.WeaponList.sword;
-        weaponManager = this.gameObject.GetComponent<WeaponManager>();
         weaponLength = weaponManager.NowWeapon.Length;
     }
 
@@ -258,10 +258,12 @@ public class PlayerCtrl : MonoBehaviour
         //攻撃
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
-            if (attackFlag == true)
+            if(finder.M_targets.Count == 0) { return; }
+            for (int i = 0; i < finder.M_targets.Count; i++)
             {
-
+                finder.M_targets[i].GetComponent<enenemyHealtmanager>().healt--;
             }
+            
         }
     }
 
@@ -280,15 +282,18 @@ public class PlayerCtrl : MonoBehaviour
     {
         weaponNumber = num;
         nowWeapon.weaponList = (WeaponInfo.WeaponList)(num);
-    }
-
-    /// <summary>
-    /// 武器増減処理
-    /// </summary>
-    /// <param name="addNum">増減する値</param>
-    /// <param name="wNum">何の武器が増減するか</param>
-    public void AddWeaponStock(int addNum, int wNum)
-    {
-        weaponManager.NowWeapon[wNum] += addNum;
+        playerWeaponManager.WeaponObjChange(num);
+        if (num == 5)
+        {
+            searchingBehavior.M_searchAngle = 360;
+            searchingBehavior.ApplySearchAngle();
+            searchingBehavior.UpdateFoundObject();
+        }
+        else
+        {
+            searchingBehavior.M_searchAngle = 90;
+            searchingBehavior.ApplySearchAngle();
+            searchingBehavior.UpdateFoundObject();
+        }
     }
 }
