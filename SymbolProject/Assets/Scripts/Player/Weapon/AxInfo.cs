@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class AxInfo : WeaponCtrl
 {
-    private GameObject player;
-    private PlayerStatus playerStatus;
+    public static int attack;
 
     void Start()
     {
@@ -13,13 +12,5 @@ public class AxInfo : WeaponCtrl
         attack = 3;
         durable = 5;
         weaponID = "Ax";
-
-        player = this.transform.parent.parent.gameObject;
-        playerStatus = player.GetComponent<PlayerStatus>();
-    }
-
-    void OnEnable()
-    {
-        playerStatus.WeaponAttack(attack);    
     }
 }

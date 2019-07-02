@@ -8,9 +8,8 @@ public class PlayerStatus : MonoBehaviour
     private int max_hp = 20;
     private int attack = 1;
 
-    [SerializeField]
-    private WeaponCtrl weaponCtrl;
     private int nowAttack;
+    private int[] weaponAttacks = new int[10];
     
     public int PlayerHp
     {
@@ -28,8 +27,15 @@ public class PlayerStatus : MonoBehaviour
         return nowAttack;
     }
 
+    private void Start()
+    {
+        weaponAttacks[0] = SwordInfo.attack + attack;
+        weaponAttacks[1] = SpearInfo.attack + attack;
+        weaponAttacks[2] = AxInfo.attack + attack;
+    }
+
     public void WeaponAttack(int _attack)
-    { 
-        nowAttack = _attack + attack;
+    {
+        nowAttack = weaponAttacks[_attack];
     }
 }

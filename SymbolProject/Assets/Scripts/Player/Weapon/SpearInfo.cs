@@ -7,8 +7,7 @@ public class SpearInfo : WeaponCtrl
     [SerializeField]
     private float _startSpeed = 100.0f;
 
-    private GameObject player;
-    private PlayerStatus playerStatus;
+    public static int attack;
 
     void Start()
     {
@@ -16,14 +15,6 @@ public class SpearInfo : WeaponCtrl
         attack = 2;
         durable = 10;
         weaponID = "Spear";
-
-        player = this.transform.parent.parent.gameObject;
-        playerStatus = player.GetComponent<PlayerStatus>();
-    }
-
-    void OnEnable()
-    {
-        playerStatus.WeaponAttack(attack);
     }
 
     void Update()
