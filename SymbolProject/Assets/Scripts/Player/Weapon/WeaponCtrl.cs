@@ -31,9 +31,9 @@ public class WeaponCtrl : MonoBehaviour
 
     #endregion
 
-    void Start()
+    void Update()
     {
-        
+
     }
 
     /// <summary>

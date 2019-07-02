@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3905160244978641622}
   - component: {fileID: 6409934052335450140}
   - component: {fileID: 4345922509366754107}
+  - component: {fileID: 3777930447967526895}
   m_Layer: 0
   m_Name: Ax
   m_TagString: Untagged
@@ -104,3 +105,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a996beb98568a4ea442b1fdfb1edb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3777930447967526895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4978689622399521429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3274cd0b21555a4290d3f62a3c1fe34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponList: 2

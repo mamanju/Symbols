@@ -68,6 +68,9 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]
     private Image nowWeapon_S;
 
+    [SerializeField]
+    private PlayerStatus playerStatus;
+    
     //武器切り替えによるコライダーの範囲の変更
     [SerializeField]
     private SearchingBehavior searchingBehavior;
@@ -258,6 +261,7 @@ public class PlayerCtrl : MonoBehaviour
         //攻撃
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
+            Debug.Log(this.GetComponent<PlayerStatus>().PlayerAttack());
             if(finder.M_targets.Count == 0) { return; }
             for (int i = 0; i < finder.M_targets.Count; i++)
             {
@@ -283,6 +287,8 @@ public class PlayerCtrl : MonoBehaviour
         weaponNumber = num;
         nowWeapon.weaponList = (WeaponInfo.WeaponList)(num);
         playerWeaponManager.WeaponObjChange(num);
+        Debug.Log(playerStatus.PlayerAttack());
+        
         if (num == 5)
         {
             searchingBehavior.M_searchAngle = 360;
