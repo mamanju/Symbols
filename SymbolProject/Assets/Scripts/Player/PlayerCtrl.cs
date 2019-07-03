@@ -273,6 +273,7 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
+    //武器切り替え右
     public void WeaponChangeRight()
     {
         weaponNumber = (weaponNumber + 1) % (weaponLength + 1);
@@ -287,6 +288,7 @@ public class PlayerCtrl : MonoBehaviour
         ChangeWeapon(weaponNumber);
     }
 
+    //武器切り替え左
     public void WeaponChangeLeft()
     {
         weaponNumber -= 1;
@@ -304,15 +306,21 @@ public class PlayerCtrl : MonoBehaviour
         }
         ChangeWeapon(weaponNumber);
     }
+
+    //範囲内に敵がいたら攻撃
+    //武器の耐久値の減少
     public void Attack()
     {
         Debug.Log(playerStatus.PlayerAttack());
         Debug.Log(playerStatus.NowWeaponID);
-        playerWeaponManager.WeaponDel(playerStatus.NowWeaponID);
         if (finder.M_targets.Count == 0) { return; }
+        playerWeaponManager.WeaponDel(playerStatus.NowWeaponID);
         for (int i = 0; i < finder.M_targets.Count; i++)
         {
-            finder.M_targets[i].GetComponent<enenemyHealtmanager>().healt--;
+            for(int j = 0; j < playerStatus.PlayerAttack(); j++)
+            {
+                finder.M_targets[i].GetComponent<enenemyHealtmanager>().healt--;
+            }
         }
     }
 }
