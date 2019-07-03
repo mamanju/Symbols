@@ -58,7 +58,6 @@ public class CamerCtrl : MonoBehaviour
         {
             if (hit.transform.tag == "Terrain")
             {
-                Debug.Log(hit.transform.name + "とぶつかった");
                 distance = Vector3.Distance(hit.point, lookPos);
             }
         }
@@ -85,7 +84,7 @@ public class CamerCtrl : MonoBehaviour
         //下に移動
         if (_verticalR < 0)
         {
-            if (angle1 < 0.1f && cameraDown == true) { angle1 = 0.1f; cameraDown = false; }
+           if (angle1 < 0.1f && cameraDown == true) { angle1 = 0.1f; cameraDown = false; }
             else if (angle1 >= 0.1f) { angle1 -= Time.deltaTime * speed; cameraUp = true; }
         }
         //リセット

@@ -23,7 +23,7 @@ public class WeaponTextManager : MonoBehaviour
         nowWeapon = player.GetComponent<WeaponManager>().NowWeapon;
         for (int i = 0; i < nowWeapon.Length; i++)
         {
-            if (i == (int)this.GetComponent<WeaponInfo>().weaponList)
+            if (i == (int)this.GetComponent<WeaponInfo>().weaponList - 1)
             {
                 childText.GetComponent<Text>().text = "×" + nowWeapon[i].ToString();
             }

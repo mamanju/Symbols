@@ -40,7 +40,7 @@ public class SetSynthesisCrystal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.sword) { return; }
+        if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.empty) { return; }
         if (synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == true)
         {
             timeCount -= Time.unscaledDeltaTime;
@@ -66,7 +66,7 @@ public class SetSynthesisCrystal : MonoBehaviour
             }
             if (endWeaponMove == true)
             {
-                this.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.sword;
+                this.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.empty;
                 weaponMove = false;
                 endWeaponMove = false;
                 synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag = false;

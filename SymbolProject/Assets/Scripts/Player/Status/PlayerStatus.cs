@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    [SerializeField]
-    private Sprite[] HpSprites;
-
-    public enum Weapon {
-        Sword = -1,
-        Spear,
-        Ax,
-        Shield
-    }
-
-
-
-    public Weapon nowWeapon;
-
-    // 武器のストック(Weaponと同じ配置)
-    private int[] weaponStock = { 1,0,0,0 };
-
     private int hp = 20;
     private int max_hp = 20;
     private int attack = 1;
 
+    private int nowAttack;
+    private int nowWeaponID;
+    public int NowWeaponID
+    {
+        get { return nowWeaponID; }
+    }
+    private int[] weaponAttacks = new int[10];
+    
     public int PlayerHp
     {
         get { return hp; }
@@ -38,28 +29,26 @@ public class PlayerStatus : MonoBehaviour
 
     public int PlayerAttack()
     {
-        return attack;
+        return nowAttack;
     }
 
-    public int[] WeaponStock
+    private void Start()
     {
-        get { return weaponStock; }
-        set { weaponStock = value; }
+        weaponAttacks[0] = SwordInfo.attack + attack;
+        weaponAttacks[1] = SpearInfo.attack + attack;
+        weaponAttacks[2] = AxInfo.attack + attack;
+        weaponAttacks[3] = ShieldInfo.attack + attack;
+        weaponAttacks[6] = CymbalsInfo.attack + attack;
+        //for (int i = 0; i < weaponAttacks.Length; i++)
+        //{
+        //
+        //}
+        nowAttack = weaponAttacks[0];
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void WeaponAttack(int _attack)
     {
-        int swordPower = SwordInfo.attack + attack;
-        int spearPower = SpearInfo.attack + attack;
-        int axPower = AxInfo.attack + attack;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        nowAttack = weaponAttacks[_attack];
+        nowWeaponID = _attack;
     }
 }

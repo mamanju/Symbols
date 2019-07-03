@@ -55,7 +55,7 @@ public class SearchingBehavior : MonoBehaviour
         ApplySearchAngle();
     }
 
-    private void ApplySearchAngle()
+    public void ApplySearchAngle()
     {
         float searchRad = m_searchAngle * 0.5f * Mathf.Deg2Rad;
         m_searchCosTheta = Mathf.Cos(searchRad);

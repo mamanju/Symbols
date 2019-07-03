@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -56,16 +57,35 @@ public class PlayerCtrl : MonoBehaviour
     //カメラの向きを取得
     private Vector3 cameraForward;
 
-    private bool attackFlag;
-    public bool AttackFlag
-    {
-        get { return attackFlag; }
-        set { attackFlag = value; }
-    }
-
     //武器の切り替えの処理
+    private WeaponInfo nowWeapon;
+    [SerializeField]
+    private WeaponManager weaponManager;
+    [SerializeField]
+    private PlayerWeaponManager playerWeaponManager;
+    private int weaponNumber = 0;
+    private int weaponLength;
+    [SerializeField]
+    private Image nowWeapon_S;
+    
+    [SerializeField]
+    private PlayerStatus playerStatus;
+    
+    //武器切り替えによるコライダーの範囲の変更
+    [SerializeField]
+    private SearchingBehavior searchingBehavior;
+    //敵のオブジェクト
+    [SerializeField]
+    private Finder finder;
+
     //ノックバック
     //無敵時間
+    private bool knockbackFlag = false;
+    public bool KnockBackFlag
+    {
+        get { return knockbackFlag; }
+        set { knockbackFlag = value; }
+    }
     //HPが減る処理
 
     void Start()
@@ -76,6 +96,10 @@ public class PlayerCtrl : MonoBehaviour
         matlBoxes = synthesisGUI.transform.GetChild(2).gameObject;
         synthesisBoxes = synthesisGUI.transform.GetChild(3).gameObject;
         synthesisCrystal = synthesisGUI.transform.GetChild(4).gameObject;
+
+        nowWeapon = nowWeapon_S.gameObject.GetComponent<WeaponInfo>();
+        nowWeapon.weaponList = WeaponInfo.WeaponList.sword;
+        weaponLength = weaponManager.NowWeapon.Length;
     }
 
     void Update()
@@ -108,7 +132,7 @@ public class PlayerCtrl : MonoBehaviour
             {
                 matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;
             }
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Cross"))
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Jump"))
             {
                 synthesisCtrl.StartSynthesis = true;
                 synthesisCtrl.EndFlag = true;
@@ -143,7 +167,6 @@ public class PlayerCtrl : MonoBehaviour
         _horizontal = Input.GetAxis("Horizontal_L");
         _vertical = Input.GetAxis("Vertical_L");
 
-        Debug.Log(_horizontal);
         //ピタッと止まる処理
         if (_horizontal + _vertical == 0)
         {
@@ -171,9 +194,12 @@ public class PlayerCtrl : MonoBehaviour
         
         lastHorizontal = Mathf.Abs(_horizontal);
         lastVertical = Mathf.Abs(_vertical);
-
         speedForce += cameraForward * _vertical * speed + Camera.main.transform.right * speed * _horizontal;
-        playerRb.AddForce(forceMgmt * speedForce);
+
+        if (knockbackFlag != true)
+        {
+            playerRb.AddForce(forceMgmt * speedForce);
+        }
         
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
         {
@@ -201,22 +227,19 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         //武器切り替え
-        if (Input.GetButtonDown("L1"))
+        if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.L))
         {
-
+            WeaponChangeRight();
         }
-        if (Input.GetButtonDown("R1"))
+        if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.K))
         {
-
+            WeaponChangeLeft();
         }
 
         //攻撃
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
-            if (attackFlag == true)
-            {
-
-            }
+            Attack();
         }
     }
 
@@ -225,5 +248,79 @@ public class PlayerCtrl : MonoBehaviour
     {
         stopFlag = false;
         playerRb.velocity = Vector3.zero;
+    }
+
+    /// <summary>
+    /// 武器切り替え処理
+    /// </summary>
+    /// <param name="_num">切り替える武器が何番目か</param>
+    public void ChangeWeapon(int _num)
+    {
+        weaponNumber = _num;
+        nowWeapon.weaponList = (WeaponInfo.WeaponList)(_num);
+        playerWeaponManager.WeaponObjChange(_num);
+        playerStatus.WeaponAttack(_num);
+        
+        if (_num == 6)
+        {
+            searchingBehavior.M_searchAngle = 360;
+            searchingBehavior.ApplySearchAngle();
+        }
+        else
+        {
+            searchingBehavior.M_searchAngle = 90;
+            searchingBehavior.ApplySearchAngle();
+        }
+    }
+
+    //武器切り替え右
+    public void WeaponChangeRight()
+    {
+        weaponNumber = (weaponNumber + 1) % (weaponLength + 1);
+        while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
+        {
+            weaponNumber++;
+            if (weaponNumber >= weaponLength)
+            {
+                weaponNumber = 0;
+            }
+        }
+        ChangeWeapon(weaponNumber);
+    }
+
+    //武器切り替え左
+    public void WeaponChangeLeft()
+    {
+        weaponNumber -= 1;
+        if (weaponNumber < 0)
+        {
+            weaponNumber = weaponLength;
+        }
+        while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
+        {
+            weaponNumber--;
+            if (weaponNumber <= 0)
+            {
+                weaponNumber = 0;
+            }
+        }
+        ChangeWeapon(weaponNumber);
+    }
+
+    //範囲内に敵がいたら攻撃
+    //武器の耐久値の減少
+    public void Attack()
+    {
+        Debug.Log(playerStatus.PlayerAttack());
+        Debug.Log(playerStatus.NowWeaponID);
+        if (finder.M_targets.Count == 0) { return; }
+        playerWeaponManager.WeaponDel(playerStatus.NowWeaponID);
+        for (int i = 0; i < finder.M_targets.Count; i++)
+        {
+            for(int j = 0; j < playerStatus.PlayerAttack(); j++)
+            {
+                finder.M_targets[i].GetComponent<enenemyHealtmanager>().healt--;
+            }
+        }
     }
 }

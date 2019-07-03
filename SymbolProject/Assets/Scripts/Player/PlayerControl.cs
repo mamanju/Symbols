@@ -56,7 +56,7 @@ public class PlayerControl : MonoBehaviour
     {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         pStatus = GetComponent<PlayerStatus>();
-        weaponLength = PlayerStatus.Weapon.GetValues(typeof(PlayerStatus.Weapon)).Length;
+        //weaponLength = PlayerStatus.Weapon.GetValues(typeof(PlayerStatus.Weapon)).Length;
         playerRb = GetComponent<Rigidbody>();       //
         invincibleTimeReset = invincibleTime;
         knockbackTimeReset = knockbackTime;      //
@@ -135,10 +135,10 @@ public class PlayerControl : MonoBehaviour
     /// <param name="num">切り替える武器が何番目か</param>
     public void ChangeWeapon(int num)
     {
-        weaponNumber = num;
-        pStatus.nowWeapon = (PlayerStatus.Weapon)(num) - 1;
-        Debug.Log(pStatus.nowWeapon);
-        nowWeapon_S.sprite = WeaponSprites[num];
+        //weaponNumber = num;
+        //pStatus.nowWeapon = (PlayerStatus.Weapon)(num) - 1;
+        //Debug.Log(pStatus.nowWeapon);
+        //nowWeapon_S.sprite = WeaponSprites[num];
     }
 
     /// <summary>
@@ -148,7 +148,7 @@ public class PlayerControl : MonoBehaviour
     /// <param name="wNum">何の武器が増減するか</param>
     public void AddWeaponStock(int addNum, int wNum)
     {
-        pStatus.WeaponStock[wNum] += addNum;
+        //pStatus.WeaponStock[wNum] += addNum;
     }
 
 

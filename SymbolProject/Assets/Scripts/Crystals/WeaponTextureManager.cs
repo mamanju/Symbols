@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class WeaponTextureManager : MonoBehaviour
 {
     [SerializeField]
+    private Sprite swordSprite;
+    [SerializeField]
     private Sprite spearSprite;
     [SerializeField]
     private Sprite axSprite;
@@ -38,11 +40,15 @@ public class WeaponTextureManager : MonoBehaviour
     {
         WeaponInfo thisWeaponInfo = this.GetComponent<WeaponInfo>();
         Image thisImage = this.GetComponent<Image>();
-        if (thisWeaponInfo.weaponList != WeaponInfo.WeaponList.sword)
+        if (thisWeaponInfo.weaponList != WeaponInfo.WeaponList.empty)
         {
             thisImage.color = new Color(255, 255, 255, 255);
         }
-        if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.spear)
+        if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.sword)
+        {
+            thisImage.sprite = swordSprite;
+        }
+        else if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.spear)
         {
             thisImage.sprite = spearSprite;
         }
