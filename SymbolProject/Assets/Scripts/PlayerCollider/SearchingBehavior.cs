@@ -66,7 +66,7 @@ public class SearchingBehavior : MonoBehaviour
         UpdateFoundObject();
     }
 
-    public void UpdateFoundObject()
+    private void UpdateFoundObject()
     {
         foreach (var foundData in m_foundList)
         {

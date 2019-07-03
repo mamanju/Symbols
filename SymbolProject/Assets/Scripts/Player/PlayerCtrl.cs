@@ -67,7 +67,7 @@ public class PlayerCtrl : MonoBehaviour
     private int weaponLength;
     [SerializeField]
     private Image nowWeapon_S;
-
+    
     [SerializeField]
     private PlayerStatus playerStatus;
     
@@ -229,45 +229,17 @@ public class PlayerCtrl : MonoBehaviour
         //武器切り替え
         if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.L))
         {
-            weaponNumber = (weaponNumber + 1) % (weaponLength + 1);
-            while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
-            {
-                weaponNumber++;
-                if (weaponNumber >= weaponLength)
-                {
-                    weaponNumber = 0;
-                }
-            }
-            ChangeWeapon(weaponNumber);
+            WeaponChangeRight();
         }
         if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.K))
         {
-            weaponNumber -= 1;
-            if (weaponNumber < 0)
-            {
-                weaponNumber = weaponLength;
-            }
-            while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
-            {
-                weaponNumber--;
-                if (weaponNumber <= 0)
-                {
-                    weaponNumber = 0;
-                }
-            }
-            ChangeWeapon(weaponNumber);
+            WeaponChangeLeft();
         }
 
         //攻撃
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
-            Debug.Log(this.GetComponent<PlayerStatus>().PlayerAttack());
-            if(finder.M_targets.Count == 0) { return; }
-            for (int i = 0; i < finder.M_targets.Count; i++)
-            {
-                finder.M_targets[i].GetComponent<enenemyHealtmanager>().healt--;
-            }
-            
+            Attack();
         }
     }
 
@@ -281,25 +253,66 @@ public class PlayerCtrl : MonoBehaviour
     /// <summary>
     /// 武器切り替え処理
     /// </summary>
-    /// <param name="num">切り替える武器が何番目か</param>
-    public void ChangeWeapon(int num)
+    /// <param name="_num">切り替える武器が何番目か</param>
+    public void ChangeWeapon(int _num)
     {
-        weaponNumber = num;
-        nowWeapon.weaponList = (WeaponInfo.WeaponList)(num);
-        playerWeaponManager.WeaponObjChange(num);
-        Debug.Log(playerStatus.PlayerAttack());
+        weaponNumber = _num;
+        nowWeapon.weaponList = (WeaponInfo.WeaponList)(_num);
+        playerWeaponManager.WeaponObjChange(_num);
+        playerStatus.WeaponAttack(_num);
         
-        if (num == 5)
+        if (_num == 6)
         {
             searchingBehavior.M_searchAngle = 360;
             searchingBehavior.ApplySearchAngle();
-            searchingBehavior.UpdateFoundObject();
         }
         else
         {
             searchingBehavior.M_searchAngle = 90;
             searchingBehavior.ApplySearchAngle();
-            searchingBehavior.UpdateFoundObject();
+        }
+    }
+
+    public void WeaponChangeRight()
+    {
+        weaponNumber = (weaponNumber + 1) % (weaponLength + 1);
+        while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
+        {
+            weaponNumber++;
+            if (weaponNumber >= weaponLength)
+            {
+                weaponNumber = 0;
+            }
+        }
+        ChangeWeapon(weaponNumber);
+    }
+
+    public void WeaponChangeLeft()
+    {
+        weaponNumber -= 1;
+        if (weaponNumber < 0)
+        {
+            weaponNumber = weaponLength;
+        }
+        while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
+        {
+            weaponNumber--;
+            if (weaponNumber <= 0)
+            {
+                weaponNumber = 0;
+            }
+        }
+        ChangeWeapon(weaponNumber);
+    }
+    public void Attack()
+    {
+        Debug.Log(playerStatus.PlayerAttack());
+        Debug.Log(playerStatus.NowWeaponID);
+        playerWeaponManager.WeaponDel(playerStatus.NowWeaponID);
+        if (finder.M_targets.Count == 0) { return; }
+        for (int i = 0; i < finder.M_targets.Count; i++)
+        {
+            finder.M_targets[i].GetComponent<enenemyHealtmanager>().healt--;
         }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3454973179061278600
+--- !u!1 &1865358654072249114
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7802872708950367029}
-  - component: {fileID: 1721709336920930214}
-  - component: {fileID: 4553633688088985430}
-  - component: {fileID: 4427376804337626032}
-  - component: {fileID: 2812516064369973904}
-  - component: {fileID: 2360944568857098457}
+  - component: {fileID: 5332525395059344790}
+  - component: {fileID: 7756378498681246313}
+  - component: {fileID: 7693595705709732697}
+  - component: {fileID: 288343670602805651}
+  - component: {fileID: 7537101341590410848}
+  - component: {fileID: 8402254922472746418}
   m_Layer: 0
-  m_Name: Shield
+  m_Name: Cymbals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7802872708950367029
+--- !u!4 &5332525395059344790
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3454973179061278600}
+  m_GameObject: {fileID: 1865358654072249114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
@@ -35,21 +35,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1721709336920930214
+--- !u!33 &7756378498681246313
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3454973179061278600}
+  m_GameObject: {fileID: 1865358654072249114}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4553633688088985430
+--- !u!23 &7693595705709732697
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3454973179061278600}
+  m_GameObject: {fileID: 1865358654072249114}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d94896c71dda6c74591a0294c4324a28, type: 2}
+  - {fileID: 2100000, guid: 1638e113d27a9b34caf7e3bb0668e677, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,41 +80,41 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4427376804337626032
+--- !u!65 &288343670602805651
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3454973179061278600}
+  m_GameObject: {fileID: 1865358654072249114}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2812516064369973904
+--- !u!114 &7537101341590410848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3454973179061278600}
+  m_GameObject: {fileID: 1865358654072249114}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3274cd0b21555a4290d3f62a3c1fe34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponList: 3
---- !u!114 &2360944568857098457
+  weaponList: 5
+--- !u!114 &8402254922472746418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3454973179061278600}
+  m_GameObject: {fileID: 1865358654072249114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88068146c16bc494492d7ef34d16f0ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fa65aa755107154686f349e5d91054f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

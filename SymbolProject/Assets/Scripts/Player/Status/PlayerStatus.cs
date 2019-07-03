@@ -9,6 +9,11 @@ public class PlayerStatus : MonoBehaviour
     private int attack = 1;
 
     private int nowAttack;
+    private int nowWeaponID;
+    public int NowWeaponID
+    {
+        get { return nowWeaponID; }
+    }
     private int[] weaponAttacks = new int[10];
     
     public int PlayerHp
@@ -32,10 +37,18 @@ public class PlayerStatus : MonoBehaviour
         weaponAttacks[0] = SwordInfo.attack + attack;
         weaponAttacks[1] = SpearInfo.attack + attack;
         weaponAttacks[2] = AxInfo.attack + attack;
+        weaponAttacks[3] = ShieldInfo.attack + attack;
+        weaponAttacks[6] = CymbalsInfo.attack + attack;
+        //for (int i = 0; i < weaponAttacks.Length; i++)
+        //{
+        //
+        //}
+        nowAttack = weaponAttacks[0];
     }
 
     public void WeaponAttack(int _attack)
     {
         nowAttack = weaponAttacks[_attack];
+        nowWeaponID = _attack;
     }
 }

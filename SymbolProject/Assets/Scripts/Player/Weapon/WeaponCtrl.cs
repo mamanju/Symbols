@@ -8,24 +8,32 @@ public class WeaponCtrl : MonoBehaviour
     // 攻撃力、耐久
     protected int attack;
     protected int durable;
+    protected int durable_max;
 
     // 武器のID
-    protected string weaponID = "";
+    protected int weaponID;
 
     #region プロパティ
     // 攻撃力のプロパティ
-    public int Attack {
+    public int Attack
+    {
         get { return attack; }
-        set { attack = value; }
     }
 
     // 防御力のプロパティ
-    public int Durable {
+    public int Durable
+    {
         get { return durable; }
     }
 
+    public int Durable_max
+    {
+        get { return durable_max; }
+    }
+
     // 武器のIDのプロパティ
-    public string WeaponID {
+    public int WeaponID
+    {
         get { return weaponID; }
     }
 
@@ -43,7 +51,7 @@ public class WeaponCtrl : MonoBehaviour
     public void BreakWeaponCheck(int _durable)
     {
         // 耐久値が0以下なら出てくる処理
-        if(durable < 0) 
+        if(durable <= 0) 
         {
             return;
         }

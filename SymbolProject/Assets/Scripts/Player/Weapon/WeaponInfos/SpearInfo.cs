@@ -8,13 +8,30 @@ public class SpearInfo : WeaponCtrl
     private float _startSpeed = 100.0f;
 
     public static int attack;
+    public static int weaponID;
 
     void Start()
     {
         // 槍の基本情報
         attack = 2;
         durable = 10;
-        weaponID = "Spear";
+        durable_max = 10;
+        weaponID = 1;
+    }
+
+    public void DelWeaponDurable()
+    {
+        Debug.Log("durable=" + durable);
+        if (durable <= 0) { return; }
+        base.BreakWeaponCheck(1);
+        Debug.Log("durable=" + durable);
+        if (durable == 0)
+        {
+            GameObject player = this.transform.parent.parent.gameObject;
+            player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
+            player.GetComponent<WeaponManager>().DeleteWeapon(weaponID - 1);
+            durable = durable_max;
+        }
     }
 
     void Update()
