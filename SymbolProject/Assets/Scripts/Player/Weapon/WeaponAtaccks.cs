@@ -49,6 +49,7 @@ public class WeaponAtaccks : MonoBehaviour
         rigidbody.AddForce(transform.forward * _startSpeed, ForceMode.Impulse);
     }
 
+    //槍が消えて個数が減ってどうのこうの
     private void SpearEnd()
     {
         spearFlag = false;
@@ -68,6 +69,18 @@ public class WeaponAtaccks : MonoBehaviour
     {
         if (spearFlag == true)
         {
+            //敵
+            if (collision.transform.tag == "Enemy")
+            {
+                //中身よろしくお願いします！！！！
+
+            }
+            //Switch
+            else if (collision.transform.tag == "Switch")
+            {
+
+            }
+            
             SpearEnd();
         }
     }
@@ -83,9 +96,9 @@ public class WeaponAtaccks : MonoBehaviour
     {
         player = this.transform.parent.parent.gameObject;
         Finder finder = player.GetComponent<Finder>();
-        for (int i = 0; i < finder.M_targets.Count; i++)
+        for (int i = 0; i < finder.M_enemy.Count; i++)
         {
-            finder.M_targets[i].GetComponent<Rigidbody>().isKinematic = true;
+            finder.M_enemy[i].GetComponent<Rigidbody>().isKinematic = true;
             stunFlag = true;
         }
     }

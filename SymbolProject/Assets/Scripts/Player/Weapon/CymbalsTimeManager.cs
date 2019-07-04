@@ -27,9 +27,9 @@ public class CymbalsTimeManager : MonoBehaviour
     private void CymbalsEnd()
     {
         Finder finder = GetComponent<Finder>();
-        for (int i = 0; i < finder.M_targets.Count; i++)
+        for (int i = 0; i < finder.M_enemy.Count; i++)
         {
-            finder.M_targets[i].GetComponent<Rigidbody>().isKinematic = false;
+            finder.M_enemy[i].GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 }

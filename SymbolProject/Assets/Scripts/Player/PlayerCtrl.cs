@@ -78,6 +78,9 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]
     private Finder finder;
 
+    //ノックバック
+    private KnockBack knockBack;
+
     //特殊攻撃、槍とCymbals
     [SerializeField]
     private GameObject spear;
@@ -107,6 +110,8 @@ public class PlayerCtrl : MonoBehaviour
         nowWeapon = nowWeapon_S.gameObject.GetComponent<WeaponInfo>();
         nowWeapon.weaponList = WeaponInfo.WeaponList.sword;
         weaponLength = weaponManager.NowWeapon.Length;
+
+        knockBack = GetComponent<KnockBack>();
     }
 
     void Update()
@@ -180,6 +185,8 @@ public class PlayerCtrl : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (knockBack.KnockbackFlag == true) { return; }
+
         if ( lastHorizontal + lastVertical == 0 && stopFlag == true && groundFlag == true)
         {
             StopMove();
@@ -329,19 +336,45 @@ public class PlayerCtrl : MonoBehaviour
     {
         Debug.Log(playerStatus.PlayerAttack());
         Debug.Log(playerStatus.NowWeaponID);
-        if (finder.M_targets.Count == 0) { return; }
+        if (finder.M_enemy.Count + finder.M_tellain.Count == 0) { return; }
         DownDurable();
-        if (weaponNumber == 6)
+        if (playerStatus.NowWeaponID == 6)
         {
             weaponAtaccks = cymbals.GetComponent<WeaponAtaccks>();
             weaponAtaccks.AbnormalAttaks(weaponNumber);
             return;
         }
-        for (int i = 0; i < finder.M_targets.Count; i++)
+        for (int i = 0; i < finder.M_enemy.Count; i++)
         {
+
+            //攻撃回数分マイナス１する
             for(int j = 0; j < playerStatus.PlayerAttack(); j++)
             {
-                finder.M_targets[i].GetComponent<enenemyHealtmanager>().healt--;
+                finder.M_enemy[i].GetComponent<enenemyHealtmanager>().healt--;
+            }
+        }
+
+        if (playerStatus.NowWeaponID == 2)
+        {
+            for (int i = 0; i < finder.M_tellain.Count; i++)
+            {
+                //切って橋にする木の名前
+                if(finder.M_tellain[i].name == "Tree")
+                {
+
+                }
+            }
+        }
+
+        if (playerStatus.NowWeaponID == 6)
+        {
+            for (int i = 0; i < finder.M_tellain.Count; i++)
+            {
+                //成長するギミックの木の名前
+                if(finder.M_tellain[i].name == "Tree")
+                {
+
+                }
             }
         }
     }

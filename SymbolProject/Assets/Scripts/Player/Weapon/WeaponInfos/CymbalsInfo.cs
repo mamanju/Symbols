@@ -29,10 +29,4 @@ public class CymbalsInfo : WeaponCtrl
             durable = durable_max;
         }
     }
-
-    // シャーン
-    public void Stun()
-    {
-
-    }
 }
