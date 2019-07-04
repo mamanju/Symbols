@@ -335,8 +335,6 @@ public class PlayerCtrl : MonoBehaviour
     //武器の耐久値の減少
     public void Attack()
     {
-        Debug.Log(playerStatus.PlayerAttack());
-        Debug.Log(playerStatus.NowWeaponID);
         if (finder.M_enemy.Count + finder.M_tellain.Count == 0) { return; }
         DownDurable();
         if (playerStatus.NowWeaponID == 5)

@@ -40,6 +40,7 @@ public class MatlBox : MonoBehaviour
         }
         itemBox[0].GetComponent<Button>().Select();
         selectNum = 0;
+        itemBox[selectNum].GetComponent<Image>().sprite = selectImage;
     }
 
     // Update is called once per frame
@@ -92,6 +93,8 @@ public class MatlBox : MonoBehaviour
         }
         itemBox[selectNum].GetComponent<Button>().Select();
         itemBox[selectNum].GetComponent<Image>().sprite = selectImage;
+
+        Debug.Log(selectNum);
         
         moveRightFlag = false;
         moveLeftFlag = false;
