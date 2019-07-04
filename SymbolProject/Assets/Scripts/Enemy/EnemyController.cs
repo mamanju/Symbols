@@ -24,15 +24,16 @@ public class EnemyController : EnemyManager
     /// ダメージ処理
     /// </summary>
     /// <param name="damage"></param>
-    public void Damage(int damage)
+    public GameObject Damage(int damage)
     {
         Health -= damage;
         if (Health - damage <= 0)
         {
             //Instantiate(crystalToSpawn, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            return gameObject;
         }
-
+        return null;
     }
 
     /// <summary>

@@ -346,7 +346,12 @@ public class PlayerCtrl : MonoBehaviour
         }
         for (int i = 0; i < finder.M_enemy.Count; i++)
         {
+            var enemyResult =
             finder.M_enemy[i].GetComponent<EnemyController>().Damage(playerStatus.PlayerAttack());
+            if (enemyResult != null)
+            {
+                finder.OnList(finder.M_enemy[i]);
+            }
         }
 
         if (finder.M_enemy.Count != 0) { return; }

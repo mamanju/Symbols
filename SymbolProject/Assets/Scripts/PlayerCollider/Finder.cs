@@ -42,7 +42,7 @@ public class Finder : MonoBehaviour
         }
     }
 
-    private void OnList( GameObject i_lostObject)
+    public void OnList( GameObject i_lostObject)
     {
         if (LayerMask.LayerToName(i_lostObject.layer) == "Enemy")
         {
