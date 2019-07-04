@@ -9,6 +9,12 @@ public class PlayerStatus : MonoBehaviour
     private int attack = 1;
     private KnockBack knockBack;
 
+
+    //盾の判定
+    private bool defenseSuccess;
+    [SerializeField]
+    private WeaponAtaccks shieldWeaponAtaccks;
+
     private int nowAttack;
     private int nowWeaponID;
     public int NowWeaponID
@@ -51,6 +57,11 @@ public class PlayerStatus : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            DownHP(1);
+        }
+
         if (hp != 0) { return; }
         
         //ゲームオーバーの処理
@@ -62,10 +73,19 @@ public class PlayerStatus : MonoBehaviour
         nowWeaponID = _attack;
     }
 
-
     //HP減少
     public void DownHP(int _damage)
     {
+        if (nowWeaponID == 3)
+        {
+            defenseSuccess = shieldWeaponAtaccks.Defense();
+        }
+        else
+        {
+            defenseSuccess = false;
+        }
+        if (defenseSuccess == true) { return; }
+
         hp -= _damage;
         knockBack = GetComponent<KnockBack>();
         knockBack.Knockback();
