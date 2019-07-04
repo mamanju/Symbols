@@ -40,7 +40,7 @@ public class MatlBox : MonoBehaviour
         }
         itemBox[0].GetComponent<Button>().Select();
         selectNum = 0;
-        itemBox[selectNum].GetComponent<Image>().sprite = selectImage;
+        itemBox[selectNum].GetComponent<Image>().color = Color.white;
     }
 
     // Update is called once per frame
@@ -91,11 +91,22 @@ public class MatlBox : MonoBehaviour
                 }
             }
         }
-        itemBox[selectNum].GetComponent<Button>().Select();
-        itemBox[selectNum].GetComponent<Image>().sprite = selectImage;
 
-        Debug.Log(selectNum);
-        
+        for (int i = 0; i < itemBox.Length; i++)
+        {
+            if (i == selectNum)
+            {
+                itemBox[selectNum].GetComponent<Image>().color = Color.white;
+                itemBox[selectNum].GetComponent<Image>().sprite = selectImage;
+            }
+            else
+            {
+                itemBox[i].GetComponent<Image>().color = Color.clear;
+            }
+        }
+
+        itemBox[selectNum].GetComponent<Button>().Select();
+
         moveRightFlag = false;
         moveLeftFlag = false;
     }
