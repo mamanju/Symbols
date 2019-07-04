@@ -171,7 +171,7 @@ public class PlayerCtrl : MonoBehaviour
 
         //槍を投げる（通常攻撃じゃない)
         //キーの変更お願いします！！！！
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown("R2"))
         {
             weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
             weaponAtaccks.AbnormalAttaks(weaponNumber);
@@ -358,8 +358,7 @@ public class PlayerCtrl : MonoBehaviour
                 //切って橋にする木のタグ
                 if(finder.M_tellain[i].tag == "Tree")
                 {
-                    //中身よろしくお願いします！！！！
-                    //タグの変更もお願いしますm(__)m
+                    finder.M_tellain[i].GetComponent<CutTreeController>().CutTree();
                 }
             }
         }
