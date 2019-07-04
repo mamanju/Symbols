@@ -32,7 +32,7 @@ public class CutTreeController : MonoBehaviour
 
     void Update()
     {
-        if(!fallFlag){
+        if(fallFlag){
             CutTree();
         }        
     }
@@ -42,8 +42,8 @@ public class CutTreeController : MonoBehaviour
     /// </summary>
     public void CutTree()
     {
-        if (fallFlag) { return; }
-        fallFlag = true;
+        if (!fallFlag) { return; }
+        fallFlag = false;
         StartCoroutine(CutreeCoroutine());
     }
 

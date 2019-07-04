@@ -76,8 +76,6 @@ public class GamePadController : SingletonMonoBehaviour<GamePadController> {
     {
         JoyStickAxis[GamePadManager.JoySticks.Horizontal_L] = Input.GetAxis("Horizontal_L");
         JoyStickAxis[GamePadManager.JoySticks.Horizontal_R] = Input.GetAxis("Horizontal_R");
-        Debug.Log("Horizontal_L" + JoyStickAxis[GamePadManager.JoySticks.Horizontal_L]);
-        Debug.Log("Horizontal_R" + JoyStickAxis[GamePadManager.JoySticks.Horizontal_R]);
     }
 
     /// <summary>
@@ -86,9 +84,7 @@ public class GamePadController : SingletonMonoBehaviour<GamePadController> {
     public void SetVertical() {
         JoyStickAxis[GamePadManager.JoySticks.Vertical_L] = Input.GetAxis("Vertical_L");
         JoyStickAxis[GamePadManager.JoySticks.Vertical_R] = Input.GetAxis("Vertical_R");
-        Debug.Log("Vertical_L" + JoyStickAxis[GamePadManager.JoySticks.Vertical_L]);
-        Debug.Log("Vertical_R" + JoyStickAxis[GamePadManager.JoySticks.Vertical_R]);
-       
+        
     }
 
     /// <summary>
@@ -134,6 +130,5 @@ public class GamePadController : SingletonMonoBehaviour<GamePadController> {
     void Update() {
         SetHorizontal();
         SetVertical();
-        Debug.Log(ButtonPush());
     }
 }

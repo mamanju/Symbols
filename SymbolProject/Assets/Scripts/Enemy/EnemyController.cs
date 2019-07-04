@@ -2,38 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+/// <summary>
+/// エネミーコントローラー
+/// </summary>
+public class EnemyController : EnemyManager
 {
-
-    public int enemyhp;
-    public int enemyatk;
-    public static EnemyController instance;
-    public GameObject crystalToSpawn;
-
-    private void Awake()
-    {
-        instance = this;
+    /// <summary>
+    /// 攻撃処理
+    /// </summary>
+    public void Attacking() {
+        StartCoroutine(AttackCoroutine());
     }
 
-    //敵は死んでから、クリスタルドロップされる
-    public void hurtEnemy(int playeratk)
+    private IEnumerator AttackCoroutine() {
+        AttackFlag = true;
+        yield return new WaitForSeconds(1f);
+        AttackFlag = false;
+    }
+
+    /// <summary>
+    /// ダメージ処理
+    /// </summary>
+    /// <param name="damage"></param>
+    public void Damage(int damage)
     {
-        enemyhp -= playeratk;
-        if (enemyhp <= 0)
+        Health -= damage;
+        if (Health - damage <= 0)
         {
+            //Instantiate(crystalToSpawn, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            Instantiate(crystalToSpawn, transform.position, Quaternion.identity);
         }
+
+    }
+
+    /// <summary>
+    /// クリスタルドロップ
+    /// </summary>
+    private void DropCrystal() {
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            hurtEnemy(PlayerController.instance.playeratk);
-        }
-            
+         
     }
 
 }
