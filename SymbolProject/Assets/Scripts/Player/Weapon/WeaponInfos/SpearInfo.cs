@@ -41,38 +41,13 @@ public class SpearInfo : WeaponCtrl
         }
     }
 
-    void Update()
+    public void InstantiateSpear()
     {
-        // スペースキーを押したら槍を投げる
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-            var playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
-            
-
-            //剣に切り替え
-            playerControl.ChangeWeapon(0);
-
-            // 槍のストックを減らす
-            playerControl.AddWeaponStock(-1, 1);
-
-            //Instantiate(Sword, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-            //Instantiate(Sword);
-
-            
-        }
-
-        //// "Z"キーを押したら槍を消す
-        //// 将来的にここは何かに当たったら消える処理にする
-        //if (Input.GetKeyDown(KeyCode.Z)){
-        //    Destroy(gameObject);
-        //}
-
         if (this.transform.childCount != 0) { return; }
-
         GameObject ChildSpear = Instantiate(ShotSpear);
         ChildSpear.transform.parent = this.transform;
         ChildSpear.transform.localPosition = Vector3.zero;
+        ChildSpear.transform.localEulerAngles = new Vector3(90, 0, 0);
         ChildSpear.GetComponent<Rigidbody>().isKinematic = true;
     }
 }

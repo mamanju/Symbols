@@ -36,10 +36,14 @@ public class WeaponAtaccks : MonoBehaviour
     private float _startSpeed = 5.0f;
     private bool spearFlag = false;
     private bool spearTimeFlag = false;
-    private float spearTime = 10;
+    private float spearTime = 3;
+
+    private GameObject SpearBox;
     
     public void SpearShot()
     {
+        SpearBox = this.transform.parent.gameObject;
+        this.transform.parent = null;
         spearTimeFlag = true;
         spearFlag = true;
         Rigidbody rigidbody = GetComponent<Rigidbody>();
@@ -57,12 +61,13 @@ public class WeaponAtaccks : MonoBehaviour
         rigidbody.isKinematic = true;
         if (rigidbody.isKinematic == true)
         {
-            player = this.transform.parent.GetComponent<SpearInfo>().Player;
+            player = SpearBox.GetComponent<SpearInfo>().Player;
             player.GetComponent<WeaponManager>().NowWeapon[0]--;
             player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
         }
 
         Destroy(this.gameObject);
+        SpearBox.GetComponent<SpearInfo>().InstantiateSpear();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -73,15 +78,15 @@ public class WeaponAtaccks : MonoBehaviour
             if (collision.transform.tag == "Enemy")
             {
                 collision.gameObject.GetComponent<EnemyController>().Damage(1);
-
+                SpearEnd();
             }
             //Switch
             else if (collision.transform.tag == "FireSwitch")
             {
                 collision.gameObject.GetComponent<VariableTrapSwitch>().StopFire();
+                SpearEnd();
             }
             
-            SpearEnd();
         }
     }
 
