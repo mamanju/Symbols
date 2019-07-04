@@ -7,6 +7,7 @@ public class PlayerStatus : MonoBehaviour
     private int hp = 20;
     private int max_hp = 20;
     private int attack = 1;
+    private KnockBack knockBack;
 
     private int nowAttack;
     private int nowWeaponID;
@@ -39,6 +40,8 @@ public class PlayerStatus : MonoBehaviour
         weaponAttacks[2] = AxInfo.attack + attack;
         weaponAttacks[3] = ShieldInfo.attack + attack;
         weaponAttacks[6] = CymbalsInfo.attack + attack;
+
+        //完成する当たり使用するかも
         //for (int i = 0; i < weaponAttacks.Length; i++)
         //{
         //
@@ -46,9 +49,25 @@ public class PlayerStatus : MonoBehaviour
         nowAttack = weaponAttacks[0];
     }
 
+    private void Update()
+    {
+        if (hp != 0) { return; }
+        
+        //ゲームオーバーの処理
+    }
+
     public void WeaponAttack(int _attack)
     {
         nowAttack = weaponAttacks[_attack];
         nowWeaponID = _attack;
+    }
+
+
+    //HP減少
+    public void DownHP(int _damage)
+    {
+        hp -= _damage;
+        knockBack = GetComponent<KnockBack>();
+        knockBack.Knockback();
     }
 }

@@ -79,6 +79,16 @@ public class PlayerCtrl : MonoBehaviour
     private Finder finder;
 
     //ノックバック
+    private KnockBack knockBack;
+
+    //特殊攻撃、槍とCymbals
+    [SerializeField]
+    private GameObject spear;
+    [SerializeField]
+    private GameObject cymbals;
+    private WeaponAtaccks weaponAtaccks;
+
+    //ノックバック
     //無敵時間
     private bool knockbackFlag = false;
     public bool KnockBackFlag
@@ -100,6 +110,8 @@ public class PlayerCtrl : MonoBehaviour
         nowWeapon = nowWeapon_S.gameObject.GetComponent<WeaponInfo>();
         nowWeapon.weaponList = WeaponInfo.WeaponList.sword;
         weaponLength = weaponManager.NowWeapon.Length;
+
+        knockBack = GetComponent<KnockBack>();
     }
 
     void Update()
@@ -144,10 +156,37 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         lastSelect = Input.GetAxisRaw("Dpad_H");
+
+        if (Time.timeScale == 0) { return; }
+        
+        //武器切り替え
+        if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.L))
+        {
+            WeaponChangeRight();
+        }
+        if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.K))
+        {
+            WeaponChangeLeft();
+        }
+
+        //槍を投げる（通常攻撃じゃない)
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
+            weaponAtaccks.AbnormalAttaks(weaponNumber);
+        }
+
+        //攻撃
+        if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
+        {
+            Attack();
+        }
     }
 
     void FixedUpdate()
     {
+        if (knockBack.KnockbackFlag == true) { return; }
+
         if ( lastHorizontal + lastVertical == 0 && stopFlag == true && groundFlag == true)
         {
             StopMove();
@@ -225,22 +264,6 @@ public class PlayerCtrl : MonoBehaviour
             downSpeed *= 1.03f;
             playerRb.AddForce(0.0f, downSpeed, 0.0f);
         }
-
-        //武器切り替え
-        if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.L))
-        {
-            WeaponChangeRight();
-        }
-        if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.K))
-        {
-            WeaponChangeLeft();
-        }
-
-        //攻撃
-        if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
-        {
-            Attack();
-        }
     }
 
     //移動ストップ
@@ -313,14 +336,52 @@ public class PlayerCtrl : MonoBehaviour
     {
         Debug.Log(playerStatus.PlayerAttack());
         Debug.Log(playerStatus.NowWeaponID);
-        if (finder.M_targets.Count == 0) { return; }
-        playerWeaponManager.WeaponDel(playerStatus.NowWeaponID);
-        for (int i = 0; i < finder.M_targets.Count; i++)
+        if (finder.M_enemy.Count + finder.M_tellain.Count == 0) { return; }
+        DownDurable();
+        if (playerStatus.NowWeaponID == 6)
         {
+            weaponAtaccks = cymbals.GetComponent<WeaponAtaccks>();
+            weaponAtaccks.AbnormalAttaks(weaponNumber);
+            return;
+        }
+        for (int i = 0; i < finder.M_enemy.Count; i++)
+        {
+
+            //攻撃回数分マイナス１する
             for(int j = 0; j < playerStatus.PlayerAttack(); j++)
             {
-                finder.M_targets[i].GetComponent<enenemyHealtmanager>().healt--;
+                finder.M_enemy[i].GetComponent<enenemyHealtmanager>().healt--;
             }
         }
+
+        if (playerStatus.NowWeaponID == 2)
+        {
+            for (int i = 0; i < finder.M_tellain.Count; i++)
+            {
+                //切って橋にする木の名前
+                if(finder.M_tellain[i].name == "Tree")
+                {
+
+                }
+            }
+        }
+
+        if (playerStatus.NowWeaponID == 6)
+        {
+            for (int i = 0; i < finder.M_tellain.Count; i++)
+            {
+                //成長するギミックの木の名前
+                if(finder.M_tellain[i].name == "Tree")
+                {
+
+                }
+            }
+        }
+    }
+
+    //武器の耐久値減少
+    public void DownDurable()
+    {
+        playerWeaponManager.WeaponDel(playerStatus.NowWeaponID);
     }
 }

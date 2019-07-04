@@ -11,7 +11,7 @@ public class ShieldInfo : WeaponCtrl
     {
         // 盾の基本情報
         attack = 0;
-        durable = 1;
+        durable = 5;
         durable_max = 5;
         weaponID = 3;
     }

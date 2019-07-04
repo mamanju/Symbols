@@ -5,7 +5,14 @@ using UnityEngine;
 public class SpearInfo : WeaponCtrl
 {
     [SerializeField]
-    private float _startSpeed = 100.0f;
+    private GameObject ShotSpear;
+
+    [SerializeField]
+    private GameObject player;
+    public GameObject Player
+    {
+        get { return player; }
+    }
 
     public static int attack;
     public static int weaponID;
@@ -39,7 +46,7 @@ public class SpearInfo : WeaponCtrl
         // スペースキーを押したら槍を投げる
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Shot();
+
             var playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
             
 
@@ -60,12 +67,12 @@ public class SpearInfo : WeaponCtrl
         //if (Input.GetKeyDown(KeyCode.Z)){
         //    Destroy(gameObject);
         //}
-    }
 
-    public void Shot()
-    {
-        var direction = Vector3.forward;
-        direction.y += 1f;
-        GetComponent<Rigidbody>().AddForce(Vector3.forward * _startSpeed, ForceMode.Impulse);
+        if (this.transform.childCount != 0) { return; }
+
+        GameObject ChildSpear = Instantiate(ShotSpear);
+        ChildSpear.transform.parent = this.transform;
+        ChildSpear.transform.localPosition = Vector3.zero;
+        ChildSpear.GetComponent<Rigidbody>().isKinematic = true;
     }
 }

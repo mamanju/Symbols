@@ -158,7 +158,6 @@ public class PlayerControl : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            if(pStatus.PlayerHp == 0 || invincibleFlag == true) { return; }
             invincibleFlag = true;
             ctrlFlag = true;
             knockbackFlag = true;
