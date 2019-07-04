@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3453705353771782177}
   - component: {fileID: 29139574162100861}
   m_Layer: 0
-  m_Name: Spear
+  m_Name: SpearBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255f33cf8fedaf74d9c88fcec576462a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startSpeed: 100
-  ShotSpear: {fileID: 2923084368070248620, guid: 7c96973aa477de147b0dbb53b2a24f11,
+  ShotSpear: {fileID: 2421319644200254861, guid: 632426b3db16f3a4ab81b24a8b556f33,
     type: 3}
   player: {fileID: 0}
 --- !u!114 &29139574162100861

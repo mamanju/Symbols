@@ -149,7 +149,7 @@ public class PlayerCtrl : MonoBehaviour
                 synthesisCtrl.StartSynthesis = true;
                 synthesisCtrl.EndFlag = true;
             }
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.I))
             {
                 synthesisCtrl.ResetFlag = true;
             }
@@ -251,7 +251,7 @@ public class PlayerCtrl : MonoBehaviour
         {
             downFlag = false;
             downSpeed = -1.3f;
-            if (Input.GetButtonDown("Cross"))
+            if (Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.Space))
             {
                 nowPlayerY = transform.position.y + 3.0f;
                 playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);

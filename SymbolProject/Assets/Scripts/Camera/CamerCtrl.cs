@@ -87,13 +87,6 @@ public class CamerCtrl : MonoBehaviour
            if (angle1 < 0.1f && cameraDown == true) { angle1 = 0.1f; cameraDown = false; }
             else if (angle1 >= 0.1f) { angle1 -= Time.deltaTime * speed; cameraUp = true; }
         }
-        //リセット
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            distance = distanceT;
-            angle1 = 0.09966f;
-            angle2 = radianP;
-        }
         
         offset.x = (Mathf.Cos(angle1) * distance) * Mathf.Sin(angle2);
         offset.y = Mathf.Sin(angle1) * distance;
