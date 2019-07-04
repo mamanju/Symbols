@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2669840993893746668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0.25}
+  m_LocalPosition: {x: 0, y: 4.4399996, z: 0.25}
   m_LocalScale: {x: 1.6, y: 9, z: 0.5}
   m_Children: []
   m_Father: {fileID: 983694486878821274}
@@ -114,7 +114,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3943776938877008671}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4991086191133474603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: -0.25}
+  m_LocalPosition: {x: 0, y: 4.4399996, z: -0.25}
   m_LocalScale: {x: 1.6, y: 9, z: 0.5}
   m_Children: []
   m_Father: {fileID: 983694486878821274}
@@ -224,7 +224,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5509945801089619864}
-  - component: {fileID: 8897525774468999206}
   m_Layer: 0
   m_Name: CutTree
   m_TagString: Untagged
@@ -248,22 +247,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8897525774468999206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5492894966996963955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03d18913e90c9614f9c9e4e551bfb7e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallTree: {fileID: 3943776938877008671}
-  destroyTree: {fileID: 4991086191133474603}
-  Leaf: {fileID: 6371967299827474962}
-  fallSpeed: 0
 --- !u!1 &6371967299827474962
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6371967299827474962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 9.44, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 983694486878821274}
@@ -367,9 +350,10 @@ GameObject:
   - component: {fileID: 2431373912535387449}
   - component: {fileID: 7836098854822442436}
   - component: {fileID: 7710766687210919570}
-  m_Layer: 0
+  - component: {fileID: 2189498920574409760}
+  m_Layer: 11
   m_Name: Stump
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,8 +366,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8639892036602811965}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalScale: {x: 1.6, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 5509945801089619864}
   m_RootOrder: 1
@@ -446,3 +430,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2189498920574409760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8639892036602811965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d18913e90c9614f9c9e4e551bfb7e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallTree: {fileID: 3943776938877008671}
+  destroyTree: {fileID: 4991086191133474603}
+  Leaf: {fileID: 6371967299827474962}
+  fallSpeed: 5

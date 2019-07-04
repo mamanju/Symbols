@@ -358,7 +358,7 @@ public class PlayerCtrl : MonoBehaviour
                 //切って橋にする木のタグ
                 if(finder.M_tellain[i].tag == "Tree")
                 {
-                    finder.M_tellain[i].GetComponent<CutTreeController>().CutTree();
+                    finder.M_tellain[i].GetComponent<CutTreeController>().SetFallFlag = true;
                 }
             }
         }
