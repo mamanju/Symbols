@@ -4932,7 +4932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b031d4a17b2a14380ee64e393190cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_searchAngle: 0
+  m_searchAngle: 90
 --- !u!1001 &1936722383700897489
 PrefabInstance:
   m_ObjectHideFlags: 0
