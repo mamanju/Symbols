@@ -25,7 +25,6 @@ public class PlayerWeaponManager : MonoBehaviour
 
         weapons[_weaponNum].SetActive(true);
         nowWeapon = weapons[_weaponNum];
-        nowWeapon.transform.localPosition = Vector3.zero;
     }
 
     public void WeaponDel(int _num)

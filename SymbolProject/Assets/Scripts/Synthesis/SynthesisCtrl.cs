@@ -30,13 +30,13 @@ public class SynthesisCtrl : MonoBehaviour
     //盾
     private readonly int[] shield = { -1, 0, 0, 0, 0 };
     //双剣
-    private readonly int[] twinSword = { -1, -1, -1, 0, 0 };
+    //private readonly int[] twinSword = { -1, -1, -1, 0, 0 };
     //シンバル
     private readonly int[] cymbal = { -1, -1, 0, 3, 3 };
     //ハンマー
-    private readonly int[] hammer = { -1, -1, 0, 0, 0 };
+    //private readonly int[] hammer = { -1, -1, 0, 0, 0 };
     //メテオ
-    private readonly int[] meteo = { 2, 2, 2, 2, 2 };
+    //private readonly int[] meteo = { 2, 2, 2, 2, 2 };
 
     //入力された素材(配列)
     private int matlCount = 0;
@@ -178,16 +178,16 @@ public class SynthesisCtrl : MonoBehaviour
             Debug.Log("盾");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.shield;
         }
-        else if (_a == twinSword[0] && _b == twinSword[1] && _c == twinSword[2] && _d == twinSword[3] && _e == twinSword[4])
-        {
-            if (playerWeaponManager.NowWeapon[3] >= 5)
-            {
-                Debug.Log("所持上限を超えています");
-                return;
-            }
-            Debug.Log("双剣");
-            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.twinSword;
-        }
+        //else if (_a == twinSword[0] && _b == twinSword[1] && _c == twinSword[2] && _d == twinSword[3] && _e == twinSword[4])
+        //{
+        //    if (playerWeaponManager.NowWeapon[3] >= 5)
+        //    {
+        //        Debug.Log("所持上限を超えています");
+        //        return;
+        //    }
+        //    Debug.Log("双剣");
+        //    synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.twinSword;
+        //}
         else if (_a == cymbal[0] && _b == cymbal[1] && _c == cymbal[2] && _d == cymbal[3] && _e == cymbal[4])
         {
             if (playerWeaponManager.NowWeapon[4] >= 5)
@@ -198,26 +198,26 @@ public class SynthesisCtrl : MonoBehaviour
             Debug.Log("シンバル");
             synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.cymbal;
         }
-        else if (_a == hammer[0] && _b == hammer[1] && _c == hammer[2] && _d == hammer[3] && _e == hammer[4])
-        {
-            if (playerWeaponManager.NowWeapon[5] >= 5)
-            {
-                Debug.Log("所持上限を超えています");
-                return;
-            }
-            Debug.Log("ハンマー");
-            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.hammer;
-        }
-        else if (_a == meteo[0] && _b == meteo[1] && _c == meteo[2] && _d == meteo[3] && _e == meteo[4])
-        {
-            if (playerWeaponManager.NowWeapon[6] >= 5)
-            {
-                Debug.Log("所持上限を超えています");
-                return;
-            }
-            Debug.Log("メテオ");
-            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.meteor;
-        }
+        //else if (_a == hammer[0] && _b == hammer[1] && _c == hammer[2] && _d == hammer[3] && _e == hammer[4])
+        //{
+        //    if (playerWeaponManager.NowWeapon[5] >= 5)
+        //    {
+        //        Debug.Log("所持上限を超えています");
+        //        return;
+        //    }
+        //    Debug.Log("ハンマー");
+        //    synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.hammer;
+        //}
+        //else if (_a == meteo[0] && _b == meteo[1] && _c == meteo[2] && _d == meteo[3] && _e == meteo[4])
+        //{
+        //    if (playerWeaponManager.NowWeapon[6] >= 5)
+        //    {
+        //        Debug.Log("所持上限を超えています");
+        //        return;
+        //    }
+        //    Debug.Log("メテオ");
+        //    synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.meteor;
+        //}
         //レシピNo.0は失敗
         else
         {

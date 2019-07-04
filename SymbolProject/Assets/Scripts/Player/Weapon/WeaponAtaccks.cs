@@ -46,7 +46,7 @@ public class WeaponAtaccks : MonoBehaviour
         rigidbody.isKinematic = false;
         var direction = transform.forward;
         direction.y += 1f;
-        rigidbody.AddForce(transform.forward * _startSpeed, ForceMode.Impulse);
+        rigidbody.AddForce(transform.up * _startSpeed, ForceMode.Impulse);
     }
 
     //槍が消えて個数が減ってどうのこうの
