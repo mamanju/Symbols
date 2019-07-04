@@ -5,18 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : SingletonMonoBehaviour<SceneController>
 {
-    /// <summary>
-    /// シーン名
-    /// </summary>
-    public enum SceneName
-    {
-        Title,
-        StageSelect,
-        StageFirst,
-        BossScene,
-    }
-
-    public SceneName names;
     // 遷移の時間
     [SerializeField,Header("フェードの時間")]
     private float fadeTime;

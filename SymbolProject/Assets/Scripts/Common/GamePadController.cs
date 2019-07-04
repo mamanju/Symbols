@@ -118,9 +118,6 @@ public class GamePadController : SingletonMonoBehaviour<GamePadController> {
         if (Input.GetButtonDown("R2")) {
             return "R2";
         }
-        if (Input.GetButtonDown("Option")) {
-            return "Option";
-        }
         return null;
 
         //foreach (var btn in System.Enum.GetValues(typeof(GamePadManager.Buttons)).ToString()) {
