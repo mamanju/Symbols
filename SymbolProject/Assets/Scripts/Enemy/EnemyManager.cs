@@ -17,6 +17,7 @@ public class EnemyManager : MonoBehaviour
         Plus,
         Stick,
         LessThan,
+        Boss,
     }
 
     [SerializeField]

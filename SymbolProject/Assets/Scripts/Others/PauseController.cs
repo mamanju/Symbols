@@ -15,6 +15,9 @@ public class PauseController : MonoBehaviour
     private GameObject gameOverUI;
 
     [SerializeField]
+    private GameObject gameClearUI;
+
+    [SerializeField]
     private Image[] SelectButtons;
 
     private int buttonNum = 0;
@@ -22,28 +25,44 @@ public class PauseController : MonoBehaviour
     private bool pauseFlag = false;
     private bool gameOverFlag = false;
     private bool selectFlag = false;
+    private bool clearFlag = false;
+    public bool ClearFlag {
+        get { return clearFlag; }
+        set { clearFlag = value; }
+    }
     // Start is called before the first frame update
     void Awake()
     {
         pauseUI.SetActive(false);
         gameOverUI.SetActive(false);
+        gameClearUI.SetActive(false);
     }
 
     private void Update() {
+        if (clearFlag) {
+            gameClearUI.SetActive(true);
+        }
         if (Input.GetButtonDown("Option")) {
             Pause();
         }
 
-        if (!pauseFlag) {
-            return;
-        }
-
         if (Input.GetButtonDown("Circle")) {
-            if(buttonNum == 0) {
+            if (clearFlag) {
+                SceneController.Instance.ChangeScene("Title");
+            }
+
+            if (!pauseFlag) {
+                return;
+            }
+            if (buttonNum == 0) {
                 SceneController.Instance.ChangeScene("Title");
             } else {
                 Pause();
             }
+        }
+
+        if (!pauseFlag) {
+            return;
         }
 
         Debug.Log(Input.GetAxis("CrossKey_V"));

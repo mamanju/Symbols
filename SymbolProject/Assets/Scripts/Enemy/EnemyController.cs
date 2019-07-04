@@ -32,6 +32,9 @@ public class EnemyController : EnemyManager
     {
         if (Health - damage <= 0)
         {
+            if(crystal == Crystals.Boss) {
+                BossDrop();
+            }
             DropCrystal();
             Destroy(gameObject);
             return gameObject;
@@ -48,5 +51,10 @@ public class EnemyController : EnemyManager
         GameObject cry = Instantiate(Resources.Load<GameObject>(path), transform);
         cry.transform.position = transform.position;
         cry.transform.SetParent(transform.parent);
+    }
+
+    private void BossDrop() {
+        GameObject clearPanel = FindObjectOfType<PauseController>().gameObject;
+        clearPanel.GetComponent<PauseController>().ClearFlag = true;
     }
 }
