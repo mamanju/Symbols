@@ -7,11 +7,16 @@ using UnityEngine;
 /// </summary>
 public class TitleManager : MonoBehaviour
 {
+    private void Update() {
+        if (Input.GetButtonDown("Circle")) {
+            MoveSelect();
+        }
+    }
     /// <summary>
     /// ステージセレクトへ遷移
     /// </summary>
     public void MoveSelect() {
-        SceneController.Instance.ChangeScene("StageSelect");
+        SceneController.Instance.ChangeScene("StageFirst");
     }
 
 

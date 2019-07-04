@@ -7,6 +7,10 @@ using UnityEngine;
 /// </summary>
 public class EnemyController : EnemyManager
 {
+    private void Start() {
+        Debug.Log(crystal);
+        DropCrystal();
+    }
     /// <summary>
     /// 攻撃処理
     /// </summary>
@@ -26,13 +30,13 @@ public class EnemyController : EnemyManager
     /// <param name="damage"></param>
     public GameObject Damage(int damage)
     {
-        Health -= damage;
         if (Health - damage <= 0)
         {
-            //Instantiate(crystalToSpawn, transform.position, Quaternion.identity);
+            DropCrystal();
             Destroy(gameObject);
             return gameObject;
         }
+        Health -= damage;
         return null;
     }
 
@@ -40,12 +44,9 @@ public class EnemyController : EnemyManager
     /// クリスタルドロップ
     /// </summary>
     private void DropCrystal() {
-
+        string path = "Prefabs/Crystal/MCrystal/Prefab/MCrystal_" + crystal;
+        GameObject cry = Instantiate(Resources.Load<GameObject>(path), transform);
+        cry.transform.position = transform.position;
+        cry.transform.SetParent(transform.parent);
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-         
-    }
-
 }

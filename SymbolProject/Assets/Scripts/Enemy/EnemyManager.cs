@@ -10,15 +10,17 @@ public class EnemyManager : MonoBehaviour
     /// <summary>
     /// クリスタルリスト
     /// </summary>
-    [SerializeField]
-    private enum Crystals
+    protected enum Crystals
     {
         Circle,
         Triangle,
         Plus,
         Stick,
-        Parentheses,
+        LessThan,
     }
+
+    [SerializeField]
+    protected Crystals crystal;
 
     /// <summary>
     /// 体力
