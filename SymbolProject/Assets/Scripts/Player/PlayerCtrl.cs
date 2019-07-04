@@ -171,7 +171,7 @@ public class PlayerCtrl : MonoBehaviour
 
         //槍を投げる（通常攻撃じゃない)
         //キーの変更お願いします！！！！
-        if (Input.GetKeyDown("R2"))
+        if (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.O))
         {
             weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
             weaponAtaccks.AbnormalAttaks(weaponNumber);
