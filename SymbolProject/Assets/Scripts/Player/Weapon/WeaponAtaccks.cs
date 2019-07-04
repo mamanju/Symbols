@@ -49,9 +49,6 @@ public class WeaponAtaccks : MonoBehaviour
         rigidbody.AddForce(transform.up * _startSpeed, ForceMode.Impulse);
     }
 
-
-    //槍
-
     //槍が消えて個数が減ってどうのこうの
     private void SpearEnd()
     {
@@ -88,9 +85,6 @@ public class WeaponAtaccks : MonoBehaviour
         }
     }
 
-
-    //シンバル
-
     private bool stunFlag;
     public bool StunFlag
     {
@@ -110,17 +104,4 @@ public class WeaponAtaccks : MonoBehaviour
             stunFlag = true;
         }
     }
-
-
-    //盾
-
-    public bool Defense()
-    {
-        player = this.transform.parent.parent.gameObject;
-        Finder finder = player.GetComponent<Finder>();
-
-        if (finder.M_enemy.Count == 0) { return false; }
-        return true;
-    }
-
 }
