@@ -181,24 +181,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 709466a6c5abb3844bd66383cdca32d9, type: 3}
---- !u!1 &241269779 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 357606782437343920, guid: 12c76e7413ba2c04db488af8035070a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1498303135}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &488987957 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2008154294367183288, guid: 12c76e7413ba2c04db488af8035070a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1498303135}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eace0ad090161345a6e30e3220a5f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &505803934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -869,18 +851,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1533331907}
   speed: 1
---- !u!114 &1044865387 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8353351283725622234, guid: 12c76e7413ba2c04db488af8035070a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1498303135}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d5e35e9355c2647883ee088c7b0272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1097167091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6149909346168575847, guid: b73c3211a31ef04448b4c3f1a903160c,
@@ -984,34 +954,9 @@ PrefabInstance:
       objectReference: {fileID: 1413163292}
     - target: {fileID: 1901460688140222572, guid: 12c76e7413ba2c04db488af8035070a0,
         type: 3}
-      propertyPath: playerWeaponManager
-      value: 
-      objectReference: {fileID: 1044865387}
-    - target: {fileID: 1901460688140222572, guid: 12c76e7413ba2c04db488af8035070a0,
-        type: 3}
       propertyPath: nowWeapon_S
       value: 
       objectReference: {fileID: 1338991662}
-    - target: {fileID: 1901460688140222572, guid: 12c76e7413ba2c04db488af8035070a0,
-        type: 3}
-      propertyPath: spear
-      value: 
-      objectReference: {fileID: 241269779}
-    - target: {fileID: 1901460688140222572, guid: 12c76e7413ba2c04db488af8035070a0,
-        type: 3}
-      propertyPath: cymbals
-      value: 
-      objectReference: {fileID: 1575088396}
-    - target: {fileID: 1901460688140222573, guid: 12c76e7413ba2c04db488af8035070a0,
-        type: 3}
-      propertyPath: shieldWeaponAtaccks
-      value: 
-      objectReference: {fileID: 488987957}
-    - target: {fileID: 1901460688140222583, guid: 12c76e7413ba2c04db488af8035070a0,
-        type: 3}
-      propertyPath: weaponAtaccks
-      value: 
-      objectReference: {fileID: 1575088397}
     - target: {fileID: 1901460688140222580, guid: 12c76e7413ba2c04db488af8035070a0,
         type: 3}
       propertyPath: weaponBoxes
@@ -1025,24 +970,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1498303135}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1575088396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3961702475143388670, guid: 12c76e7413ba2c04db488af8035070a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1498303135}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1575088397 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1882495720281194814, guid: 12c76e7413ba2c04db488af8035070a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1498303135}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575088396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eace0ad090161345a6e30e3220a5f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1791029961
 PrefabInstance:
   m_ObjectHideFlags: 0
