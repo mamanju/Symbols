@@ -75,13 +75,13 @@ public class WeaponAtaccks : MonoBehaviour
             //敵
             if (collision.transform.tag == "Enemy")
             {
-                //中身よろしくお願いします！！！！
+                collision.gameObject.GetComponent<EnemyController>().Damage(1);
 
             }
             //Switch
-            else if (collision.transform.tag == "Switch")
+            else if (collision.transform.tag == "TrapSwitch")
             {
-                //中身よろしくお願いします！！！！
+                collision.gameObject.GetComponent<VariableTrapSwitch>().StopFire();
             }
             
             SpearEnd();
