@@ -72,7 +72,7 @@ public class SearchingBehavior : MonoBehaviour
         foreach (var foundData in m_foundList)
         {
             GameObject targetObject = foundData.Obj;
-            Debug.Log(LayerMask.LayerToName(targetObject.layer));
+            //Debug.Log(LayerMask.LayerToName(targetObject.layer));
             if (targetObject == null)
             {
                 continue;

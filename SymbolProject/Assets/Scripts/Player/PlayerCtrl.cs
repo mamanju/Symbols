@@ -170,6 +170,7 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         //槍を投げる（通常攻撃じゃない)
+        //キーの変更お願いします！！！！
         if (Input.GetKeyDown(KeyCode.O))
         {
             weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
@@ -338,11 +339,10 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log(playerStatus.NowWeaponID);
         if (finder.M_enemy.Count + finder.M_tellain.Count == 0) { return; }
         DownDurable();
-        if (playerStatus.NowWeaponID == 6)
+        if (playerStatus.NowWeaponID == 5)
         {
             weaponAtaccks = cymbals.GetComponent<WeaponAtaccks>();
             weaponAtaccks.AbnormalAttaks(weaponNumber);
-            return;
         }
         for (int i = 0; i < finder.M_enemy.Count; i++)
         {
@@ -355,22 +355,23 @@ public class PlayerCtrl : MonoBehaviour
         {
             for (int i = 0; i < finder.M_tellain.Count; i++)
             {
-                //切って橋にする木の名前
-                if(finder.M_tellain[i].name == "Tree")
+                //切って橋にする木のタグ
+                if(finder.M_tellain[i].tag == "Tree")
                 {
-
+                    //中身よろしくお願いします！！！！
+                    //タグの変更もお願いしますm(__)m
                 }
             }
         }
-
-        if (playerStatus.NowWeaponID == 6)
+        else if (playerStatus.NowWeaponID == 5)
         {
             for (int i = 0; i < finder.M_tellain.Count; i++)
             {
-                //成長するギミックの木の名前
-                if(finder.M_tellain[i].name == "Tree")
+                //成長するギミックの木のタグ
+                if(finder.M_tellain[i].tag == "Tree")
                 {
-
+                    //中身よろしくお願いします！！！！
+                    //タグの変更もお願いしますm(__)m
                 }
             }
         }

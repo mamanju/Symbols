@@ -316,7 +316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &587821593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -510,9 +510,9 @@ GameObject:
   - component: {fileID: 848456709}
   - component: {fileID: 848456708}
   - component: {fileID: 848456707}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Wall
-  m_TagString: Terrain
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1661,7 +1661,7 @@ PrefabInstance:
     - target: {fileID: 8893424871100293292, guid: dc3ef0fdee56fb446a5ccbe89d9593ba,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc3ef0fdee56fb446a5ccbe89d9593ba, type: 3}

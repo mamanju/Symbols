@@ -39,7 +39,7 @@ public class PlayerStatus : MonoBehaviour
         weaponAttacks[1] = SpearInfo.attack + attack;
         weaponAttacks[2] = AxInfo.attack + attack;
         weaponAttacks[3] = ShieldInfo.attack + attack;
-        weaponAttacks[6] = CymbalsInfo.attack + attack;
+        weaponAttacks[5] = CymbalsInfo.attack + attack;
 
         //完成する当たり使用するかも
         //for (int i = 0; i < weaponAttacks.Length; i++)

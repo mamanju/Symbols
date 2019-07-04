@@ -26,7 +26,7 @@ public class WeaponAtaccks : MonoBehaviour
         {
             SpearShot();
         }
-        if (_num == 6)
+        if (_num == 5)
         {
             CymbalsFalter();
         }
@@ -78,7 +78,7 @@ public class WeaponAtaccks : MonoBehaviour
             //Switch
             else if (collision.transform.tag == "Switch")
             {
-
+                //中身よろしくお願いします！！！！
             }
             
             SpearEnd();
@@ -96,6 +96,8 @@ public class WeaponAtaccks : MonoBehaviour
     {
         player = this.transform.parent.parent.gameObject;
         Finder finder = player.GetComponent<Finder>();
+
+        if (finder.M_enemy.Count == 0) { return; }
         for (int i = 0; i < finder.M_enemy.Count; i++)
         {
             finder.M_enemy[i].GetComponent<Rigidbody>().isKinematic = true;

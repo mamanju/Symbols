@@ -43,7 +43,7 @@ public class PlayerWeaponManager : MonoBehaviour
             case 3:
                 weapons[_num].GetComponent<ShieldInfo>().DelWeaponDurable();
                 break;
-            case 6:
+            case 5:
                 weapons[_num].GetComponent<CymbalsInfo>().DelWeaponDurable();
                 break;
             default:

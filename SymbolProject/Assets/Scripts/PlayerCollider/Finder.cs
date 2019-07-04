@@ -29,13 +29,13 @@ public class Finder : MonoBehaviour
     private void OnFound( GameObject i_foundObject )
     {
         //攻撃可能
-        if (i_foundObject.tag == "Enemy")
+        if (LayerMask.LayerToName(i_foundObject.layer) == "Enemy")
         {
             m_enemy.Add(i_foundObject);
             Debug.Log("敵発見！");
         }
         //ギミック
-        if (i_foundObject.tag == "Terrain")
+        if (LayerMask.LayerToName(i_foundObject.layer) == "Terrain")
         {
             m_tellain.Add(i_foundObject);
             Debug.Log("ギミック発見！");
@@ -44,11 +44,11 @@ public class Finder : MonoBehaviour
 
     private void OnList( GameObject i_lostObject)
     {
-        if (i_lostObject.tag == "Enemy")
+        if (LayerMask.LayerToName(i_lostObject.layer) == "Enemy")
         {
             m_enemy.Remove(i_lostObject);
         }
-        if (i_lostObject.tag == "Terrain")
+        if (LayerMask.LayerToName(i_lostObject.layer) == "Terrain")
         {
             m_tellain.Remove(i_lostObject);
         }
