@@ -144,7 +144,7 @@ public class PlayerCtrl : MonoBehaviour
             {
                 matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;
             }
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Jump"))
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Cross"))
             {
                 synthesisCtrl.StartSynthesis = true;
                 synthesisCtrl.EndFlag = true;
