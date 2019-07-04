@@ -346,13 +346,10 @@ public class PlayerCtrl : MonoBehaviour
         }
         for (int i = 0; i < finder.M_enemy.Count; i++)
         {
-
-            //攻撃回数分マイナス１する
-            for(int j = 0; j < playerStatus.PlayerAttack(); j++)
-            {
-                finder.M_enemy[i].GetComponent<enenemyHealtmanager>().healt--;
-            }
+            finder.M_enemy[i].GetComponent<EnemyController>().Damage(playerStatus.PlayerAttack());
         }
+
+        if (finder.M_enemy.Count != 0) { return; }
 
         if (playerStatus.NowWeaponID == 2)
         {

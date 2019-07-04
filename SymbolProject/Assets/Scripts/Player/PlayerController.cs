@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            hurtPlayer(EnemyController.instance.enemyatk);
+            //hurtPlayer(EnemyController.instance.enemyatk);
         }
         if (other.tag == "FireTrap")
         {
