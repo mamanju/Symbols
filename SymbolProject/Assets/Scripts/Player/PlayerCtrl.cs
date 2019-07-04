@@ -78,6 +78,13 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]
     private Finder finder;
 
+    //特殊攻撃、槍とCymbals
+    [SerializeField]
+    private GameObject spear;
+    [SerializeField]
+    private GameObject cymbals;
+    private WeaponAtaccks weaponAtaccks;
+
     //ノックバック
     //無敵時間
     private bool knockbackFlag = false;
@@ -144,6 +151,31 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         lastSelect = Input.GetAxisRaw("Dpad_H");
+
+        if (Time.timeScale == 0) { return; }
+        
+        //武器切り替え
+        if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.L))
+        {
+            WeaponChangeRight();
+        }
+        if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.K))
+        {
+            WeaponChangeLeft();
+        }
+
+        //槍を投げる（通常攻撃じゃない)
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
+            weaponAtaccks.AbnormalAttaks(weaponNumber);
+        }
+
+        //攻撃
+        if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
+        {
+            Attack();
+        }
     }
 
     void FixedUpdate()
@@ -225,22 +257,6 @@ public class PlayerCtrl : MonoBehaviour
             downSpeed *= 1.03f;
             playerRb.AddForce(0.0f, downSpeed, 0.0f);
         }
-
-        //武器切り替え
-        if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.L))
-        {
-            WeaponChangeRight();
-        }
-        if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.K))
-        {
-            WeaponChangeLeft();
-        }
-
-        //攻撃
-        if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
-        {
-            Attack();
-        }
     }
 
     //移動ストップ
@@ -314,7 +330,13 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log(playerStatus.PlayerAttack());
         Debug.Log(playerStatus.NowWeaponID);
         if (finder.M_targets.Count == 0) { return; }
-        playerWeaponManager.WeaponDel(playerStatus.NowWeaponID);
+        DownDurable();
+        if (weaponNumber == 6)
+        {
+            weaponAtaccks = cymbals.GetComponent<WeaponAtaccks>();
+            weaponAtaccks.AbnormalAttaks(weaponNumber);
+            return;
+        }
         for (int i = 0; i < finder.M_targets.Count; i++)
         {
             for(int j = 0; j < playerStatus.PlayerAttack(); j++)
@@ -322,5 +344,11 @@ public class PlayerCtrl : MonoBehaviour
                 finder.M_targets[i].GetComponent<enenemyHealtmanager>().healt--;
             }
         }
+    }
+
+    //武器の耐久値減少
+    public void DownDurable()
+    {
+        playerWeaponManager.WeaponDel(playerStatus.NowWeaponID);
     }
 }

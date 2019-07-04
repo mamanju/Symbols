@@ -25,7 +25,7 @@ public class WeaponManager : MonoBehaviour
         {
             weaponBox[i] = weaponBoxes.transform.GetChild(i).gameObject;
         }
-        nowWeapon = new int[] { 1, 1, 1, 0, 0, 1, 0, 0, 0 };
+        nowWeapon = new int[] { 3, 1, 1, 0, 0, 1, 0, 0, 0 };
     }
 
     void Update()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 111765080}
   - component: {fileID: 111765079}
   - component: {fileID: 3227315273083142677}
-  - component: {fileID: 1582488386342589947}
+  - component: {fileID: 6552280008857598913}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponList: 0
---- !u!114 &1582488386342589947
+--- !u!114 &6552280008857598913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 6149909344170913719}
   - component: {fileID: 6149909344170913720}
   - component: {fileID: 6149909344170913723}
-  - component: {fileID: 2546337290312872520}
+  - component: {fileID: 1283165652334424967}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &2546337290312872520
+--- !u!114 &1283165652334424967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 6149909344279684670}
   - component: {fileID: 6149909344279684642}
   - component: {fileID: 6149909344279684640}
-  - component: {fileID: 2577211310055991702}
+  - component: {fileID: 8300131374488569218}
   m_Layer: 5
   m_Name: SynthesisCrystal
   m_TagString: Untagged
@@ -572,7 +572,7 @@ MonoBehaviour:
   player: {fileID: 0}
   synthesisBoxes: {fileID: 6149909344361551422}
   timeCount: 1
---- !u!114 &2577211310055991702
+--- !u!114 &8300131374488569218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 6149909344425886695}
   - component: {fileID: 6149909344425886696}
   - component: {fileID: 6149909344425886699}
-  - component: {fileID: 4450049923215497564}
+  - component: {fileID: 2514100942341274474}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &4450049923215497564
+--- !u!114 &2514100942341274474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -1988,7 +1988,7 @@ GameObject:
   - component: {fileID: 6149909345046834059}
   - component: {fileID: 6149909345046834060}
   - component: {fileID: 6149909345046834063}
-  - component: {fileID: 5810170964749770033}
+  - component: {fileID: 6082151022267974139}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -2079,7 +2079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &5810170964749770033
+--- !u!114 &6082151022267974139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2091,7 +2091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -2114,7 +2114,7 @@ GameObject:
   - component: {fileID: 6149909345111085873}
   - component: {fileID: 6149909345111085874}
   - component: {fileID: 6149909345111085877}
-  - component: {fileID: 5142671229615098942}
+  - component: {fileID: 5075117836613111235}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -2205,7 +2205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &5142671229615098942
+--- !u!114 &5075117836613111235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -2503,7 +2503,7 @@ GameObject:
   - component: {fileID: 6149909345265031265}
   - component: {fileID: 6149909345265031266}
   - component: {fileID: 6149909345265031269}
-  - component: {fileID: 588263969400990588}
+  - component: {fileID: 3731350556900090657}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -2594,7 +2594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &588263969400990588
+--- !u!114 &3731350556900090657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -2724,7 +2724,7 @@ GameObject:
   - component: {fileID: 6149909345352201438}
   - component: {fileID: 6149909345352201411}
   - component: {fileID: 6149909345352201410}
-  - component: {fileID: 6047303188067118189}
+  - component: {fileID: 3968863618608718669}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -2815,7 +2815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &6047303188067118189
+--- !u!114 &3968863618608718669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2827,7 +2827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -2850,7 +2850,7 @@ GameObject:
   - component: {fileID: 6149909345407337110}
   - component: {fileID: 6149909345407337115}
   - component: {fileID: 6149909345407337114}
-  - component: {fileID: 6666787885030098365}
+  - component: {fileID: 7154626538405745755}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -2941,7 +2941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &6666787885030098365
+--- !u!114 &7154626538405745755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2953,7 +2953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -3446,7 +3446,7 @@ GameObject:
   - component: {fileID: 6149909345809988297}
   - component: {fileID: 6149909345809988298}
   - component: {fileID: 6149909345809988301}
-  - component: {fileID: 330544922138042160}
+  - component: {fileID: 6274977734427376800}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -3537,7 +3537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &330544922138042160
+--- !u!114 &6274977734427376800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3549,7 +3549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
@@ -3572,7 +3572,7 @@ GameObject:
   - component: {fileID: 6149909345837932195}
   - component: {fileID: 6149909345837932196}
   - component: {fileID: 6149909345837932199}
-  - component: {fileID: 888692894098957251}
+  - component: {fileID: 8930094383697969664}
   m_Layer: 5
   m_Name: WeaponBox
   m_TagString: Untagged
@@ -3663,7 +3663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &888692894098957251
+--- !u!114 &8930094383697969664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3675,7 +3675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
   spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
   axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
   shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
