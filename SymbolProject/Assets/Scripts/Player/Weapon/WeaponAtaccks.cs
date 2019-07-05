@@ -16,6 +16,7 @@ public class WeaponAtaccks : MonoBehaviour
         {
             spearTimeFlag = false;
             spearTime = 10;
+            Destroy(gameObject);
             SpearEnd();
         }
     }
@@ -36,7 +37,7 @@ public class WeaponAtaccks : MonoBehaviour
     private float _startSpeed = 5.0f;
     private bool spearFlag = false;
     private bool spearTimeFlag = false;
-    private float spearTime = 3;
+    private float spearTime = 10;
 
     private GameObject SpearBox;
     
@@ -66,7 +67,7 @@ public class WeaponAtaccks : MonoBehaviour
             player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
         }
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
         SpearBox.GetComponent<SpearInfo>().InstantiateSpear();
     }
 

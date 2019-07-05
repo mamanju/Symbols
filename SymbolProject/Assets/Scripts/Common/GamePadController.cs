@@ -113,9 +113,11 @@ public class GamePadController : SingletonMonoBehaviour<GamePadController> {
             return "R1";
         }
         if (Input.GetButtonDown("L2")) {
+            Debug.Log("L2");
             return "L2";
         }
         if (Input.GetButtonDown("R2")) {
+            Debug.Log("R");
             return "R2";
         }
         return null;
@@ -130,5 +132,6 @@ public class GamePadController : SingletonMonoBehaviour<GamePadController> {
     void Update() {
         SetHorizontal();
         SetVertical();
+        ButtonPush();
     }
 }
