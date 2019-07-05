@@ -16,7 +16,7 @@ public class WeaponAtaccks : MonoBehaviour
         {
             spearTimeFlag = false;
             spearTime = 10;
-            Destroy(gameObject);
+            //Destroy(gameObject);
             SpearEnd();
         }
     }
@@ -37,13 +37,14 @@ public class WeaponAtaccks : MonoBehaviour
     private float _startSpeed = 5.0f;
     private bool spearFlag = false;
     private bool spearTimeFlag = false;
-    private float spearTime = 10;
+    private float spearTime = 5;
 
     private GameObject SpearBox;
     
     public void SpearShot()
     {
         SpearBox = this.transform.parent.gameObject;
+        Debug.Log(SpearBox.name);
         this.transform.parent = null;
         spearTimeFlag = true;
         spearFlag = true;
@@ -57,6 +58,7 @@ public class WeaponAtaccks : MonoBehaviour
     //槍が消えて個数が減ってどうのこうの
     private void SpearEnd()
     {
+        Debug.Log("End" + SpearBox.name);
         spearFlag = false;
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = true;

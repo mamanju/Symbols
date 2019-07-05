@@ -7,10 +7,6 @@ using UnityEngine;
 /// </summary>
 public class EnemyController : EnemyManager
 {
-    private void Start() {
-        Debug.Log(crystal);
-        DropCrystal();
-    }
     /// <summary>
     /// 攻撃処理
     /// </summary>
@@ -30,11 +26,9 @@ public class EnemyController : EnemyManager
     /// <param name="damage"></param>
     public GameObject Damage(int damage)
     {
+        Debug.Log(Health);
         if (Health - damage <= 0)
         {
-            if(crystal == Crystals.Boss) {
-                BossDrop();
-            }
             DropCrystal();
             Destroy(gameObject);
             return gameObject;
@@ -51,10 +45,5 @@ public class EnemyController : EnemyManager
         GameObject cry = Instantiate(Resources.Load<GameObject>(path), transform);
         cry.transform.position = transform.position;
         cry.transform.SetParent(transform.parent);
-    }
-
-    private void BossDrop() {
-        GameObject clearPanel = FindObjectOfType<PauseController>().gameObject;
-        clearPanel.GetComponent<PauseController>().ClearFlag = true;
     }
 }

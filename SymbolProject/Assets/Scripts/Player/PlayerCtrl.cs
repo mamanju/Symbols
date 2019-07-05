@@ -134,12 +134,12 @@ public class PlayerCtrl : MonoBehaviour
         if (synthesisGUI.activeSelf == true)
         {
             SynthesisCtrl synthesisCtrl = synthesisBoxes.GetComponent<SynthesisCtrl>();
-            if (Input.GetButtonDown("L2") && lastSelect == 0 && synthesisCtrl.EndFlag == false
+            if (Input.GetButtonDown("R2") && synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveRightFlag = true;
             }
-            if (Input.GetButtonDown("R2") && lastSelect == 0 && synthesisCtrl.EndFlag == false
+            if (Input.GetButtonDown("L2") /*&& lastSelect == 0 */&& synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;

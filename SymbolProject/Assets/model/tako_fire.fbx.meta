@@ -1,31 +1,85 @@
 fileFormatVersion: 2
-guid: 7507df24f953dfa4186bef1514be2a10
+guid: 8286386bb4418f74fb71365d536ff674
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: slime_body1
-    100002: slime_body2
-    100004: //RootNode
-    100006: slime_L_eye
-    100008: slime_L_eye1
-    400000: slime_body1
-    400002: slime_body2
-    400004: //RootNode
-    400006: slime_L_eye
-    400008: slime_L_eye1
-    2100000: slime_g
-    2300000: slime_body1
-    2300002: slime_body2
-    2300004: slime_L_eye
-    2300006: slime_L_eye1
-    3300000: slime_body1
-    3300002: slime_body2
-    3300004: slime_L_eye
-    3300006: slime_L_eye1
-    4300000: slime_L_eye
-    4300002: slime_body1
-    4300004: slime_body2
-    4300006: slime_L_eye1
+    100000: ashi
+    100002: ashi1
+    100004: ashi10
+    100006: ashi3
+    100008: ashi4
+    100010: ashi7
+    100012: ashi8
+    100014: ashi9
+    100016: ashi_group
+    100018: hed
+    100020: kuti
+    100022: me
+    100024: me 1
+    100026: me1
+    100028: me2
+    100030: me3
+    100032: //RootNode
+    400000: ashi
+    400002: ashi1
+    400004: ashi10
+    400006: ashi3
+    400008: ashi4
+    400010: ashi7
+    400012: ashi8
+    400014: ashi9
+    400016: ashi_group
+    400018: hed
+    400020: kuti
+    400022: me
+    400024: me 1
+    400026: me1
+    400028: me2
+    400030: me3
+    400032: //RootNode
+    2100000: tako
+    2300000: ashi
+    2300002: ashi1
+    2300004: ashi10
+    2300006: ashi3
+    2300008: ashi4
+    2300010: ashi7
+    2300012: ashi8
+    2300014: ashi9
+    2300016: hed
+    2300018: kuti
+    2300020: me 1
+    2300022: me1
+    2300024: me2
+    2300026: me3
+    3300000: ashi
+    3300002: ashi1
+    3300004: ashi10
+    3300006: ashi3
+    3300008: ashi4
+    3300010: ashi7
+    3300012: ashi8
+    3300014: ashi9
+    3300016: hed
+    3300018: kuti
+    3300020: me 1
+    3300022: me1
+    3300024: me2
+    3300026: me3
+    4300000: me
+    4300002: me1
+    4300004: me2
+    4300006: me3
+    4300008: hed
+    4300010: kuti
+    4300012: ashi
+    4300014: ashi3
+    4300016: ashi4
+    4300018: ashi7
+    4300020: ashi1
+    4300022: ashi8
+    4300024: ashi9
+    4300026: ashi10
   externalObjects: {}
   materials:
     importMaterials: 1
