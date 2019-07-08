@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class ResultController : MonoBehaviour
 {
-   public void ChangeSceneSelect(string name) {
-        SceneController.Instance.ChangeScene(name);
+   public void ChangeSceneSelect() {
+        SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
    }
 }

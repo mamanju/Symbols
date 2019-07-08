@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class StageSelectController : MonoBehaviour
 {
-    public void ChangeGame(string name) {
-        SceneController.Instance.ChangeScene(name);
+    public void ChangeGame() {
+        SceneController.Instance.ChangeScene(SceneController.SceneName.StageFirst);
     }
 }

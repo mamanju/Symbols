@@ -48,14 +48,14 @@ public class PauseController : MonoBehaviour
 
         if (Input.GetButtonDown("Circle")) {
             if (clearFlag) {
-                SceneController.Instance.ChangeScene("Title");
+                SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
             }
 
             if (!pauseFlag) {
                 return;
             }
             if (buttonNum == 0) {
-                SceneController.Instance.ChangeScene("Title");
+                SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
             } else {
                 Pause();
             }
