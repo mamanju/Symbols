@@ -7,16 +7,13 @@ public class PauseButton : MonoBehaviour
     [SerializeField]
     [Range (0,1)]private int selectNum;
     
-
-    void Decision()
+    public int GetSelectNum
     {
-        if(selectNum == 0)
-        {
+        get { return selectNum; }
+    }
 
-        }
-        else
-        {
-
-        }
+    public void Decision()
+    {
+        SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
     }
 }

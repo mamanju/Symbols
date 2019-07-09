@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -354,9 +354,9 @@ GameObject:
   - component: {fileID: 272959867}
   - component: {fileID: 272959866}
   - component: {fileID: 272959865}
-  - component: {fileID: 272959868}
   - component: {fileID: 272959870}
   - component: {fileID: 272959869}
+  - component: {fileID: 272959868}
   m_Layer: 13
   m_Name: Image
   m_TagString: Untagged
@@ -429,11 +429,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 272959864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d2bdb226bb006647bd5acc8c89d168b, type: 3}
+  m_Script: {fileID: 11500000, guid: 24dd1c3f9a1f195419f956a21be8b6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  gameManager: {fileID: 0}
+  pauseCon: {fileID: 592471711}
+  moveSpeed: 5
 --- !u!61 &272959869
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -755,6 +755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 592471713}
+  - component: {fileID: 592471712}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -762,6 +763,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &592471712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592471711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0270b9169cec0094088c5c10b182a249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 1636899753}
+  gameOverUI: {fileID: 978878602}
+  gameClearUI: {fileID: 1636899753}
 --- !u!4 &592471713
 Transform:
   m_ObjectHideFlags: 0
@@ -789,6 +805,7 @@ GameObject:
   - component: {fileID: 905869804}
   - component: {fileID: 905869807}
   - component: {fileID: 905869806}
+  - component: {fileID: 905869808}
   m_Layer: 5
   m_Name: bbbbb
   m_TagString: Untagged
@@ -899,6 +916,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &905869808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905869802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00de35a1858077e4e902b7abe4db4de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectNum: 0
 --- !u!1 &936414968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,6 +1156,7 @@ GameObject:
   - component: {fileID: 1344375276}
   - component: {fileID: 1344375279}
   - component: {fileID: 1344375278}
+  - component: {fileID: 1344375280}
   m_Layer: 5
   m_Name: aaaaa
   m_TagString: Untagged
@@ -1236,6 +1267,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &1344375280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344375274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00de35a1858077e4e902b7abe4db4de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectNum: 0
 --- !u!1 &1636899753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,7 +1334,6 @@ MonoBehaviour:
   pauseUI: {fileID: 0}
   gameOverUI: {fileID: 0}
   gameClearUI: {fileID: 0}
-  SelectButtons: []
 --- !u!1 &1768383183
 GameObject:
   m_ObjectHideFlags: 0

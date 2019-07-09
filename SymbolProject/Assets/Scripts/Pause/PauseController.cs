@@ -17,8 +17,8 @@ public class PauseController : MonoBehaviour
     [SerializeField]
     private GameObject gameClearUI;
 
-    [SerializeField]
-    private Image[] SelectButtons;
+    //[SerializeField]
+    //private Image[] SelectButtons;
 
     private int buttonNum = 0;
 
@@ -26,6 +26,7 @@ public class PauseController : MonoBehaviour
     private bool gameOverFlag = false;
     private bool selectFlag = false;
     private bool clearFlag = false;
+
     public bool ClearFlag {
         get { return clearFlag; }
         set { clearFlag = value; }
@@ -39,63 +40,69 @@ public class PauseController : MonoBehaviour
     }
 
     private void Update() {
-        if (clearFlag) {
+
+
+        if (clearFlag)
+        {
             gameClearUI.SetActive(true);
         }
-        if (Input.GetButtonDown("Option")) {
+        if (Input.GetButtonDown("Option"))
+        {
             Pause();
         }
 
-        if (Input.GetButtonDown("Circle")) {
-            if (clearFlag) {
-                SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
-            }
+#region 十字キー操作
+        //if (Input.GetButtonDown("Circle")) {
+        //    if (clearFlag) {
+        //        SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
+        //    }
 
-            if (!pauseFlag) {
-                return;
-            }
-            if (buttonNum == 0) {
-                SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
-            } else {
-                Pause();
-            }
-        }
+        //    if (!pauseFlag) {
+        //        return;
+        //    }
+        //    if (buttonNum == 0) {
+        //        SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
+        //    } else {
+        //        Pause();
+        //    }
+        //}
 
-        if (!pauseFlag) {
-            return;
-        }
+        //if (!pauseFlag) {
+        //    return;
+        //}
 
-        Debug.Log(Input.GetAxis("CrossKey_V"));
-        if(Input.GetAxis("CrossKey_V") == 0) {
-            selectFlag = false;
-            return;
-        }
+        //Debug.Log(Input.GetAxis("CrossKey_V"));
+        //if(Input.GetAxis("CrossKey_V") == 0) {
+        //    selectFlag = false;
+        //    return;
+        //}
 
-        if (selectFlag) {
-            return;
-        }
+        //if (selectFlag) {
+        //    return;
+        //}
 
-        if(Input.GetAxis("CrossKey_V") < 0) {
-            if(buttonNum - 1 < 0) {
-                buttonNum = 1;
-            } else {
-                buttonNum--;
-            }
-        } else {
-            if (buttonNum + 1 > 1) {
-                buttonNum = 0;
-            } else {
-                buttonNum++;
-            }
-        }
-        if(buttonNum == 0) {
-            SelectButtons[buttonNum].transform.localScale = new Vector2(1.2f, 1.2f);
-            SelectButtons[buttonNum + 1].transform.localScale = new Vector2(1f, 1f);
-        } else {
-            SelectButtons[buttonNum].transform.localScale = new Vector2(1.2f, 1.2f);
-            SelectButtons[buttonNum - 1].transform.localScale = new Vector2(1f, 1f);
-        }
-        selectFlag = true;
+        //if(Input.GetAxis("CrossKey_V") < 0) {
+        //    if(buttonNum - 1 < 0) {
+        //        buttonNum = 1;
+        //    } else {
+        //        buttonNum--;
+        //    }
+        //} else {
+        //    if (buttonNum + 1 > 1) {
+        //        buttonNum = 0;
+        //    } else {
+        //        buttonNum++;
+        //    }
+        //}
+        //if(buttonNum == 0) {
+        //    SelectButtons[buttonNum].transform.localScale = new Vector2(1.2f, 1.2f);
+        //    SelectButtons[buttonNum + 1].transform.localScale = new Vector2(1f, 1f);
+        //} else {
+        //    SelectButtons[buttonNum].transform.localScale = new Vector2(1.2f, 1.2f);
+        //    SelectButtons[buttonNum - 1].transform.localScale = new Vector2(1f, 1f);
+        //}
+#endregion
+        //selectFlag = true;
     }
 
     /// <summary>

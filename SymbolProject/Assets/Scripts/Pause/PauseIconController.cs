@@ -1,25 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class CursorTest : MonoBehaviour
+public class PauseIconController : MonoBehaviour
 {
     [SerializeField]
+    private GameObject pauseCon;
+    [SerializeField]
     private float moveSpeed;
-
-    [SerializeField]
-    private GameObject cursorIcon;
-
-    [SerializeField]
-    private GameObject PausePanel;
-
-    private Vector3 cursorPosition;
-
+    private float Horizontal;
+    private float Vertical;
     private GameObject targetObj;
-
-    //[SerializeField]
-    //private GameObject gameManager;
+    private Vector3 cursorPosition;
 
     private void OnEnable()
     {
@@ -31,43 +23,31 @@ public class CursorTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float Horizontal = Input.GetAxis("Horizontal_L");
-        float Vertical = Input.GetAxis("Vertical_L");
+        Horizontal = Input.GetAxis("Horizontal_L");
+        Vertical = Input.GetAxis("Vertical_L");
 
+        // ポーズ内のボタンを押したときの処理
         if (Input.GetButtonDown("Circle") && targetObj != null)
         {
             PauseButton pButton = targetObj.GetComponent<PauseButton>();
-            if(pButton.GetSelectNum == 0)
+            if (pButton.GetSelectNum == 0)
             {
                 pButton.Decision();
             }
             else
             {
-
+                pauseCon.GetComponent<PauseController>().Pause();
             }
-
-            //switch (gameManager.GetComponent<GameStateController>().PState)
-            //{
-            //    case GameStateController.PlayerState.Action:
-            //        break;
-            //    case GameStateController.PlayerState.Pause:
-            //        //targetObj.GetComponent<>()
-            //        break;
-            //    case GameStateController.PlayerState.Synthesis:
-            //        break;
-            //    default:
-            //        break;
-            //}
         }
 
         // 横移動
-        if(Horizontal != 0)
+        if (Horizontal != 0)
         {
             cursorPosition.x += Horizontal * moveSpeed;
         }
 
         // 縦移動
-        if(Vertical != 0)
+        if (Vertical != 0)
         {
             cursorPosition.y += Vertical * moveSpeed;
         }
@@ -83,7 +63,7 @@ public class CursorTest : MonoBehaviour
             cursorPosition = transform.position;
         }
         // ------------------------------------------------------------------------
-        cursorIcon.transform.position = cursorPosition;
+        transform.position = cursorPosition;
     }
 
     public void OnTriggerStay2D(Collider2D col)
@@ -93,7 +73,6 @@ public class CursorTest : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D col)
     {
-        Debug.Log("call");
         targetObj = null;
     }
 }
