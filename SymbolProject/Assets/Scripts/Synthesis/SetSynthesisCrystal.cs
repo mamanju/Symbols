@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetSynthesisCrystal : MonoBehaviour
 {
@@ -40,8 +41,9 @@ public class SetSynthesisCrystal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.empty) { return; }
-        if (synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == true)
+        if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.empty) { return; }
+        if (synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == false){ return; }
+        else
         {
             timeCount -= Time.unscaledDeltaTime;
             if (timeCount <= 0)
