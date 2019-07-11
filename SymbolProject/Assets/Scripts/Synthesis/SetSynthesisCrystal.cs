@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetSynthesisCrystal : MonoBehaviour
 {
@@ -40,8 +41,9 @@ public class SetSynthesisCrystal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.empty) { return; }
-        if (synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == true)
+        if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.empty) { return; }
+        if (synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == false){ return; }
+        else
         {
             timeCount -= Time.unscaledDeltaTime;
             if (timeCount <= 0)
@@ -57,9 +59,10 @@ public class SetSynthesisCrystal : MonoBehaviour
             {
                 if ((int)this.GetComponent<WeaponInfo>().weaponList == i && endWeaponMove == false)
                 {
-                    player.GetComponent<WeaponManager>().NowWeapon[i]++;
+                    Debug.Log(i);
+                    player.GetComponent<WeaponManager>().NowWeapon[i - 1]++;
                     endWeaponMove = true;
-                    weaponBox[i].GetComponent<WeaponInfo>().weaponList
+                    weaponBox[i - 1].GetComponent<WeaponInfo>().weaponList
                         = ((WeaponInfo.WeaponList)Enum.ToObject(typeof(WeaponInfo.WeaponList), i));
                     break;
                 }

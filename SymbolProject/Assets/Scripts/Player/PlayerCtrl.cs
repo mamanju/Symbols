@@ -149,9 +149,10 @@ public class PlayerCtrl : MonoBehaviour
                 synthesisCtrl.StartSynthesis = true;
                 synthesisCtrl.EndFlag = true;
             }
-            if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.I))
+            //リセット
+            if (Input.GetButtonDown("Square") || Input.GetKeyDown(KeyCode.I))
             {
-                synthesisCtrl.ResetFlag = true;
+                synthesisCtrl.ResetCrystal();
             }
         }
 

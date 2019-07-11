@@ -25,6 +25,8 @@ public class WeaponTextureManager : MonoBehaviour
     private Sprite questionSprite;
     [SerializeField]
     private Sprite exclamation;
+    [SerializeField]
+    private SynthesisCtrl synthesisCtrl;
 
     private void Start()
     {
@@ -32,7 +34,7 @@ public class WeaponTextureManager : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
         WeaponChange();
     }
 
@@ -40,9 +42,22 @@ public class WeaponTextureManager : MonoBehaviour
     {
         WeaponInfo thisWeaponInfo = this.GetComponent<WeaponInfo>();
         Image thisImage = this.GetComponent<Image>();
-        if (thisWeaponInfo.weaponList != WeaponInfo.WeaponList.empty)
+        bool isEmpty = thisWeaponInfo.weaponList != WeaponInfo.WeaponList.empty;
+        bool isName = this.gameObject.name == "SynthesisCrystal";
+        if (isEmpty && isName)
         {
-            thisImage.color = new Color(255, 255, 255, 255);
+            if (synthesisCtrl.EndFlag == false)
+            {
+                thisImage.color = new Color(1, 1, 1, 0.5f);
+            }
+            else
+            {
+                thisImage.color = Color.white;
+            }
+        }
+        else if (isEmpty && isName == false)
+        {
+            thisImage.color = Color.white;
         }
         if (thisWeaponInfo.weaponList == WeaponInfo.WeaponList.sword)
         {
@@ -88,6 +103,5 @@ public class WeaponTextureManager : MonoBehaviour
         {
             thisImage.color = Color.clear;
         }
-
     }
 }

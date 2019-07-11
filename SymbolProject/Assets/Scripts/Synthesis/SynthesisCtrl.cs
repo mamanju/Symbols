@@ -44,14 +44,6 @@ public class SynthesisCtrl : MonoBehaviour
     private int changeFlag = 0;
     private bool changeFin = false;
 
-    //リセット用
-    private bool resetFlag = false;
-    public bool ResetFlag
-    {
-        get { return resetFlag; }
-        set { resetFlag = value; }
-    }
-
     [SerializeField]
     private GameObject player;
 
@@ -62,6 +54,7 @@ public class SynthesisCtrl : MonoBehaviour
     //合成成功した際の送り先
     [SerializeField]
     private GameObject synthesisCrystal;
+    WeaponInfo synthesisWeaponInfo;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +63,7 @@ public class SynthesisCtrl : MonoBehaviour
         {
             matlBox[i] = matlBoxes.transform.GetChild(i).gameObject;
         }
+        synthesisWeaponInfo = synthesisCrystal.GetComponent<WeaponInfo>();
     }
 
     // Update is called once per frame
@@ -83,43 +77,9 @@ public class SynthesisCtrl : MonoBehaviour
         {
             matlCrystals[i] = transform.GetChild(i).gameObject;
             inputMatl[i] = (int)matlCrystals[i].GetComponent<MatlInfo>().matlList;
+            changeFin = false;
         }
 
-        if (resetFlag == true)
-        {
-            MatlManager playerMatlManager = player.GetComponent<MatlManager>();
-            for (int i = 0; i < inputMatl.Length; i++)
-            {
-                if (inputMatl[i] == 0)
-                {
-                    playerMatlManager.NowMatl[0]++;
-                    matlBox[0].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.stick;
-                }
-                else if (inputMatl[i] == 1)
-                {
-                    playerMatlManager.NowMatl[1]++;
-                    matlBox[1].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.triangle;
-                }
-                else if (inputMatl[i] == 2)
-                {
-                    playerMatlManager.NowMatl[2]++;
-                    matlBox[2].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.lessThan;
-                }
-                else if (inputMatl[i] == 3)
-                {
-                    playerMatlManager.NowMatl[3]++;
-                    matlBox[3].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.circle;
-                }
-                else
-                {
-                    return;
-                }
-                matlCrystals[i].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
-                resetFlag = false;
-            }
-        }
-
-        if (!startSynthesis) { return; }
         
         //素材クリスタルの並び替え(昇順)
         while (changeFin == false)
@@ -137,15 +97,21 @@ public class SynthesisCtrl : MonoBehaviour
             }
             if (changeFlag == 0) { changeFin = true; };
         }
+        
         Synthesis(inputMatl[0], inputMatl[1],
               inputMatl[2], inputMatl[3], inputMatl[4]);
+
+        if (!startSynthesis) { return; }
+
         EndSynthesis();
     }
 
     public void Synthesis(int _a, int _b, int _c, int _d, int _e)
     {
+        if (changeFin == false) { return; }
+
         WeaponManager playerWeaponManager = player.GetComponent<WeaponManager>();
-        WeaponInfo synthesisWeaponInfo = synthesisCrystal.GetComponent<WeaponInfo>();
+        
         //レシピNo.1
         if (_a == spear[0] && _b == spear[1] &&
             _c == spear[2] && _d == spear[3] && _e == spear[4])
@@ -222,6 +188,7 @@ public class SynthesisCtrl : MonoBehaviour
         else
         {
             Debug.Log("失敗");
+            synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.empty;
             endFlag = false;
         }
     }
@@ -234,8 +201,40 @@ public class SynthesisCtrl : MonoBehaviour
             matlCrystals[i].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
             inputMatl[i] = 0;
         }
-        changeFin = false;
         startSynthesis = false;
+        changeFin = false;
+    }
+
+    public void ResetCrystal()
+    {
+        MatlManager playerMatlManager = player.GetComponent<MatlManager>();
+        for (int i = 0; i < inputMatl.Length; i++)
+        {
+            if (inputMatl[i] == 0)
+            {
+                playerMatlManager.NowMatl[0]++;
+                matlBox[0].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.stick;
+            }
+            else if (inputMatl[i] == 1)
+            {
+                playerMatlManager.NowMatl[1]++;
+                matlBox[1].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.triangle;
+            }
+            else if (inputMatl[i] == 2)
+            {
+                playerMatlManager.NowMatl[2]++;
+                matlBox[2].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.lessThan;
+            }
+            else if (inputMatl[i] == 3)
+            {
+                playerMatlManager.NowMatl[3]++;
+                matlBox[3].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.circle;
+            }
+            inputMatl[i] = -1;
+            matlCrystals[i].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.empty;
+        }
+        synthesisWeaponInfo.weaponList = WeaponInfo.WeaponList.empty;
+        changeFin = false;
     }
 }
  
