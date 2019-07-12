@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - FireSwitch
+  - Fire
+  - Tree
+  - Enemy
+  - TrapSwitch
+  - Axe
+  - FireTrap
+  - Crystal
+  - WeaponCrystal
+  - Terrain
   layers:
   - Default
   - TransparentFX
@@ -14,12 +25,12 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Terrain
+  - Search
+  - Cursor
+  - Background
   - 
   - 
   - 

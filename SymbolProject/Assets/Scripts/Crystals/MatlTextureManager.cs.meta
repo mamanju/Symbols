@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3c27f2731559d60489ba0c06ac8fce62
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - emptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  - stickSprite: {fileID: 21300000, guid: 3019a5b3e34a2404da5c93fc0e3b81e6, type: 3}
+  - triangleSprite: {fileID: 21300000, guid: 26f305c99e1a56d428afd55517cb8b2b, type: 3}
+  - lessThanSprite: {fileID: 21300000, guid: f94031088aba10b41b4d29c13a98ba5e, type: 3}
+  - circleSprite: {fileID: 21300000, guid: 2535c605a6302e440a03e5d38f3d7ad1, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
