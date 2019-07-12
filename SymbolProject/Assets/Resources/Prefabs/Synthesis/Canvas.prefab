@@ -111,6 +111,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
+  synthesisCtrl: {fileID: 0}
 --- !u!1 &9185039528288856
 GameObject:
   m_ObjectHideFlags: 0

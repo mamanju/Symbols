@@ -8,8 +8,8 @@ public static class SearchingBehaviorGizmosEditor
     private static readonly Color MESH_COLOR = new Color(1.0f, 1.0f, 0.0f, 0.7f);
 
 
-    [DrawGizmo(GizmoType.NonSelected | GizmoType.Selected)]
-    private static void DrawPointGizmos(SearchingBehavior i_object, GizmoType i_gizmoType)
+    //[DrawGizmo(GizmoType.NonSelected | GizmoType.Selected)]
+    private static void DrawPointGizmos(SearchingBehavior i_object/*, GizmoType i_gizmoType*/)
     {
         if (i_object.SearchRadius <= 0.0f)
         {

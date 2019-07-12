@@ -35,7 +35,7 @@ public class Finder : MonoBehaviour
             Debug.Log("敵発見！");
         }
         //ギミック
-        if (LayerMask.LayerToName(i_foundObject.layer) == "Terrain")
+        if (LayerMask.LayerToName(i_foundObject.layer) == "Gimmick")
         {
             m_tellain.Add(i_foundObject);
             Debug.Log("ギミック発見！");
