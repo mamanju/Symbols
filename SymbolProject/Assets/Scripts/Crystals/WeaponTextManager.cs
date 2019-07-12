@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class WeaponTextManager : MonoBehaviour
 {
-    [SerializeField]
     private GameObject player;
     private int[] nowWeapon = new int[9];
 
@@ -14,6 +13,7 @@ public class WeaponTextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = transform.parent.parent.GetComponent<GetPlayer>().Player;
         childText = this.transform.GetChild(0).gameObject;
     }
 

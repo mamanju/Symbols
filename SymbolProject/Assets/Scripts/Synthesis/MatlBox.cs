@@ -12,8 +12,7 @@ public class MatlBox : MonoBehaviour
 
     [SerializeField]
     private Sprite selectImage;
-
-    [SerializeField]
+    
     private GameObject player;
 
     private bool moveRightFlag;
@@ -29,10 +28,12 @@ public class MatlBox : MonoBehaviour
         get { return moveLeftFlag; }
         set { moveLeftFlag = value; }
     }
-
+    
     // Start is called before the first frame update
     void Start()
     {
+        player = transform.parent.GetComponent<GetPlayer>().Player;
+
         itemBoxCount = this.transform.childCount;
         for (int i = 0; i < itemBoxCount; i++)
         {

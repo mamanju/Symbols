@@ -25,7 +25,7 @@ public class PlayerCtrl : MonoBehaviour
     //移動用変数
     private bool stopFlag;
     private float speed;
-    private float speedMax = 2.0f;
+    private float speedMax = 5.0f;
     private float forceMgmt = 2.0f;
     private float playerVelocity;
 
@@ -146,7 +146,6 @@ public class PlayerCtrl : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Cross"))
             {
-                synthesisCtrl.StartSynthesis = true;
                 synthesisCtrl.EndFlag = true;
             }
             //リセット
@@ -223,13 +222,14 @@ public class PlayerCtrl : MonoBehaviour
             speed = 10.0f;
             stopFlag = true;
 
+            //左スティック押し込みに変更
             if (Mathf.Abs(_horizontal ) + Mathf.Abs(_vertical) >= 1.0f)
             {
-                speedMax = 5.0f;
+                speedMax = 8.0f;
             }
             else
             {
-                speedMax = 2.0f;
+                speedMax = 5.0f;
             }
         }
         

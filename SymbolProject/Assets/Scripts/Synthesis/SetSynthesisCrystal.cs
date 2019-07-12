@@ -9,8 +9,7 @@ public class SetSynthesisCrystal : MonoBehaviour
     [SerializeField]
     private GameObject weaponBoxes;
     private GameObject[] weaponBox;
-
-    [SerializeField]
+    
     private GameObject player;
 
     [SerializeField]
@@ -18,6 +17,7 @@ public class SetSynthesisCrystal : MonoBehaviour
 
     [SerializeField]
     private float timeCount = 1;
+    private float resetTime;
 
     private int weaponBoxCount;
     private bool weaponMove;
@@ -31,6 +31,9 @@ public class SetSynthesisCrystal : MonoBehaviour
 
     void Start()
     {
+        player = transform.parent.GetComponent<GetPlayer>().Player;
+
+        resetTime = timeCount;
         weaponBoxCount = weaponBoxes.transform.childCount;
         weaponBox = new GameObject[weaponBoxCount];
         for (int i = 0; i < weaponBoxCount; i++)
@@ -49,7 +52,7 @@ public class SetSynthesisCrystal : MonoBehaviour
             if (timeCount <= 0)
             {
                 weaponMove = true;
-                timeCount = 1.0f;
+                timeCount = resetTime;
             }
         }
 
@@ -73,6 +76,7 @@ public class SetSynthesisCrystal : MonoBehaviour
                 weaponMove = false;
                 endWeaponMove = false;
                 synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag = false;
+                synthesisBoxes.GetComponent<SynthesisCtrl>().StartSynthesis = true;
             }
         }
     }
