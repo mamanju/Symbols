@@ -70,8 +70,7 @@ public class PauseController : MonoBehaviour
             return;
         }
 
-        Debug.Log(Input.GetAxis("CrossKey_V"));
-        if (Input.GetAxis("CrossKey_V") == 0)
+        if (Input.GetAxis("CrossKey_H") == 0)
         {
             selectFlag = false;
             return;
@@ -82,7 +81,7 @@ public class PauseController : MonoBehaviour
             return;
         }
 
-        if (Input.GetAxis("CrossKey_V") < 0)
+        if (Input.GetAxis("CrossKey_H") < 0)
         {
             if (buttonNum - 1 < 0)
             {
@@ -106,12 +105,12 @@ public class PauseController : MonoBehaviour
         }
         if (buttonNum == 0)
         {
-            SelectButtons[buttonNum].transform.localScale = new Vector2(1.2f, 1.2f);
+            SelectButtons[buttonNum].transform.localScale = new Vector2(1.1f, 1.1f);
             SelectButtons[buttonNum + 1].transform.localScale = new Vector2(1f, 1f);
         }
         else
         {
-            SelectButtons[buttonNum].transform.localScale = new Vector2(1.2f, 1.2f);
+            SelectButtons[buttonNum].transform.localScale = new Vector2(1.1f, 1.1f);
             SelectButtons[buttonNum - 1].transform.localScale = new Vector2(1f, 1f);
         }
         selectFlag = true;
