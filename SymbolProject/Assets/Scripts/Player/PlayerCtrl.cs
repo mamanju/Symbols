@@ -134,28 +134,28 @@ public class PlayerCtrl : MonoBehaviour
         if (synthesisGUI.activeSelf == true)
         {
             SynthesisCtrl synthesisCtrl = synthesisBoxes.GetComponent<SynthesisCtrl>();
-            if (Input.GetButtonDown("R2") && synthesisCtrl.EndFlag == false
+            if (Input.GetAxisRaw("CrossKey_H") > 0 && lastSelect == 0 && synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveRightFlag = true;
             }
-            if (Input.GetButtonDown("L2") /*&& lastSelect == 0 */&& synthesisCtrl.EndFlag == false
+            if (Input.GetAxisRaw("CrossKey_H") < 0 && lastSelect == 0 && synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;
             }
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Cross"))
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Square"))
             {
                 synthesisCtrl.EndFlag = true;
             }
             //リセット
-            if (Input.GetButtonDown("Square") || Input.GetKeyDown(KeyCode.I))
+            if (Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.I))
             {
                 synthesisCtrl.ResetCrystal();
             }
         }
 
-        lastSelect = Input.GetAxisRaw("Dpad_H");
+        lastSelect = Input.GetAxisRaw("CrossKey_H");
 
         if (Time.timeScale == 0) { return; }
         
@@ -223,7 +223,7 @@ public class PlayerCtrl : MonoBehaviour
             stopFlag = true;
 
             //左スティック押し込みに変更
-            if (Mathf.Abs(_horizontal ) + Mathf.Abs(_vertical) >= 1.0f)
+            if (Input.GetButton("StickPush_L"))
             {
                 speedMax = 8.0f;
             }
@@ -232,6 +232,8 @@ public class PlayerCtrl : MonoBehaviour
                 speedMax = 5.0f;
             }
         }
+
+        Debug.Log(speedMax);
         
         lastHorizontal = Mathf.Abs(_horizontal);
         lastVertical = Mathf.Abs(_vertical);

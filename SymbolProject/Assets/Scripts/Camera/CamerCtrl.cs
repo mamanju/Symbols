@@ -90,7 +90,7 @@ public class CamerCtrl : MonoBehaviour
             else if (angle1 >= 0.1f) { angle1 -= Time.deltaTime * speed; cameraUp = true; }
         }
         //Reset
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("StickPush_R"))
         {
             angle1 = 0.09966f;
             angle2 = radianP;
