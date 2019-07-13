@@ -98,10 +98,14 @@ public class PlayerCtrl : MonoBehaviour
         set { knockbackFlag = value; }
     }
 
-    // アニメーション
+    // 移動アニメーション
     private Animator playerAnime;
     private string key_Jump = "Jump";
     private string key_Speed = "Speed";
+
+    // 武器アニメーション
+    private string key_Weapon = "Weapons";
+    private string key_Attack = "Attack";
 
     void Start()
     {
@@ -189,6 +193,7 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
             Attack();
+            playerAnime.SetTrigger(key_Attack);
         }
     }
 
@@ -314,7 +319,9 @@ public class PlayerCtrl : MonoBehaviour
         nowWeapon.weaponList = (WeaponInfo.WeaponList)(_num);
         playerWeaponManager.WeaponObjChange(_num);
         playerStatus.WeaponAttack(_num);
-        
+
+        playerAnime.SetInteger(key_Weapon, _num);
+
         if (_num == 6)
         {
             searchingBehavior.M_searchAngle = 360;

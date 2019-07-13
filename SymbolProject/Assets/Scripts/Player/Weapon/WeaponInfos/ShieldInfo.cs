@@ -7,6 +7,9 @@ public class ShieldInfo : WeaponCtrl
     public static int attack;
     public static int weaponID;
 
+    [SerializeField]
+    private GameObject shield;
+
     void Start()
     {
         // 盾の基本情報
@@ -14,6 +17,16 @@ public class ShieldInfo : WeaponCtrl
         durable = 5;
         durable_max = 5;
         weaponID = 3;
+    }
+
+    private void OnEnable()
+    {
+        shield.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        shield.SetActive(false);
     }
 
     public void DelWeaponDurable()
