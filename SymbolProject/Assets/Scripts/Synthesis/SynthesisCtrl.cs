@@ -43,8 +43,7 @@ public class SynthesisCtrl : MonoBehaviour
     private int[] inputMatl = new int[5];
     private int changeFlag = 0;
     private bool changeFin = false;
-
-    [SerializeField]
+    
     private GameObject player;
 
     [SerializeField]
@@ -59,6 +58,7 @@ public class SynthesisCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = transform.parent.GetComponent<GetPlayer>().Player;
         for (int i = 0; i < matlBox.Length; i++)
         {
             matlBox[i] = matlBoxes.transform.GetChild(i).gameObject;
@@ -100,7 +100,7 @@ public class SynthesisCtrl : MonoBehaviour
         
         Synthesis(inputMatl[0], inputMatl[1],
               inputMatl[2], inputMatl[3], inputMatl[4]);
-
+        
         if (!startSynthesis) { return; }
 
         EndSynthesis();

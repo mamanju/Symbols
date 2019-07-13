@@ -8,7 +8,6 @@ public class MatlSet : MonoBehaviour
     private GameObject setMatls;
     private GameObject[] setMatl = new GameObject[5];
 
-    [SerializeField]
     private GameObject player;
     private int[] nowMatl = new int[4];
 
@@ -19,6 +18,7 @@ public class MatlSet : MonoBehaviour
 
     void Start()
     {
+        player = transform.parent.parent.GetComponent<GetPlayer>().Player;
         for(int i = 0; i < 5; i++)
         {
             setMatl[i] = setMatls.transform.GetChild(i).gameObject;

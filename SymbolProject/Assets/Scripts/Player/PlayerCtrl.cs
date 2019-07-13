@@ -25,7 +25,7 @@ public class PlayerCtrl : MonoBehaviour
     //移動用変数
     private bool stopFlag;
     private float speed;
-    private float speedMax = 2.0f;
+    private float speedMax = 5.0f;
     private float forceMgmt = 2.0f;
     private float playerVelocity;
 
@@ -134,29 +134,28 @@ public class PlayerCtrl : MonoBehaviour
         if (synthesisGUI.activeSelf == true)
         {
             SynthesisCtrl synthesisCtrl = synthesisBoxes.GetComponent<SynthesisCtrl>();
-            if (Input.GetButtonDown("R2") && synthesisCtrl.EndFlag == false
+            if (Input.GetAxisRaw("CrossKey_H") > 0 && lastSelect == 0 && synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveRightFlag = true;
             }
-            if (Input.GetButtonDown("L2") /*&& lastSelect == 0 */&& synthesisCtrl.EndFlag == false
+            if (Input.GetAxisRaw("CrossKey_H") < 0 && lastSelect == 0 && synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;
             }
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Cross"))
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Square"))
             {
-                synthesisCtrl.StartSynthesis = true;
                 synthesisCtrl.EndFlag = true;
             }
             //リセット
-            if (Input.GetButtonDown("Square") || Input.GetKeyDown(KeyCode.I))
+            if (Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.I))
             {
                 synthesisCtrl.ResetCrystal();
             }
         }
 
-        lastSelect = Input.GetAxisRaw("Dpad_H");
+        lastSelect = Input.GetAxisRaw("CrossKey_H");
 
         if (Time.timeScale == 0) { return; }
         
@@ -223,13 +222,14 @@ public class PlayerCtrl : MonoBehaviour
             speed = 10.0f;
             stopFlag = true;
 
-            if (Mathf.Abs(_horizontal ) + Mathf.Abs(_vertical) >= 1.0f)
+            //左スティック押し込みに変更
+            if (Input.GetButton("StickPush_L"))
             {
-                speedMax = 5.0f;
+                speedMax = 8.0f;
             }
             else
             {
-                speedMax = 2.0f;
+                speedMax = 5.0f;
             }
         }
         
