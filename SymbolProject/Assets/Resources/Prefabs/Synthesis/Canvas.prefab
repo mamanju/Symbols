@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 111765080}
   - component: {fileID: 111765079}
   - component: {fileID: 3227315273083142677}
-  - component: {fileID: 6552280008857598913}
+  - component: {fileID: 6903529140367318776}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponList: 0
---- !u!114 &6552280008857598913
+--- !u!114 &6903529140367318776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,20 +98,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 111765077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
+  m_Script: {fileID: 11500000, guid: deb3471084462564795903b7ce9b7ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
-  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
-  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
-  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  spearSprite: {fileID: 21300000, guid: d09ce3a3d4931a1428f6ba487d43894d, type: 3}
+  axSprite: {fileID: 21300000, guid: cb1ec35ba367aae488a3ba5492175462, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 94c6b01f236b20f4ab557604f7cfb2ca, type: 3}
   cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
-  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
-  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
 --- !u!1 &9185039528288856
 GameObject:
   m_ObjectHideFlags: 0

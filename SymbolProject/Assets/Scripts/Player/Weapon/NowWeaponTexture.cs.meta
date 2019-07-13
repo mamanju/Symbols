@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: deb3471084462564795903b7ce9b7ab2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
+  - spearSprite: {fileID: 21300000, guid: d09ce3a3d4931a1428f6ba487d43894d, type: 3}
+  - axSprite: {fileID: 21300000, guid: cb1ec35ba367aae488a3ba5492175462, type: 3}
+  - shieldSprite: {fileID: 21300000, guid: 94c6b01f236b20f4ab557604f7cfb2ca, type: 3}
+  - cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
