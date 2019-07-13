@@ -13,7 +13,8 @@ public class PlayerCtrl : MonoBehaviour
         set { groundFlag = value; }
     }
     private bool downFlag;
-    private float jumpForce = 4.0f;
+    [SerializeField]
+    private float jumpForce = 0.0f;
     private float downSpeed;
 
     private float nowPlayerY;
@@ -96,7 +97,11 @@ public class PlayerCtrl : MonoBehaviour
         get { return knockbackFlag; }
         set { knockbackFlag = value; }
     }
-    //HPが減る処理
+
+    // アニメーション
+    private Animator playerAnime;
+    private string key_Jump = "Jump";
+    private string key_Speed = "Speed";
 
     void Start()
     {
@@ -112,6 +117,9 @@ public class PlayerCtrl : MonoBehaviour
         weaponLength = weaponManager.NowWeapon.Length;
 
         knockBack = GetComponent<KnockBack>();
+
+        playerAnime = GetComponent<Animator>();
+        playerAnime.SetBool(key_Jump, false);
     }
 
     void Update()
@@ -211,6 +219,7 @@ public class PlayerCtrl : MonoBehaviour
         if (_horizontal + _vertical == 0)
         {
             if (stopFlag == true) { StopMove(); }
+            speedMax = 0;
         }
         //スピード制御と、静止状態の維持
         if (playerVelocity >= speedMax)
@@ -247,13 +256,33 @@ public class PlayerCtrl : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(speedForce);
         }
 
+        // アニメーション
+        if (speedMax == 5)
+        {
+            // 歩くアニメーション
+            playerAnime.SetFloat(key_Speed, 0.6f);
+        }
+        else if (speedMax == 8)
+        {
+            // 走るアニメーション
+            playerAnime.SetFloat(key_Speed, 1.1f);
+        }
+        else
+        {
+            // 静止アニメーション
+            playerAnime.SetFloat(key_Speed, 0.0f);
+        }
+
+
         //ジャンプ
         if (groundFlag == true)
         {
             downFlag = false;
             downSpeed = -1.3f;
+            //playerAnime.SetBool(key_Jump, false);
             if (Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.Space))
             {
+                playerAnime.SetTrigger(key_Jump);
                 nowPlayerY = transform.position.y + 3.0f;
                 playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);
                 downFlag = true;
