@@ -1,0 +1,362 @@
+fileFormatVersion: 2
+guid: dce496d20cdf5c84aacdb56157423153
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: belt
+    100002: belt_clip
+    100004: belt_cord2
+    100006: belt_cord3
+    100008: beltset
+    100010: body
+    100012: chara
+    100014: controller
+    100016: cosi
+    100018: hair2
+    100020: hair_back
+    100022: hair_front
+    100024: hair_front_back
+    100026: hara
+    100028: hara 1
+    100030: hed
+    100032: hed 1
+    100034: hed1
+    100036: joint
+    100038: kokan
+    100040: kokan 1
+    100042: kosi
+    100044: L_asisoko
+    100046: L_asisoko 1
+    100048: L_ear
+    100050: L_eye
+    100052: L_eye_dodai
+    100054: L_eye_hilight
+    100056: L_eye_huti
+    100058: L_eye_main
+    100060: L_Foot
+    100062: L_hand
+    100064: L_hand 1
+    100066: L_hiza
+    100068: L_hizi
+    100070: L_kata
+    100072: L_mayuge
+    100074: L_momo
+    100076: L_shoes
+    100078: L_shoes 1
+    100080: L_shoes_belt
+    100082: L_sune
+    100084: L_tekubi
+    100086: L_tekubi 1
+    100088: L_tumasaki
+    100090: L_tumasaki 1
+    100092: L_wrist_band
+    100094: locator4
+    100096: mune
+    100098: neck
+    100100: neck 1
+    100102: neck 2
+    100104: null10
+    100106: null11
+    100108: null12
+    100110: null15
+    100112: null16
+    100114: null17
+    100116: null18
+    100118: null2
+    100120: null3
+    100122: null4
+    100124: null5
+    100126: null6
+    100128: null7
+    100130: null8
+    100132: null9
+    100134: pants
+    100136: pouch
+    100138: pouch_dodai
+    100140: pouch_huta
+    100142: R_asisoko
+    100144: R_asisoko 1
+    100146: R_ear
+    100148: R_eye
+    100150: R_eye_dodai
+    100152: R_eye_hilight
+    100154: R_eye_huti
+    100156: R_eye_main
+    100158: R_Foot
+    100160: R_hand
+    100162: R_hand 1
+    100164: R_hiza
+    100166: R_hizi
+    100168: R_kata
+    100170: R_mayuge
+    100172: R_momo
+    100174: R_shoes
+    100176: R_shoes 1
+    100178: R_shoes_belt
+    100180: R_sune
+    100182: R_tekubi
+    100184: R_tekubi 1
+    100186: R_tumasaki
+    100188: R_tumasaki1
+    100190: R_wrist_band
+    100192: //RootNode
+    100194: shoulder_pad
+    100196: wear
+    400000: belt
+    400002: belt_clip
+    400004: belt_cord2
+    400006: belt_cord3
+    400008: beltset
+    400010: body
+    400012: chara
+    400014: controller
+    400016: cosi
+    400018: hair2
+    400020: hair_back
+    400022: hair_front
+    400024: hair_front_back
+    400026: hara
+    400028: hara 1
+    400030: hed
+    400032: hed 1
+    400034: hed1
+    400036: joint
+    400038: kokan
+    400040: kokan 1
+    400042: kosi
+    400044: L_asisoko
+    400046: L_asisoko 1
+    400048: L_ear
+    400050: L_eye
+    400052: L_eye_dodai
+    400054: L_eye_hilight
+    400056: L_eye_huti
+    400058: L_eye_main
+    400060: L_Foot
+    400062: L_hand
+    400064: L_hand 1
+    400066: L_hiza
+    400068: L_hizi
+    400070: L_kata
+    400072: L_mayuge
+    400074: L_momo
+    400076: L_shoes
+    400078: L_shoes 1
+    400080: L_shoes_belt
+    400082: L_sune
+    400084: L_tekubi
+    400086: L_tekubi 1
+    400088: L_tumasaki
+    400090: L_tumasaki 1
+    400092: L_wrist_band
+    400094: locator4
+    400096: mune
+    400098: neck
+    400100: neck 1
+    400102: neck 2
+    400104: null10
+    400106: null11
+    400108: null12
+    400110: null15
+    400112: null16
+    400114: null17
+    400116: null18
+    400118: null2
+    400120: null3
+    400122: null4
+    400124: null5
+    400126: null6
+    400128: null7
+    400130: null8
+    400132: null9
+    400134: pants
+    400136: pouch
+    400138: pouch_dodai
+    400140: pouch_huta
+    400142: R_asisoko
+    400144: R_asisoko 1
+    400146: R_ear
+    400148: R_eye
+    400150: R_eye_dodai
+    400152: R_eye_hilight
+    400154: R_eye_huti
+    400156: R_eye_main
+    400158: R_Foot
+    400160: R_hand
+    400162: R_hand 1
+    400164: R_hiza
+    400166: R_hizi
+    400168: R_kata
+    400170: R_mayuge
+    400172: R_momo
+    400174: R_shoes
+    400176: R_shoes 1
+    400178: R_shoes_belt
+    400180: R_sune
+    400182: R_tekubi
+    400184: R_tekubi 1
+    400186: R_tumasaki
+    400188: R_tumasaki1
+    400190: R_wrist_band
+    400192: //RootNode
+    400194: shoulder_pad
+    400196: wear
+    2100000: syujinkou
+    4300000: hair_back
+    4300002: hair_front_back
+    4300004: hair_front
+    4300006: L_ear
+    4300008: R_ear
+    4300010: hed1
+    4300012: neck
+    4300014: L_eye_hilight
+    4300016: L_eye_main
+    4300018: L_eye_dodai
+    4300020: L_eye_huti
+    4300022: L_mayuge
+    4300024: R_eye_hilight
+    4300026: R_eye_main
+    4300028: R_eye_dodai
+    4300030: R_eye_huti
+    4300032: R_mayuge
+    4300034: shoulder_pad
+    4300036: belt
+    4300038: belt_clip
+    4300040: belt_cord2
+    4300042: belt_cord3
+    4300044: R_hand
+    4300046: R_wrist_band
+    4300048: L_hand
+    4300050: L_wrist_band
+    4300052: body
+    4300054: wear
+    4300056: pants
+    4300058: L_shoes_belt
+    4300060: L_shoes
+    4300062: R_shoes
+    4300064: R_shoes_belt
+    4300066: pouch_huta
+    4300068: pouch_dodai
+    7400000: shields
+    9500000: //RootNode
+    13700000: belt
+    13700002: belt_clip
+    13700004: belt_cord2
+    13700006: belt_cord3
+    13700008: body
+    13700010: hair_back
+    13700012: hair_front
+    13700014: hair_front_back
+    13700016: hed1
+    13700018: L_ear
+    13700020: L_eye_dodai
+    13700022: L_eye_hilight
+    13700024: L_eye_huti
+    13700026: L_eye_main
+    13700028: L_hand
+    13700030: L_mayuge
+    13700032: L_shoes 1
+    13700034: L_shoes_belt
+    13700036: L_wrist_band
+    13700038: neck
+    13700040: pants
+    13700042: pouch_dodai
+    13700044: pouch_huta
+    13700046: R_ear
+    13700048: R_eye_dodai
+    13700050: R_eye_hilight
+    13700052: R_eye_huti
+    13700054: R_eye_main
+    13700056: R_hand
+    13700058: R_mayuge
+    13700060: R_shoes 1
+    13700062: R_shoes_belt
+    13700064: R_wrist_band
+    13700066: shoulder_pad
+    13700068: wear
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
