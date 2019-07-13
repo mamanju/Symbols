@@ -232,8 +232,6 @@ public class PlayerCtrl : MonoBehaviour
                 speedMax = 5.0f;
             }
         }
-
-        Debug.Log(speedMax);
         
         lastHorizontal = Mathf.Abs(_horizontal);
         lastVertical = Mathf.Abs(_vertical);

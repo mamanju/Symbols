@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 3337472218712778075}
   - component: {fileID: 3337472218712778068}
   - component: {fileID: 187092248245371158}
-  - component: {fileID: 8412524813258389698}
+  - component: {fileID: 2080566863330165176}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponList: 0
---- !u!114 &8412524813258389698
+--- !u!114 &2080566863330165176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,19 +476,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3337472218712778070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a4f1c0aac06c046a1d7f2167cf8dec, type: 3}
+  m_Script: {fileID: 11500000, guid: deb3471084462564795903b7ce9b7ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   swordSprite: {fileID: 21300000, guid: 3ad414c169f5f3144b61a5af462c40df, type: 3}
-  spearSprite: {fileID: 21300000, guid: 2bfe99bea248f2244a7bf5a993ce8c07, type: 3}
-  axSprite: {fileID: 21300000, guid: dfccf9b8c9ae96948af1ac81d72e1347, type: 3}
-  shieldSprite: {fileID: 21300000, guid: 4282fc7b460e1a54795cee8b397b5378, type: 3}
-  twinSwordSprite: {fileID: 21300000, guid: 867acbac57ed2ea4fa4d1ef934140e47, type: 3}
+  spearSprite: {fileID: 21300000, guid: d09ce3a3d4931a1428f6ba487d43894d, type: 3}
+  axSprite: {fileID: 21300000, guid: cb1ec35ba367aae488a3ba5492175462, type: 3}
+  shieldSprite: {fileID: 21300000, guid: 94c6b01f236b20f4ab557604f7cfb2ca, type: 3}
   cymbalSprite: {fileID: 21300000, guid: c11eaf4408dd36744b5ad49fd4d4d1fc, type: 3}
-  hammerSprite: {fileID: 21300000, guid: 6f68afba2c715294cbfeabfe558e39bd, type: 3}
-  meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
-  questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
-  exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
 --- !u!1 &5981594284863515213
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,9 +787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 2655203716896899319}
   gameOverUI: {fileID: 6414055759461602382}
-  SelectButtons:
-  - {fileID: 2096651923579756108}
-  - {fileID: 7326164598335164605}
+  gameClearUI: {fileID: 0}
 --- !u!1001 &4586078617118590120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -802,11 +795,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8865838051215522956}
     m_Modifications:
-    - target: {fileID: 9057489567532319039, guid: 6e64072ad8491fc4e99b516514da360a,
-        type: 3}
-      propertyPath: m_Name
-      value: SynthesisPanels
-      objectReference: {fileID: 0}
     - target: {fileID: 9057489567532319038, guid: 6e64072ad8491fc4e99b516514da360a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -912,6 +900,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9057489567532319039, guid: 6e64072ad8491fc4e99b516514da360a,
+        type: 3}
+      propertyPath: m_Name
+      value: SynthesisPanels
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e64072ad8491fc4e99b516514da360a, type: 3}
 --- !u!224 &4762465284752426390 stripped
@@ -927,11 +920,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8865838051215522956}
     m_Modifications:
-    - target: {fileID: 3838743765131916752, guid: 68390610e7db42a428c2545a980b0c46,
-        type: 3}
-      propertyPath: m_Name
-      value: HPBox
-      objectReference: {fileID: 0}
     - target: {fileID: 3838743765131916753, guid: 68390610e7db42a428c2545a980b0c46,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1036,6 +1024,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838743765131916752, guid: 68390610e7db42a428c2545a980b0c46,
+        type: 3}
+      propertyPath: m_Name
+      value: HPBox
       objectReference: {fileID: 0}
     - target: {fileID: 3838743765765885828, guid: 68390610e7db42a428c2545a980b0c46,
         type: 3}
