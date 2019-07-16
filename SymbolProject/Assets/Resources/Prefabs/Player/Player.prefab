@@ -1832,7 +1832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b478615b889a6564297570a810fea2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponBoxes: {fileID: 999741023612393518}
+  weaponBoxes: {fileID: 0}
 --- !u!114 &2169706574673601581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5294,6 +5294,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297822980}
     m_Modifications:
+    - target: {fileID: 1318005445153855658, guid: c881d087b48388f4190cca73a1ce0f68,
+        type: 3}
+      propertyPath: m_Name
+      value: Shield
+      objectReference: {fileID: 0}
     - target: {fileID: 1318005445153686666, guid: c881d087b48388f4190cca73a1ce0f68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5348,11 +5353,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -97.122
-      objectReference: {fileID: 0}
-    - target: {fileID: 1318005445153855658, guid: c881d087b48388f4190cca73a1ce0f68,
-        type: 3}
-      propertyPath: m_Name
-      value: Shield
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c881d087b48388f4190cca73a1ce0f68, type: 3}
@@ -5466,11 +5466,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
-    - target: {fileID: 1865358654072249114, guid: 95835514a598d824f9a4438a03cbadfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Cymbals
-      objectReference: {fileID: 0}
     - target: {fileID: 5332525395059344790, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5535,6 +5530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865358654072249114, guid: 95835514a598d824f9a4438a03cbadfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Cymbals
       objectReference: {fileID: 0}
     - target: {fileID: 4991336047851452111, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
@@ -5665,6 +5665,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
+    - target: {fileID: 8582569809766643820, guid: 4a8588573df6c9146a191fecce7ec90e,
+        type: 3}
+      propertyPath: m_Name
+      value: Spear
+      objectReference: {fileID: 0}
     - target: {fileID: 5017224239829028832, guid: 4a8588573df6c9146a191fecce7ec90e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5719,11 +5724,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582569809766643820, guid: 4a8588573df6c9146a191fecce7ec90e,
-        type: 3}
-      propertyPath: m_Name
-      value: Spear
       objectReference: {fileID: 0}
     - target: {fileID: 3453705353771782177, guid: 4a8588573df6c9146a191fecce7ec90e,
         type: 3}
