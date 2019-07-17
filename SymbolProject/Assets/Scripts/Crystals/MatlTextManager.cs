@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MatlTextManager : MonoBehaviour
 {
+    [SerializeField]
     private GameObject player;
     private int[] nowMatl = new int[4];
 
@@ -12,7 +13,6 @@ public class MatlTextManager : MonoBehaviour
 
     void Start()
     {
-        player = transform.parent.parent.GetComponent<GetPlayer>().Player;
         childText = this.transform.GetChild(0).gameObject;
     }
 

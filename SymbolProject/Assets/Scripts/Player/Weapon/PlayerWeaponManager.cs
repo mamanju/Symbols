@@ -5,14 +5,14 @@ using UnityEngine;
 public class PlayerWeaponManager : MonoBehaviour
 {
     private GameObject nowWeapon;
-    [SerializeField]
     private GameObject[] weapons = new GameObject[10];
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         for (int i = 0; i < weapons.Length; i++)
         {
+            weapons[i] = this.transform.GetChild(i).gameObject;
             weapons[i].SetActive(false);
         }
         weapons[0].SetActive(true);

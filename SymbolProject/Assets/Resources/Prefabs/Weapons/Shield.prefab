@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1318005445153686666}
   - component: {fileID: 1318005445152916650}
   - component: {fileID: 1318005445151917674}
+  - component: {fileID: 2002496716197595099}
+  - component: {fileID: 3235100193070175267}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -77,3 +79,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2002496716197595099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318005445153855658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88068146c16bc494492d7ef34d16f0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3235100193070175267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318005445153855658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3274cd0b21555a4290d3f62a3c1fe34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponList: 3
