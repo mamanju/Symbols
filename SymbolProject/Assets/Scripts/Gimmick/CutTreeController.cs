@@ -15,6 +15,10 @@ public class CutTreeController : MonoBehaviour
     [SerializeField]
     private GameObject destroyTree;
 
+    // 葉っぱ
+    [SerializeField]
+    private GameObject Leaf;
+
     // 倒れる速さ
     [SerializeField]
     private float fallSpeed;
@@ -28,8 +32,9 @@ public class CutTreeController : MonoBehaviour
 
     void Update()
     {
-        if (fallFlag) { return; }
-            CutTree();     
+        if(fallFlag){
+            CutTree();
+        }        
     }
 
     /// <summary>
@@ -37,6 +42,8 @@ public class CutTreeController : MonoBehaviour
     /// </summary>
     public void CutTree()
     {
+        if (!fallFlag) { return; }
+        fallFlag = false;
         StartCoroutine(CutreeCoroutine());
     }
 
@@ -45,7 +52,6 @@ public class CutTreeController : MonoBehaviour
     /// </summary>
     public IEnumerator CutreeCoroutine()
     {
-        fallFlag = true;
         float beforeRotate = 0;
         // 直角になるまで徐々に倒す
         while (beforeRotate - fallTree.transform.localEulerAngles.x <= 0)
@@ -56,6 +62,7 @@ public class CutTreeController : MonoBehaviour
             fallTree.transform.Rotate(rotateX, 0, 0);
             yield return null;
         }
-        Destroy(destroyTree.gameObject);
+        Leaf.gameObject.SetActive(false);
+        destroyTree.gameObject.SetActive(false);
     }
 }
