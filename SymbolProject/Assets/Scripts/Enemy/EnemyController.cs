@@ -44,10 +44,10 @@ public class EnemyController : EnemyManager
     /// クリスタルドロップ
     /// </summary>
     private void DropCrystal() {
-        string path = "Prefabs/Crystal/MCrystal/Prefab/MCrystal_" + crystal;
-        GameObject cry = Instantiate(Resources.Load<GameObject>(path), transform);
-        cry.transform.position = transform.position;
-        cry.transform.SetParent(transform.parent);
-        spawnPos.GetComponent<EnemyRespawn>().setIsSpawn = true;
+        //string path = "Prefabs/Crystal/MCrystal/Prefab/MCrystal_" + crystal;
+        //GameObject cry = Instantiate(Resources.Load<GameObject>(path), transform);
+        //cry.transform.position = transform.position;
+        //cry.transform.SetParent(transform.parent);
+        //spawnPos.GetComponent<EnemyRespawn>().setIsSpawn = true;
     }
 }

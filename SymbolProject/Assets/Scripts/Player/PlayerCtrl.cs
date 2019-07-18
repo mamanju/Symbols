@@ -355,6 +355,12 @@ public class PlayerCtrl : MonoBehaviour
 
         if (finder.M_enemy.Count != 0) { return; }
 
+        for (int i = 0; i < finder.M_tellain.Count; i++) {
+            if (finder.M_tellain[i].tag == "ClimbTree") {
+                finder.M_tellain[i].GetComponent<ClimbTreeController>().Climb(gameObject);
+            }
+        }
+
         if (playerStatus.NowWeaponID == 2)
         {
             for (int i = 0; i < finder.M_tellain.Count; i++)
@@ -373,8 +379,7 @@ public class PlayerCtrl : MonoBehaviour
                 //成長するギミックの木のタグ
                 if(finder.M_tellain[i].tag == "Tree")
                 {
-                    //中身よろしくお願いします！！！！
-                    //タグの変更もお願いしますm(__)m
+                    finder.M_tellain[i].GetComponent<CutTreeController>().SetFallFlag = true;
                 }
             }
         }
