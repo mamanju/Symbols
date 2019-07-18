@@ -2094,17 +2094,17 @@ PrefabInstance:
     - target: {fileID: 3673421057068741954, guid: 2213820d73d54594a8faebfb9a2f88a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -137.90265
+      value: -407.03516
       objectReference: {fileID: 0}
     - target: {fileID: 3673421057068741954, guid: 2213820d73d54594a8faebfb9a2f88a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.48288
+      value: -284.83188
       objectReference: {fileID: 0}
     - target: {fileID: 3673421057068741954, guid: 2213820d73d54594a8faebfb9a2f88a4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -59.156338
+      value: -198.24162
       objectReference: {fileID: 0}
     - target: {fileID: 7795666455446871586, guid: 2213820d73d54594a8faebfb9a2f88a4,
         type: 3}
@@ -2201,6 +2201,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5889213086181336903, guid: 2213820d73d54594a8faebfb9a2f88a4,
+        type: 3}
+      propertyPath: climbPos
+      value: 
+      objectReference: {fileID: 67167770}
     - target: {fileID: 4746487382070639645, guid: 2213820d73d54594a8faebfb9a2f88a4,
         type: 3}
       propertyPath: m_Name
