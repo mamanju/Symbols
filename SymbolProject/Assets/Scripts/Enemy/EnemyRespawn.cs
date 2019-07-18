@@ -22,7 +22,7 @@ public class EnemyRespawn : MonoBehaviour
     void Start() {
         isSpawn = false;
         eManager = transform.parent.GetComponent<EnemyManager>();
-        transform.SetParent(null);
+        transform.SetParent(transform.parent.transform.parent);
     }
 
     void Update() {
@@ -55,9 +55,8 @@ public class EnemyRespawn : MonoBehaviour
                 break;
         }
         GameObject monster = Resources.Load(path) as GameObject;
-        Instantiate(monster, transform);
-        monster.transform.position = new Vector3(0, 0, 0);
-        monster.transform.SetParent(null);
+        Instantiate(monster);
+        monster.transform.position = transform.position;
         Destroy(gameObject);
     }
 }
