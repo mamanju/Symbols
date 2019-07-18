@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
     /// <summary>
     /// クリスタルリスト
     /// </summary>
-    protected enum Crystals
+    public enum Crystals
     {
         Circle,
         Triangle,
@@ -21,7 +21,7 @@ public class EnemyManager : MonoBehaviour
     }
 
     [SerializeField]
-    protected Crystals crystal;
+    public Crystals crystal;
 
     /// <summary>
     /// 体力
