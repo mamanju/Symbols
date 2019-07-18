@@ -48,7 +48,7 @@ public class Finder : MonoBehaviour
         {
             m_enemy.Remove(i_lostObject);
         }
-        if (LayerMask.LayerToName(i_lostObject.layer) == "Terrain")
+        if (LayerMask.LayerToName(i_lostObject.layer) == "Gimmick")
         {
             m_tellain.Remove(i_lostObject);
         }

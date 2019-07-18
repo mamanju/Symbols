@@ -2717,6 +2717,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ClimbTree
       objectReference: {fileID: 0}
+    - target: {fileID: 164206494496944061, guid: b0da55d4dd0ca304abb28469fb56de23,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0da55d4dd0ca304abb28469fb56de23, type: 3}
 --- !u!1 &8032959521873066776 stripped

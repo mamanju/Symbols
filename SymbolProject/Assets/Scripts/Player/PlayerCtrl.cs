@@ -337,6 +337,11 @@ public class PlayerCtrl : MonoBehaviour
     public void Attack()
     {
         if (finder.M_enemy.Count + finder.M_tellain.Count == 0) { return; }
+        for (int i = 0; i < finder.M_tellain.Count; i++) {
+            if (finder.M_tellain[i].tag == "ClimbTree") {
+                finder.M_tellain[i].GetComponent<ClimbTreeController>().Climb(gameObject);
+            }
+        }
         DownDurable();
         if (playerStatus.NowWeaponID == 5)
         {
@@ -354,12 +359,6 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         if (finder.M_enemy.Count != 0) { return; }
-
-        for (int i = 0; i < finder.M_tellain.Count; i++) {
-            if (finder.M_tellain[i].tag == "ClimbTree") {
-                finder.M_tellain[i].GetComponent<ClimbTreeController>().Climb(gameObject);
-            }
-        }
 
         if (playerStatus.NowWeaponID == 2)
         {
