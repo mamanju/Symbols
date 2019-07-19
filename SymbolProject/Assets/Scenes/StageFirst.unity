@@ -2461,8 +2461,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597959886}
-  m_LocalRotation: {x: -0.51323175, y: 0.38603723, z: 0.2772297, w: 0.71464133}
-  m_LocalPosition: {x: -124.09482, y: -95.01311, z: -10.745628}
+  m_LocalRotation: {x: -0.058950085, y: 0.8949608, z: 0.4244067, w: 0.12429402}
+  m_LocalPosition: {x: -118.33814, y: -150.51952, z: 133.50505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3579,12 +3579,12 @@ Transform:
   - {fileID: 1789303023}
   - {fileID: 630038536}
   - {fileID: 923162491}
-  - {fileID: 691706803}
   - {fileID: 1400415420}
-  - {fileID: 695335482}
+  - {fileID: 691706803}
   - {fileID: 1603771753}
   - {fileID: 1247476596}
   - {fileID: 1158724327}
+  - {fileID: 695335482}
   - {fileID: 73965019}
   - {fileID: 1492463365}
   m_Father: {fileID: 0}
@@ -5772,11 +5772,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 520122962}
     m_Modifications:
-    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
-        type: 3}
-      propertyPath: m_Name
-      value: FallTree
-      objectReference: {fileID: 0}
     - target: {fileID: 6575395601622927200, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5831,6 +5826,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
+        type: 3}
+      propertyPath: m_Name
+      value: FallTree
       objectReference: {fileID: 0}
     - target: {fileID: 3107513768360178691, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
@@ -7974,11 +7974,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 520122962}
     m_Modifications:
-    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
-        type: 3}
-      propertyPath: m_Name
-      value: FallTree
-      objectReference: {fileID: 0}
     - target: {fileID: 6575395601622927200, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8033,6 +8028,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
+        type: 3}
+      propertyPath: m_Name
+      value: FallTree
       objectReference: {fileID: 0}
     - target: {fileID: 3107513768360178691, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
