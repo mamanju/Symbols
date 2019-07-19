@@ -1270,8 +1270,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597959886}
-  m_LocalRotation: {x: -0.12883492, y: 0.21332477, z: 0.028388416, w: 0.9680332}
-  m_LocalPosition: {x: -125.65935, y: -13.041986, z: -30.045214}
+  m_LocalRotation: {x: -0.247146, y: 0.5560938, z: 0.17770661, w: 0.7733686}
+  m_LocalPosition: {x: -117.80596, y: -0.4354849, z: -36.329166}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1987,6 +1987,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e33f345030400694ba0b576858fa1d51, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 473b0c68e1559ac4ba70606b82130354, type: 3}
+--- !u!114 &854576704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 874466255761728511, guid: 12c76e7413ba2c04db488af8035070a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1901460687533511042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b031d4a17b2a14380ee64e393190cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &874683863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4841,18 +4853,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95cd7a149f4b8634ea4b740f018bb515, type: 3}
---- !u!114 &1616334924 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1256505633748233019, guid: 12c76e7413ba2c04db488af8035070a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1901460687533511042}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b031d4a17b2a14380ee64e393190cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1650888403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5914,7 +5914,7 @@ PrefabInstance:
         type: 3}
       propertyPath: searchingBehavior
       value: 
-      objectReference: {fileID: 1616334924}
+      objectReference: {fileID: 854576704}
     - target: {fileID: 1901460688140222580, guid: 12c76e7413ba2c04db488af8035070a0,
         type: 3}
       propertyPath: weaponBoxes
