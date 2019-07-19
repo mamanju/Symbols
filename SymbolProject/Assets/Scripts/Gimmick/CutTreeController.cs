@@ -15,6 +15,10 @@ public class CutTreeController : MonoBehaviour
     [SerializeField]
     private GameObject destroyTree;
 
+    // 葉っぱ
+    [SerializeField]
+    private GameObject Leaf;
+
     // 倒れる速さ
     [SerializeField]
     private float fallSpeed;
@@ -58,6 +62,7 @@ public class CutTreeController : MonoBehaviour
             fallTree.transform.Rotate(rotateX, 0, 0);
             yield return null;
         }
-        Destroy(destroyTree);
+        Leaf.gameObject.SetActive(false);
+        destroyTree.gameObject.SetActive(false);
     }
 }
