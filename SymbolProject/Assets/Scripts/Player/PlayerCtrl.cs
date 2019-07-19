@@ -224,7 +224,7 @@ public class PlayerCtrl : MonoBehaviour
         if (_horizontal + _vertical == 0)
         {
             if (stopFlag == true) { StopMove(); }
-            speedMax = 0;
+            //speedMax = 0;
         }
         //スピード制御と、静止状態の維持
         if (playerVelocity >= speedMax)
@@ -262,12 +262,12 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         // アニメーション
-        if (speedMax == 5)
+        if (0 < playerVelocity && playerVelocity <=5)
         {
             // 歩くアニメーション
             playerAnime.SetFloat(key_Speed, 0.6f);
         }
-        else if (speedMax == 8)
+        else if (6 < playerVelocity)
         {
             // 走るアニメーション
             playerAnime.SetFloat(key_Speed, 1.1f);
