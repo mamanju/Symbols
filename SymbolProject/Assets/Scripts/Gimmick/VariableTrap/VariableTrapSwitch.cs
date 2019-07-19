@@ -13,7 +13,7 @@ public class VariableTrapSwitch : MonoBehaviour
                 Debug.Log("OK");
                 Destroy(Fires.transform.GetChild(i).GetChild(0).GetComponent<VariableTrap>().gameObject);
             }
-            Fires.transform.GetChild(i).GetChild(0).GetComponent<VariableTrap>().FireOff();
+            //Fires.transform.GetChild(i).GetChild(0).GetComponent<VariableTrap>().FireOff();
         }
     }
 }

@@ -122,9 +122,9 @@ GameObject:
   - component: {fileID: 164206494500172731}
   - component: {fileID: 164206494499205499}
   - component: {fileID: 7249503847684737675}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: trunk
-  m_TagString: Untagged
+  m_TagString: ClimbTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

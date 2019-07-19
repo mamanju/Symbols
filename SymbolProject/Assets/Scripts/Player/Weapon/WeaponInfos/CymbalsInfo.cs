@@ -7,6 +7,9 @@ public class CymbalsInfo : WeaponCtrl
     public static int attack;
     public static int weaponID;
 
+    [SerializeField]
+    private GameObject leftCymbal;
+
     void Start()
     {
         // シンバルの基本情報
@@ -14,6 +17,16 @@ public class CymbalsInfo : WeaponCtrl
         durable = 5;
         durable_max = 5;
         weaponID = 6;
+    }
+
+    private void OnEnable()
+    {
+        leftCymbal.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        leftCymbal.SetActive(false);
     }
 
     public void DelWeaponDurable()

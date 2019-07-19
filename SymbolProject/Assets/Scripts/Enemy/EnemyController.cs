@@ -7,9 +7,6 @@ using UnityEngine;
 /// </summary>
 public class EnemyController : EnemyManager
 {
-    [SerializeField]
-    private GameObject spawnPos;
-
     /// <summary>
     /// 攻撃処理
     /// </summary>
@@ -48,6 +45,5 @@ public class EnemyController : EnemyManager
         GameObject cry = Instantiate(Resources.Load<GameObject>(path), transform);
         cry.transform.position = transform.position;
         cry.transform.SetParent(transform.parent);
-        spawnPos.GetComponent<EnemyRespawn>().setIsSpawn = true;
     }
 }

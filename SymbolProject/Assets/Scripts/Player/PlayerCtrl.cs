@@ -13,7 +13,8 @@ public class PlayerCtrl : MonoBehaviour
         set { groundFlag = value; }
     }
     private bool downFlag;
-    private float jumpForce = 4.0f;
+    [SerializeField]
+    private float jumpForce = 0.0f;
     private float downSpeed;
 
     private float nowPlayerY;
@@ -96,7 +97,15 @@ public class PlayerCtrl : MonoBehaviour
         get { return knockbackFlag; }
         set { knockbackFlag = value; }
     }
-    //HPが減る処理
+
+    // 移動アニメーション
+    private Animator playerAnime;
+    private string key_Jump = "Jump";
+    private string key_Speed = "Speed";
+
+    // 武器アニメーション
+    private string key_Weapon = "Weapons";
+    private string key_Attack = "Attack";
 
     void Start()
     {
@@ -112,6 +121,9 @@ public class PlayerCtrl : MonoBehaviour
         weaponLength = weaponManager.NowWeapon.Length;
 
         knockBack = GetComponent<KnockBack>();
+
+        playerAnime = GetComponent<Animator>();
+        playerAnime.SetBool(key_Jump, false);
     }
 
     void Update()
@@ -181,6 +193,7 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
             Attack();
+            playerAnime.SetTrigger(key_Attack);
         }
     }
 
@@ -211,6 +224,7 @@ public class PlayerCtrl : MonoBehaviour
         if (_horizontal + _vertical == 0)
         {
             if (stopFlag == true) { StopMove(); }
+            speedMax = 0;
         }
         //スピード制御と、静止状態の維持
         if (playerVelocity >= speedMax)
@@ -247,13 +261,33 @@ public class PlayerCtrl : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(speedForce);
         }
 
+        // アニメーション
+        if (speedMax == 5)
+        {
+            // 歩くアニメーション
+            playerAnime.SetFloat(key_Speed, 0.6f);
+        }
+        else if (speedMax == 8)
+        {
+            // 走るアニメーション
+            playerAnime.SetFloat(key_Speed, 1.1f);
+        }
+        else
+        {
+            // 静止アニメーション
+            playerAnime.SetFloat(key_Speed, 0.0f);
+        }
+
+
         //ジャンプ
         if (groundFlag == true)
         {
             downFlag = false;
             downSpeed = -1.3f;
+            //playerAnime.SetBool(key_Jump, false);
             if (Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.Space))
             {
+                playerAnime.SetTrigger(key_Jump);
                 nowPlayerY = transform.position.y + 3.0f;
                 playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);
                 downFlag = true;
@@ -285,7 +319,9 @@ public class PlayerCtrl : MonoBehaviour
         nowWeapon.weaponList = (WeaponInfo.WeaponList)(_num);
         playerWeaponManager.WeaponObjChange(_num);
         playerStatus.WeaponAttack(_num);
-        
+
+        playerAnime.SetInteger(key_Weapon, _num);
+
         if (_num == 6)
         {
             searchingBehavior.M_searchAngle = 360;
@@ -337,11 +373,6 @@ public class PlayerCtrl : MonoBehaviour
     public void Attack()
     {
         if (finder.M_enemy.Count + finder.M_tellain.Count == 0) { return; }
-        for (int i = 0; i < finder.M_tellain.Count; i++) {
-            if (finder.M_tellain[i].tag == "ClimbTree") {
-                finder.M_tellain[i].GetComponent<ClimbTreeController>().Climb(gameObject);
-            }
-        }
         DownDurable();
         if (playerStatus.NowWeaponID == 5)
         {
@@ -378,7 +409,8 @@ public class PlayerCtrl : MonoBehaviour
                 //成長するギミックの木のタグ
                 if(finder.M_tellain[i].tag == "Tree")
                 {
-                    finder.M_tellain[i].GetComponent<CutTreeController>().SetFallFlag = true;
+                    //中身よろしくお願いします！！！！
+                    //タグの変更もお願いしますm(__)m
                 }
             }
         }
