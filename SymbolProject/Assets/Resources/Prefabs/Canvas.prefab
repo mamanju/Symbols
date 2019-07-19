@@ -788,6 +788,7 @@ MonoBehaviour:
   pauseUI: {fileID: 2655203716896899319}
   gameOverUI: {fileID: 6414055759461602382}
   gameClearUI: {fileID: 0}
+  SelectButtons: []
 --- !u!1001 &4586078617118590120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -795,6 +796,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8865838051215522956}
     m_Modifications:
+    - target: {fileID: 9057489567532319039, guid: 6e64072ad8491fc4e99b516514da360a,
+        type: 3}
+      propertyPath: m_Name
+      value: SynthesisPanels
+      objectReference: {fileID: 0}
     - target: {fileID: 9057489567532319038, guid: 6e64072ad8491fc4e99b516514da360a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -900,11 +906,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 9057489567532319039, guid: 6e64072ad8491fc4e99b516514da360a,
-        type: 3}
-      propertyPath: m_Name
-      value: SynthesisPanels
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e64072ad8491fc4e99b516514da360a, type: 3}
 --- !u!224 &4762465284752426390 stripped
@@ -920,6 +921,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8865838051215522956}
     m_Modifications:
+    - target: {fileID: 3838743765131916752, guid: 68390610e7db42a428c2545a980b0c46,
+        type: 3}
+      propertyPath: m_Name
+      value: HPBox
+      objectReference: {fileID: 0}
     - target: {fileID: 3838743765131916753, guid: 68390610e7db42a428c2545a980b0c46,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1024,11 +1030,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838743765131916752, guid: 68390610e7db42a428c2545a980b0c46,
-        type: 3}
-      propertyPath: m_Name
-      value: HPBox
       objectReference: {fileID: 0}
     - target: {fileID: 3838743765765885828, guid: 68390610e7db42a428c2545a980b0c46,
         type: 3}

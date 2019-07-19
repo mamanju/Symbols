@@ -1799,14 +1799,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 0
   synthesisGUI: {fileID: 0}
-  weaponManager: {fileID: 0}
-  playerWeaponManager: {fileID: 0}
+  weaponManager: {fileID: 2169706574673601576}
+  playerWeaponManager: {fileID: 3347060895697097554}
   nowWeapon_S: {fileID: 0}
-  playerStatus: {fileID: 0}
+  playerStatus: {fileID: 2169706574673601585}
   searchingBehavior: {fileID: 0}
-  finder: {fileID: 0}
-  spear: {fileID: 0}
-  cymbals: {fileID: 0}
+  finder: {fileID: 2169706574673601581}
+  spear: {fileID: 999741023612393518}
+  cymbals: {fileID: 6109297729088738981}
 --- !u!114 &2169706574673601586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1832,7 +1832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b478615b889a6564297570a810fea2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponBoxes: {fileID: 999741023612393518}
+  weaponBoxes: {fileID: 0}
 --- !u!114 &2169706574673601581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5126,6 +5126,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823078}
     m_Modifications:
+    - target: {fileID: 2112957171945260122, guid: 38da35a4587764d4a9957c3599a2c1e8,
+        type: 3}
+      propertyPath: m_Name
+      value: Search
+      objectReference: {fileID: 0}
     - target: {fileID: 2112957171945260121, guid: 38da35a4587764d4a9957c3599a2c1e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5180,11 +5185,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112957171945260122, guid: 38da35a4587764d4a9957c3599a2c1e8,
-        type: 3}
-      propertyPath: m_Name
-      value: Search
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38da35a4587764d4a9957c3599a2c1e8, type: 3}
@@ -5282,6 +5282,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297822980}
     m_Modifications:
+    - target: {fileID: 1318005445153855658, guid: c881d087b48388f4190cca73a1ce0f68,
+        type: 3}
+      propertyPath: m_Name
+      value: Shield
+      objectReference: {fileID: 0}
     - target: {fileID: 1318005445153686666, guid: c881d087b48388f4190cca73a1ce0f68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5337,11 +5342,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -97.122
       objectReference: {fileID: 0}
-    - target: {fileID: 1318005445153855658, guid: c881d087b48388f4190cca73a1ce0f68,
-        type: 3}
-      propertyPath: m_Name
-      value: Shield
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c881d087b48388f4190cca73a1ce0f68, type: 3}
 --- !u!1 &64473106278328071 stripped
@@ -5363,6 +5363,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297822980}
     m_Modifications:
+    - target: {fileID: 121332670039996667, guid: 09d8c239dc970634a84ced616ab14519,
+        type: 3}
+      propertyPath: m_Name
+      value: symbal01_L
+      objectReference: {fileID: 0}
     - target: {fileID: 121332670040220891, guid: 09d8c239dc970634a84ced616ab14519,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5427,11 +5432,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 121332670039996667, guid: 09d8c239dc970634a84ced616ab14519,
-        type: 3}
-      propertyPath: m_Name
-      value: symbal01_L
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09d8c239dc970634a84ced616ab14519, type: 3}
@@ -5524,6 +5524,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 8402254922472746418, guid: 95835514a598d824f9a4438a03cbadfe,
+        type: 3}
+      propertyPath: leftCymbal
+      value: 
+      objectReference: {fileID: 3866107714564352141}
     - target: {fileID: 4991336047851452111, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5534,11 +5539,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8402254922472746418, guid: 95835514a598d824f9a4438a03cbadfe,
-        type: 3}
-      propertyPath: leftCymbal
-      value: 
-      objectReference: {fileID: 3866107714564352141}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95835514a598d824f9a4438a03cbadfe, type: 3}
 --- !u!1 &6109297729088738981 stripped
@@ -5572,6 +5572,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
+    - target: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 5580436315297476655, guid: 16ee8293268e7ec43a40f55bb09f9659,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5627,11 +5632,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -34.906006
       objectReference: {fileID: 0}
-    - target: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ee8293268e7ec43a40f55bb09f9659, type: 3}
 --- !u!1 &3092887477118421492 stripped
@@ -5653,6 +5653,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
+    - target: {fileID: 8582569809766643820, guid: 4a8588573df6c9146a191fecce7ec90e,
+        type: 3}
+      propertyPath: m_Name
+      value: SpearBox
+      objectReference: {fileID: 0}
     - target: {fileID: 5017224239829028832, guid: 4a8588573df6c9146a191fecce7ec90e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5707,11 +5712,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582569809766643820, guid: 4a8588573df6c9146a191fecce7ec90e,
-        type: 3}
-      propertyPath: m_Name
-      value: Spear
       objectReference: {fileID: 0}
     - target: {fileID: 3453705353771782177, guid: 4a8588573df6c9146a191fecce7ec90e,
         type: 3}
