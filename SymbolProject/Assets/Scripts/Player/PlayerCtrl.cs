@@ -194,38 +194,11 @@ public class PlayerCtrl : MonoBehaviour
         //攻撃
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
-
-
             playerAnime.SetTrigger(key_Attack);
             attackAnime_Flag = true;
 
-            //string nowAnime = playerAnime.GetCurrentAnimatorStateInfo(1);
-
-            //if (playerAnime.GetCurrentAnimatorStateInfo(1).normalizedTime > 1f)
-            //{
-            //    Attack();
-            //    Debug.Log("攻撃判定");
-            //}
-
-        }
-
-            // Sword の中にいれば
-        if (playerAnime.GetCurrentAnimatorStateInfo(1).IsName("Sword")
-            // Idle の中にいなければ
-            && !playerAnime.GetCurrentAnimatorStateInfo(1).IsName("Idle")
-            // 他の状態への遷移をしていなければ
-            && !playerAnime.IsInTransition(1)
-            && attackAnime_Flag
-            // アニメーションが半分経過した時
-            && playerAnime.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.5f)
-        {
-            attackAnime_Flag = false;
-            playerAnime.SetTrigger(key_AnimeBack);
-            Attack();
-            // コライダーをON
-            gameObject.SetActive(true);
-
-            Debug.Log("終わったよ！");
+            GetComponent<weapon_collider>().OnCollider(weaponNumber);
+            
         }
     }
 
@@ -294,7 +267,7 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         // アニメーション
-        if (0 < playerVelocity && playerVelocity <=5)
+        if (1 < playerVelocity && playerVelocity <=5)
         {
             // 歩くアニメーション
             playerAnime.SetFloat(key_Speed, 0.6f);

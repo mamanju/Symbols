@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 4220376316370819925}
   - component: {fileID: 1527868669866529697}
   - component: {fileID: 1831200451524289035}
+  - component: {fileID: 8647933385206424415}
   m_Layer: 0
   m_Name: Axe01
   m_TagString: Untagged
@@ -136,6 +137,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponList: 0
+--- !u!65 &8647933385206424415
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4220376316371175285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.8, z: 0.1}
+  m_Center: {x: 0.6, y: 0.57, z: 0}
 --- !u!1 &4220376316371175287
 GameObject:
   m_ObjectHideFlags: 0
