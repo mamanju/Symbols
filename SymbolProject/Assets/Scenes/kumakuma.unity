@@ -197,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12001130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.01, y: 1.03, z: 4.99}
+  m_LocalPosition: {x: 1.01, y: 1.03, z: -4.11}
   m_LocalScale: {x: 5, y: 1.0144, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -831,6 +831,11 @@ PrefabInstance:
       propertyPath: synthesisCtrl
       value: 
       objectReference: {fileID: 600047254}
+    - target: {fileID: 4762465285863651196, guid: 70d1535eb2f42c64eaef8cec6c605e47,
+        type: 3}
+      propertyPath: m_FillCenter
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70d1535eb2f42c64eaef8cec6c605e47, type: 3}
 --- !u!1 &1551383073 stripped
@@ -931,7 +936,23 @@ PrefabInstance:
       propertyPath: weaponBoxes
       value: 
       objectReference: {fileID: 1020880250}
-    m_RemovedComponents: []
+    - target: {fileID: 8387909339681567811, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: max_colliderTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268123144514024117, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268123144514024117, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8275630679478536691, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
 --- !u!1 &1835834187
 GameObject:

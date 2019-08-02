@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponCtrl : MonoBehaviour
+public class WeaponController : MonoBehaviour
 {
     // 攻撃力、耐久
     protected int attack;

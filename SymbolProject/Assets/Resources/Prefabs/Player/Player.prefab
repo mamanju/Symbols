@@ -1100,6 +1100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2169706575297823032}
   - component: {fileID: 3347060895697097554}
+  - component: {fileID: 6262817848853039038}
   m_Layer: 0
   m_Name: R_tekubi
   m_TagString: Untagged
@@ -1154,6 +1155,19 @@ MonoBehaviour:
   - {fileID: 4423385193830367515}
   - {fileID: 1956399505293307674}
   - {fileID: 882947887891831744}
+--- !u!114 &6262817848853039038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169706575297731800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1b244442f47f84fa27dcce2effcd38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2169706575297731846}
 --- !u!1 &2169706575297731802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1736,7 @@ GameObject:
   - component: {fileID: 2169706574673601580}
   - component: {fileID: 2169706574673601589}
   - component: {fileID: 9181239352857341891}
+  - component: {fileID: 8387909339681567811}
   - component: {fileID: 2169706574673601586}
   - component: {fileID: 2169706574673601576}
   - component: {fileID: 2169706574673601581}
@@ -1807,6 +1822,20 @@ MonoBehaviour:
   finder: {fileID: 2169706574673601581}
   spear: {fileID: 999741023612393518}
   cymbals: {fileID: 6109297729088738981}
+--- !u!114 &8387909339681567811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169706575297731846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c7a1e8104ad9b478c32e9aa564aa7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wrist: {fileID: 2169706575297731800}
+  max_colliderTime: 0.8
 --- !u!114 &2169706574673601586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4971,6 +5000,19 @@ Transform:
   m_Father: {fileID: 2169706575297822994}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8275630679478536691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092887477118421494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.18323593, y: 0.04868138, z: 0.56890273}
+  m_Center: {x: -0.0009634568, y: 1.6082136e-10, z: -0.00027705717}
 --- !u!1 &3230662054514587898
 GameObject:
   m_ObjectHideFlags: 0
@@ -5344,15 +5386,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c881d087b48388f4190cca73a1ce0f68, type: 3}
---- !u!1 &64473106278328071 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1318005445153855658, guid: c881d087b48388f4190cca73a1ce0f68,
-    type: 3}
-  m_PrefabInstance: {fileID: 1346421304540282797}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &64473106278693671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1318005445153686666, guid: c881d087b48388f4190cca73a1ce0f68,
+    type: 3}
+  m_PrefabInstance: {fileID: 1346421304540282797}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &64473106278328071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1318005445153855658, guid: c881d087b48388f4190cca73a1ce0f68,
     type: 3}
   m_PrefabInstance: {fileID: 1346421304540282797}
   m_PrefabAsset: {fileID: 0}
@@ -5454,11 +5496,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
-    - target: {fileID: 1865358654072249114, guid: 95835514a598d824f9a4438a03cbadfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Cymbals
-      objectReference: {fileID: 0}
     - target: {fileID: 5332525395059344790, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5524,6 +5561,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1865358654072249114, guid: 95835514a598d824f9a4438a03cbadfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Cymbals
+      objectReference: {fileID: 0}
     - target: {fileID: 8402254922472746418, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
       propertyPath: leftCymbal
@@ -5547,12 +5589,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5560679154128653759}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &516629326314145833 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5332525395059344790, guid: 95835514a598d824f9a4438a03cbadfe,
-    type: 3}
-  m_PrefabInstance: {fileID: 5560679154128653759}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8659763896662854245 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3820786806443837402, guid: 95835514a598d824f9a4438a03cbadfe,
@@ -5565,6 +5601,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eace0ad090161345a6e30e3220a5f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &516629326314145833 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5332525395059344790, guid: 95835514a598d824f9a4438a03cbadfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 5560679154128653759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7466288156302419451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5572,11 +5614,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
-    - target: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword
-      objectReference: {fileID: 0}
     - target: {fileID: 5580436315297476655, guid: 16ee8293268e7ec43a40f55bb09f9659,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5632,17 +5669,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -34.906006
       objectReference: {fileID: 0}
+    - target: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ee8293268e7ec43a40f55bb09f9659, type: 3}
---- !u!1 &3092887477118421492 stripped
+--- !u!1 &3092887477118421494 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
+  m_CorrespondingSourceObject: {fileID: 5580436315297115149, guid: 16ee8293268e7ec43a40f55bb09f9659,
     type: 3}
   m_PrefabInstance: {fileID: 7466288156302419451}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &3092887477118195156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5580436315297476655, guid: 16ee8293268e7ec43a40f55bb09f9659,
+    type: 3}
+  m_PrefabInstance: {fileID: 7466288156302419451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3092887477118421492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
     type: 3}
   m_PrefabInstance: {fileID: 7466288156302419451}
   m_PrefabAsset: {fileID: 0}
@@ -5720,15 +5768,15 @@ PrefabInstance:
       objectReference: {fileID: 2169706575297731846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a8588573df6c9146a191fecce7ec90e, type: 3}
---- !u!1 &999741023612393518 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8582569809766643820, guid: 4a8588573df6c9146a191fecce7ec90e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8846374715458887746}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4567881690421243810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5017224239829028832, guid: 4a8588573df6c9146a191fecce7ec90e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8846374715458887746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &999741023612393518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8582569809766643820, guid: 4a8588573df6c9146a191fecce7ec90e,
     type: 3}
   m_PrefabInstance: {fileID: 8846374715458887746}
   m_PrefabAsset: {fileID: 0}

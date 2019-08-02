@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldInfo : WeaponCtrl
+public class ShieldInfo : WeaponController
 {
     public static int attack;
     public static int weaponID;
