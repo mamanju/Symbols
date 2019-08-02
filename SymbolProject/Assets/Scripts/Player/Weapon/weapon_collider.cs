@@ -20,7 +20,6 @@ public class weapon_collider : MonoBehaviour
 
     private int num;
 
-    // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < weapons.Length; i++)

@@ -339,9 +339,9 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 620, y: -70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 620, y: 80}
   m_SizeDelta: {x: 1200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3838743765131916756
@@ -367,7 +367,7 @@ MonoBehaviour:
   fullHpSprites: {fileID: 21300000, guid: f12c0b4ab157e224c90a44f6a30d03a2, type: 3}
   halfHpSprites: {fileID: 21300000, guid: 2ba367333af17ee4284a3aa4813bbb58, type: 3}
   notHpSprites: {fileID: 21300000, guid: 7130872f3e536694daac2802713093af, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 2169706575297731846, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
 --- !u!114 &3838743765131916754
 MonoBehaviour:
   m_ObjectHideFlags: 0
