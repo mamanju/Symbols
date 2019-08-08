@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordInfo : WeaponCtrl
+public class SwordInfo : WeaponController
 {
     public static int attack;
     public static int weaponID;
+
+    private GameObject player;
 
     void Start()
     {
@@ -14,5 +16,18 @@ public class SwordInfo : WeaponCtrl
         durable = -1;
         durable_max = -1;
         weaponID = 0;
+
+        player = transform.parent.GetComponent<GetPlayer>().Player;
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("剣");
+        if (other.transform.tag == "Enemy")
+        {
+            player.GetComponent<PlayerCtrl>().Attack();
+        }
     }
 }

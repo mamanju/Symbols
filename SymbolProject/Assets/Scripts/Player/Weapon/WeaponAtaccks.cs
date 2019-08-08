@@ -43,6 +43,7 @@ public class WeaponAtaccks : MonoBehaviour
     
     public void SpearShot()
     {
+        GetComponent<BoxCollider>().enabled = true;
         SpearBox = this.transform.parent.gameObject;
         Debug.Log(SpearBox.name);
         this.transform.parent = null;

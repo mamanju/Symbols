@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CymbalsInfo : WeaponCtrl
+public class CymbalsInfo : WeaponController
 {
     public static int attack;
     public static int weaponID;

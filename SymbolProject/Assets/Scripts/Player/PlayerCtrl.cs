@@ -26,7 +26,7 @@ public class PlayerCtrl : MonoBehaviour
     //移動用変数
     private bool stopFlag;
     private float speed;
-    private float speedMax = 5.0f;
+    private float speedMax = 10.0f;
     private float forceMgmt = 2.0f;
     private float playerVelocity;
 
@@ -194,38 +194,11 @@ public class PlayerCtrl : MonoBehaviour
         //攻撃
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
-
-
             playerAnime.SetTrigger(key_Attack);
             attackAnime_Flag = true;
 
-            //string nowAnime = playerAnime.GetCurrentAnimatorStateInfo(1);
-
-            //if (playerAnime.GetCurrentAnimatorStateInfo(1).normalizedTime > 1f)
-            //{
-            //    Attack();
-            //    Debug.Log("攻撃判定");
-            //}
-
-        }
-
-            // Sword の中にいれば
-        if (playerAnime.GetCurrentAnimatorStateInfo(1).IsName("Sword")
-            // Idle の中にいなければ
-            && !playerAnime.GetCurrentAnimatorStateInfo(1).IsName("Idle")
-            // 他の状態への遷移をしていなければ
-            && !playerAnime.IsInTransition(1)
-            && attackAnime_Flag
-            // アニメーションが半分経過した時
-            && playerAnime.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.5f)
-        {
-            attackAnime_Flag = false;
-            playerAnime.SetTrigger(key_AnimeBack);
-            Attack();
-            // コライダーをON
-            gameObject.SetActive(true);
-
-            Debug.Log("終わったよ！");
+            GetComponent<weapon_collider>().OnCollider(weaponNumber);
+            
         }
     }
 
@@ -256,7 +229,6 @@ public class PlayerCtrl : MonoBehaviour
         if (_horizontal + _vertical == 0)
         {
             if (stopFlag == true) { StopMove(); }
-            //speedMax = 0;
         }
         //スピード制御と、静止状態の維持
         if (playerVelocity >= speedMax)
@@ -265,27 +237,28 @@ public class PlayerCtrl : MonoBehaviour
         }
         else if (_horizontal != 0 || _vertical != 0)
         {
-            speed = 10.0f;
             stopFlag = true;
 
             //左スティック押し込みに変更
             if (Input.GetButton("StickPush_L"))
             {
-                speedMax = 8.0f;
+                speed = speedMax;
+                Debug.Log(speed);
             }
             else
             {
-                speedMax = 5.0f;
+                speed = 5.0f;
             }
         }
         
         lastHorizontal = Mathf.Abs(_horizontal);
         lastVertical = Mathf.Abs(_vertical);
-        speedForce += cameraForward * _vertical * speed + Camera.main.transform.right * speed * _horizontal;
+        speedForce += cameraForward.normalized * _vertical * speed
+            + Camera.main.transform.right.normalized * speed * _horizontal;
 
         if (knockbackFlag != true)
         {
-            playerRb.AddForce(forceMgmt * speedForce);
+            playerRb.velocity = speedForce;
         }
         
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
@@ -293,16 +266,18 @@ public class PlayerCtrl : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(speedForce);
         }
 
+        Debug.Log(playerVelocity);
+
         // アニメーション
-        if (0 < playerVelocity && playerVelocity <=5)
-        {
-            // 歩くアニメーション
-            playerAnime.SetFloat(key_Speed, 0.6f);
-        }
-        else if (6 < playerVelocity)
+        if (6 < playerVelocity)
         {
             // 走るアニメーション
             playerAnime.SetFloat(key_Speed, 1.1f);
+        }
+        else if (0 < playerVelocity && playerVelocity <=5)
+        {
+            // 歩くアニメーション
+            playerAnime.SetFloat(key_Speed, 0.6f);
         }
         else
         {
@@ -330,7 +305,8 @@ public class PlayerCtrl : MonoBehaviour
         if (downFlag == true)
         {
             downSpeed *= 1.03f;
-            playerRb.AddForce(0.0f, downSpeed, 0.0f);
+            Vector3 downVector = new Vector3 (0, downSpeed, 0);
+            playerRb.velocity = downVector.normalized;
         }
     }
 
