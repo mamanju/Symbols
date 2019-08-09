@@ -11,6 +11,8 @@ public class weapon_collider : MonoBehaviour
 
     private BoxCollider[] boxColliders = new BoxCollider[10];
 
+    private int nowWeapon;
+
     private bool collider_Flag = false;
 
     private float colliderTime;
@@ -20,6 +22,8 @@ public class weapon_collider : MonoBehaviour
 
     // 斧のコライダーのディレイ
     private float axeTime;
+
+    private PlayerCtrl pControl;
 
     [SerializeField]
     private float max_colliderTime = 0.5f;
@@ -46,55 +50,14 @@ public class weapon_collider : MonoBehaviour
         spearTime = max_spearTime;
         axeTime = max_axeTime;
 
+        
     }
 
     private void Update()
     {
         if (collider_Flag == false) { return; }
 
-
-        // if文の中身ちゃんと書き換える！！！！！
-        // 持っている武器が槍だったら
-        if (weapons[1])
-        {
-            spearTime -= Time.deltaTime;
-            if (spearTime <= 0)
-            {
-                colliderTime -= Time.deltaTime;
-                if (colliderTime <= 0)
-                {
-                    OffCollider(num);
-                    collider_Flag = false;
-                    colliderTime = max_colliderTime;
-                }
-            }
-            return;
-        }
-
-        // 持っている武器が斧だったら
-        if (weapons[2])
-        {
-            axeTime -= Time.deltaTime;
-            if (axeTime <= 0)
-            {
-                colliderTime -= Time.deltaTime;
-                if (colliderTime <= 0)
-                {
-                    OffCollider(num);
-                    collider_Flag = false;
-                    colliderTime = max_colliderTime;
-                }
-            }
-            return;
-        }
-
-        colliderTime -= Time.deltaTime;
-        if (colliderTime <= 0)
-        {
-            OffCollider(num);
-            collider_Flag = false;
-            colliderTime = max_colliderTime;
-        }
+        WeaponColliderTime();
     }
 
 
@@ -110,5 +73,54 @@ public class weapon_collider : MonoBehaviour
     {
         if (_num >= 3) { return; }
         boxColliders[_num].enabled = false;
+    }
+
+    public void ColliderTime()
+    {
+        colliderTime -= Time.deltaTime;
+        if (colliderTime <= 0)
+        {
+            OffCollider(num);
+            collider_Flag = false;
+            colliderTime = max_colliderTime;
+        }
+    }
+
+    private void WeaponColliderTime()
+    {
+        // 今持っている武器の番号をPlayerCtrlから取得
+        nowWeapon = GetComponent<PlayerCtrl>().GetWeaponNumber;
+
+        switch (nowWeapon)
+        {
+            case 0:
+                Debug.Log("剣で攻撃したよ！");
+                ColliderTime();
+                break;
+
+            case 1:
+                Debug.Log("槍で攻撃したよ！");
+                spearTime -= Time.deltaTime;
+                if (spearTime <= 0)
+                {
+                    ColliderTime();
+                    spearTime = max_spearTime;
+                }
+                break;
+
+            case 2:
+                Debug.Log("斧で攻撃したよ！");
+                axeTime -= Time.deltaTime;
+                if (axeTime <= 0)
+                {
+                    ColliderTime();
+                    axeTime = max_axeTime;
+                }
+                break;
+
+            default:
+                break;
+
+        }
     }
 }
