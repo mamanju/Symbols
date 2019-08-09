@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CymbalsInfo : WeaponCtrl
+public class CymbalsInfo : WeaponController
 {
     public static int attack;
     public static int weaponID;
+
+    [SerializeField]
+    private GameObject leftCymbal;
 
     void Start()
     {
@@ -14,6 +17,16 @@ public class CymbalsInfo : WeaponCtrl
         durable = 5;
         durable_max = 5;
         weaponID = 6;
+    }
+
+    private void OnEnable()
+    {
+        leftCymbal.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        leftCymbal.SetActive(false);
     }
 
     public void DelWeaponDurable()

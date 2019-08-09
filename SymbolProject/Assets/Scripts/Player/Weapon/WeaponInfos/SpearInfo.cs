@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpearInfo : WeaponCtrl
+public class SpearInfo : WeaponController
 {
     [SerializeField]
     private GameObject ShotSpear;
@@ -17,6 +17,8 @@ public class SpearInfo : WeaponCtrl
     public static int attack;
     public static int weaponID;
 
+
+
     void Start()
     {
         // 槍の基本情報
@@ -24,6 +26,9 @@ public class SpearInfo : WeaponCtrl
         durable = 10;
         durable_max = 10;
         weaponID = 1;
+
+        player = transform.parent.GetComponent<GetPlayer>().Player;
+
     }
 
     public void DelWeaponDurable()
@@ -49,5 +54,14 @@ public class SpearInfo : WeaponCtrl
         ChildSpear.transform.localPosition = Vector3.zero;
         ChildSpear.transform.localEulerAngles = new Vector3(90, 0, 0);
         ChildSpear.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("槍");
+        if (other.transform.tag == "Enemy")
+        {
+            player.GetComponent<PlayerCtrl>().Attack();
+        }
     }
 }

@@ -40,6 +40,8 @@ public class PauseController : MonoBehaviour
     }
 
     private void Update() {
+
+
         if (clearFlag)
         {
             gameClearUI.SetActive(true);
@@ -49,70 +51,57 @@ public class PauseController : MonoBehaviour
             Pause();
         }
 
-        if (Input.GetButtonDown("Circle"))
-        {
-            if (!pauseFlag)
-            {
-                return;
-            }
-            if (buttonNum == 0)
-            {
+        #region 十字キー操作
+        if (Input.GetButtonDown("Circle")) {
+            if (clearFlag) {
                 SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
             }
-            else
-            {
+
+            if (!pauseFlag) {
+                return;
+            }
+            if (buttonNum == 0) {
+                SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
+            } else {
                 Pause();
             }
         }
 
-        if (!pauseFlag)
-        {
+        if (!pauseFlag) {
             return;
         }
 
-        if (Input.GetAxis("CrossKey_H") == 0)
-        {
+        Debug.Log(Input.GetAxis("CrossKey_H"));
+        if (Input.GetAxis("CrossKey_H") == 0) {
             selectFlag = false;
             return;
         }
 
-        if (selectFlag)
-        {
+        if (selectFlag) {
             return;
         }
 
-        if (Input.GetAxis("CrossKey_H") < 0)
-        {
-            if (buttonNum - 1 < 0)
-            {
+        if (Input.GetAxis("CrossKey_H") < 0) {
+            if (buttonNum - 1 < 0) {
                 buttonNum = 1;
-            }
-            else
-            {
+            } else {
                 buttonNum--;
             }
-        }
-        else
-        {
-            if (buttonNum + 1 > 1)
-            {
+        } else {
+            if (buttonNum + 1 > 1) {
                 buttonNum = 0;
-            }
-            else
-            {
+            } else {
                 buttonNum++;
             }
         }
-        if (buttonNum == 0)
-        {
-            SelectButtons[buttonNum].transform.localScale = new Vector2(1.1f, 1.1f);
+        if (buttonNum == 0) {
+            SelectButtons[buttonNum].transform.localScale = new Vector2(1.2f, 1.2f);
             SelectButtons[buttonNum + 1].transform.localScale = new Vector2(1f, 1f);
-        }
-        else
-        {
-            SelectButtons[buttonNum].transform.localScale = new Vector2(1.1f, 1.1f);
+        } else {
+            SelectButtons[buttonNum].transform.localScale = new Vector2(1.2f, 1.2f);
             SelectButtons[buttonNum - 1].transform.localScale = new Vector2(1f, 1f);
         }
+        #endregion
         selectFlag = true;
     }
 

@@ -13,7 +13,8 @@ public class PlayerCtrl : MonoBehaviour
         set { groundFlag = value; }
     }
     private bool downFlag;
-    private float jumpForce = 4.0f;
+    [SerializeField]
+    private float jumpForce = 0.0f;
     private float downSpeed;
 
     private float nowPlayerY;
@@ -25,7 +26,7 @@ public class PlayerCtrl : MonoBehaviour
     //移動用変数
     private bool stopFlag;
     private float speed;
-    private float speedMax = 5.0f;
+    private float speedMax = 10.0f;
     private float forceMgmt = 2.0f;
     private float playerVelocity;
 
@@ -96,7 +97,17 @@ public class PlayerCtrl : MonoBehaviour
         get { return knockbackFlag; }
         set { knockbackFlag = value; }
     }
-    //HPが減る処理
+
+    // 移動アニメーション
+    private Animator playerAnime;
+    private string key_Jump = "Jump";
+    private string key_Speed = "Speed";
+
+    // 攻撃アニメーション
+    private string key_Weapon = "Weapons";
+    private string key_Attack = "Attack";
+    private string key_AnimeBack = "AnimeBack";
+    private bool attackAnime_Flag = false;
 
     void Start()
     {
@@ -112,6 +123,9 @@ public class PlayerCtrl : MonoBehaviour
         weaponLength = weaponManager.NowWeapon.Length;
 
         knockBack = GetComponent<KnockBack>();
+
+        playerAnime = GetComponent<Animator>();
+        playerAnime.SetBool(key_Jump, false);
     }
 
     void Update()
@@ -180,7 +194,11 @@ public class PlayerCtrl : MonoBehaviour
         //攻撃
         if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
         {
-            Attack();
+            playerAnime.SetTrigger(key_Attack);
+            attackAnime_Flag = true;
+
+            GetComponent<weapon_collider>().OnCollider(weaponNumber);
+            
         }
     }
 
@@ -219,27 +237,28 @@ public class PlayerCtrl : MonoBehaviour
         }
         else if (_horizontal != 0 || _vertical != 0)
         {
-            speed = 10.0f;
             stopFlag = true;
 
             //左スティック押し込みに変更
             if (Input.GetButton("StickPush_L"))
             {
-                speedMax = 8.0f;
+                speed = speedMax;
+                Debug.Log(speed);
             }
             else
             {
-                speedMax = 5.0f;
+                speed = 5.0f;
             }
         }
         
         lastHorizontal = Mathf.Abs(_horizontal);
         lastVertical = Mathf.Abs(_vertical);
-        speedForce += cameraForward * _vertical * speed + Camera.main.transform.right * speed * _horizontal;
+        speedForce += cameraForward.normalized * _vertical * speed
+            + Camera.main.transform.right.normalized * speed * _horizontal;
 
         if (knockbackFlag != true)
         {
-            playerRb.AddForce(forceMgmt * speedForce);
+            playerRb.velocity = speedForce;
         }
         
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
@@ -247,13 +266,35 @@ public class PlayerCtrl : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(speedForce);
         }
 
+        Debug.Log(playerVelocity);
+
+        // アニメーション
+        if (6 < playerVelocity)
+        {
+            // 走るアニメーション
+            playerAnime.SetFloat(key_Speed, 1.1f);
+        }
+        else if (0 < playerVelocity && playerVelocity <=5)
+        {
+            // 歩くアニメーション
+            playerAnime.SetFloat(key_Speed, 0.6f);
+        }
+        else
+        {
+            // 静止アニメーション
+            playerAnime.SetFloat(key_Speed, 0.0f);
+        }
+
+
         //ジャンプ
         if (groundFlag == true)
         {
             downFlag = false;
             downSpeed = -1.3f;
+            //playerAnime.SetBool(key_Jump, false);
             if (Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.Space))
             {
+                playerAnime.SetTrigger(key_Jump);
                 nowPlayerY = transform.position.y + 3.0f;
                 playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);
                 downFlag = true;
@@ -264,7 +305,8 @@ public class PlayerCtrl : MonoBehaviour
         if (downFlag == true)
         {
             downSpeed *= 1.03f;
-            playerRb.AddForce(0.0f, downSpeed, 0.0f);
+            Vector3 downVector = new Vector3 (0, downSpeed, 0);
+            playerRb.velocity = downVector.normalized;
         }
     }
 
@@ -285,7 +327,9 @@ public class PlayerCtrl : MonoBehaviour
         nowWeapon.weaponList = (WeaponInfo.WeaponList)(_num);
         playerWeaponManager.WeaponObjChange(_num);
         playerStatus.WeaponAttack(_num);
-        
+
+        playerAnime.SetInteger(key_Weapon, _num);
+
         if (_num == 6)
         {
             searchingBehavior.M_searchAngle = 360;

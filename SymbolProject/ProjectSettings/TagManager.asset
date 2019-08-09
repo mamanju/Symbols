@@ -15,6 +15,7 @@ TagManager:
   - Crystal
   - WeaponCrystal
   - Terrain
+  - ClimbTree
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Search
   - Cursor
   - Background
-  - 
+  - MiniMap
   - 
   - 
   - 

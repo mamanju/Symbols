@@ -20,7 +20,6 @@ public class EnemyManager : MonoBehaviour
         Boss,
     }
 
-    [SerializeField]
     public Crystals crystal;
 
     /// <summary>

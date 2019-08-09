@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldInfo : WeaponCtrl
+public class ShieldInfo : WeaponController
 {
     public static int attack;
     public static int weaponID;
+
+    [SerializeField]
+    private GameObject shield;
 
     void Start()
     {
@@ -14,6 +17,16 @@ public class ShieldInfo : WeaponCtrl
         durable = 5;
         durable_max = 5;
         weaponID = 3;
+    }
+
+    private void OnEnable()
+    {
+        shield.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        shield.SetActive(false);
     }
 
     public void DelWeaponDurable()
