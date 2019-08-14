@@ -8,7 +8,7 @@ using UnityEngine;
 public class TitleManager : MonoBehaviour
 {
     private void Update() {
-        if (Input.GetButtonDown("Circle")) {
+        if (Input.GetButtonDown("Circle") || Input.GetKeyDown(KeyCode.O)) {
             MoveSelect();
         }
     }

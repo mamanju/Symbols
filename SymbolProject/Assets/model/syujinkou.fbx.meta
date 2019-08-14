@@ -1,0 +1,285 @@
+fileFormatVersion: 2
+guid: bdd64774445fe734f9e8e71ecfb7ee15
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: belt
+    100002: belt_clip
+    100004: belt_cord2
+    100006: belt_cord3
+    100008: beltset
+    100010: body
+    100012: hair2
+    100014: hair_back
+    100016: hair_front
+    100018: hair_front_back
+    100020: hed
+    100022: hed1
+    100024: L_ear
+    100026: L_eye
+    100028: L_eye_dodai
+    100030: L_eye_hilight
+    100032: L_eye_huti
+    100034: L_eye_main
+    100036: L_hand
+    100038: L_mayuge
+    100040: L_shoes
+    100042: L_shoes 1
+    100044: L_shoes_belt
+    100046: L_wrist_band
+    100048: neck
+    100050: pants
+    100052: pouch
+    100054: pouch_dodai
+    100056: pouch_huta
+    100058: R_ear
+    100060: R_eye
+    100062: R_eye_dodai
+    100064: R_eye_hilight
+    100066: R_eye_huti
+    100068: R_eye_main
+    100070: R_hand
+    100072: R_mayuge
+    100074: R_shoes
+    100076: R_shoes 1
+    100078: R_shoes_belt
+    100080: R_wrist_band
+    100082: shoulder_pad
+    100084: //RootNode
+    100086: wear
+    400000: belt
+    400002: belt_clip
+    400004: belt_cord2
+    400006: belt_cord3
+    400008: beltset
+    400010: body
+    400012: hair2
+    400014: hair_back
+    400016: hair_front
+    400018: hair_front_back
+    400020: hed
+    400022: hed1
+    400024: L_ear
+    400026: L_eye
+    400028: L_eye_dodai
+    400030: L_eye_hilight
+    400032: L_eye_huti
+    400034: L_eye_main
+    400036: L_hand
+    400038: L_mayuge
+    400040: L_shoes
+    400042: L_shoes 1
+    400044: L_shoes_belt
+    400046: L_wrist_band
+    400048: neck
+    400050: pants
+    400052: pouch
+    400054: pouch_dodai
+    400056: pouch_huta
+    400058: R_ear
+    400060: R_eye
+    400062: R_eye_dodai
+    400064: R_eye_hilight
+    400066: R_eye_huti
+    400068: R_eye_main
+    400070: R_hand
+    400072: R_mayuge
+    400074: R_shoes
+    400076: R_shoes 1
+    400078: R_shoes_belt
+    400080: R_wrist_band
+    400082: shoulder_pad
+    400084: //RootNode
+    400086: wear
+    2100000: syujinkou
+    2300000: belt
+    2300002: belt_clip
+    2300004: belt_cord2
+    2300006: belt_cord3
+    2300008: body
+    2300010: hair_back
+    2300012: hair_front
+    2300014: hair_front_back
+    2300016: hed1
+    2300018: L_ear
+    2300020: L_eye_dodai
+    2300022: L_eye_hilight
+    2300024: L_eye_huti
+    2300026: L_eye_main
+    2300028: L_hand
+    2300030: L_mayuge
+    2300032: L_shoes 1
+    2300034: L_shoes_belt
+    2300036: L_wrist_band
+    2300038: neck
+    2300040: pants
+    2300042: pouch_dodai
+    2300044: pouch_huta
+    2300046: R_ear
+    2300048: R_eye_dodai
+    2300050: R_eye_hilight
+    2300052: R_eye_huti
+    2300054: R_eye_main
+    2300056: R_hand
+    2300058: R_mayuge
+    2300060: R_shoes 1
+    2300062: R_shoes_belt
+    2300064: R_wrist_band
+    2300066: shoulder_pad
+    2300068: wear
+    3300000: belt
+    3300002: belt_clip
+    3300004: belt_cord2
+    3300006: belt_cord3
+    3300008: body
+    3300010: hair_back
+    3300012: hair_front
+    3300014: hair_front_back
+    3300016: hed1
+    3300018: L_ear
+    3300020: L_eye_dodai
+    3300022: L_eye_hilight
+    3300024: L_eye_huti
+    3300026: L_eye_main
+    3300028: L_hand
+    3300030: L_mayuge
+    3300032: L_shoes 1
+    3300034: L_shoes_belt
+    3300036: L_wrist_band
+    3300038: neck
+    3300040: pants
+    3300042: pouch_dodai
+    3300044: pouch_huta
+    3300046: R_ear
+    3300048: R_eye_dodai
+    3300050: R_eye_hilight
+    3300052: R_eye_huti
+    3300054: R_eye_main
+    3300056: R_hand
+    3300058: R_mayuge
+    3300060: R_shoes 1
+    3300062: R_shoes_belt
+    3300064: R_wrist_band
+    3300066: shoulder_pad
+    3300068: wear
+    4300000: hair_back
+    4300002: hair_front_back
+    4300004: hair_front
+    4300006: L_ear
+    4300008: R_ear
+    4300010: hed1
+    4300012: neck
+    4300014: L_eye_hilight
+    4300016: L_eye_main
+    4300018: L_eye_dodai
+    4300020: L_eye_huti
+    4300022: L_mayuge
+    4300024: R_eye_hilight
+    4300026: R_eye_main
+    4300028: R_eye_dodai
+    4300030: R_eye_huti
+    4300032: R_mayuge
+    4300034: R_hand
+    4300036: R_wrist_band
+    4300038: L_hand
+    4300040: L_wrist_band
+    4300042: body
+    4300044: wear
+    4300046: pants
+    4300048: shoulder_pad
+    4300050: belt
+    4300052: belt_clip
+    4300054: belt_cord2
+    4300056: belt_cord3
+    4300058: L_shoes_belt
+    4300060: L_shoes
+    4300062: R_shoes
+    4300064: R_shoes_belt
+    4300066: pouch_huta
+    4300068: pouch_dodai
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
