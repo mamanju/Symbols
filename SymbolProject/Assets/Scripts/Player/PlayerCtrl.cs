@@ -65,6 +65,11 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]
     private PlayerWeaponManager playerWeaponManager;
     private int weaponNumber = 0;
+    public int GetWeaponNumber
+    {
+        get { return weaponNumber; }
+    }
+
     private int weaponLength;
     [SerializeField]
     private Image nowWeapon_S;
