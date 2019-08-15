@@ -24,28 +24,22 @@ public class PlayerCtrl : MonoBehaviour
     private float _vertical;
 
     //移動用変数
-    private bool stopFlag;
     private float speed;
     [SerializeField]
     private float walkSpeed;
     [SerializeField]
     private float runSpeed;
-    private float forceMgmt = 2.0f;
     private float playerVelocity;
 
     //横移動用変数
     private float angle;
     private Vector3 moveForceH;
     private Vector3 speedForce;
-    private float rotateSpeed = 0.628319f;
-
-    private float lastHorizontal;
-    private float lastVertical;
 
     private float lastSelect;
 
-    Vector3 horizontalForce;
-    Vector3 verticalForce;
+    private Vector3 horizontalForce;
+    private Vector3 verticalForce;
 
     //playerのrigidbody
     private Rigidbody playerRb;
@@ -206,10 +200,6 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (knockBack.KnockbackFlag == true) { return; }
 
-        if ( lastHorizontal + lastVertical == 0 && stopFlag == true && groundFlag == true)
-        {
-            StopMove();
-        }
         cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
         //現在のplayerの速度の取得
         playerVelocity = playerRb.velocity.magnitude;
@@ -224,21 +214,9 @@ public class PlayerCtrl : MonoBehaviour
         //キー入力
         _horizontal = Input.GetAxis("Horizontal_L");
         _vertical = Input.GetAxis("Vertical_L");
-
-        //ピタッと止まる処理
-        if (_horizontal + _vertical == 0)
+        
+        if (_horizontal != 0 || _vertical != 0)
         {
-            if (stopFlag == true) { StopMove(); }
-        }
-        //スピード制御と、静止状態の維持
-        if (playerVelocity >= runSpeed)
-        {
-            speed = 0.0f;
-        }
-        else if (_horizontal != 0 || _vertical != 0)
-        {
-            stopFlag = true;
-
             //左スティック押し込みに変更
             if (Input.GetButton("StickPush_L"))
             {
@@ -246,20 +224,17 @@ public class PlayerCtrl : MonoBehaviour
             }
             else
             {
-                speed = 5.0f;
+                speed = walkSpeed;
             }
         }
         
-        lastHorizontal = Mathf.Abs(_horizontal);
-        lastVertical = Mathf.Abs(_vertical);
-        speedForce += cameraForward.normalized * _vertical
+        speedForce += cameraForward.normalized * _vertical 
             + Camera.main.transform.right.normalized * _horizontal;
 
         if (knockbackFlag != true)
         {
             playerRb.velocity = speedForce * speed * Time.deltaTime;
         }
-        
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
         {
             transform.rotation = Quaternion.LookRotation(speedForce);
@@ -268,12 +243,12 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log(playerVelocity);
 
         // アニメーション
-        if (6 < playerVelocity)
+        if (4 <= playerVelocity)
         {
             // 走るアニメーション
             playerAnime.SetFloat(key_Speed, 1.1f);
         }
-        else if (0 < playerVelocity && playerVelocity <=5)
+        else if (0 < playerVelocity && playerVelocity < 4)
         {
             // 歩くアニメーション
             playerAnime.SetFloat(key_Speed, 0.6f);
@@ -307,13 +282,6 @@ public class PlayerCtrl : MonoBehaviour
             Vector3 downVector = new Vector3 (0, downSpeed, 0);
             playerRb.velocity = downVector.normalized;
         }
-    }
-
-    //移動ストップ
-    public void StopMove()
-    {
-        stopFlag = false;
-        playerRb.velocity = Vector3.zero;
     }
 
     /// <summary>
