@@ -1120,7 +1120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3092887477118195156}
-  - {fileID: 8846374715458890073}
+  - {fileID: 4567881690421243810}
   - {fileID: 3551059177694722254}
   - {fileID: 8927365135900765538}
   - {fileID: 3830562993109510224}
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 3092887477118421492}
-  - {fileID: 8846374715458889142}
+  - {fileID: 999741023612393518}
   - {fileID: 3551059177694946542}
   - {fileID: 8123948186325266015}
   - {fileID: 8222459039742921303}
@@ -1810,13 +1810,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c1e0afffb7a6f48b3134547f17755f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 0
+  jumpForce: 170
+  walkSpeed: 150
+  runSpeed: 300
   synthesisGUI: {fileID: 0}
   weaponManager: {fileID: 2169706574673601576}
   playerWeaponManager: {fileID: 3347060895697097554}
   nowWeapon_S: {fileID: 0}
   playerStatus: {fileID: 2169706574673601585}
-  spear: {fileID: 8846374715458889142}
+  spear: {fileID: 999741023612393518}
   cymbals: {fileID: 6109297729088738981}
 --- !u!114 &8387909339681567811
 MonoBehaviour:
@@ -5660,13 +5662,13 @@ PrefabInstance:
       objectReference: {fileID: 2169706575297731846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a8588573df6c9146a191fecce7ec90e, type: 3}
---- !u!4 &8846374715458890073 stripped
+--- !u!4 &4567881690421243810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5017224239829028832, guid: 4a8588573df6c9146a191fecce7ec90e,
     type: 3}
   m_PrefabInstance: {fileID: 8846374715458887746}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8846374715458889142 stripped
+--- !u!1 &999741023612393518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8582569809766643820, guid: 4a8588573df6c9146a191fecce7ec90e,
     type: 3}

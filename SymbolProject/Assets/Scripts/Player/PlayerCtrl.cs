@@ -226,15 +226,16 @@ public class PlayerCtrl : MonoBehaviour
             {
                 speed = walkSpeed;
             }
+            speedForce += cameraForward.normalized * _vertical 
+                + Camera.main.transform.right.normalized * _horizontal;
+            speedForce = speedForce * speed * Time.deltaTime;
+
+            if (knockbackFlag != true)
+            {
+                playerRb.velocity = new Vector3 (speedForce.x, playerRb.velocity.y, speedForce.z);
+            }
         }
         
-        speedForce += cameraForward.normalized * _vertical 
-            + Camera.main.transform.right.normalized * _horizontal;
-
-        if (knockbackFlag != true)
-        {
-            playerRb.velocity = speedForce * speed * Time.deltaTime;
-        }
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
         {
             transform.rotation = Quaternion.LookRotation(speedForce);
@@ -263,24 +264,16 @@ public class PlayerCtrl : MonoBehaviour
         //ジャンプ
         if (groundFlag == true)
         {
-            downFlag = false;
-            downSpeed = -1.3f;
             //playerAnime.SetBool(key_Jump, false);
             if (Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.Space))
             {
                 playerAnime.SetTrigger(key_Jump);
-                nowPlayerY = transform.position.y + 3.0f;
-                playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);
+                playerRb.velocity = new Vector3 (playerRb.velocity.x,
+                    transform.up.y * jumpForce * Time.deltaTime, playerRb.velocity.z);
+                Debug.Log(new Vector3(playerRb.velocity.x,
+                    transform.up.y * jumpForce * Time.deltaTime, playerRb.velocity.z));
                 downFlag = true;
             }
-        }
-
-        //落下を自然にする処理
-        if (downFlag == true)
-        {
-            downSpeed *= 1.03f;
-            Vector3 downVector = new Vector3 (0, downSpeed, 0);
-            playerRb.velocity = downVector.normalized;
         }
     }
 
