@@ -58,10 +58,7 @@ public class SpearInfo : WeaponController
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("槍");
-        if (other.transform.tag == "Enemy")
-        {
-            player.GetComponent<PlayerCtrl>().Attack();
-        }
+       player.GetComponent<PlayerCtrl>().Attack(other.gameObject);
+    
     }
 }

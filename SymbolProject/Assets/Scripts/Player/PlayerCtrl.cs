@@ -14,7 +14,7 @@ public class PlayerCtrl : MonoBehaviour
     }
     private bool downFlag;
     [SerializeField]
-    private float jumpForce = 0.0f;
+    private float jumpForce;
     private float downSpeed;
 
     private float nowPlayerY;
@@ -26,7 +26,10 @@ public class PlayerCtrl : MonoBehaviour
     //移動用変数
     private bool stopFlag;
     private float speed;
-    private float speedMax = 10.0f;
+    [SerializeField]
+    private float walkSpeed;
+    [SerializeField]
+    private float runSpeed;
     private float forceMgmt = 2.0f;
     private float playerVelocity;
 
@@ -77,13 +80,6 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]
     private PlayerStatus playerStatus;
     
-    //武器切り替えによるコライダーの範囲の変更
-    [SerializeField]
-    private SearchingBehavior searchingBehavior;
-    //敵のオブジェクト
-    [SerializeField]
-    private Finder finder;
-
     //ノックバック
     private KnockBack knockBack;
 
@@ -189,7 +185,6 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         //槍を投げる（通常攻撃じゃない)
-        //キーの変更お願いします！！！！
         if (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.O))
         {
             weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
@@ -236,7 +231,7 @@ public class PlayerCtrl : MonoBehaviour
             if (stopFlag == true) { StopMove(); }
         }
         //スピード制御と、静止状態の維持
-        if (playerVelocity >= speedMax)
+        if (playerVelocity >= runSpeed)
         {
             speed = 0.0f;
         }
@@ -247,8 +242,7 @@ public class PlayerCtrl : MonoBehaviour
             //左スティック押し込みに変更
             if (Input.GetButton("StickPush_L"))
             {
-                speed = speedMax;
-                Debug.Log(speed);
+                speed = runSpeed;
             }
             else
             {
@@ -258,12 +252,12 @@ public class PlayerCtrl : MonoBehaviour
         
         lastHorizontal = Mathf.Abs(_horizontal);
         lastVertical = Mathf.Abs(_vertical);
-        speedForce += cameraForward.normalized * _vertical * speed
-            + Camera.main.transform.right.normalized * speed * _horizontal;
+        speedForce += cameraForward.normalized * _vertical
+            + Camera.main.transform.right.normalized * _horizontal;
 
         if (knockbackFlag != true)
         {
-            playerRb.velocity = speedForce;
+            playerRb.velocity = speedForce * speed * Time.deltaTime;
         }
         
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
@@ -335,16 +329,16 @@ public class PlayerCtrl : MonoBehaviour
 
         playerAnime.SetInteger(key_Weapon, _num);
 
-        if (_num == 6)
-        {
-            searchingBehavior.M_searchAngle = 360;
-            searchingBehavior.ApplySearchAngle();
-        }
-        else
-        {
-            searchingBehavior.M_searchAngle = 90;
-            searchingBehavior.ApplySearchAngle();
-        }
+        //if (_num == 6)
+        //{
+        //    searchingBehavior.M_searchAngle = 360;
+        //    searchingBehavior.ApplySearchAngle();
+        //}
+        //else
+        //{
+        //    searchingBehavior.M_searchAngle = 90;
+        //    searchingBehavior.ApplySearchAngle();
+        //}
     }
 
     //武器切り替え右
@@ -383,49 +377,36 @@ public class PlayerCtrl : MonoBehaviour
 
     //範囲内に敵がいたら攻撃
     //武器の耐久値の減少
-    public void Attack()
+    public void Attack(GameObject other)
     {
-        if (finder.M_enemy.Count + finder.M_tellain.Count == 0) { return; }
         DownDurable();
         if (playerStatus.NowWeaponID == 5)
         {
             weaponAtaccks = cymbals.GetComponent<WeaponAtaccks>();
             weaponAtaccks.AbnormalAttaks(weaponNumber);
         }
-        for (int i = 0; i < finder.M_enemy.Count; i++)
+        if (other.tag == "Enemy")
         {
-            var enemyResult =
-            finder.M_enemy[i].GetComponent<EnemyController>().Damage(playerStatus.PlayerAttack());
-            if (enemyResult != null)
-            {
-                finder.OnList(finder.M_enemy[i]);
-            }
+            other.GetComponent<EnemyController>().Damage(playerStatus.PlayerAttack());
         }
-
-        if (finder.M_enemy.Count != 0) { return; }
-
+        
         if (playerStatus.NowWeaponID == 2)
         {
-            for (int i = 0; i < finder.M_tellain.Count; i++)
-            {
-                //切って橋にする木のタグ
-                if(finder.M_tellain[i].tag == "Tree")
-                {
-                    finder.M_tellain[i].GetComponent<CutTreeController>().SetFallFlag = true;
-                }
-            }
+             //切って橋にする木のタグ
+             if(other.tag == "Tree")
+             {
+                 other.GetComponent<CutTreeController>().SetFallFlag = true;
+             }
         }
         else if (playerStatus.NowWeaponID == 5)
         {
-            for (int i = 0; i < finder.M_tellain.Count; i++)
-            {
-                //成長するギミックの木のタグ
-                if(finder.M_tellain[i].tag == "Tree")
-                {
-                    //中身よろしくお願いします！！！！
-                    //タグの変更もお願いしますm(__)m
-                }
-            }
+             //成長するギミックの木のタグ
+             if(other.tag == "Tree")
+             {
+                 //中身よろしくお願いします！！！！
+                 //タグの変更もお願いしますm(__)m
+             }
+          
         }
     }
 
