@@ -364,9 +364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0ff302538beb1499daae90912b8fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullHpSprites: {fileID: 21300000, guid: f12c0b4ab157e224c90a44f6a30d03a2, type: 3}
-  halfHpSprites: {fileID: 21300000, guid: 2ba367333af17ee4284a3aa4813bbb58, type: 3}
-  notHpSprites: {fileID: 21300000, guid: 7130872f3e536694daac2802713093af, type: 3}
+  fullHpSprites: {fileID: 21300000, guid: 1481c34daaec00d42bcfc608af0175cd, type: 3}
+  halfHpSprites: {fileID: 21300000, guid: e5be23f6b27bdce4aa937d0370910f79, type: 3}
+  notHpSprites: {fileID: 21300000, guid: 5941ab33ff809cf49a664ea1b4d2a103, type: 3}
   player: {fileID: 2169706575297731846, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
 --- !u!114 &3838743765131916754
 MonoBehaviour:

@@ -67,28 +67,35 @@ public class MatlBox : MonoBehaviour
             {
                 selectNum = mobeCtrl - 1;
             }
-            for (int i = selectNum; i < mobeCtrl -1; i++)
+            else
             {
-                if(itemBox[i + 1].GetComponent<Button>().interactable == true)
+                for (int i = selectNum; i < mobeCtrl -1; i++)
                 {
-                    selectNum = i + 1;
-                    break;
+                    if(itemBox[i + 1].GetComponent<Button>().interactable == true)
+                    {
+                        selectNum = i + 1;
+                        break;
+                    }
                 }
             }
         }
-        if (moveLeftFlag == true && selectNum >= 0)
+        if (moveLeftFlag == true && selectNum > 0)
         {
-            if (selectNum == 0)
+            if (selectNum <= 0)
             {
                 selectNum = 0;
                 return;
             }
-            for (int i = selectNum; i > 0; i--)
+            else
             {
-                if(itemBox[i - 1].GetComponent<Button>().interactable == true)
+                Debug.Log("通った");
+                for (int i = selectNum; i > 0; i--)
                 {
-                    selectNum = i - 1;
-                    break;
+                    if(itemBox[i - 1].GetComponent<Button>().interactable == true)
+                    {
+                        selectNum = i - 1;
+                        break;
+                    }
                 }
             }
         }
@@ -107,6 +114,7 @@ public class MatlBox : MonoBehaviour
         }
 
         itemBox[selectNum].GetComponent<Button>().Select();
+
 
         moveRightFlag = false;
         moveLeftFlag = false;

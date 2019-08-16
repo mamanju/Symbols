@@ -14,7 +14,7 @@ public class PlayerCtrl : MonoBehaviour
     }
     private bool downFlag;
     [SerializeField]
-    private float jumpForce = 0.0f;
+    private float jumpForce;
     private float downSpeed;
 
     private float nowPlayerY;
@@ -24,25 +24,22 @@ public class PlayerCtrl : MonoBehaviour
     private float _vertical;
 
     //移動用変数
-    private bool stopFlag;
     private float speed;
-    private float speedMax = 10.0f;
-    private float forceMgmt = 2.0f;
+    [SerializeField]
+    private float walkSpeed;
+    [SerializeField]
+    private float runSpeed;
     private float playerVelocity;
 
     //横移動用変数
     private float angle;
     private Vector3 moveForceH;
     private Vector3 speedForce;
-    private float rotateSpeed = 0.628319f;
-
-    private float lastHorizontal;
-    private float lastVertical;
 
     private float lastSelect;
 
-    Vector3 horizontalForce;
-    Vector3 verticalForce;
+    private Vector3 horizontalForce;
+    private Vector3 verticalForce;
 
     //playerのrigidbody
     private Rigidbody playerRb;
@@ -77,13 +74,6 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]
     private PlayerStatus playerStatus;
     
-    //武器切り替えによるコライダーの範囲の変更
-    [SerializeField]
-    private SearchingBehavior searchingBehavior;
-    //敵のオブジェクト
-    [SerializeField]
-    private Finder finder;
-
     //ノックバック
     private KnockBack knockBack;
 
@@ -189,7 +179,6 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         //槍を投げる（通常攻撃じゃない)
-        //キーの変更お願いします！！！！
         if (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.O))
         {
             weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
@@ -211,10 +200,6 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (knockBack.KnockbackFlag == true) { return; }
 
-        if ( lastHorizontal + lastVertical == 0 && stopFlag == true && groundFlag == true)
-        {
-            StopMove();
-        }
         cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
         //現在のplayerの速度の取得
         playerVelocity = playerRb.velocity.magnitude;
@@ -229,41 +214,26 @@ public class PlayerCtrl : MonoBehaviour
         //キー入力
         _horizontal = Input.GetAxis("Horizontal_L");
         _vertical = Input.GetAxis("Vertical_L");
-
-        //ピタッと止まる処理
-        if (_horizontal + _vertical == 0)
+        
+        if (_horizontal != 0 || _vertical != 0)
         {
-            if (stopFlag == true) { StopMove(); }
-        }
-        //スピード制御と、静止状態の維持
-        if (playerVelocity >= speedMax)
-        {
-            speed = 0.0f;
-        }
-        else if (_horizontal != 0 || _vertical != 0)
-        {
-            stopFlag = true;
-
             //左スティック押し込みに変更
             if (Input.GetButton("StickPush_L"))
             {
-                speed = speedMax;
-                Debug.Log(speed);
+                speed = runSpeed;
             }
             else
             {
-                speed = 5.0f;
+                speed = walkSpeed;
             }
-        }
-        
-        lastHorizontal = Mathf.Abs(_horizontal);
-        lastVertical = Mathf.Abs(_vertical);
-        speedForce += cameraForward.normalized * _vertical * speed
-            + Camera.main.transform.right.normalized * speed * _horizontal;
+            speedForce += cameraForward.normalized * _vertical 
+                + Camera.main.transform.right.normalized * _horizontal;
+            speedForce = speedForce * speed * Time.deltaTime;
 
-        if (knockbackFlag != true)
-        {
-            playerRb.velocity = speedForce;
+            if (knockbackFlag != true)
+            {
+                playerRb.velocity = new Vector3 (speedForce.x, playerRb.velocity.y, speedForce.z);
+            }
         }
         
         if (speedForce != Vector3.zero && _horizontal + _vertical != 0)
@@ -274,12 +244,12 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log(playerVelocity);
 
         // アニメーション
-        if (6 < playerVelocity)
+        if (4 <= playerVelocity)
         {
             // 走るアニメーション
             playerAnime.SetFloat(key_Speed, 1.1f);
         }
-        else if (0 < playerVelocity && playerVelocity <=5)
+        else if (0 < playerVelocity && playerVelocity < 4)
         {
             // 歩くアニメーション
             playerAnime.SetFloat(key_Speed, 0.6f);
@@ -294,32 +264,17 @@ public class PlayerCtrl : MonoBehaviour
         //ジャンプ
         if (groundFlag == true)
         {
-            downFlag = false;
-            downSpeed = -1.3f;
             //playerAnime.SetBool(key_Jump, false);
             if (Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.Space))
             {
                 playerAnime.SetTrigger(key_Jump);
-                nowPlayerY = transform.position.y + 3.0f;
-                playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);
+                playerRb.velocity = new Vector3 (playerRb.velocity.x,
+                    transform.up.y * jumpForce * Time.deltaTime, playerRb.velocity.z);
+                Debug.Log(new Vector3(playerRb.velocity.x,
+                    transform.up.y * jumpForce * Time.deltaTime, playerRb.velocity.z));
                 downFlag = true;
             }
         }
-
-        //落下を自然にする処理
-        if (downFlag == true)
-        {
-            downSpeed *= 1.03f;
-            Vector3 downVector = new Vector3 (0, downSpeed, 0);
-            playerRb.velocity = downVector.normalized;
-        }
-    }
-
-    //移動ストップ
-    public void StopMove()
-    {
-        stopFlag = false;
-        playerRb.velocity = Vector3.zero;
     }
 
     /// <summary>
@@ -335,16 +290,16 @@ public class PlayerCtrl : MonoBehaviour
 
         playerAnime.SetInteger(key_Weapon, _num);
 
-        if (_num == 6)
-        {
-            searchingBehavior.M_searchAngle = 360;
-            searchingBehavior.ApplySearchAngle();
-        }
-        else
-        {
-            searchingBehavior.M_searchAngle = 90;
-            searchingBehavior.ApplySearchAngle();
-        }
+        //if (_num == 6)
+        //{
+        //    searchingBehavior.M_searchAngle = 360;
+        //    searchingBehavior.ApplySearchAngle();
+        //}
+        //else
+        //{
+        //    searchingBehavior.M_searchAngle = 90;
+        //    searchingBehavior.ApplySearchAngle();
+        //}
     }
 
     //武器切り替え右
@@ -383,49 +338,36 @@ public class PlayerCtrl : MonoBehaviour
 
     //範囲内に敵がいたら攻撃
     //武器の耐久値の減少
-    public void Attack()
+    public void Attack(GameObject other)
     {
-        if (finder.M_enemy.Count + finder.M_tellain.Count == 0) { return; }
         DownDurable();
         if (playerStatus.NowWeaponID == 5)
         {
             weaponAtaccks = cymbals.GetComponent<WeaponAtaccks>();
             weaponAtaccks.AbnormalAttaks(weaponNumber);
         }
-        for (int i = 0; i < finder.M_enemy.Count; i++)
+        if (other.tag == "Enemy")
         {
-            var enemyResult =
-            finder.M_enemy[i].GetComponent<EnemyController>().Damage(playerStatus.PlayerAttack());
-            if (enemyResult != null)
-            {
-                finder.OnList(finder.M_enemy[i]);
-            }
+            other.GetComponent<EnemyController>().Damage(playerStatus.PlayerAttack());
         }
-
-        if (finder.M_enemy.Count != 0) { return; }
-
+        
         if (playerStatus.NowWeaponID == 2)
         {
-            for (int i = 0; i < finder.M_tellain.Count; i++)
-            {
-                //切って橋にする木のタグ
-                if(finder.M_tellain[i].tag == "Tree")
-                {
-                    finder.M_tellain[i].GetComponent<CutTreeController>().SetFallFlag = true;
-                }
-            }
+             //切って橋にする木のタグ
+             if(other.tag == "Tree")
+             {
+                 other.GetComponent<CutTreeController>().SetFallFlag = true;
+             }
         }
         else if (playerStatus.NowWeaponID == 5)
         {
-            for (int i = 0; i < finder.M_tellain.Count; i++)
-            {
-                //成長するギミックの木のタグ
-                if(finder.M_tellain[i].tag == "Tree")
-                {
-                    //中身よろしくお願いします！！！！
-                    //タグの変更もお願いしますm(__)m
-                }
-            }
+             //成長するギミックの木のタグ
+             if(other.tag == "Tree")
+             {
+                 //中身よろしくお願いします！！！！
+                 //タグの変更もお願いしますm(__)m
+             }
+          
         }
     }
 

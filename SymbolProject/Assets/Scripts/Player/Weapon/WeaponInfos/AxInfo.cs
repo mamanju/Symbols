@@ -36,9 +36,6 @@ public class AxInfo : WeaponController
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Enemy")
-        {
-            player.GetComponent<PlayerCtrl>().Attack();
-        }
+        player.GetComponent<PlayerCtrl>().Attack(other.gameObject);
     }
 }
