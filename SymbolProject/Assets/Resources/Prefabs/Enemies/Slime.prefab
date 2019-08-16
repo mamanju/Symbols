@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569537}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569539}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569541}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: head 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569543}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569545}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569547}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: head_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569549}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hip1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569551}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hip 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569553}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,9 +301,10 @@ GameObject:
   - component: {fileID: 4244770347844056675}
   - component: {fileID: 4543095191468080554}
   - component: {fileID: 112706341587749462}
-  m_Layer: 0
+  - component: {fileID: 8845562282396899349}
+  m_Layer: 10
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,7 +359,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!65 &112706341587749462
 BoxCollider:
@@ -372,7 +373,24 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.3, z: 0.6}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &8845562282396899349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244770347851335091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c9ecb6903950143b8699031c930bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystal: 0
+  health: 1
+  attack: 1
+  attackSpeed: 1
+  moveSpeed: 1
 --- !u!1 &4244770347851335093
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569557}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569559}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569561}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lefteye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569563}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: left_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569565}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lefteye_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569567}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lefteye 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569569}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mae 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569571}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569573}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: null1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569575}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mae_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: null3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569579}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: null2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569581}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,7 +797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569583}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: nurbsCircle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569585}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: right_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -839,7 +857,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569587}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -869,7 +887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569589}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Righteye_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569591}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Righteye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,7 +948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4244770347851569593}
   - component: {fileID: 4244770347839834275}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: slime_body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569595}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4244770347851569597}
   - component: {fileID: 4244770347839834279}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: slime_L_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4244770347851569599}
   - component: {fileID: 4244770347839834273}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: slime_body2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1230,7 +1248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569601}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: usiro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1262,7 +1280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4244770347851569603}
   - component: {fileID: 4244770347839834277}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: slime_L_eye1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1350,7 +1368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244770347851569607}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: usiro_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
