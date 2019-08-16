@@ -12,8 +12,8 @@ public class EnemyRespawn : MonoBehaviour
 
     private float timer;
 
-    [SerializeField]
-    private float spawmTime;
+    //[SerializeField]
+    private float spawmTime = 10;
 
     public bool setIsSpawn {
         set { isSpawn = value; }

@@ -241,8 +241,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6600163062571606215}
   - component: {fileID: 3985935875357404206}
-  - component: {fileID: 4352471642788687632}
   - component: {fileID: 3455421180771105803}
+  - component: {fileID: 7201440335973867781}
+  - component: {fileID: 6146198629311896713}
   m_Layer: 10
   m_Name: slime_B
   m_TagString: Enemy
@@ -259,7 +260,7 @@ Transform:
   m_GameObject: {fileID: 6600163062571580647}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -67.86, y: 6, z: -6.4000034}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 9115783026023563324}
   - {fileID: 6600163062571606213}
@@ -286,22 +287,6 @@ MonoBehaviour:
   attack: 1
   attackSpeed: 1
   moveSpeed: 1
---- !u!54 &4352471642788687632
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6600163062571580647}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3455421180771105803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -315,6 +300,46 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.3, z: 0.6}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &7201440335973867781
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600163062571580647}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.5
+  m_BaseOffset: 0.15
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &6146198629311896713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600163062571580647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aacad33244a2614f87c1a2267b2f5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PatrolPoints: []
+  currentState: 0
+  waitAtPoint: 2
+  chaseRange: 3
+  attackRange: 1
+  timeBetweenAttacks: 2
 --- !u!1 &6600163062571580655
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,4 +460,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98cc05dce1d6b44eb44c5c88379e34f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawmTime: 10
