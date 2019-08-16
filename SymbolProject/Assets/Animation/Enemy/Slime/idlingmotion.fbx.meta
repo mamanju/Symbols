@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 4a0fa17af7094334ba5b6dc99674aa9a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Body_joint
+    100002: eye
+    100004: head
+    100006: head 1
+    100008: head_joint
+    100010: hip
+    100012: hip 1
+    100014: hip1
+    100016: //RootNode
+    100018: joint1
+    100020: Left
+    100022: Left 1
+    100024: left_joint
+    100026: Lefteye
+    100028: Lefteye 1
+    100030: Lefteye_joint
+    100032: mae
+    100034: mae 1
+    100036: mae_joint
+    100038: null1
+    100040: null2
+    100042: null3
+    100044: nurbsCircle3
+    100046: Right
+    100048: Right1
+    100050: right_joint
+    100052: Righteye
+    100054: Righteye_joint
+    100056: slime
+    100058: slime_body1
+    100060: slime_body2
+    100062: slime_L_eye
+    100064: slime_L_eye1
+    100066: usiro
+    100068: usiro_joint
+    400000: Body_joint
+    400002: eye
+    400004: head
+    400006: head 1
+    400008: head_joint
+    400010: hip
+    400012: hip 1
+    400014: hip1
+    400016: //RootNode
+    400018: joint1
+    400020: Left
+    400022: Left 1
+    400024: left_joint
+    400026: Lefteye
+    400028: Lefteye 1
+    400030: Lefteye_joint
+    400032: mae
+    400034: mae 1
+    400036: mae_joint
+    400038: null1
+    400040: null2
+    400042: null3
+    400044: nurbsCircle3
+    400046: Right
+    400048: Right1
+    400050: right_joint
+    400052: Righteye
+    400054: Righteye_joint
+    400056: slime
+    400058: slime_body1
+    400060: slime_body2
+    400062: slime_L_eye
+    400064: slime_L_eye1
+    400066: usiro
+    400068: usiro_joint
+    2100000: slime_b
+    4300000: slime_L_eye
+    4300002: slime_body1
+    4300004: slime_body2
+    4300006: slime_L_eye1
+    7400000: slime_idlingmotion
+    9500000: //RootNode
+    13700000: slime_body1
+    13700002: slime_body2
+    13700004: slime_L_eye
+    13700006: slime_L_eye1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: slime_idlingmotion
+      takeName: slime_idlingmotion
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

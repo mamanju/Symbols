@@ -320,6 +320,8 @@ GameObject:
   - component: {fileID: 2666221168777796039}
   - component: {fileID: 1838050578550727059}
   - component: {fileID: 6261463151492190785}
+  - component: {fileID: 2875320134748014739}
+  - component: {fileID: 644436661548192780}
   m_Layer: 10
   m_Name: slime_Y
   m_TagString: Enemy
@@ -392,6 +394,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.3, z: 0.6}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &2875320134748014739
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944443301803932795}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 4a0fa17af7094334ba5b6dc99674aa9a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 766291916c8a2244ab0a5aed170b9a11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &644436661548192780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944443301803932795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9d9300cb762a7429c9eb7b1ba47381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6018378224178327162
 GameObject:
   m_ObjectHideFlags: 0
