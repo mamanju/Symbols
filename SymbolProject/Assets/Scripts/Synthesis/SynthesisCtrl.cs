@@ -93,6 +93,7 @@ public class SynthesisCtrl : MonoBehaviour
                     inputMatl[i] = inputMatl[i + 1];
                     inputMatl[i + 1] = a;
                     changeFlag++;
+                    Debug.Log(inputMatl[i]);
                 }
             }
             if (changeFlag == 0) { changeFin = true; };

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    public static PlayerCtrl instance;
+
     //ジャンプ用変数
     private bool groundFlag;
     public bool GroundFlag
@@ -103,6 +105,11 @@ public class PlayerCtrl : MonoBehaviour
     private string key_Attack = "Attack";
     private string key_AnimeBack = "AnimeBack";
     private bool attackAnime_Flag = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -240,8 +247,6 @@ public class PlayerCtrl : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(speedForce);
         }
-
-        Debug.Log(playerVelocity);
 
         // アニメーション
         if (4 <= playerVelocity)

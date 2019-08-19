@@ -302,8 +302,10 @@ GameObject:
   - component: {fileID: 4543095191468080554}
   - component: {fileID: 112706341587749462}
   - component: {fileID: 8845562282396899349}
+  - component: {fileID: 2897420484142493267}
+  - component: {fileID: 4341930617253111329}
   m_Layer: 10
-  m_Name: Slime
+  m_Name: Slime_Blue
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +320,7 @@ Transform:
   m_GameObject: {fileID: 4244770347851335091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4244770347851569539}
   - {fileID: 4244770347851569545}
@@ -359,7 +361,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &112706341587749462
 BoxCollider:
@@ -373,7 +375,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.3, z: 0.6}
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!114 &8845562282396899349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,10 +389,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crystal: 0
-  health: 1
-  attack: 1
+  health: 10
+  attack: 2
   attackSpeed: 1
   moveSpeed: 1
+--- !u!195 &2897420484142493267
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244770347851335091}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &4341930617253111329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244770347851335091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aacad33244a2614f87c1a2267b2f5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PatrolPoints: []
+  currentPatrolPoint: 0
+  agent: {fileID: 2897420484142493267}
+  currentState: 0
+  waitAtPoint: 2
+  chaseRange: 3
+  attackRange: 2
+  timeBetweenAttacks: 2
 --- !u!1 &4244770347851335093
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,21 +22,28 @@ public class EnemyAI : MonoBehaviour
     public AIState currentState;
     public float waitAtPoint = 2f;
     private float waitCounter;
-    public float chaseRange;
-    public float attackRange = 1f;
+    public float chaseRange  = 3f;
+    public float attackRange = 2f;
     public float timeBetweenAttacks = 2f;
     private float attackCounter;
 
+    private float distancetoPlayer;
+
     void Start()
     {
+        currentState = AIState.isIdle;
         waitCounter = waitAtPoint;
     }
 
      void Update()
     {
-        float distancetoPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
-
+        if (PlayerCtrl.instance != null)
         {
+            distancetoPlayer = Vector3.Distance(transform.position, PlayerCtrl.instance.transform.position);
+        }
+
+        Debug.Log(distancetoPlayer);
+
             //敵の動きはswitchで設定
             switch (currentState)
             {
@@ -88,7 +95,11 @@ public class EnemyAI : MonoBehaviour
 
                 case AIState.isChasing:
 
-                    agent.SetDestination(PlayerController.instance.transform.position);
+                    if (PlayerCtrl.instance != null)
+                    {
+                        agent.SetDestination(PlayerCtrl.instance.transform.position);
+                    }
+
 
                     if (distancetoPlayer <= attackRange)
                     {
@@ -115,7 +126,11 @@ public class EnemyAI : MonoBehaviour
 
                 case AIState.isAttacking:
 
-                    transform.LookAt(PlayerController.instance.transform, Vector3.up);
+                    if (PlayerCtrl.instance != null)
+                    {
+                        transform.LookAt(PlayerCtrl.instance.transform, Vector3.up);
+                    }
+
                     transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
 
                     attackCounter -= Time.deltaTime;
@@ -140,6 +155,4 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
-
-}
     
