@@ -482,7 +482,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
+  synthesisCtrl: {fileID: 9057489566423155658}
 --- !u!1 &9057489566175084131
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +607,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
+  synthesisCtrl: {fileID: 9057489566423155658}
 --- !u!1 &9057489566293407998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
+  synthesisCtrl: {fileID: 9057489566423155658}
 --- !u!1 &9057489566692377113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b38d2f9d53434340802ad142feff97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &9057489566692377119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1715,7 +1714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b38d2f9d53434340802ad142feff97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &9057489566826823757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,7 +1854,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
+  synthesisCtrl: {fileID: 9057489566423155658}
 --- !u!1 &9057489566942810463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,7 +2344,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
+  synthesisCtrl: {fileID: 9057489566423155658}
 --- !u!1 &9057489567064881968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,7 +2548,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
+  synthesisCtrl: {fileID: 9057489566423155658}
 --- !u!1 &9057489567274544494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,7 +2693,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 72a1d6d56ee1d8d4885143f03ecb272f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7e3051cf2fa5f04ea7623e310547ecc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2965,7 +2963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b38d2f9d53434340802ad142feff97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &9057489567419883460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3185,7 +3182,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
+  synthesisCtrl: {fileID: 9057489566423155658}
 --- !u!1 &9057489567519865398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,7 +3415,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
+  synthesisCtrl: {fileID: 9057489566423155658}
 --- !u!1 &9057489567599529365
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,7 +3540,7 @@ MonoBehaviour:
   meteoSprite: {fileID: 21300000, guid: 3e4139f7b6cbe8f45b9c468cb6fd9d22, type: 3}
   questionSprite: {fileID: 21300000, guid: 2723b26e17b668547abe6669d66bb69d, type: 3}
   exclamation: {fileID: 21300000, guid: 9afd4dc29b6d5924ba35d7e31676d1d9, type: 3}
-  synthesisCtrl: {fileID: 0}
+  synthesisCtrl: {fileID: 9057489566423155658}
 --- !u!1 &9057489567603113555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3789,7 +3786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b38d2f9d53434340802ad142feff97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &9057489567664608178
 MonoBehaviour:
   m_ObjectHideFlags: 0
