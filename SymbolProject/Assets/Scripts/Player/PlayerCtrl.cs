@@ -147,19 +147,24 @@ public class PlayerCtrl : MonoBehaviour
             }
         }
 
+
+        //合成の操作
         if (synthesisGUI.activeSelf == true)
         {
             SynthesisCtrl synthesisCtrl = synthesisBoxes.GetComponent<SynthesisCtrl>();
+            //素材クリスタルを右に移動
             if (Input.GetAxisRaw("CrossKey_H") > 0 && lastSelect == 0 && synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveRightFlag = true;
             }
+            //素材クリスタルを左に移動
             if (Input.GetAxisRaw("CrossKey_H") < 0 && lastSelect == 0 && synthesisCtrl.EndFlag == false
                 || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 matlButton.GetComponent<MatlBox>().MoveLeftFlag = true;
             }
+            //合成ボタン
             if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Square"))
             {
                 synthesisCtrl.EndFlag = true;
@@ -169,10 +174,9 @@ public class PlayerCtrl : MonoBehaviour
             {
                 synthesisCtrl.ResetCrystal();
             }
+            lastSelect = Input.GetAxisRaw("CrossKey_H");
         }
-
-        lastSelect = Input.GetAxisRaw("CrossKey_H");
-
+        
         if (Time.timeScale == 0) { return; }
         
         //武器切り替え
