@@ -7,6 +7,18 @@ using UnityEngine;
 /// </summary>
 public class EnemyController : EnemyManager
 {
+    private Animator anim;
+
+    public int Attack
+    {
+        get { return GetAttack; }
+    }
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     /// <summary>
     /// 攻撃処理
     /// </summary>
@@ -26,7 +38,6 @@ public class EnemyController : EnemyManager
     /// <param name="damage"></param>
     public GameObject Damage(int damage)
     {
-        Debug.Log(Health);
         if (Health - damage <= 0)
         {
             DropCrystal();
@@ -34,6 +45,7 @@ public class EnemyController : EnemyManager
             return gameObject;
         }
         Health -= damage;
+        anim.SetTrigger("Damage");
         return null;
     }
 
@@ -45,5 +57,6 @@ public class EnemyController : EnemyManager
         GameObject cry = Instantiate(Resources.Load<GameObject>(path), transform);
         cry.transform.position = transform.position;
         cry.transform.SetParent(transform.parent);
+        cry.GetComponent<CapsuleCollider>().enabled = false;
     }
 }

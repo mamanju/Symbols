@@ -25,6 +25,5 @@ public class SwordInfo : WeaponController
     private void OnTriggerEnter(Collider other)
     {
        player.GetComponent<PlayerCtrl>().Attack(other.gameObject);
-    
     }
 }

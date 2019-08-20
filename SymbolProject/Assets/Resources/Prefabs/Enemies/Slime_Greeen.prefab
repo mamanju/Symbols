@@ -317,8 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crystal: 3
-  health: 10
-  attack: 2
+  health: 3
+  attack: 1
   attackSpeed: 1
   moveSpeed: 1
 --- !u!195 &2053117403058446837

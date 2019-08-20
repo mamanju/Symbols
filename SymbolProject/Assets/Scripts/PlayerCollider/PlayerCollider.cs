@@ -7,22 +7,28 @@ public class PlayerCollider : MonoBehaviour
     MatlManager matlManager;
     WeaponManager weaponManager;
 
+    private void Start()
+    {
+        matlManager = GetComponent<MatlManager>();
+    }
+
     //プレイヤーにぶつかったものがCrystalだったら10個まで取得
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Crystal")
         {
             MatlInfo matlInfo = other.GetComponent<MatlInfo>();
-            matlManager = this.GetComponent<MatlManager>();
+            other.GetComponent<CapsuleCollider>().enabled = false;
             if (matlManager.NowMatl[(int)matlInfo.matlList] >= 10)
             {
                 Debug.Log("所持上限を超えています");
+                other.GetComponent<CapsuleCollider>().enabled = true;
                 return;
             }
             else
             {
-                matlManager.NowMatl[(int)matlInfo.matlList]++;
                 Destroy(other.gameObject);
+                matlManager.NowMatl[(int)matlInfo.matlList]++;
             }
         }
 

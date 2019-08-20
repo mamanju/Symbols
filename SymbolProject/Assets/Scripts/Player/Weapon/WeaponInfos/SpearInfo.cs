@@ -28,7 +28,6 @@ public class SpearInfo : WeaponController
         weaponID = 1;
 
         player = transform.parent.GetComponent<GetPlayer>().Player;
-
     }
 
     public void DelWeaponDurable()
@@ -39,7 +38,6 @@ public class SpearInfo : WeaponController
         Debug.Log("durable=" + durable);
         if (durable == 0)
         {
-            GameObject player = this.transform.parent.parent.gameObject;
             player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
             player.GetComponent<WeaponManager>().DeleteWeapon(weaponID - 1);
             durable = durable_max;

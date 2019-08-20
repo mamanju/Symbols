@@ -193,7 +193,7 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.O))
         {
             weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
-            weaponAtaccks.AbnormalAttaks(weaponNumber);
+            weaponAtaccks.AbnormalAttaks(weaponNumber, null);
         }
 
         //攻撃
@@ -350,10 +350,10 @@ public class PlayerCtrl : MonoBehaviour
     public void Attack(GameObject other)
     {
         DownDurable();
-        if (playerStatus.NowWeaponID == 5)
+        if (playerStatus.NowWeaponID == 5 && other.tag == "Enemy")
         {
             weaponAtaccks = cymbals.GetComponent<WeaponAtaccks>();
-            weaponAtaccks.AbnormalAttaks(weaponNumber);
+            weaponAtaccks.AbnormalAttaks(weaponNumber, other);
         }
         if (other.tag == "Enemy")
         {

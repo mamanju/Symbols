@@ -8,6 +8,8 @@ public class WeaponAtaccks : MonoBehaviour
 
     void Update()
     {
+        if (spearTimeFlag == false) { return; }
+
         if (spearTimeFlag == true)
         {
             spearTime -= Time.unscaledDeltaTime;
@@ -21,7 +23,7 @@ public class WeaponAtaccks : MonoBehaviour
         }
     }
 
-    public void AbnormalAttaks(int _num)
+    public void AbnormalAttaks(int _num , GameObject _enemy)
     {
         if(_num == 1)
         {
@@ -29,7 +31,7 @@ public class WeaponAtaccks : MonoBehaviour
         }
         if (_num == 5)
         {
-            CymbalsFalter();
+            CymbalsFalter(_enemy);
         }
     }
 
@@ -101,16 +103,16 @@ public class WeaponAtaccks : MonoBehaviour
         set { stunFlag = value; }
     }
 
-    public void CymbalsFalter()
+    public void CymbalsFalter(GameObject _enemy)
     {
-        player = this.transform.parent.parent.gameObject;
-        Finder finder = player.GetComponent<Finder>();
+        //player = this.transform.parent.parent.gameObject;
+        //Finder finder = player.GetComponent<Finder>();
 
-        if (finder.M_enemy.Count == 0) { return; }
-        for (int i = 0; i < finder.M_enemy.Count; i++)
-        {
-            finder.M_enemy[i].GetComponent<Rigidbody>().isKinematic = true;
-            stunFlag = true;
-        }
+        //if (finder.M_enemy.Count == 0) { return; }
+        //for (int i = 0; i < finder.M_enemy.Count; i++)
+        
+        _enemy.GetComponent<Rigidbody>().isKinematic = true;
+        stunFlag = true;
+        
     }
 }

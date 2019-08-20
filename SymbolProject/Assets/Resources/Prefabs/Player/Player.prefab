@@ -1811,8 +1811,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 170
-  walkSpeed: 150
-  runSpeed: 300
+  walkSpeed: 200
+  runSpeed: 400
   synthesisGUI: {fileID: 0}
   weaponManager: {fileID: 2169706574673601576}
   playerWeaponManager: {fileID: 3347060895697097554}
@@ -5396,6 +5396,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
+    - target: {fileID: 1865358654072249114, guid: 95835514a598d824f9a4438a03cbadfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Cymbals
+      objectReference: {fileID: 0}
     - target: {fileID: 5332525395059344790, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5461,11 +5466,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 1865358654072249114, guid: 95835514a598d824f9a4438a03cbadfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Cymbals
-      objectReference: {fileID: 0}
     - target: {fileID: 8402254922472746418, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
       propertyPath: leftCymbal
@@ -5514,6 +5514,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
+    - target: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 5580436315297476655, guid: 16ee8293268e7ec43a40f55bb09f9659,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5568,11 +5573,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -34.906006
-      objectReference: {fileID: 0}
-    - target: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ee8293268e7ec43a40f55bb09f9659, type: 3}

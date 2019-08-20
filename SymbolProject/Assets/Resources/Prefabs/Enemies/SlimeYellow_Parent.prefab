@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5941886604622378041}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Position2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5124457420429446374}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Position1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,6 +160,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6502993971623343730, guid: d0bb61e6b19c688448e90b9c5a3eb8ac,
+        type: 3}
+      propertyPath: PatrolPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 5124457420429446374}
+    - target: {fileID: 6502993971623343730, guid: d0bb61e6b19c688448e90b9c5a3eb8ac,
+        type: 3}
+      propertyPath: PatrolPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 5941886604622378041}
     - target: {fileID: 1010518460985536690, guid: d0bb61e6b19c688448e90b9c5a3eb8ac,
         type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -175,16 +185,6 @@ PrefabInstance:
       propertyPath: PatrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 9125742689890557411}
-    - target: {fileID: 6502993971623343730, guid: d0bb61e6b19c688448e90b9c5a3eb8ac,
-        type: 3}
-      propertyPath: PatrolPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 5124457420429446374}
-    - target: {fileID: 6502993971623343730, guid: d0bb61e6b19c688448e90b9c5a3eb8ac,
-        type: 3}
-      propertyPath: PatrolPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 5941886604622378041}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0bb61e6b19c688448e90b9c5a3eb8ac, type: 3}
 --- !u!4 &9125742689890557411 stripped

@@ -367,7 +367,7 @@ MonoBehaviour:
   fullHpSprites: {fileID: 21300000, guid: 1481c34daaec00d42bcfc608af0175cd, type: 3}
   halfHpSprites: {fileID: 21300000, guid: e5be23f6b27bdce4aa937d0370910f79, type: 3}
   notHpSprites: {fileID: 21300000, guid: 5941ab33ff809cf49a664ea1b4d2a103, type: 3}
-  player: {fileID: 2169706575297731846, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
+  player: {fileID: 0}
 --- !u!114 &3838743765131916754
 MonoBehaviour:
   m_ObjectHideFlags: 0
