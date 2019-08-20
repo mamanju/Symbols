@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerAvatarMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: chara
+    m_Weight: 1
+  - m_Path: chara/body
+    m_Weight: 1
+  - m_Path: chara/hair2
+    m_Weight: 1
+  - m_Path: chara/hair2/hair_back
+    m_Weight: 1
+  - m_Path: chara/hair2/hair_front
+    m_Weight: 1
+  - m_Path: chara/hair2/hair_front_back
+    m_Weight: 1
+  - m_Path: chara/hed
+    m_Weight: 1
+  - m_Path: chara/hed/hed1
+    m_Weight: 1
+  - m_Path: chara/hed/L_ear
+    m_Weight: 1
+  - m_Path: chara/hed/L_eye
+    m_Weight: 1
+  - m_Path: chara/hed/L_eye/L_eye_dodai
+    m_Weight: 1
+  - m_Path: chara/hed/L_eye/L_eye_hilight
+    m_Weight: 1
+  - m_Path: chara/hed/L_eye/L_eye_huti
+    m_Weight: 1
+  - m_Path: chara/hed/L_eye/L_eye_main
+    m_Weight: 1
+  - m_Path: chara/hed/L_eye/L_mayuge
+    m_Weight: 1
+  - m_Path: chara/hed/neck
+    m_Weight: 1
+  - m_Path: chara/hed/R_ear
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_eye_dodai
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_eye_hilight
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_eye_huti
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_eye_main
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_mayuge
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_mayuge/beltset
+    m_Weight: 0
+  - m_Path: chara/hed/R_eye/R_mayuge/beltset/belt
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_mayuge/beltset/belt_clip
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_mayuge/beltset/belt_cord2
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_mayuge/beltset/belt_cord3
+    m_Weight: 1
+  - m_Path: chara/hed/R_eye/R_mayuge/beltset/shoulder_pad
+    m_Weight: 1
+  - m_Path: chara/L_hand
+    m_Weight: 1
+  - m_Path: chara/L_shoes
+    m_Weight: 0
+  - m_Path: chara/L_shoes/L_shoes 1
+    m_Weight: 1
+  - m_Path: chara/L_shoes/L_shoes_belt
+    m_Weight: 1
+  - m_Path: chara/L_wrist_band
+    m_Weight: 1
+  - m_Path: chara/pants
+    m_Weight: 0
+  - m_Path: chara/pouch
+    m_Weight: 0
+  - m_Path: chara/pouch/pouch_dodai
+    m_Weight: 1
+  - m_Path: chara/pouch/pouch_huta
+    m_Weight: 1
+  - m_Path: chara/R_hand
+    m_Weight: 1
+  - m_Path: chara/R_shoes
+    m_Weight: 0
+  - m_Path: chara/R_shoes/R_shoes 1
+    m_Weight: 1
+  - m_Path: chara/R_shoes/R_shoes_belt
+    m_Weight: 1
+  - m_Path: chara/R_wrist_band
+    m_Weight: 1
+  - m_Path: chara/wear
+    m_Weight: 0
+  - m_Path: controller
+    m_Weight: 0
+  - m_Path: controller/kosi
+    m_Weight: 1
+  - m_Path: controller/kosi/null2
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null10
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null10/R_hand 1
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null10/R_hand 1/null15
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null10/R_hand 1/null15/R_tekubi
+      1
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null11
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null11/L_hand 1
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null11/L_hand 1/null16
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null11/L_hand 1/null16/L_tekubi
+      1
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null12
+    m_Weight: 1
+  - m_Path: controller/kosi/null2/kokan 1/null3/hara 1/null12/neck 2
+    m_Weight: 1
+  - m_Path: controller/kosi/null4
+    m_Weight: 1
+  - m_Path: controller/kosi/null4/R_Foot
+    m_Weight: 1
+  - m_Path: controller/kosi/null4/R_Foot/null17
+    m_Weight: 1
+  - m_Path: controller/kosi/null4/R_Foot/null17/R_hiza
+    m_Weight: 1
+  - m_Path: controller/kosi/null4/R_Foot/null17/R_hiza/null5
+    m_Weight: 1
+  - m_Path: controller/kosi/null4/R_Foot/null17/R_hiza/null5/R_asisoko 1
+    m_Weight: 1
+  - m_Path: controller/kosi/null4/R_Foot/null17/R_hiza/null5/R_asisoko 1/null8
+    m_Weight: 1
+  - m_Path: controller/kosi/null4/R_Foot/null17/R_hiza/null5/R_asisoko 1/null8/R_tumasaki
+    m_Weight: 1
+  - m_Path: controller/kosi/null9
+    m_Weight: 1
+  - m_Path: controller/kosi/null9/L_Foot
+    m_Weight: 1
+  - m_Path: controller/kosi/null9/L_Foot/null18
+    m_Weight: 1
+  - m_Path: controller/kosi/null9/L_Foot/null18/L_hiza
+    m_Weight: 1
+  - m_Path: controller/kosi/null9/L_Foot/null18/L_hiza/null6
+    m_Weight: 1
+  - m_Path: controller/kosi/null9/L_Foot/null18/L_hiza/null6/L_asisoko 1
+    m_Weight: 1
+  - m_Path: controller/kosi/null9/L_Foot/null18/L_hiza/null6/L_asisoko 1/null7
+    m_Weight: 1
+  - m_Path: controller/kosi/null9/L_Foot/null18/L_hiza/null6/L_asisoko 1/null7/L_tumasaki
+      1
+    m_Weight: 1
+  - m_Path: joint
+    m_Weight: 0
+  - m_Path: joint/cosi
+    m_Weight: 0
+  - m_Path: joint/cosi/kokan
+    m_Weight: 0
+  - m_Path: joint/cosi/kokan/hara
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/hara/mune
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/hara/mune/L_kata
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/hara/mune/L_kata/L_hizi
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/hara/mune/L_kata/L_hizi/L_tekubi
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/hara/mune/neck 1
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/hara/mune/neck 1/hed 1
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/hara/mune/R_kata
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/hara/mune/R_kata/R_hizi
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/hara/mune/R_kata/R_hizi/R_tekubi
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/L_momo
+    m_Weight: 0
+  - m_Path: joint/cosi/kokan/L_momo/L_sune
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/L_momo/L_sune/L_asisoko
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/L_momo/L_sune/L_asisoko/L_tumasaki
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/R_momo
+    m_Weight: 0
+  - m_Path: joint/cosi/kokan/R_momo/R_sune
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/R_momo/R_sune/R_asisoko
+    m_Weight: 1
+  - m_Path: joint/cosi/kokan/R_momo/R_sune/R_asisoko/R_tumasaki1
+    m_Weight: 1

@@ -197,6 +197,8 @@ ModelImporter:
     4300064: R_shoes_belt
     4300066: pouch_huta
     4300068: pouch_dodai
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -209,7 +211,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftLowerLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -217,7 +220,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -249,8 +252,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -264,7 +267,227 @@ ModelImporter:
   humanDescription:
     serializedVersion: 2
     human: []
-    skeleton: []
+    skeleton:
+    - name: syujinkou(Clone)
+      parentName: 
+      position: {x: 0.006968082, y: 0.8183232, z: -0.06984961}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hair2
+      parentName: syujinkou(Clone)
+      position: {x: -0.0067800935, y: 0.41481116, z: -0.0060008126}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hair_back
+      parentName: hair2
+      position: {x: -0.0033923835, y: -0.03454903, z: -0.19784302}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hair_front_back
+      parentName: hair2
+      position: {x: -0.0005026558, y: 0.073018156, z: 0.1681721}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hair_front
+      parentName: hair2
+      position: {x: -0.0005026558, y: 0.073018156, z: 0.1681721}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hed
+      parentName: syujinkou(Clone)
+      position: {x: -0.002513008, y: -0.8183232, z: -0.07683563}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ear
+      parentName: hed
+      position: {x: -0.36463514, y: 1.0383637, z: 0.050948676}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ear
+      parentName: hed
+      position: {x: 0.35572502, y: 1.0383637, z: 0.050948676}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hed1
+      parentName: hed
+      position: {x: -0.0047697416, y: 1.0928277, z: 0.09551712}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: neck
+      parentName: hed
+      position: {x: -0.0047697416, y: 0.80819607, z: 0.08713873}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye
+      parentName: hed
+      position: {x: -0.004455074, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye_hilight
+      parentName: L_eye
+      position: {x: -0.1394499, y: 1.0942851, z: 0.37742713}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye_main
+      parentName: L_eye
+      position: {x: -0.16349646, y: 1.0672239, z: 0.35468882}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye_dodai
+      parentName: L_eye
+      position: {x: -0.17596361, y: 1.0741105, z: 0.3470532}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye_huti
+      parentName: L_eye
+      position: {x: -0.1768637, y: 1.0745485, z: 0.348272}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_mayuge
+      parentName: L_eye
+      position: {x: -0.17377864, y: 1.1507417, z: 0.37501955}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye
+      parentName: hed
+      position: {x: -0.004455074, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye_hilight
+      parentName: R_eye
+      position: {x: 0.13887268, y: 1.0943723, z: 0.37658766}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye_main
+      parentName: R_eye
+      position: {x: 0.16291946, y: 1.0673388, z: 0.35593027}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye_dodai
+      parentName: R_eye
+      position: {x: 0.17596176, y: 1.0741138, z: 0.34705326}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye_huti
+      parentName: R_eye
+      position: {x: 0.17687595, y: 1.0745485, z: 0.3476985}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_mayuge
+      parentName: R_eye
+      position: {x: 0.17650911, y: 1.1542492, z: 0.37620112}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_hand
+      parentName: syujinkou(Clone)
+      position: {x: 0.47896773, y: -0.06611256, z: -0.005272948}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_wrist_band
+      parentName: syujinkou(Clone)
+      position: {x: 0.40443474, y: -0.060401056, z: -0.0053152638}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_hand
+      parentName: syujinkou(Clone)
+      position: {x: -0.4929039, y: -0.06611256, z: -0.005272948}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_wrist_band
+      parentName: syujinkou(Clone)
+      position: {x: -0.41837087, y: -0.060401056, z: -0.0053152638}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: body
+      parentName: syujinkou(Clone)
+      position: {x: -0.0072827497, y: -0.36583552, z: -0.0007394428}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wear
+      parentName: syujinkou(Clone)
+      position: {x: -0.0072827497, y: -0.3819075, z: -0.00036874844}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pants
+      parentName: syujinkou(Clone)
+      position: {x: -0.0072827497, y: -0.36900142, z: -0.0046077482}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: beltset
+      parentName: syujinkou(Clone)
+      position: {x: -0.006968082, y: -0.8183232, z: -0.07683563}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shoulder_pad
+      parentName: beltset
+      position: {x: -0.24645215, y: 0.8192328, z: 0.06877171}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: belt
+      parentName: beltset
+      position: {x: -0.00031466756, y: 0.4399895, z: 0.09278272}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: belt_clip
+      parentName: beltset
+      position: {x: -0.1752567, y: 0.4500867, z: 0.083378345}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: belt_cord2
+      parentName: beltset
+      position: {x: -0.1962897, y: 0.35369867, z: 0.084502384}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: belt_cord3
+      parentName: beltset
+      position: {x: -0.20683771, y: 0.35369867, z: 0.06649947}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_shoes
+      parentName: syujinkou(Clone)
+      position: {x: -0.006968082, y: -0.8183232, z: -0.07683563}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_shoes_belt
+      parentName: L_shoes
+      position: {x: -0.083928324, y: 0.15793525, z: 0.08916623}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_shoes 1
+      parentName: L_shoes
+      position: {x: -0.082860574, y: 0.072018266, z: 0.14487791}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_shoes
+      parentName: syujinkou(Clone)
+      position: {x: -0.006968082, y: -0.8183232, z: -0.07683563}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_shoes 1
+      parentName: R_shoes
+      position: {x: 0.082860574, y: 0.072018266, z: 0.14487791}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_shoes_belt
+      parentName: R_shoes
+      position: {x: 0.083928324, y: 0.15793525, z: 0.08916623}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pouch
+      parentName: syujinkou(Clone)
+      position: {x: 0.18545493, y: -0.37794188, z: 0.0125079565}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pouch_huta
+      parentName: pouch
+      position: {x: -0.003562423, y: 0.043518234, z: -0.0000000052563593}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pouch_dodai
+      parentName: pouch
+      position: {x: -0.0036884255, y: -0.0063851653, z: -0.0000000052563593}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -277,7 +500,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
