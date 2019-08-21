@@ -9,11 +9,6 @@ public class EnemyController : EnemyManager
 {
     private Animator anim;
 
-    public int Attack
-    {
-        get { return GetAttack; }
-    }
-
     private void Start()
     {
         anim = GetComponent<Animator>();

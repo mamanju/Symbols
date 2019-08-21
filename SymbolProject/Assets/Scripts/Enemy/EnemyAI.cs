@@ -136,7 +136,7 @@ public class EnemyAI : MonoBehaviour
                             //anim.SetTrigger("Attack");敵のアニメーションを作ってから、ここから設定する
                             anim.SetTrigger("Attack");
                             attackCounter = timeBetweenAttacks;
-                            int attack = GetComponent<EnemyController>().Attack;
+                            int attack = GetComponent<EnemyController>().GetAttack;
                             PlayerCtrl.instance.GetComponent<PlayerStatus>().DownHP(attack);
                         }
                         else

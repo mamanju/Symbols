@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 8900915910362980336}
   - component: {fileID: 8900915910365005742}
   - component: {fileID: 6829488902091118390}
+  - component: {fileID: 6811631000457901558}
   m_Layer: 0
-  m_Name: WCrystal_Hook
+  m_Name: MCrystal_Boss
   m_TagString: WeaponCrystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,3 +107,16 @@ CapsuleCollider:
   m_Height: 1.1939856
   m_Direction: 1
   m_Center: {x: 0, y: 0.5969928, z: 0}
+--- !u!114 &6811631000457901558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8900915910364905776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb03d811d6e37d641be6e1830e6fc63f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeMax_crystal: 0.5
