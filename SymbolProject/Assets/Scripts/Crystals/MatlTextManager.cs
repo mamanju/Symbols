@@ -19,7 +19,7 @@ public class MatlTextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nowMatl = player.GetComponent<MatlManager>().NowMatl;
+        nowMatl = MatlManager.NowMatl;
         for (int i = 0; i < nowMatl.Length; i++)
         {
             if ( i == (int)this.GetComponent<MatlInfo>().matlList)

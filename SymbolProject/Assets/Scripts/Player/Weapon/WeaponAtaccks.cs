@@ -68,7 +68,7 @@ public class WeaponAtaccks : MonoBehaviour
         if (rigidbody.isKinematic == true)
         {
             player = SpearBox.GetComponent<SpearInfo>().Player;
-            player.GetComponent<WeaponManager>().NowWeapon[0]--;
+            WeaponManager.NowWeapon[0]--;
             player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
         }
 

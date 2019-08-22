@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    private int hp = 20;
+    private static int hp = 20;
+    public static int PlayerHp()
+    {
+        return hp;
+    }
+
     private int max_hp = 20;
     private int attack = 1;
     private KnockBack knockBack;
@@ -17,11 +22,6 @@ public class PlayerStatus : MonoBehaviour
     }
     private int[] weaponAttacks = new int[10];
     
-    public int PlayerHp
-    {
-        get { return hp; }
-        set { hp = value; }
-    }
 
     public int PlayerMax_Hp()
     {

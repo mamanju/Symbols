@@ -50,7 +50,7 @@ public class MatlBox : MonoBehaviour
         for (int i = 0; i < itemBox.Length; i++)
         {
             Button button = itemBox[i].GetComponent<Button>();
-            if (player.GetComponent<MatlManager>().NowMatl[i] == 0)
+            if (MatlManager.NowMatl[i] == 0)
             {
                 button.interactable = false;
                 itemBox[i].GetComponent<Image>().color = Color.clear;

@@ -60,8 +60,6 @@ public class PlayerCtrl : MonoBehaviour
     //武器の切り替えの処理
     private WeaponInfo nowWeapon;
     [SerializeField]
-    private WeaponManager weaponManager;
-    [SerializeField]
     private PlayerWeaponManager playerWeaponManager;
     private int weaponNumber = 0;
     public int GetWeaponNumber
@@ -122,7 +120,7 @@ public class PlayerCtrl : MonoBehaviour
 
         nowWeapon = nowWeapon_S.gameObject.GetComponent<WeaponInfo>();
         nowWeapon.weaponList = WeaponInfo.WeaponList.sword;
-        weaponLength = weaponManager.NowWeapon.Length;
+        weaponLength = WeaponManager.NowWeapon.Length;
 
         knockBack = GetComponent<KnockBack>();
 
@@ -315,7 +313,7 @@ public class PlayerCtrl : MonoBehaviour
     public void WeaponChangeRight()
     {
         weaponNumber = (weaponNumber + 1) % (weaponLength + 1);
-        while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
+        while (weaponNumber != 0 && WeaponManager.NowWeapon[weaponNumber - 1] == 0)
         {
             weaponNumber++;
             if (weaponNumber >= weaponLength)
@@ -334,7 +332,7 @@ public class PlayerCtrl : MonoBehaviour
         {
             weaponNumber = weaponLength;
         }
-        while (weaponNumber != 0 && weaponManager.NowWeapon[weaponNumber - 1] == 0)
+        while (weaponNumber != 0 && WeaponManager.NowWeapon[weaponNumber - 1] == 0)
         {
             weaponNumber--;
             if (weaponNumber <= 0)

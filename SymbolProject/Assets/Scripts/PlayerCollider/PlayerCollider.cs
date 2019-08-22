@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class PlayerCollider : MonoBehaviour
 {
-    MatlManager matlManager;
-    WeaponManager weaponManager;
-
-    private void Start()
-    {
-        matlManager = GetComponent<MatlManager>();
-    }
-
     //プレイヤーにぶつかったものがCrystalだったら10個まで取得
     void OnTriggerEnter(Collider other)
     {
@@ -19,7 +11,7 @@ public class PlayerCollider : MonoBehaviour
         {
             MatlInfo matlInfo = other.GetComponent<MatlInfo>();
             other.GetComponent<CapsuleCollider>().enabled = false;
-            if (matlManager.NowMatl[(int)matlInfo.matlList] >= 10)
+            if (MatlManager.NowMatl[(int)matlInfo.matlList] >= 10)
             {
                 Debug.Log("所持上限を超えています");
                 other.GetComponent<CapsuleCollider>().enabled = true;
@@ -28,22 +20,21 @@ public class PlayerCollider : MonoBehaviour
             else
             {
                 Destroy(other.gameObject);
-                matlManager.NowMatl[(int)matlInfo.matlList]++;
+                MatlManager.NowMatl[(int)matlInfo.matlList]++;
             }
         }
 
         if (other.tag == "WeaponCrystal")
         {
             WeaponInfo weaponInfo = other.GetComponent<WeaponInfo>();
-            weaponManager = this.GetComponent<WeaponManager>();
-            if (weaponManager.NowWeapon[(int)weaponInfo.weaponList] >= 5)
+            if (WeaponManager.NowWeapon[(int)weaponInfo.weaponList] >= 5)
             {
                 Debug.Log("所持上限を超えています");
                 return;
             }
             else
             {
-                weaponManager.NowWeapon[(int)weaponInfo.weaponList]++;
+                WeaponManager.NowWeapon[(int)weaponInfo.weaponList]++;
                 Destroy(other.gameObject);
             }
         }

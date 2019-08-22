@@ -20,7 +20,7 @@ public class WeaponTextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nowWeapon = player.GetComponent<WeaponManager>().NowWeapon;
+        nowWeapon = WeaponManager.NowWeapon;
         for (int i = 0; i < nowWeapon.Length; i++)
         {
             if (i == (int)this.GetComponent<WeaponInfo>().weaponList - 1)

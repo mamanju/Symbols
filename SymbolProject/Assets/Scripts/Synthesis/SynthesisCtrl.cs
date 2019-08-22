@@ -110,14 +110,12 @@ public class SynthesisCtrl : MonoBehaviour
     public void Synthesis(int _a, int _b, int _c, int _d, int _e)
     {
         if (changeFin == false) { return; }
-
-        WeaponManager playerWeaponManager = player.GetComponent<WeaponManager>();
         
         //レシピNo.1
         if (_a == spear[0] && _b == spear[1] &&
             _c == spear[2] && _d == spear[3] && _e == spear[4])
         {
-            if (playerWeaponManager.NowWeapon[0] >= 5)
+            if (WeaponManager.NowWeapon[0] >= 5)
             {   
                 Debug.Log("所持上限を超えています");
                 return;
@@ -127,7 +125,7 @@ public class SynthesisCtrl : MonoBehaviour
         }
         else if (_a == ax[0] && _b == ax[1] && _c == ax[2] && _d == ax[3] && _e == ax[4])
         {
-            if (playerWeaponManager.NowWeapon[1] >= 5)
+            if (WeaponManager.NowWeapon[1] >= 5)
             {
                 Debug.Log("所持上限を超えています");
                 return;
@@ -137,7 +135,7 @@ public class SynthesisCtrl : MonoBehaviour
         }
         else if (_a == shield[0] && _b == shield[1] && _c == shield[2] && _d == shield[3] && _e == shield[4])
         {
-            if (playerWeaponManager.NowWeapon[2] >= 5)
+            if (WeaponManager.NowWeapon[2] >= 5)
             {   
                 Debug.Log("所持上限を超えています");
                 return;
@@ -157,7 +155,7 @@ public class SynthesisCtrl : MonoBehaviour
         //}
         else if (_a == cymbal[0] && _b == cymbal[1] && _c == cymbal[2] && _d == cymbal[3] && _e == cymbal[4])
         {
-            if (playerWeaponManager.NowWeapon[4] >= 5)
+            if (WeaponManager.NowWeapon[4] >= 5)
             {
                 Debug.Log("所持上限を超えています");
                 return;
@@ -208,27 +206,26 @@ public class SynthesisCtrl : MonoBehaviour
 
     public void ResetCrystal()
     {
-        MatlManager playerMatlManager = player.GetComponent<MatlManager>();
         for (int i = 0; i < inputMatl.Length; i++)
         {
             if (inputMatl[i] == 0)
             {
-                playerMatlManager.NowMatl[0]++;
+                MatlManager.NowMatl[0]++;
                 matlBox[0].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.stick;
             }
             else if (inputMatl[i] == 1)
             {
-                playerMatlManager.NowMatl[1]++;
+                MatlManager.NowMatl[1]++;
                 matlBox[1].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.triangle;
             }
             else if (inputMatl[i] == 2)
             {
-                playerMatlManager.NowMatl[2]++;
+                MatlManager.NowMatl[2]++;
                 matlBox[2].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.lessThan;
             }
             else if (inputMatl[i] == 3)
             {
-                playerMatlManager.NowMatl[3]++;
+                MatlManager.NowMatl[3]++;
                 matlBox[3].GetComponent<MatlInfo>().matlList = MatlInfo.MatlList.circle;
             }
             inputMatl[i] = -1;
