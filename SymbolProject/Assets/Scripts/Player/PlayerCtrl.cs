@@ -97,12 +97,25 @@ public class PlayerCtrl : MonoBehaviour
     private Animator playerAnime;
     private string key_Jump = "Jump";
     private string key_Speed = "Speed";
+    private string key_Climb = "Climb";
 
     // 攻撃アニメーション
     private string key_Weapon = "Weapons";
     private string key_Attack = "Attack";
     private string key_AnimeBack = "AnimeBack";
-    private bool attackAnime_Flag = false;
+    private string key_SpearThrow = "SpearThrow";
+    private string key_ShildLoop = "ShildLoop";
+
+    private float spearThrowTime = 1.0f;
+    private float max_spearThrowTime;
+    
+
+    // trueの時はダメージを受けない
+    private bool shildFlag = false;
+    public bool ShildFlag
+    {
+        get { return shildFlag; }
+    }
 
     private void Awake()
     {
@@ -126,6 +139,8 @@ public class PlayerCtrl : MonoBehaviour
 
         playerAnime = GetComponent<Animator>();
         playerAnime.SetBool(key_Jump, false);
+
+        max_spearThrowTime = spearThrowTime;
     }
 
     void Update()
@@ -190,18 +205,47 @@ public class PlayerCtrl : MonoBehaviour
         //槍を投げる（通常攻撃じゃない)
         if (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.O))
         {
-            weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
-            weaponAtaccks.AbnormalAttaks(weaponNumber, null);
+            playerAnime.SetTrigger(key_SpearThrow);
+            spearThrowTime -= Time.deltaTime;
+            Debug.Log(spearThrowTime);
+            if (spearThrowTime <= 0)
+            {
+                weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
+                weaponAtaccks.AbnormalAttaks(weaponNumber, null);
+            }
+        }
+
+
+        if (weaponNumber == 3)
+        {
+            if (Input.GetButton("Circle"))
+            {
+                // shildFlagがtrueの時はダメージを受けない
+                shildFlag = true;
+                playerAnime.SetTrigger(key_Attack);
+                playerAnime.SetBool(key_ShildLoop, true);
+            }
+
+            if (Input.GetButtonUp("Circle"))
+            {
+                shildFlag = false;
+                playerAnime.SetBool(key_ShildLoop, false);
+            }
         }
 
         //攻撃
-        if (Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle"))
+        if ((Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle")) && weaponNumber != 3)
         {
             playerAnime.SetTrigger(key_Attack);
-            attackAnime_Flag = true;
-
             GetComponent<weapon_collider>().OnCollider(weaponNumber);
             
+        }
+
+
+        // デバッグ用
+        if (Input.GetButtonDown("Square"))
+        {
+            playerAnime.SetTrigger(key_Climb);
         }
     }
 
@@ -282,6 +326,8 @@ public class PlayerCtrl : MonoBehaviour
                 downFlag = true;
             }
         }
+
+
     }
 
     /// <summary>

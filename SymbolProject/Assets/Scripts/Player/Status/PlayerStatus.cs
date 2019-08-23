@@ -13,6 +13,7 @@ public class PlayerStatus : MonoBehaviour
     private int max_hp = 20;
     private int attack = 1;
     private KnockBack knockBack;
+    private PlayerCtrl pCon;
 
     private int nowAttack;
     private int nowWeaponID;
@@ -66,6 +67,8 @@ public class PlayerStatus : MonoBehaviour
     //HP減少
     public void DownHP(int _damage)
     {
+        pCon = GetComponent<PlayerCtrl>();
+        if (pCon.ShildFlag) { return; }
         hp -= _damage;
         knockBack = GetComponent<KnockBack>();
         knockBack.Knockback();

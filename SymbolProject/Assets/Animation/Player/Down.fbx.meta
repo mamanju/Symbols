@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aebfad169b6cae144a4bf97ed820ce78
+guid: 42115775d87f99843b60f4a05c830256
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -12,49 +12,49 @@ ModelImporter:
     100012: chara
     100014: controller
     100016: cosi
-    100018: hair2
-    100020: hair_back
-    100022: hair_front
-    100024: hair_front_back
-    100026: hara
-    100028: hara 1
-    100030: hed
-    100032: hed 1
-    100034: hed1
-    100036: joint
-    100038: kokan
-    100040: kokan 1
-    100042: kosi
-    100044: L_asisoko
-    100046: L_asisoko 1
-    100048: L_ear
-    100050: L_eye
-    100052: L_eye_dodai
-    100054: L_eye_hilight
-    100056: L_eye_huti
-    100058: L_eye_main
-    100060: L_Foot
-    100062: L_hand
-    100064: L_hand 1
-    100066: L_hiza
-    100068: L_hizi
-    100070: L_kata
-    100072: L_mayuge
-    100074: L_momo
-    100076: L_shoes
-    100078: L_shoes 1
-    100080: L_shoes_belt
-    100082: L_sune
-    100084: L_tekubi
-    100086: L_tekubi 1
-    100088: L_tumasaki
-    100090: L_tumasaki 1
-    100092: L_wrist_band
-    100094: mune
-    100096: neck
-    100098: neck 1
-    100100: neck 2
-    100102: //RootNode
+    100018: //RootNode
+    100020: hair2
+    100022: hair_back
+    100024: hair_front
+    100026: hair_front_back
+    100028: hara
+    100030: hara 1
+    100032: hed
+    100034: hed 1
+    100036: hed1
+    100038: joint
+    100040: kokan
+    100042: kokan 1
+    100044: kosi
+    100046: L_asisoko
+    100048: L_asisoko 1
+    100050: L_ear
+    100052: L_eye
+    100054: L_eye_dodai
+    100056: L_eye_hilight
+    100058: L_eye_huti
+    100060: L_eye_main
+    100062: L_Foot
+    100064: L_hand
+    100066: L_hand 1
+    100068: L_hiza
+    100070: L_hizi
+    100072: L_kata
+    100074: L_mayuge
+    100076: L_momo
+    100078: L_shoes
+    100080: L_shoes 1
+    100082: L_shoes_belt
+    100084: L_sune
+    100086: L_tekubi
+    100088: L_tekubi 1
+    100090: L_tumasaki
+    100092: L_tumasaki 1
+    100094: L_wrist_band
+    100096: mune
+    100098: neck
+    100100: neck 1
+    100102: neck 2
     100104: null10
     100106: null11
     100108: null12
@@ -110,49 +110,49 @@ ModelImporter:
     400012: chara
     400014: controller
     400016: cosi
-    400018: hair2
-    400020: hair_back
-    400022: hair_front
-    400024: hair_front_back
-    400026: hara
-    400028: hara 1
-    400030: hed
-    400032: hed 1
-    400034: hed1
-    400036: joint
-    400038: kokan
-    400040: kokan 1
-    400042: kosi
-    400044: L_asisoko
-    400046: L_asisoko 1
-    400048: L_ear
-    400050: L_eye
-    400052: L_eye_dodai
-    400054: L_eye_hilight
-    400056: L_eye_huti
-    400058: L_eye_main
-    400060: L_Foot
-    400062: L_hand
-    400064: L_hand 1
-    400066: L_hiza
-    400068: L_hizi
-    400070: L_kata
-    400072: L_mayuge
-    400074: L_momo
-    400076: L_shoes
-    400078: L_shoes 1
-    400080: L_shoes_belt
-    400082: L_sune
-    400084: L_tekubi
-    400086: L_tekubi 1
-    400088: L_tumasaki
-    400090: L_tumasaki 1
-    400092: L_wrist_band
-    400094: mune
-    400096: neck
-    400098: neck 1
-    400100: neck 2
-    400102: //RootNode
+    400018: //RootNode
+    400020: hair2
+    400022: hair_back
+    400024: hair_front
+    400026: hair_front_back
+    400028: hara
+    400030: hara 1
+    400032: hed
+    400034: hed 1
+    400036: hed1
+    400038: joint
+    400040: kokan
+    400042: kokan 1
+    400044: kosi
+    400046: L_asisoko
+    400048: L_asisoko 1
+    400050: L_ear
+    400052: L_eye
+    400054: L_eye_dodai
+    400056: L_eye_hilight
+    400058: L_eye_huti
+    400060: L_eye_main
+    400062: L_Foot
+    400064: L_hand
+    400066: L_hand 1
+    400068: L_hiza
+    400070: L_hizi
+    400072: L_kata
+    400074: L_mayuge
+    400076: L_momo
+    400078: L_shoes
+    400080: L_shoes 1
+    400082: L_shoes_belt
+    400084: L_sune
+    400086: L_tekubi
+    400088: L_tekubi 1
+    400090: L_tumasaki
+    400092: L_tumasaki 1
+    400094: L_wrist_band
+    400096: mune
+    400098: neck
+    400100: neck 1
+    400102: neck 2
     400104: null10
     400106: null11
     400108: null12
@@ -235,7 +235,7 @@ ModelImporter:
     4300064: R_shoes_belt
     4300066: pouch_huta
     4300068: pouch_dodai
-    7400000: nobori
+    7400000: Down
     9500000: //RootNode
     13700000: belt
     13700002: belt_clip
@@ -299,35 +299,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: nobori
-      takeName: nobori
-      firstFrame: 1
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
