@@ -30,7 +30,7 @@ public class WeaponText : MonoBehaviour
     void Update()
     {
         WeaponTextChange();
-        //GetComponent<Text>().text = weaponText.text;
+        GetComponent<Text>().text = weaponText.text;
         
     }
 
