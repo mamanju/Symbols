@@ -178,11 +178,11 @@ public class PlayerCtrl : MonoBehaviour
         if (Time.timeScale == 0) { return; }
         
         //武器切り替え
-        if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.L))
+        if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.L))
         {
             WeaponChangeRight();
         }
-        if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.K))
+        if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.K))
         {
             WeaponChangeLeft();
         }
