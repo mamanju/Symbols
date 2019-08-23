@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aebfad169b6cae144a4bf97ed820ce78
+guid: a217a47b5c26cb84a979c8bbaf3c4820
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -50,11 +50,11 @@ ModelImporter:
     100088: L_tumasaki
     100090: L_tumasaki 1
     100092: L_wrist_band
-    100094: mune
-    100096: neck
-    100098: neck 1
-    100100: neck 2
-    100102: //RootNode
+    100094: locator4
+    100096: mune
+    100098: neck
+    100100: neck 1
+    100102: neck 2
     100104: null10
     100106: null11
     100108: null12
@@ -99,8 +99,9 @@ ModelImporter:
     100186: R_tumasaki
     100188: R_tumasaki1
     100190: R_wrist_band
-    100192: shoulder_pad
-    100194: wear
+    100192: //RootNode
+    100194: shoulder_pad
+    100196: wear
     400000: belt
     400002: belt_clip
     400004: belt_cord2
@@ -148,11 +149,11 @@ ModelImporter:
     400088: L_tumasaki
     400090: L_tumasaki 1
     400092: L_wrist_band
-    400094: mune
-    400096: neck
-    400098: neck 1
-    400100: neck 2
-    400102: //RootNode
+    400094: locator4
+    400096: mune
+    400098: neck
+    400100: neck 1
+    400102: neck 2
     400104: null10
     400106: null11
     400108: null12
@@ -197,8 +198,9 @@ ModelImporter:
     400186: R_tumasaki
     400188: R_tumasaki1
     400190: R_wrist_band
-    400192: shoulder_pad
-    400194: wear
+    400192: //RootNode
+    400194: shoulder_pad
+    400196: wear
     2100000: syujinkou
     4300000: hair_back
     4300002: hair_front_back
@@ -235,7 +237,7 @@ ModelImporter:
     4300064: R_shoes_belt
     4300066: pouch_huta
     4300068: pouch_dodai
-    7400000: nobori
+    7400000: shields
     9500000: //RootNode
     13700000: belt
     13700002: belt_clip
@@ -301,17 +303,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: nobori
-      takeName: nobori
-      firstFrame: 1
-      lastFrame: 40
+      name: shields
+      takeName: shields
+      firstFrame: 15
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

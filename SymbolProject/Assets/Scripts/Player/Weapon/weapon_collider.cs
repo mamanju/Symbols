@@ -17,6 +17,9 @@ public class weapon_collider : MonoBehaviour
 
     private float colliderTime;
 
+    // 剣のコライダーディレイ
+    private float swordTime;
+
     // 槍のコライダーのディレイ
     private float spearTime;
 
@@ -29,10 +32,19 @@ public class weapon_collider : MonoBehaviour
     private float max_colliderTime = 0.5f;
 
     [SerializeField]
+    private float max_swordTime = 0.5f;
+
+    [SerializeField]
     private float max_spearTime = 0.3f;
 
     [SerializeField]
     private float max_axeTime = 0.3f;
+
+    private bool swordFlag = false;
+
+    private bool spearFlag = false;
+
+    private bool axeFlag = false;
 
 
     private int num;
@@ -47,6 +59,7 @@ public class weapon_collider : MonoBehaviour
         }
 
         colliderTime = max_colliderTime;
+        swordTime = max_swordTime;
         spearTime = max_spearTime;
         axeTime = max_axeTime;
 
@@ -95,7 +108,17 @@ public class weapon_collider : MonoBehaviour
         {
             case 0:
                 Debug.Log("剣で攻撃したよ！");
-                ColliderTime();
+                swordFlag = true;
+                if (swordFlag)
+                {
+                    swordFlag = false;
+                    swordTime -= Time.deltaTime;
+                    if (swordTime <= 0)
+                    {
+                        ColliderTime();
+                        swordTime = max_swordTime;
+                    }
+                }
                 break;
 
             case 1:

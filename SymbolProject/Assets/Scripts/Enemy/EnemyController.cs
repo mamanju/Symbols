@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class EnemyController : EnemyManager
 {
+    private string key_Health = "Health";
     private Animator anim;
 
     private void Start()
@@ -35,6 +36,7 @@ public class EnemyController : EnemyManager
     {
         if (Health - damage <= 0)
         {
+            anim.SetInteger(key_Health, 0);
             DropCrystal();
             Destroy(gameObject);
             return gameObject;

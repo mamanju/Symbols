@@ -171,7 +171,7 @@ AvatarMask:
   - m_Path: joint/cosi
     m_Weight: 0
   - m_Path: joint/cosi/kokan
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: joint/cosi/kokan/hara
     m_Weight: 1
   - m_Path: joint/cosi/kokan/hara/mune

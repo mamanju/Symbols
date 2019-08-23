@@ -1277,11 +1277,26 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1807352811}
+    - target: {fileID: 8887521231347433219, guid: b73c3211a31ef04448b4c3f1a903160c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887521231347433219, guid: b73c3211a31ef04448b4c3f1a903160c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4780308958739235382, guid: b73c3211a31ef04448b4c3f1a903160c,
         type: 3}
       propertyPath: gameClearUI
       value: 
       objectReference: {fileID: 1162693239}
+    - target: {fileID: 8967363954106798970, guid: b73c3211a31ef04448b4c3f1a903160c,
+        type: 3}
+      propertyPath: enemyController
+      value: 
+      objectReference: {fileID: 2036324008}
     - target: {fileID: 5390085135908667699, guid: b73c3211a31ef04448b4c3f1a903160c,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1297,21 +1312,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8887521231347433219, guid: b73c3211a31ef04448b4c3f1a903160c,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8887521231347433219, guid: b73c3211a31ef04448b4c3f1a903160c,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8967363954106798970, guid: b73c3211a31ef04448b4c3f1a903160c,
-        type: 3}
-      propertyPath: enemyController
-      value: 
-      objectReference: {fileID: 2036324008}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b73c3211a31ef04448b4c3f1a903160c, type: 3}
 --- !u!1 &1246498906 stripped
