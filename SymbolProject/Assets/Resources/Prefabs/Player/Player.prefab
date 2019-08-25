@@ -1814,12 +1814,12 @@ MonoBehaviour:
   walkSpeed: 200
   runSpeed: 400
   synthesisGUI: {fileID: 0}
-  weaponManager: {fileID: 2169706574673601576}
   playerWeaponManager: {fileID: 3347060895697097554}
   nowWeapon_S: {fileID: 0}
   playerStatus: {fileID: 2169706574673601585}
   spear: {fileID: 999741023612393518}
   cymbals: {fileID: 6109297729088738981}
+  spearThrowTime: 1.4
 --- !u!114 &8387909339681567811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,6 +1834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wrist: {fileID: 2169706575297731800}
   max_colliderTime: 0.8
+  max_swordTime: 0.5
   max_spearTime: 1.3
   max_axeTime: 0.5
 --- !u!114 &2169706574673601586

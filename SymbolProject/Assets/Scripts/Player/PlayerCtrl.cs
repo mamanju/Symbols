@@ -106,9 +106,18 @@ public class PlayerCtrl : MonoBehaviour
     private string key_SpearThrow = "SpearThrow";
     private string key_ShildLoop = "ShildLoop";
 
-    private float spearThrowTime = 1.0f;
+    [SerializeField]
+    private float spearThrowTime = 2.0f;
     private float max_spearThrowTime;
-    
+    private bool spearThrowTimeFlag = false;
+    // 槍を投げている時に槍を投げる動作をするとエラーが出るので防ぐ為のFlag
+    private bool secondSpearPreventFlag = true;
+    public bool SecondSpearPreventFlag
+    {
+        get { return secondSpearPreventFlag; }
+        set { secondSpearPreventFlag = value; }
+    }
+
 
     // trueの時はダメージを受けない
     private bool shildFlag = false;
@@ -203,15 +212,22 @@ public class PlayerCtrl : MonoBehaviour
         }
 
         //槍を投げる（通常攻撃じゃない)
-        if (Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.O))
+        if (secondSpearPreventFlag && weaponNumber == 1 && Input.GetButtonDown("R2") || Input.GetKeyDown(KeyCode.O))
         {
             playerAnime.SetTrigger(key_SpearThrow);
+            spearThrowTimeFlag = true;
+            secondSpearPreventFlag = false;
+        }
+        // 槍を投げる
+        if (spearThrowTimeFlag)
+        {
             spearThrowTime -= Time.deltaTime;
-            Debug.Log(spearThrowTime);
             if (spearThrowTime <= 0)
             {
                 weaponAtaccks = spear.transform.GetChild(0).GetComponent<WeaponAtaccks>();
                 weaponAtaccks.AbnormalAttaks(weaponNumber, null);
+                spearThrowTimeFlag = false;
+                spearThrowTime = max_spearThrowTime;
             }
         }
 
