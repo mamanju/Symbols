@@ -38,6 +38,10 @@ public class GrowTreeController : MonoBehaviour
     /// </summary>
     private IEnumerator GrowTreeCoroutine()
     {
+        // 煙エフェクト発生
+        GameObject smoke = Instantiate(smokeEffect);
+        smoke.transform.position = Seedling.transform.position;
+
         // 苗の成長
         while (growTime < 1)
         {
@@ -45,9 +49,9 @@ public class GrowTreeController : MonoBehaviour
             growTime += 0.01f;
             yield return null;
         }
-        // 煙エフェクト発生、苗の成長をストップ
-        GameObject smoke = Instantiate(smokeEffect);
-        smoke.transform.position = Seedling.transform.position;
+        // 苗の成長をストップ
+        
+        
         // 成長した木を生成、苗を削除
         GameObject tree = Instantiate(growTree);
         tree.transform.position = Seedling.transform.position;
