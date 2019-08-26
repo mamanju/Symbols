@@ -1253,6 +1253,7 @@ MonoBehaviour:
   chaseRange: 3
   attackRange: 2
   timeBetweenAttacks: 2
+  anim_time: 0.2
 --- !u!1 &8702761845295266132
 GameObject:
   m_ObjectHideFlags: 0
