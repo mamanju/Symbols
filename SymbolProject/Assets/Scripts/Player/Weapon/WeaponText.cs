@@ -6,89 +6,84 @@ using UnityEngine.UI;
 public class WeaponText : MonoBehaviour
 {
     private Text weaponText;
-    private string[] sentence;
 
     [SerializeField]
     private WeaponInfo nowWeapon;
 
-    [SerializeField]
-    private float displayTime = 0.05f;
+    private string[] sentence = new string[10];
+    private string nowSentence;
 
-    private int currentSentenceNum = 0;
-    private string currentSentence = string.Empty;
-    private float timeUntilDisplay = 0;
-    private float timeBeganDisplay = 1;
-    private int lastUpdateCharCount = -1;
+    [SerializeField]
+    private float speed = 0.05f;
+    private float text_speed;
+    private int sentenceNum;
+
+    private int lastWeapon;
+
+    private bool start_count;
+    private bool end_display;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        text_speed = speed;
+        WeaponTextSet();
     }
 
     // Update is called once per frame
     void Update()
     {
-        WeaponTextChange();
-        GetComponent<Text>().text = weaponText.text;
+        if (lastWeapon != (int)nowWeapon.weaponList && end_display == true)
+        {
+            end_display = false;
+        }
+
+        nowSentence = sentence[(int)nowWeapon.weaponList];
+        lastWeapon = (int)nowWeapon.weaponList;
         
+        if (nowSentence.Length != sentenceNum - 1 && end_display == false)
+        {
+            start_count = true;
+        }
+        else
+        {
+            start_count = false;
+            end_display = true;
+        }
+
+        if (end_display == true)
+        {
+            sentenceNum = 0;
+            return;
+        }
+        if (start_count == false) { return; }
+
+        text_speed -= Time.deltaTime;
+
+        if (text_speed <= 0)
+        {
+            DisplayText();
+            text_speed = speed;
+            sentenceNum++;
+        }
     }
 
-    public void SetNextSentencee()
+    public void WeaponTextSet()
     {
-        currentSentence = sentence[currentSentenceNum];
-        timeUntilDisplay = currentSentence.Length * displayTime;
-        timeBeganDisplay = Time.time;
-        currentSentenceNum++;
-        lastUpdateCharCount = 0;
+        sentence[(int)WeaponInfo.WeaponList.sword] = "【ソード】\nただの剣。\nなぜか壊れない。";
+        sentence[(int)WeaponInfo.WeaponList.spear] = "【スピア】\nR2で投げられそうだ。";
+        sentence[(int)WeaponInfo.WeaponList.ax] = "【アックス】\n木が切れそうだ。";
+        sentence[(int)WeaponInfo.WeaponList.shield] = "【シールド】\nすべての攻撃が防げる。";
+        //WeaponInfo.WeaponList.twinSword
+        sentence[(int)WeaponInfo.WeaponList.cymbal] = "【シンバル】\n大きな音で敵がびっくりする。\n木が好みそうな音色だ。";
+        //WeaponInfo.WeaponList.hammer
+        //WeaponInfo.WeaponList.meteor
+        //WeaponInfo.WeaponList.question
+        //WeaponInfo.WeaponList.exclamation
     }
 
-    public bool IsDisplayComplete()
+    public void DisplayText()
     {
-        return Time.time > timeBeganDisplay + timeUntilDisplay;
-    }
-
-    public void WeaponTextChange()
-    {
-        if (nowWeapon.weaponList == WeaponInfo.WeaponList.sword)
-        {
-            weaponText.text = "[ソード]\nただの剣。\nなぜか壊れない。";
-        }
-        else if (nowWeapon.weaponList == WeaponInfo.WeaponList.spear)
-        {
-            weaponText.text = "[スピア]\nR2で投げられそうだ。";
-        }
-        else if (nowWeapon.weaponList == WeaponInfo.WeaponList.ax)
-        {
-            weaponText.text = "[アックス]\n木が切れそうだ。";
-        }
-        else if (nowWeapon.weaponList == WeaponInfo.WeaponList.shield)
-        {
-            weaponText.text = "[シールド]\nすべての攻撃が防げる。";
-        }
-        //else if (nowWeapon.weaponList == WeaponInfo.WeaponList.twinSword)
-        //{
-        //  weaponText.GetComponent<Text>().text = "";
-        //}
-        else if (nowWeapon.weaponList == WeaponInfo.WeaponList.cymbal)
-        {
-            weaponText.text = "[シンバル]\n大きな音で敵がびっくりする。\n木が好みそうな音色だ。";
-        }
-        //else if (nowWeapon.weaponList == WeaponInfo.WeaponList.hammer)
-        //{
-        //  weaponText.GetComponent<Text>().text = "";
-        //}
-        //else if (nowWeapon.weaponList == WeaponInfo.WeaponList.meteor)
-        //{
-        //  weaponText.GetComponent<Text>().text = "";
-        //}
-        //else if (nowWeapon.weaponList == WeaponInfo.WeaponList.question)
-        //{
-        //  weaponText.GetComponent<Text>().text = "";
-        //}
-        //else if (nowWeapon.weaponList == WeaponInfo.WeaponList.exclamation)
-        //{
-        //  weaponText.GetComponent<Text>().text = "";
-        //}
+            GetComponent<Text>().text = nowSentence.Substring(0, sentenceNum);
     }
 }
