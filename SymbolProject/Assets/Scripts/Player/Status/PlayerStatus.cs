@@ -36,17 +36,17 @@ public class PlayerStatus : MonoBehaviour
 
     private void Start()
     {
-        weaponAttacks[0] = SwordInfo.attack + attack;
-        weaponAttacks[1] = SpearInfo.attack + attack;
-        weaponAttacks[2] = AxInfo.attack + attack;
-        weaponAttacks[3] = ShieldInfo.attack + attack;
-        weaponAttacks[5] = CymbalsInfo.attack + attack;
+        weaponAttacks[0] = 1 + attack;
+        weaponAttacks[1] = 2 + attack;
+        weaponAttacks[2] = 3 + attack;
+        weaponAttacks[3] = -1 + attack;
+        weaponAttacks[5] = -1 + attack;
 
         //完成する当たり使用するかも
-        //for (int i = 0; i < weaponAttacks.Length; i++)
-        //{
-        //
-        //}
+        for (int i = 0; i < 6; i++)
+        {
+        }
+            Debug.Log(AxInfo.attack);
         nowAttack = weaponAttacks[0];
     }
 

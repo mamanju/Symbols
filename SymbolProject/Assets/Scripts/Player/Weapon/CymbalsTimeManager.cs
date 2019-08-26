@@ -20,16 +20,7 @@ public class CymbalsTimeManager : MonoBehaviour
         {
             weaponAtaccks.StunFlag = false;
             stunTime = 5;
-            CymbalsEnd();
-        }
-    }
-
-    private void CymbalsEnd()
-    {
-        Finder finder = GetComponent<Finder>();
-        for (int i = 0; i < finder.M_enemy.Count; i++)
-        {
-            finder.M_enemy[i].GetComponent<Rigidbody>().isKinematic = false;
+            weaponAtaccks.CymbalsEnd();
         }
     }
 }

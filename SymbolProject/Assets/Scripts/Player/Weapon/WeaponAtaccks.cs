@@ -104,6 +104,8 @@ public class WeaponAtaccks : MonoBehaviour
         }
     }
 
+    private GameObject enemy;
+
     private bool stunFlag;
     public bool StunFlag
     {
@@ -118,9 +120,15 @@ public class WeaponAtaccks : MonoBehaviour
 
         //if (finder.M_enemy.Count == 0) { return; }
         //for (int i = 0; i < finder.M_enemy.Count; i++)
-        
-        _enemy.GetComponent<Rigidbody>().isKinematic = true;
+
+        enemy = _enemy;
+        enemy.GetComponent<Rigidbody>().isKinematic = true;
         stunFlag = true;
         
+    }
+
+    public void CymbalsEnd()
+    {
+        enemy.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

@@ -255,6 +255,7 @@ public class PlayerCtrl : MonoBehaviour
             playerAnime.SetTrigger(key_Attack);
             //GetComponent<weapon_collider>().OnCollider(weaponNumber);
             GetComponent<weapon_collider>().SetCollider_Flag = true;
+            Debug.Log(playerStatus.PlayerAttack());
         }
 
 
