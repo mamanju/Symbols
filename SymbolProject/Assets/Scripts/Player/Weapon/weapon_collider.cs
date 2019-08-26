@@ -15,6 +15,11 @@ public class weapon_collider : MonoBehaviour
 
     private bool collider_Flag = false;
 
+    public bool SetCollider_Flag
+    {
+        set { collider_Flag = value; }
+    }
+
     private float colliderTime;
 
     // 剣のコライダーディレイ
@@ -46,6 +51,8 @@ public class weapon_collider : MonoBehaviour
 
     private bool axeFlag = false;
 
+    private bool colliderFlag = false;
+
 
     private int num;
 
@@ -68,6 +75,47 @@ public class weapon_collider : MonoBehaviour
 
     private void Update()
     {
+        if (colliderFlag)
+        {
+            ColliderTime();
+        }
+
+        if (swordFlag)
+        {
+            swordTime -= Time.deltaTime;
+            if (swordTime <= 0)
+            {
+                OnCollider(nowWeapon);
+                colliderFlag = true;
+                swordFlag = false;
+                swordTime = max_swordTime;
+            }
+        }
+
+        if (spearFlag)
+        {
+            spearTime -= Time.deltaTime;
+            if (spearTime <= 0)
+            {
+                OnCollider(nowWeapon);
+                colliderFlag = true;
+                spearFlag = false;
+                spearTime = max_spearTime;
+            }
+        }
+
+        if (axeFlag)
+        {
+            axeTime -= Time.deltaTime;
+            if (axeTime <= 0)
+            {
+                OnCollider(nowWeapon);
+                colliderFlag = true;
+                axeFlag = false;
+                axeTime = max_axeTime;
+            }
+        }
+
         if (collider_Flag == false) { return; }
 
         WeaponColliderTime();
@@ -79,7 +127,6 @@ public class weapon_collider : MonoBehaviour
         num = _num;
         if (_num >= 3) { return; }
         boxColliders[_num].enabled = true;
-        collider_Flag = true;
     }
 
     public void OffCollider(int _num)
@@ -94,8 +141,8 @@ public class weapon_collider : MonoBehaviour
         if (colliderTime <= 0)
         {
             OffCollider(num);
-            collider_Flag = false;
             colliderTime = max_colliderTime;
+            colliderFlag = false;
         }
     }
 
@@ -104,46 +151,22 @@ public class weapon_collider : MonoBehaviour
         // 今持っている武器の番号をPlayerCtrlから取得
         nowWeapon = GetComponent<PlayerCtrl>().GetWeaponNumber;
 
-        switch (nowWeapon)
+        if (nowWeapon == 0)
         {
-            case 0:
-                Debug.Log("剣で攻撃したよ！");
-                swordFlag = true;
-                if (swordFlag)
-                {
-                    swordFlag = false;
-                    swordTime -= Time.deltaTime;
-                    if (swordTime <= 0)
-                    {
-                        ColliderTime();
-                        swordTime = max_swordTime;
-                    }
-                }
-                break;
+            collider_Flag = false;
+            swordFlag = true;
+        }
 
-            case 1:
-                Debug.Log("槍で攻撃したよ！");
-                spearTime -= Time.deltaTime;
-                if (spearTime <= 0)
-                {
-                    ColliderTime();
-                    spearTime = max_spearTime;
-                }
-                break;
+        if (nowWeapon == 1)
+        {
+            collider_Flag = false;
+            spearFlag = true;
+        }
 
-            case 2:
-                Debug.Log("斧で攻撃したよ！");
-                axeTime -= Time.deltaTime;
-                if (axeTime <= 0)
-                {
-                    ColliderTime();
-                    axeTime = max_axeTime;
-                }
-                break;
-
-            default:
-                break;
-
+        if (nowWeapon == 2)
+        {
+            collider_Flag = false;
+            axeFlag = true;
         }
     }
 }

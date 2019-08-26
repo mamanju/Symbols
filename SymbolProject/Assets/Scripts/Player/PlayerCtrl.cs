@@ -253,8 +253,8 @@ public class PlayerCtrl : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle")) && weaponNumber != 3)
         {
             playerAnime.SetTrigger(key_Attack);
-            GetComponent<weapon_collider>().OnCollider(weaponNumber);
-            
+            //GetComponent<weapon_collider>().OnCollider(weaponNumber);
+            GetComponent<weapon_collider>().SetCollider_Flag = true;
         }
 
 
