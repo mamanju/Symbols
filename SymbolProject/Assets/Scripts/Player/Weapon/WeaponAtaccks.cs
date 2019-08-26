@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WeaponAtaccks : MonoBehaviour
 {
+    private PlayerCtrl pCon;
+
     private GameObject player;
 
     void Update()
@@ -53,6 +55,9 @@ public class WeaponAtaccks : MonoBehaviour
         spearFlag = true;
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
+        player = PlayerCtrl.instance.gameObject;
+        transform.rotation = player.transform.rotation;
+        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
         var direction = transform.forward;
         direction.y += 1f;
         rigidbody.AddForce(transform.up * _startSpeed, ForceMode.Impulse);
@@ -72,6 +77,9 @@ public class WeaponAtaccks : MonoBehaviour
             player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
         }
 
+        pCon = GameObject.Find("Player").GetComponent<PlayerCtrl>();
+        // 槍の投げる動作をできるようにする
+        pCon.SecondSpearPreventFlag = true;
         Destroy(gameObject);
         SpearBox.GetComponent<SpearInfo>().InstantiateSpear();
     }
@@ -96,6 +104,8 @@ public class WeaponAtaccks : MonoBehaviour
         }
     }
 
+    private GameObject enemy;
+
     private bool stunFlag;
     public bool StunFlag
     {
@@ -110,9 +120,15 @@ public class WeaponAtaccks : MonoBehaviour
 
         //if (finder.M_enemy.Count == 0) { return; }
         //for (int i = 0; i < finder.M_enemy.Count; i++)
-        
-        _enemy.GetComponent<Rigidbody>().isKinematic = true;
+
+        enemy = _enemy;
+        enemy.GetComponent<Rigidbody>().isKinematic = true;
         stunFlag = true;
         
+    }
+
+    public void CymbalsEnd()
+    {
+        enemy.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

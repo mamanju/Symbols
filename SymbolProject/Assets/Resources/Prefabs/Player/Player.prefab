@@ -1814,12 +1814,12 @@ MonoBehaviour:
   walkSpeed: 200
   runSpeed: 400
   synthesisGUI: {fileID: 0}
-  weaponManager: {fileID: 2169706574673601576}
   playerWeaponManager: {fileID: 3347060895697097554}
   nowWeapon_S: {fileID: 0}
   playerStatus: {fileID: 2169706574673601585}
   spear: {fileID: 999741023612393518}
   cymbals: {fileID: 6109297729088738981}
+  spearThrowTime: 1.4
 --- !u!114 &8387909339681567811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,8 +1834,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wrist: {fileID: 2169706575297731800}
   max_colliderTime: 0.8
-  max_spearTime: 1.3
-  max_axeTime: 0.5
+  max_swordTime: 0.3
+  max_spearTime: 0.2
+  max_axeTime: 0.8
+  max_cymbalsTime: 0.8
 --- !u!114 &2169706574673601586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5396,11 +5398,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
-    - target: {fileID: 1865358654072249114, guid: 95835514a598d824f9a4438a03cbadfe,
-        type: 3}
-      propertyPath: m_Name
-      value: Cymbals
-      objectReference: {fileID: 0}
     - target: {fileID: 5332525395059344790, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5466,6 +5463,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1865358654072249114, guid: 95835514a598d824f9a4438a03cbadfe,
+        type: 3}
+      propertyPath: m_Name
+      value: Cymbals
+      objectReference: {fileID: 0}
     - target: {fileID: 8402254922472746418, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
       propertyPath: leftCymbal
@@ -5480,6 +5482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547669500754915147, guid: 95835514a598d824f9a4438a03cbadfe,
+        type: 3}
+      propertyPath: m_Radius
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95835514a598d824f9a4438a03cbadfe, type: 3}
@@ -5514,11 +5521,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2169706575297823032}
     m_Modifications:
-    - target: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword
-      objectReference: {fileID: 0}
     - target: {fileID: 5580436315297476655, guid: 16ee8293268e7ec43a40f55bb09f9659,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5573,6 +5575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -34.906006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580436315297115151, guid: 16ee8293268e7ec43a40f55bb09f9659,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ee8293268e7ec43a40f55bb09f9659, type: 3}

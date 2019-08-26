@@ -11,9 +11,16 @@ public class weapon_collider : MonoBehaviour
 
     private BoxCollider[] boxColliders = new BoxCollider[10];
 
+    private SphereCollider sphereCollider;
+
     private int nowWeapon;
 
-    private bool collider_Flag = false;
+    private bool weaponCollider_Flag = false;
+
+    public bool SetCollider_Flag
+    {
+        set { weaponCollider_Flag = value; }
+    }
 
     private float colliderTime;
 
@@ -25,6 +32,9 @@ public class weapon_collider : MonoBehaviour
 
     // 斧のコライダーのディレイ
     private float axeTime;
+
+    // シンバルのコライダ―のディレイ
+    private float cymbalsTime;
 
     private PlayerCtrl pControl;
 
@@ -40,11 +50,20 @@ public class weapon_collider : MonoBehaviour
     [SerializeField]
     private float max_axeTime = 0.3f;
 
+    [SerializeField]
+    private float max_cymbalsTime = 0.3f;
+
     private bool swordFlag = false;
 
     private bool spearFlag = false;
 
     private bool axeFlag = false;
+
+    private bool cymbalsFlag = false;
+
+    private bool colliderFlag = false;
+
+    private bool spherecolliderFlag = false;
 
 
     private int num;
@@ -53,22 +72,89 @@ public class weapon_collider : MonoBehaviour
     {
         for (int i = 0; i < weapons.Length; i++)
         {
-            if (i >= 3) { return; }
             weapons[i] = wrist.transform.GetChild(i).gameObject;
-            boxColliders[i] = weapons[i].GetComponent<BoxCollider>();
+            if (i == 5)
+            {
+                sphereCollider = weapons[i].GetComponent<SphereCollider>();
+            }
+
+            if (i <= 3)
+            {
+                boxColliders[i] = weapons[i].GetComponent<BoxCollider>();
+            }
+
         }
+
 
         colliderTime = max_colliderTime;
         swordTime = max_swordTime;
         spearTime = max_spearTime;
         axeTime = max_axeTime;
-
+        cymbalsTime = max_cymbalsTime;
         
     }
 
     private void Update()
     {
-        if (collider_Flag == false) { return; }
+        if (colliderFlag)
+        {
+            ColliderTime();
+        }
+
+        if (spherecolliderFlag)
+        {
+            SphereColliderTime();
+        }
+
+        if (swordFlag)
+        {
+            swordTime -= Time.deltaTime;
+            if (swordTime <= 0)
+            {
+                OnCollider(nowWeapon);
+                colliderFlag = true;
+                swordFlag = false;
+                swordTime = max_swordTime;
+            }
+        }
+
+        if (spearFlag)
+        {
+            spearTime -= Time.deltaTime;
+            if (spearTime <= 0)
+            {
+                OnCollider(nowWeapon);
+                colliderFlag = true;
+                spearFlag = false;
+                spearTime = max_spearTime;
+            }
+        }
+
+        if (axeFlag)
+        {
+            axeTime -= Time.deltaTime;
+            if (axeTime <= 0)
+            {
+                OnCollider(nowWeapon);
+                colliderFlag = true;
+                axeFlag = false;
+                axeTime = max_axeTime;
+            }
+        }
+
+        if (cymbalsFlag)
+        {
+            cymbalsTime -= Time.deltaTime;
+            if (cymbalsTime <= 0)
+            {
+                OnSphereCollider(nowWeapon);
+                spherecolliderFlag = true;
+                cymbalsFlag = false;
+                cymbalsTime = max_cymbalsTime;
+            }
+        }
+
+        if (weaponCollider_Flag == false) { return; }
 
         WeaponColliderTime();
     }
@@ -77,15 +163,27 @@ public class weapon_collider : MonoBehaviour
     public void OnCollider(int _num)
     {
         num = _num;
-        if (_num >= 3) { return; }
+        if (_num >= 6) { return; }
         boxColliders[_num].enabled = true;
-        collider_Flag = true;
+    }
+
+    public void OnSphereCollider(int _num)
+    {
+        num = _num;
+        if (_num >= 6) { return; }
+        sphereCollider.enabled = true;
     }
 
     public void OffCollider(int _num)
     {
-        if (_num >= 3) { return; }
+        if (_num >= 6) { return; }
         boxColliders[_num].enabled = false;
+    }
+
+    public void OffSphereCollider(int _num)
+    {
+        if (_num >= 6) { return; }
+        sphereCollider.enabled = false;
     }
 
     public void ColliderTime()
@@ -94,8 +192,19 @@ public class weapon_collider : MonoBehaviour
         if (colliderTime <= 0)
         {
             OffCollider(num);
-            collider_Flag = false;
             colliderTime = max_colliderTime;
+            colliderFlag = false;
+        }
+    }
+
+    public void SphereColliderTime()
+    {
+        colliderTime -= Time.deltaTime;
+        if (colliderTime <= 0)
+        {
+            OffSphereCollider(num);
+            colliderTime = max_colliderTime;
+            spherecolliderFlag = false;
         }
     }
 
@@ -104,46 +213,35 @@ public class weapon_collider : MonoBehaviour
         // 今持っている武器の番号をPlayerCtrlから取得
         nowWeapon = GetComponent<PlayerCtrl>().GetWeaponNumber;
 
-        switch (nowWeapon)
+        if (nowWeapon == 0)
         {
-            case 0:
-                Debug.Log("剣で攻撃したよ！");
-                swordFlag = true;
-                if (swordFlag)
-                {
-                    swordFlag = false;
-                    swordTime -= Time.deltaTime;
-                    if (swordTime <= 0)
-                    {
-                        ColliderTime();
-                        swordTime = max_swordTime;
-                    }
-                }
-                break;
-
-            case 1:
-                Debug.Log("槍で攻撃したよ！");
-                spearTime -= Time.deltaTime;
-                if (spearTime <= 0)
-                {
-                    ColliderTime();
-                    spearTime = max_spearTime;
-                }
-                break;
-
-            case 2:
-                Debug.Log("斧で攻撃したよ！");
-                axeTime -= Time.deltaTime;
-                if (axeTime <= 0)
-                {
-                    ColliderTime();
-                    axeTime = max_axeTime;
-                }
-                break;
-
-            default:
-                break;
-
+            weaponCollider_Flag = false;
+            swordFlag = true;
         }
+
+        if (nowWeapon == 1)
+        {
+            weaponCollider_Flag = false;
+            spearFlag = true;
+        }
+
+        if (nowWeapon == 2)
+        {
+            weaponCollider_Flag = false;
+            axeFlag = true;
+        }
+
+        if (nowWeapon == 5)
+        {
+            weaponCollider_Flag = false;
+            cymbalsFlag = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (nowWeapon != 5) { return; }
+
+        GetComponent<PlayerCtrl>().Attack(other.gameObject);
     }
 }
