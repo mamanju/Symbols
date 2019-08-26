@@ -39,12 +39,10 @@ public class EnemyController : EnemyManager
             anim.SetInteger(key_Health, 0);
             DropCrystal();
             Destroy(gameObject);
-            SoundsManager.instance.PlaySE_enemy(1);
             return gameObject;
         }
         Health -= damage;
         anim.SetTrigger("Damage");
-        SoundsManager.instance.PlaySE_enemy(0);
         return null;
     }
 

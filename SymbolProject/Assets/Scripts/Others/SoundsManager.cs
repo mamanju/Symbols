@@ -11,11 +11,10 @@ public class SoundsManager : MonoBehaviour
     //0.Sword、1.Spear、2.Ax、3.Damage、4.Jump
     [SerializeField]
     private AudioClip[] clips_SE_player;
-    //0.Damage(slime)、1.Destroy(slime)、2.Attack(slime)、
-    //3.Damage(boss)、4.Destroy(boss)、5.Attack(boss)
+    //
     [SerializeField]
     private AudioClip[] clips_SE_enemy;
-    //0.炎、1.
+    //
     [SerializeField]
     private AudioClip[] clips_SE_gimmick;
 
@@ -61,6 +60,11 @@ public class SoundsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.anyKeyDown)
+        {
+            StopBGM();
+        }
+
         if (stop_flag == true)
         {
             bgmSource.volume -= stop_speed * Time.deltaTime;
@@ -91,17 +95,20 @@ public class SoundsManager : MonoBehaviour
 
     public void PlaySE_player(int _num)
     {
-        seSources[0].PlayOneShot(clips_SE_player[_num]);
+        seSources[0].clip = clips_SE_player[_num];
+        seSources[0].Play();
     }
 
     public void PlaySE_enemy(int _num)
     {
-        seSources[0].PlayOneShot(clips_SE_enemy[_num]);
+        seSources[0].clip = clips_SE_enemy[_num];
+        seSources[0].Play();
     }
 
     public void PlaySE_gimmick(int _num)
     {
-        seSources[0].PlayOneShot(clips_SE_gimmick[_num]);
+        seSources[0].clip = clips_SE_gimmick[_num];
+        seSources[0].Play();
     }
 
     public void StopSE(int _num)

@@ -152,10 +152,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a72009a7e867b084e84d0f23968112ad, type: 3}
   - {fileID: 8300000, guid: 2d6e10a4411d730429056b52886e74c8, type: 3}
   - {fileID: 8300000, guid: 77c70f89405a29a409f941d4f354dd1d, type: 3}
-  clips_SE_enemy:
-  - {fileID: 8300000, guid: 665a1e0bb0ddf394aac446b6eed4a5b9, type: 3}
-  - {fileID: 8300000, guid: 59b4ba5ae3020fb4ea7b385a2a13d9b0, type: 3}
-  - {fileID: 8300000, guid: b8a813fe8dc223a469ecc0f17d446976, type: 3}
-  clips_SE_gimmick:
-  - {fileID: 8300000, guid: ebc1ca3b0abbbbe45b0868862ea052cb, type: 3}
+  clips_SE_enemy: []
+  clips_SE_gimmick: []
   stop_speed: 1
