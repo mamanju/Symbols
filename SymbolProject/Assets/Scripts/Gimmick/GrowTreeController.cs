@@ -14,6 +14,8 @@ public class GrowTreeController : MonoBehaviour
     [SerializeField]
     private GameObject growTree;
 
+    private bool growFlag = false;
+
 
     private float growTime;
 
@@ -22,7 +24,11 @@ public class GrowTreeController : MonoBehaviour
     /// </summary>
     public void GrowTree()
     {
-        StartCoroutine(GrowTreeCoroutine());
+        if (!growFlag)
+        {
+            growFlag = true;
+            StartCoroutine(GrowTreeCoroutine());
+        }
     }
 
     /// <summary>

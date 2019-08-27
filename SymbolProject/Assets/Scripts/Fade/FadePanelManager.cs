@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FadePanelManager : MonoBehaviour
+public class FadePanelManager : SingletonMonoBehaviour<FadePanelManager>
 {
     // アルファ値
     private float alfa;
@@ -29,6 +29,15 @@ public class FadePanelManager : MonoBehaviour
 
             return instance;
         }
+    }
+    void Awake()
+    {
+        if (this != Instance)
+        {
+            Destroy(this);
+            return;
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
     #endregion
 
@@ -63,7 +72,6 @@ public class FadePanelManager : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(1f);
-        FadeOut();
     }
 
     /// <summary>

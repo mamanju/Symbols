@@ -11,7 +11,7 @@ public class ClimbTreeController : MonoBehaviour
     private float fadeStartTime;
 
     [SerializeField]
-    private GameObject[] climbPos;
+    private GameObject climbPos;
 
     private bool climbFlag = false;
 
@@ -20,27 +20,23 @@ public class ClimbTreeController : MonoBehaviour
     /// </summary>
     public void Climb(GameObject player)
     {
-        GameObject cPos = climbPos[0];
-        if (climbFlag) {
-            cPos = climbPos[1];
-        } else {
-            cPos = climbPos[0];
+        if (!climbFlag)
+        {
+            StartCoroutine(ClimbCoroutine(player));
         }
-        StartCoroutine(ClimbCoroutine(player,cPos));
     }
 
-    public IEnumerator ClimbCoroutine(GameObject player,GameObject pos)
+    private IEnumerator ClimbCoroutine(GameObject player)
     {
+        climbFlag = true;
         // アニメーション再生
         // 再生から指定された時間後、フェードイン
-        yield return new WaitForSeconds(fadeStartTime);
         FadePanelManager.instance.FadeIn();
-        player.transform.position = pos.transform.position;
+        yield return new WaitForSeconds(fadeStartTime);
+        player.transform.position = climbPos.transform.position;
+        FadePanelManager.instance.FadeOut();
+        yield return new WaitForSeconds(fadeStartTime);
+        climbFlag = false;
         yield return null;
-        if (climbFlag) {
-            climbFlag = false;
-        } else {
-            climbFlag = true;
-        }
     }
 }

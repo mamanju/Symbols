@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
@@ -90,6 +88,15 @@ public class SceneController : SingletonMonoBehaviour<SceneController>
         StartCoroutine(Fade(name));
         var eventSystem = FindObjectOfType<EventSystem>();
         eventSystem.enabled = false;
+    }
+
+    public IEnumerator ChangeSceneCoroutine(SceneName name)
+    {
+        FadePanelManager.instance.FadeIn();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene((int)name);
+        FadePanelManager.instance.FadeOut();
+        yield return null;
     }
 
 }
