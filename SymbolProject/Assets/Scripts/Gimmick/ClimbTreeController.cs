@@ -2,45 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 木を登る処理
-/// </summary>
 public class ClimbTreeController : MonoBehaviour
 {
-    [SerializeField]
-    private float fadeStartTime;
-
-    [SerializeField]
-    private GameObject[] climbPos;
-
     private bool climbFlag = false;
 
-    /// <summary>
-    /// 木を登る
-    /// </summary>
-    public void Climb(GameObject player)
-    {
-        GameObject cPos = climbPos[0];
-        if (climbFlag) {
-            cPos = climbPos[1];
-        } else {
-            cPos = climbPos[0];
-        }
-        StartCoroutine(ClimbCoroutine(player,cPos));
+    public bool ClimbFlag {
+        get { return climbFlag; }
+        set { climbFlag = value; }
     }
 
-    public IEnumerator ClimbCoroutine(GameObject player,GameObject pos)
+    [SerializeField]
+    private GameObject climbPos;
+    // Start is called before the first frame update
+    void Start()
     {
-        // アニメーション再生
-        // 再生から指定された時間後、フェードイン
-        yield return new WaitForSeconds(fadeStartTime);
-        FadePanelManager.instance.FadeIn();
-        player.transform.position = pos.transform.position;
-        yield return null;
-        if (climbFlag) {
-            climbFlag = false;
-        } else {
-            climbFlag = true;
-        }
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void Climb(GameObject player) {
+        climbFlag = true;
+        player.transform.position = climbPos.transform.position;
     }
 }
