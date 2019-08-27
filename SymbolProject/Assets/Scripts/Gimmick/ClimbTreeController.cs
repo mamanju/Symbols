@@ -30,6 +30,7 @@ public class ClimbTreeController : MonoBehaviour
     {
         climbFlag = true;
         // アニメーション再生
+
         // 再生から指定された時間後、フェードイン
         FadePanelManager.instance.FadeIn();
         yield return new WaitForSeconds(fadeStartTime);
