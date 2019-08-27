@@ -56,9 +56,11 @@ public class WeaponAtaccks : MonoBehaviour
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
         player = PlayerCtrl.instance.gameObject;
-        rigidbody.AddForce(player.transform.forward * _startSpeed, ForceMode.Impulse);
-        Vector3 dir = player.transform.eulerAngles;
-        transform.localEulerAngles = new Vector3(dir.x + 90, dir.y, dir.z);
+        transform.rotation = player.transform.rotation;
+        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+        var direction = transform.forward;
+        direction.y += 1f;
+        rigidbody.AddForce(transform.up * _startSpeed, ForceMode.Impulse);
     }
 
     //槍が消えて個数が減ってどうのこうの

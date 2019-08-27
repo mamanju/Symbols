@@ -11,7 +11,7 @@ public class WeaponText : MonoBehaviour
     private WeaponInfo nowWeapon;
 
     private string[] sentence = new string[10];
-    //private string nowSentence;
+    private string nowSentence;
 
     [SerializeField]
     private float speed = 0.05f;
@@ -33,15 +33,15 @@ public class WeaponText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lastWeapon != (int)nowWeapon.weaponList)
+        if (lastWeapon != (int)nowWeapon.weaponList && end_display == true)
         {
-            sentenceNum = 0;
             end_display = false;
         }
-        
-        lastWeapon = (int)nowWeapon.weaponList;
 
-        if (sentence[(int)nowWeapon.weaponList].Length != sentenceNum - 1 && end_display == false)
+        nowSentence = sentence[(int)nowWeapon.weaponList];
+        lastWeapon = (int)nowWeapon.weaponList;
+        
+        if (nowSentence.Length != sentenceNum - 1 && end_display == false)
         {
             start_count = true;
         }
@@ -53,6 +53,7 @@ public class WeaponText : MonoBehaviour
 
         if (end_display == true)
         {
+            sentenceNum = 0;
             return;
         }
         if (start_count == false) { return; }
@@ -83,6 +84,6 @@ public class WeaponText : MonoBehaviour
 
     public void DisplayText()
     {
-        GetComponent<Text>().text = sentence[(int)nowWeapon.weaponList].Substring(0, sentenceNum);
+            GetComponent<Text>().text = nowSentence.Substring(0, sentenceNum);
     }
 }

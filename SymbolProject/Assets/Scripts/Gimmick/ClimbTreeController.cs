@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 木を登る処理
+/// </summary>
 public class ClimbTreeController : MonoBehaviour
 {
     [SerializeField]
@@ -12,15 +15,10 @@ public class ClimbTreeController : MonoBehaviour
 
     private bool climbFlag = false;
 
-    public bool ClimbFlag {
-        get { return climbFlag; }
-        set { climbFlag = value; }
-    }
-
-    [SerializeField]
-    private GameObject climbPos;
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// 木を登る
+    /// </summary>
+    public void Climb(GameObject player)
     {
         if (!climbFlag)
         {
