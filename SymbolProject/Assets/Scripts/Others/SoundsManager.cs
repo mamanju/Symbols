@@ -5,20 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SoundsManager : MonoBehaviour
 {
-    [Header("0.Title,1.Map,2.Boss,3.GameOver,4.GameClear")]
+    //0.Title、1.Map、2.Boss、3.GameOver、4.GameClear
     [SerializeField]
     private AudioClip[] clips_BGM;
-
-    [Header("0.Sword,1.Spear,2.Ax,3.Damage,4.Jump")]
+    //0.Sword、1.Spear、2.Ax、3.Damage、4.Jump
     [SerializeField]
     private AudioClip[] clips_SE_player;
-
-    [Header("boss-3.Damage,4.Destroy,5.Attack")]
-    [Header("slime-0.Damage,1.Destroy,2.Attack")]
+    //
     [SerializeField]
     private AudioClip[] clips_SE_enemy;
-
-    [Header("0.Fire, 1.CrystalDestory")]
+    //
     [SerializeField]
     private AudioClip[] clips_SE_gimmick;
 
@@ -66,7 +62,7 @@ public class SoundsManager : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            //ChangeBGM(4);
+            StopBGM();
         }
 
         if (stop_flag == true)
@@ -77,13 +73,6 @@ public class SoundsManager : MonoBehaviour
         {
             bgmSource.Stop();
         }
-    }
-
-    //BGMを変える
-    public void ChangeBGM(int _num)
-    {
-        bgmSource.clip = clips_BGM[_num];
-        PlayBGM();
     }
 
     //現在のBGMをセットする
@@ -99,7 +88,6 @@ public class SoundsManager : MonoBehaviour
         bgmSource.Play();
     }
 
-    //BGMを止める
     public void StopBGM()
     {
         stop_flag = true;

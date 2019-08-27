@@ -43,9 +43,10 @@ public class PlayerStatus : MonoBehaviour
         weaponAttacks[5] = -1 + attack;
 
         //完成する当たり使用するかも
-        //for (int i = 0; i < 6; i++)
-        //{
-        //}
+        for (int i = 0; i < 6; i++)
+        {
+        }
+            Debug.Log(AxInfo.attack);
         nowAttack = weaponAttacks[0];
     }
 

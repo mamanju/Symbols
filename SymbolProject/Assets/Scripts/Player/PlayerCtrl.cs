@@ -77,6 +77,13 @@ public class PlayerCtrl : MonoBehaviour
     //ノックバック
     private KnockBack knockBack;
 
+    // 木登り用
+    private BoxCollider boxCollider;
+    private bool climbFlag = false;
+    private float climbClliderTime;
+    private float max_climbClliderTime = 0.1f;
+    private bool climbClliderTimeFlag = false;
+
     //特殊攻撃、槍とCymbals
     [SerializeField]
     private GameObject spear;
@@ -150,11 +157,14 @@ public class PlayerCtrl : MonoBehaviour
         playerAnime.SetBool(key_Jump, false);
 
         max_spearThrowTime = spearThrowTime;
+
+        boxCollider = GetComponent<BoxCollider>();
+        climbClliderTime = max_climbClliderTime;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("Triangle"))
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("Triangle") && synthesisGUI.activeSelf == false)
         {
             synthesisGUI.SetActive(!synthesisGUI.activeSelf);
             if (synthesisGUI.activeSelf == true)
@@ -163,10 +173,12 @@ public class PlayerCtrl : MonoBehaviour
                 this.GetComponent<MatlManager>().HaveCrystal();
                 this.GetComponent<WeaponManager>().HaveWeapon();
             }
-            else
-            {
-                Time.timeScale = 1.0f;
-            }
+        }
+
+        if (Input.GetButtonDown("Cross") && synthesisGUI.activeSelf == true)
+        {
+            synthesisGUI.SetActive(!synthesisGUI.activeSelf);
+            Time.timeScale = 1.0f;
         }
 
 
@@ -258,10 +270,23 @@ public class PlayerCtrl : MonoBehaviour
         }
 
 
-        // デバッグ用
+        // 木登り
         if (Input.GetButtonDown("Square"))
         {
-            playerAnime.SetTrigger(key_Climb);
+            boxCollider.enabled = true;
+            climbFlag = true;
+            climbClliderTimeFlag = true;
+        }
+        // 木登り用のコライダーを一瞬だけ出して消す
+        if (climbClliderTimeFlag)
+        {
+            climbClliderTime -= Time.deltaTime;
+            if (climbClliderTime <= 0)
+            {
+                boxCollider.enabled = false;
+                climbFlag = false;
+                climbClliderTime = max_climbClliderTime;
+            }
         }
     }
 
@@ -444,4 +469,20 @@ public class PlayerCtrl : MonoBehaviour
     {
         playerWeaponManager.WeaponDel(playerStatus.NowWeaponID);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "ClimbTree" && climbFlag)
+        {
+            other.GetComponent<ClimbTreeController>().Climb(gameObject);
+            boxCollider.enabled = false;
+            climbFlag = false;
+        }
+        else
+        {
+            boxCollider.enabled = false;
+            climbFlag = false;
+        }
+    }
+
 }
