@@ -138,6 +138,7 @@ public class EnemyAI : MonoBehaviour
                             attackCounter = timeBetweenAttacks;
                             int attack = GetComponent<EnemyController>().GetAttack;
                             PlayerCtrl.instance.GetComponent<PlayerStatus>().DownHP(attack);
+                            SoundsManager.instance.PlaySE_enemy(2);
                         }
                         else
                         {
