@@ -17,14 +17,6 @@ public class GrowTreeController : MonoBehaviour
 
     private float growTime;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            GrowTree();
-        }
-    }
-
     /// <summary>
     /// 木の成長
     /// </summary>
@@ -50,16 +42,16 @@ public class GrowTreeController : MonoBehaviour
             yield return null;
         }
         // 苗の成長をストップ
-        
-        
+
+
         // 成長した木を生成、苗を削除
-        GameObject tree = Instantiate(growTree);
-        tree.transform.position = Seedling.transform.position;
+        growTree.SetActive(true);
         Destroy(Seedling);
         // 成長した木を大きく
-        while(growTree.transform.localScale.x < 1)
+        while(growTime < 2)
         {
             growTree.transform.localScale += new Vector3(0.01f, 0.01f, 0.01f);
+            growTime += 0.01f;
             yield return null;
         }
         Destroy(smoke);
