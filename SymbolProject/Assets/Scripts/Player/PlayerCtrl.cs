@@ -154,7 +154,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("Triangle"))
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetButtonDown("Triangle") && synthesisGUI.activeSelf == false)
         {
             synthesisGUI.SetActive(!synthesisGUI.activeSelf);
             if (synthesisGUI.activeSelf == true)
@@ -163,10 +163,12 @@ public class PlayerCtrl : MonoBehaviour
                 this.GetComponent<MatlManager>().HaveCrystal();
                 this.GetComponent<WeaponManager>().HaveWeapon();
             }
-            else
-            {
-                Time.timeScale = 1.0f;
-            }
+        }
+
+        if (Input.GetButtonDown("Cross") && synthesisGUI.activeSelf == true)
+        {
+            synthesisGUI.SetActive(!synthesisGUI.activeSelf);
+            Time.timeScale = 1.0f;
         }
 
 
