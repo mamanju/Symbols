@@ -192,7 +192,7 @@ public class PlayerCtrl : MonoBehaviour
                 synthesisCtrl.EndFlag = true;
             }
             //リセット
-            if (Input.GetButtonDown("Cross") || Input.GetKeyDown(KeyCode.I))
+            if (Input.GetButtonDown("Triangle") || Input.GetKeyDown(KeyCode.I))
             {
                 synthesisCtrl.ResetCrystal();
             }
@@ -326,8 +326,7 @@ public class PlayerCtrl : MonoBehaviour
             // 静止アニメーション
             playerAnime.SetFloat(key_Speed, 0.0f);
         }
-
-
+        
         //ジャンプ
         if (groundFlag == true)
         {

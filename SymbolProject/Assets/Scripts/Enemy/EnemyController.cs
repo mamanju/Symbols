@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// エネミーコントローラー
@@ -39,6 +40,10 @@ public class EnemyController : EnemyManager
             anim.SetInteger(key_Health, 0);
             DropCrystal();
             SoundsManager.instance.PlaySE_enemy(1);
+            if (SceneManager.GetActiveScene().name == ("Tutorial"))
+            {
+                TutorialController.instance.Tutorial_Flag(5);
+            }
             Destroy(gameObject);
             return gameObject;
         }

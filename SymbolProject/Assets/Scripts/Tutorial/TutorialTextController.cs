@@ -5,32 +5,14 @@ using UnityEngine.UI;
 
 public class TutorialTextController : MonoBehaviour
 {
-    //スタートのあいさつ
-    private bool start_Flag;
-
-    //カメラ移動
-    private bool camera_Flag;
-    //ジャンプ
-    private bool jump_Flag;
-    //移動
-    private bool move_Flag;
-    //クリスタル取得
-    private bool crystal_Flag_1;
-    //敵を倒す
-    private bool enemy_Flag;
-    //クリスタル取得
-    private bool crystal_Flag_2;
-    //合成画面を開く
-    private bool synthesis_Flag_open;
-    //合成
-    private bool synthesis_Flag;
-    //合成画面を閉じる
-    private bool synthesis_Flag_close;
-
     private Text tutorialText;
 
     private string[] sentence = new string[10];
     private int sentenceNum;
+    public int SentenceNum
+    {
+        set { sentenceNum = value; }
+    }
     private int textNum;
 
     private float speed = 0.05f;
@@ -38,19 +20,31 @@ public class TutorialTextController : MonoBehaviour
 
     private bool startCount;
     private bool endDisplay;
+    public bool EndDisplay
+    {
+        get { return endDisplay; }
+    }
 
+    private int lastSentence;
+
+    public static TutorialTextController instance;
     // Start is called before the first frame update
     void Start()
     {
         tutorialText = GetComponent<Text>();
         SetSentence();
         text_speed = speed;
+        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        tutorialText.text = sentence[7];
+        if (lastSentence != sentenceNum && endDisplay == true)
+        {
+            textNum = 0;
+            endDisplay = false;
+        }
 
         if (sentence[sentenceNum].Length != textNum - 1 && endDisplay == false)
         {
@@ -60,9 +54,10 @@ public class TutorialTextController : MonoBehaviour
         {
             startCount = false;
             endDisplay = true;
+            lastSentence = sentenceNum;
         }
 
-        if(startCount == false) { return; }
+        if (startCount == false) { return; }
 
         text_speed -= Time.deltaTime;
 
@@ -72,26 +67,6 @@ public class TutorialTextController : MonoBehaviour
             text_speed = speed;
             textNum++;
         }
-
-        if (start_Flag == false) { return; }
-
-        if (camera_Flag == false) { return; }
-
-        if (jump_Flag == false) { return; }
-
-        if (move_Flag == false) { return; }
-
-        if (crystal_Flag_1 == false) { return; }
-
-        if (enemy_Flag == false) { return; }
-
-        if (crystal_Flag_2 == false) { return; }
-
-        if (synthesis_Flag_open == false) { return; }
-
-        if (synthesis_Flag == false) { return; }
-
-        if (synthesis_Flag_close == false) { return; }
     }
 
     private void SetSentence()
@@ -102,8 +77,9 @@ public class TutorialTextController : MonoBehaviour
         sentence[3] = "左スティックで移動ができるよ！\n押し込みでダッシュが出来るよ！";
         sentence[4] = "これは合成用クリスタルだよ！\n触れると拾えるよ！";
         sentence[5] = "これはこれは...スライム君ですね。\nやっちゃいましょ。\n○ボタンで攻撃できるよ！";
-        sentence[6] = "剣だけだじゃ飽きちゃうよね。\n新しい武器を作ろう！\n□ボタンで合成画面が開くよ！";
-        sentence[7] = "十字キーでクリスタルを選んで\n○ボタンで決定だよ！\n合成できる組み合わせだと表示が変わるよ";
+        sentence[6] = "スライムの色と同じ種類の\nクリスタルがゲットできるよ！";
+        sentence[7] = "剣だけだじゃ飽きちゃうよね。\n新しい武器を作ろう！\n△ボタンで合成画面が開くよ！";
+        sentence[8] = "十字キーでクリスタルを選んで\n○ボタンで決定だよ！\n合成できる組み合わせだと表示が変わるよ";
     }
 
     private void DisplaySentence()

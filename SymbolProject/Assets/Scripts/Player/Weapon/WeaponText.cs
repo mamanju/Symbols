@@ -51,10 +51,7 @@ public class WeaponText : MonoBehaviour
             end_display = true;
         }
 
-        if (end_display == true)
-        {
-            return;
-        }
+        if (end_display == true) { return; }
         if (start_count == false) { return; }
 
         text_speed -= Time.deltaTime;

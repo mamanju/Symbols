@@ -294,6 +294,75 @@ Transform:
   m_Father: {fileID: 938796188}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &132666633
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1997202004749757083, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundsManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997202004749757080, guid: 685d4a3187c1dfc41a24f10c8203b0a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 685d4a3187c1dfc41a24f10c8203b0a7, type: 3}
 --- !u!1 &157071251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,6 +2020,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &949789219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2293929772387265408, guid: b73c3211a31ef04448b4c3f1a903160c,
+    type: 3}
+  m_PrefabInstance: {fileID: 395109907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a16467d19db6847b2b5258d75414ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &978521996
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,6 +2223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1051843578}
+  - component: {fileID: 1051843579}
   m_Layer: 0
   m_Name: TutorialController
   m_TagString: Untagged
@@ -2163,6 +2245,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051843579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051843577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca880b2cce5a0f2428b6a943a73948bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialTextController: {fileID: 949789219}
 --- !u!1001 &1077836597
 PrefabInstance:
   m_ObjectHideFlags: 0

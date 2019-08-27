@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollider : MonoBehaviour
 {
@@ -9,6 +10,18 @@ public class PlayerCollider : MonoBehaviour
     {
         if (other.tag == "Crystal")
         {
+            if (SceneManager.GetActiveScene().name == "Tutorial")
+            {
+                if (TutorialController.instance.GetTutorial_Flag[4] == true)
+                {
+                    TutorialController.instance.Tutorial_Flag(6);
+                }
+                else
+                {
+                    TutorialController.instance.Tutorial_Flag(4);
+                }
+            }
+
             MatlInfo matlInfo = other.GetComponent<MatlInfo>();
             other.GetComponent<CapsuleCollider>().enabled = false;
             if (MatlManager.NowMatl[(int)matlInfo.matlList] >= 10)

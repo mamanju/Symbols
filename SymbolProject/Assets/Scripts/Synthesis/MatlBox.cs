@@ -47,6 +47,8 @@ public class MatlBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(selectNum);
+
         for (int i = 0; i < itemBox.Length; i++)
         {
             Button button = itemBox[i].GetComponent<Button>();
