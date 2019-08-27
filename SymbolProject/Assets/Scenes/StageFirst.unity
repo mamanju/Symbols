@@ -1562,16 +1562,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 461754158225545017, guid: c3dbb8b514d92944d8368f2c4190d9aa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7006305973145003309, guid: c3dbb8b514d92944d8368f2c4190d9aa,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 649428558}
+    - target: {fileID: 461754158225545017, guid: c3dbb8b514d92944d8368f2c4190d9aa,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3dbb8b514d92944d8368f2c4190d9aa, type: 3}
 --- !u!4 &370620745 stripped
@@ -5059,8 +5059,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026589105}
-  m_LocalRotation: {x: -0.20671168, y: 0, z: 0, w: 0.9784019}
-  m_LocalPosition: {x: -124.04, y: -8.639999, z: -56.7}
+  m_LocalRotation: {x: -0.0450531, y: 0.56995666, z: 0.03132111, w: 0.8198406}
+  m_LocalPosition: {x: -118.85652, y: 1.9796972, z: -37.264572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5242,6 +5242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342507504437664851, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
@@ -5482,6 +5487,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 520122962}
     m_Modifications:
+    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
+        type: 3}
+      propertyPath: m_Name
+      value: FallTree
+      objectReference: {fileID: 0}
     - target: {fileID: 6575395601622927200, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5536,11 +5546,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
-        type: 3}
-      propertyPath: m_Name
-      value: FallTree
       objectReference: {fileID: 0}
     - target: {fileID: 3107513768360178691, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
@@ -7428,6 +7433,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 520122962}
     m_Modifications:
+    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
+        type: 3}
+      propertyPath: m_Name
+      value: FallTree
+      objectReference: {fileID: 0}
     - target: {fileID: 6575395601622927200, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7482,11 +7492,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
-        type: 3}
-      propertyPath: m_Name
-      value: FallTree
       objectReference: {fileID: 0}
     - target: {fileID: 3107513768360178691, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
