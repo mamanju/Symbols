@@ -121,18 +121,44 @@ public class TutorialController : MonoBehaviour
         TextChange();
 
         if (tutorial_Flag[6] == false) { return; }
+        
+        //合成画面を開く
+        if (Input.GetButtonDown("Triangle") && tutorial_Flag[7] == false && EndSentence() == true)
+        {
+            tutorial_Flag[7] = true;
+        }
         TextChange();
 
-        //合成画面を開く
         if (tutorial_Flag[7] == false) { return; }
-        TextChange();
 
         //合成
-        if (tutorial_Flag[8] == false) { return; }
+        if (Input.GetButtonDown("Square") && tutorial_Flag[8] == false && EndSentence() == true)
+        {
+            tutorial_Flag[8] = true;
+        }
         TextChange();
 
+        if (tutorial_Flag[8] == false) { return; }
+
         //合成画面を閉じる
+        if (Input.GetButtonDown("Cross") && tutorial_Flag[9] == false && EndSentence() == true)
+        {
+
+        }
+        TextChange();
+
         if (tutorial_Flag[9] == false) { return; }
+
+        //武器を切り替える
+        TextChange();
+        
+        if (tutorial_Flag[10] == false) { return; }
+
+        //チュートリアル終了
+        TextChange();
+
+
+        if (tutorial_Flag[11] == false) { return; }
         TextChange();
     }
 
