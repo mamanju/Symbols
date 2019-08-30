@@ -16,6 +16,7 @@ TagManager:
   - WeaponCrystal
   - Terrain
   - ClimbTree
+  - GrowTree
   layers:
   - Default
   - TransparentFX

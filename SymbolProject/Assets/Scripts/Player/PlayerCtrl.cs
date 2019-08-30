@@ -474,6 +474,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (other.gameObject.tag == "ClimbTree" && climbFlag)
         {
+            playerAnime.SetTrigger(key_Climb);
             other.GetComponent<ClimbTreeController>().Climb(gameObject);
             boxCollider.enabled = false;
             climbFlag = false;

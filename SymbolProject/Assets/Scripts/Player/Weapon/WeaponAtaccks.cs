@@ -102,14 +102,32 @@ public class WeaponAtaccks : MonoBehaviour
             
         }
 
-        if (cymbalsFlag)
-        {
-            collision.gameObject.GetComponent<GrowTreeController>().GrowCount++;
-            if(collision.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
-            {
-                collision.gameObject.GetComponent<GrowTreeController>().GrowTree();
-            }
+        //if (cymbalsFlag)
+        //{
+        //    collision.gameObject.GetComponent<GrowTreeController>().GrowCount++;
+        //    if(collision.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
+        //    {
+        //        collision.gameObject.GetComponent<GrowTreeController>().GrowTree();
+        //    }
 
+        //}
+    }
+
+    public void OnEnable()
+    {
+        cymbalsFlag = true;
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (GetComponent<CymbalsInfo>() && cymbalsFlag && other.tag == "GrowTree")
+        {
+            other.gameObject.GetComponent<GrowTreeController>().GrowCount++;
+            if (other.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
+            {
+                other.gameObject.GetComponent<GrowTreeController>().GrowTree();
+            }
+            cymbalsFlag = false;
         }
     }
 
@@ -129,7 +147,6 @@ public class WeaponAtaccks : MonoBehaviour
 
         //if (finder.M_enemy.Count == 0) { return; }
         //for (int i = 0; i < finder.M_enemy.Count; i++)
-        cymbalsFlag = true;
         enemy = _enemy;
         enemy.GetComponent<Rigidbody>().isKinematic = true;
         stunFlag = true;
