@@ -16,6 +16,14 @@ public class GrowTreeController : MonoBehaviour
 
     private bool growFlag = false;
 
+    private int growCount;
+
+    public int GrowCount
+    {
+        get { return growCount; }
+        set { growCount = value; }
+    }
+
 
     private float growTime;
 
@@ -47,8 +55,6 @@ public class GrowTreeController : MonoBehaviour
             growTime += 0.01f;
             yield return null;
         }
-        // 苗の成長をストップ
-
 
         // 成長した木を生成、苗を削除
         growTree.SetActive(true);

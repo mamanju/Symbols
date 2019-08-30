@@ -41,6 +41,7 @@ public class WeaponAtaccks : MonoBehaviour
     private float _startSpeed = 5.0f;
     private bool spearFlag = false;
     private bool spearTimeFlag = false;
+    private bool cymbalsFlag = false;
     private float spearTime = 5;
 
     private GameObject SpearBox;
@@ -100,6 +101,16 @@ public class WeaponAtaccks : MonoBehaviour
             }
             
         }
+
+        if (cymbalsFlag)
+        {
+            collision.gameObject.GetComponent<GrowTreeController>().GrowCount++;
+            if(collision.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
+            {
+                collision.gameObject.GetComponent<GrowTreeController>().GrowTree();
+            }
+
+        }
     }
 
     private GameObject enemy;
@@ -118,7 +129,7 @@ public class WeaponAtaccks : MonoBehaviour
 
         //if (finder.M_enemy.Count == 0) { return; }
         //for (int i = 0; i < finder.M_enemy.Count; i++)
-
+        cymbalsFlag = true;
         enemy = _enemy;
         enemy.GetComponent<Rigidbody>().isKinematic = true;
         stunFlag = true;
@@ -127,6 +138,7 @@ public class WeaponAtaccks : MonoBehaviour
 
     public void CymbalsEnd()
     {
+        cymbalsFlag = false;
         enemy.GetComponent<Rigidbody>().isKinematic = false;
     }
 }
