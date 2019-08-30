@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
     private static int hp = 20;
+
+    [SerializeField]
+    private GameObject gameOverImage;
     public static int PlayerHp()
     {
         return hp;
@@ -70,6 +73,10 @@ public class PlayerStatus : MonoBehaviour
         pCon = GetComponent<PlayerCtrl>();
         if (pCon.ShildFlag) { return; }
         hp -= _damage;
+        if(hp == 0)
+        {
+            gameOverImage.GetComponent<PauseController>().GameOver();
+        }
         knockBack = GetComponent<KnockBack>();
         knockBack.Knockback();
     }

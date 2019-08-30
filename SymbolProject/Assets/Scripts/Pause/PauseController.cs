@@ -81,6 +81,14 @@ public class PauseController : MonoBehaviour
             return;
         }
 
+        if (gameOverFlag)
+        {
+            if (Input.GetButtonDown("Circle"))
+            {
+                SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
+            }
+        }
+
         if (Input.GetAxis("CrossKey_H") < 0) {
             if (buttonNum - 1 < 0) {
                 buttonNum = 1;
@@ -127,6 +135,7 @@ public class PauseController : MonoBehaviour
         if (!gameOverFlag) {
             gameOverFlag = true;
             gameOverUI.SetActive(true);
+            Time.timeScale = 0;
         } else {
             gameOverFlag = false;
             gameOverUI.SetActive(false);
