@@ -33,15 +33,15 @@ public class WeaponText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lastWeapon != (int)nowWeapon.weaponList && end_display == true)
+        if (lastWeapon != (int)nowWeapon.weaponList)
         {
+            sentenceNum = 0;
             end_display = false;
         }
 
-        nowSentence = sentence[(int)nowWeapon.weaponList];
         lastWeapon = (int)nowWeapon.weaponList;
-        
-        if (nowSentence.Length != sentenceNum - 1 && end_display == false)
+
+        if (sentence[(int)nowWeapon.weaponList].Length != sentenceNum - 1 && end_display == false)
         {
             start_count = true;
         }
@@ -80,6 +80,6 @@ public class WeaponText : MonoBehaviour
 
     public void DisplayText()
     {
-            GetComponent<Text>().text = nowSentence.Substring(0, sentenceNum);
+            GetComponent<Text>().text = sentence[(int)nowWeapon.weaponList].Substring(0, sentenceNum);
     }
 }
