@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialTextController : MonoBehaviour
 {
@@ -31,6 +32,11 @@ public class TutorialTextController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            transform.parent.gameObject.SetActive(false);
+        }
+
         tutorialText = GetComponent<Text>();
         SetSentence();
         text_speed = speed;

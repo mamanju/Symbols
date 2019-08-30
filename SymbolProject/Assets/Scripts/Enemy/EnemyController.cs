@@ -42,7 +42,7 @@ public class EnemyController : EnemyManager
             SoundsManager.instance.PlaySE_enemy(1);
             if (SceneManager.GetActiveScene().name == ("Tutorial"))
             {
-                TutorialController.instance.Tutorial_Flag(5);
+                TutorialController.instance.EnemyDown = true;
             }
             Destroy(gameObject);
             return gameObject;

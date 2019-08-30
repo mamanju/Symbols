@@ -12,13 +12,13 @@ public class PlayerCollider : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "Tutorial")
             {
-                if (TutorialController.instance.GetTutorial_Flag[4] == true)
+                if (TutorialController.instance.CrystalGet == false)
                 {
-                    TutorialController.instance.Tutorial_Flag(6);
+                    TutorialController.instance.CrystalGet = true;
                 }
-                else
+                else if (TutorialController.instance.CrystalGet_2 == true)
                 {
-                    TutorialController.instance.Tutorial_Flag(4);
+                    TutorialController.instance.CrystalGet_2 = true;
                 }
             }
 

@@ -6,6 +6,30 @@ public class TutorialController : MonoBehaviour
 {
     [SerializeField]
     private TutorialTextController tutorialTextController;
+    [SerializeField]
+    private GameObject crystal;
+    [SerializeField]
+    private GameObject slime_enemy;
+
+    private bool crystalGet;
+    public bool CrystalGet
+    {
+        get { return crystalGet; }
+        set { crystalGet = value; }
+    }
+
+    private bool enemyDown;
+    public bool EnemyDown
+    {
+        set { enemyDown = value; }
+    }
+
+    private bool crystalGet_2;
+    public bool CrystalGet_2
+    {
+        get { return crystalGet_2; }
+        set { crystalGet_2 = value; }
+    }
 
     private int boolNum;
 
@@ -24,7 +48,9 @@ public class TutorialController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;    
+        instance = this;
+        crystal.SetActive(false);
+        slime_enemy.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,7 +68,6 @@ public class TutorialController : MonoBehaviour
         //カメラ移動
         if (Input.GetAxis("Horizontal_R") != 0 && tutorial_Flag[1] == false && EndSentence() == true)
         {
-            Debug.Log("呼んだ？");
             tutorial_Flag[1] = true;
         }
         TextChange();
@@ -62,21 +87,39 @@ public class TutorialController : MonoBehaviour
         if (Input.GetAxis("Horizontal_L") != 0 && tutorial_Flag[3] == false && EndSentence() == true)
         {
             tutorial_Flag[3] = true;
+            crystal.SetActive(true);
         }
         TextChange();
 
         if (tutorial_Flag[3] == false) { return; }
-        TextChange();
 
         //クリスタル取得
-        if (tutorial_Flag[4] == false) { return; }
+        if (crystalGet == true && tutorial_Flag[4] == false && EndSentence() == true)
+        {
+            tutorial_Flag[4] = true;
+            slime_enemy.SetActive(true);
+        }
         TextChange();
+
+        if (tutorial_Flag[4] == false) { return; }
 
         //敵を倒す
-        if (tutorial_Flag[5] == false) { return; }
+        if (enemyDown == true && tutorial_Flag[5] == false && EndSentence() == true)
+        {
+            tutorial_Flag[5] = true;
+        }
+
         TextChange();
 
+        if (tutorial_Flag[5] == false) { return; }
+        
         //クリスタル取得
+        if (crystalGet_2 == true && tutorial_Flag[6] == false && EndSentence() == true)
+        {
+            tutorial_Flag[6] = true;
+        }
+        TextChange();
+
         if (tutorial_Flag[6] == false) { return; }
         TextChange();
 
