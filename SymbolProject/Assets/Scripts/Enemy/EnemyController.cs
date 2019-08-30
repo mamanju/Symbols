@@ -58,8 +58,10 @@ public class EnemyController : EnemyManager
     private void DropCrystal() {
         string path = "Prefabs/Crystal/MCrystal/Prefab/MCrystal_" + crystal;
         GameObject cry = Instantiate(Resources.Load<GameObject>(path), transform);
-        cry.transform.position = transform.position;
+        cry.transform.localPosition = new Vector3(0,0,0);
         cry.transform.SetParent(transform.parent);
+        Debug.Log(transform.position);
+        Debug.Log("local" + transform.localPosition);
         cry.GetComponent<CapsuleCollider>().enabled = false;
     }
 }
