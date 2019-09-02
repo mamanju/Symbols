@@ -56,7 +56,7 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Circle") && tutorial_Flag[0] == false && EndSentence() == true)
+        if ( tutorial_Flag[0] == false && EndSentence() == true)
         {
             tutorial_Flag[0] = true;
         }
@@ -143,13 +143,17 @@ public class TutorialController : MonoBehaviour
         //合成画面を閉じる
         if (Input.GetButtonDown("Cross") && tutorial_Flag[9] == false && EndSentence() == true)
         {
-
+            tutorial_Flag[9] = true;
         }
         TextChange();
 
         if (tutorial_Flag[9] == false) { return; }
 
         //武器を切り替える
+        if (Input.GetButtonDown("R1") && tutorial_Flag[10] == false && EndSentence() == true)
+        {
+
+        }
         TextChange();
         
         if (tutorial_Flag[10] == false) { return; }
