@@ -62,6 +62,7 @@ public class EnemyController : EnemyManager
         cry.transform.SetParent(transform.parent);
         Debug.Log(transform.position);
         Debug.Log("local" + transform.localPosition);
+        cry.transform.localScale = new Vector3(1, 1, 1);
         cry.GetComponent<CapsuleCollider>().enabled = false;
     }
 }
