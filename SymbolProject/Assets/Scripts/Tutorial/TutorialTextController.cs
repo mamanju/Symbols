@@ -65,7 +65,7 @@ public class TutorialTextController : MonoBehaviour
 
         if (startCount == false) { return; }
 
-        text_speed -= Time.deltaTime;
+        text_speed -= Time.fixedDeltaTime;
 
         if (text_speed <= 0)
         {
