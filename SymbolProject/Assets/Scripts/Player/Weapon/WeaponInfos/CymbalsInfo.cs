@@ -38,7 +38,7 @@ public class CymbalsInfo : WeaponController
         Debug.Log("durable=" + durable);
         if (durable <= 0) { return; }
         base.BreakWeaponCheck(1);
-        if (durable == 0)
+        if (durable <= 0)
         {
             player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
             player.GetComponent<WeaponManager>().DeleteWeapon(weaponID - 1);

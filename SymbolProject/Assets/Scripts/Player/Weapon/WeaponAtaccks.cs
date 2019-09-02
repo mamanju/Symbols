@@ -122,6 +122,7 @@ public class WeaponAtaccks : MonoBehaviour
     {
         if (GetComponent<CymbalsInfo>() && cymbalsFlag && other.tag == "GrowTree")
         {
+            Debug.Log("苗");
             other.gameObject.GetComponent<GrowTreeController>().GrowCount++;
             if (other.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
             {

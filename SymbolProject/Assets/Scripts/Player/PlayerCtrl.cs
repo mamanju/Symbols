@@ -53,6 +53,7 @@ public class PlayerCtrl : MonoBehaviour
     private GameObject matlButton;
     private GameObject synthesisBoxes;
     private GameObject synthesisCrystal;
+    private bool resetFlag;
 
     //カメラの向きを取得
     private Vector3 cameraForward;
@@ -179,6 +180,7 @@ public class PlayerCtrl : MonoBehaviour
         {
             synthesisGUI.SetActive(!synthesisGUI.activeSelf);
             Time.timeScale = 1.0f;
+            resetFlag = false;
         }
 
 
@@ -206,9 +208,13 @@ public class PlayerCtrl : MonoBehaviour
             //リセット
             if (Input.GetButtonDown("Triangle") || Input.GetKeyDown(KeyCode.I))
             {
-                synthesisCtrl.ResetCrystal();
+                if (resetFlag)
+                {
+                    synthesisCtrl.ResetCrystal();
+                }
             }
             lastSelect = Input.GetAxisRaw("CrossKey_H");
+            if (resetFlag == false) { resetFlag = true; }
         }
         
         if (Time.timeScale == 0) { return; }
@@ -474,6 +480,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (other.gameObject.tag == "ClimbTree" && climbFlag)
         {
+        Debug.Log("木");
             playerAnime.SetTrigger(key_Climb);
             other.GetComponent<ClimbTreeController>().Climb(gameObject);
             boxCollider.enabled = false;
@@ -485,5 +492,4 @@ public class PlayerCtrl : MonoBehaviour
             climbFlag = false;
         }
     }
-
 }
