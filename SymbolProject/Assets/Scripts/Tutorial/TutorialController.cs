@@ -33,7 +33,7 @@ public class TutorialController : MonoBehaviour
 
     private int boolNum;
 
-    private bool[] tutorial_Flag = new bool[10];
+    private bool[] tutorial_Flag = new bool[12];
     public void Tutorial_Flag(int i)
     {
         tutorial_Flag[i] = true;
@@ -152,7 +152,7 @@ public class TutorialController : MonoBehaviour
         //武器を切り替える
         if (Input.GetButtonDown("R1") && tutorial_Flag[10] == false && EndSentence() == true)
         {
-
+            tutorial_Flag[10] = true;
         }
         TextChange();
         

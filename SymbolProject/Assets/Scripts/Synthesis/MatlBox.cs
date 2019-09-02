@@ -9,9 +9,6 @@ public class MatlBox : MonoBehaviour
     private int itemBoxCount;
     private int selectNum;
     private int mobeCtrl = 4;
-
-    [SerializeField]
-    private Sprite selectImage;
     
     private GameObject player;
 
@@ -47,22 +44,6 @@ public class MatlBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(selectNum);
-
-        for (int i = 0; i < itemBox.Length; i++)
-        {
-            Button button = itemBox[i].GetComponent<Button>();
-            if (MatlManager.NowMatl[i] == 0)
-            {
-                button.interactable = false;
-                itemBox[i].GetComponent<Image>().color = Color.clear;
-            }
-            else
-            {
-                button.interactable = true;
-                itemBox[i].GetComponent<Image>().color = Color.white;
-            }
-        }
         if (moveRightFlag == true && selectNum < mobeCtrl)
         {
             if (selectNum == mobeCtrl - 1)
@@ -90,7 +71,6 @@ public class MatlBox : MonoBehaviour
             }
             else
             {
-                Debug.Log("通った");
                 for (int i = selectNum; i > 0; i--)
                 {
                     if(itemBox[i - 1].GetComponent<Button>().interactable == true)
@@ -107,7 +87,6 @@ public class MatlBox : MonoBehaviour
             if (i == selectNum)
             {
                 itemBox[selectNum].GetComponent<Image>().color = Color.white;
-                itemBox[selectNum].GetComponent<Image>().sprite = selectImage;
             }
             else
             {
