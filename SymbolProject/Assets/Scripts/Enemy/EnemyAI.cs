@@ -10,8 +10,6 @@ public class EnemyAI : MonoBehaviour
 
     public NavMeshAgent agent;
 
-    //public Animator anim; 敵のアニメーションを作ってから、ここから設定する
-
     //敵の動きのリスト
     public enum AIState
     {
@@ -30,6 +28,9 @@ public class EnemyAI : MonoBehaviour
     private float distancetoPlayer;
 
     private Animator anim;
+    private string key_IsMoving = "IsMoving";
+    private string key_Attack = "Attack";
+    private string key_SAttack = "SAttack";
 
     void Start()
     {
@@ -47,8 +48,7 @@ public class EnemyAI : MonoBehaviour
             switch (currentState)
             {
                 case AIState.isIdle:
-                    //anim.SetBool("IsMoving", false); 敵のアニメーションを作ってから、ここから設定する
-                    anim.SetBool("IsMoving", false);
+                    anim.SetBool(key_IsMoving, false);
 
                     if (waitCounter > 0)
                             {
@@ -63,8 +63,7 @@ public class EnemyAI : MonoBehaviour
                     if (distancetoPlayer <= chaseRange)
                     {
                         currentState = AIState.isChasing;
-                        //anim.SetBool("IsMoving", true);敵のアニメーションを作ってから、ここから設定する
-                        anim.SetBool("IsMoving", true);
+                        anim.SetBool(key_IsMoving, true);
                     }
 
                     break;
@@ -90,8 +89,7 @@ public class EnemyAI : MonoBehaviour
                         currentState = AIState.isChasing;
                     }
 
-                    //anim.SetBool("IsMoving", true);敵のアニメーションを作ってから、ここから設定する
-                    anim.SetBool("IsMoving", true);
+                    anim.SetBool(key_IsMoving, true);
                     break;
 
                 case AIState.isChasing:
@@ -101,9 +99,8 @@ public class EnemyAI : MonoBehaviour
                     if (distancetoPlayer <= attackRange)
                     {
                         currentState = AIState.isAttacking;
-                        //anim.SetTrigger("Attack");敵のアニメーションを作ってから、ここから設定する
-                        //anim.SetBool("IsMoving", false);敵のアニメーションを作ってから、ここから設定する
-                        anim.SetBool("IsMoving", false);
+                        anim.SetTrigger(key_Attack);
+                        anim.SetBool(key_IsMoving, false);
 
 
                         agent.velocity = Vector3.zero;
@@ -133,8 +130,7 @@ public class EnemyAI : MonoBehaviour
                     {
                         if (distancetoPlayer < attackRange)
                         {
-                            //anim.SetTrigger("Attack");敵のアニメーションを作ってから、ここから設定する
-                            anim.SetTrigger("Attack");
+                            anim.SetTrigger(key_Attack);
                             attackCounter = timeBetweenAttacks;
                             int attack = GetComponent<EnemyController>().GetAttack;
                             PlayerCtrl.instance.GetComponent<PlayerStatus>().DownHP(attack);
