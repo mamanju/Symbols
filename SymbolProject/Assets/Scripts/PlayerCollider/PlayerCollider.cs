@@ -16,7 +16,7 @@ public class PlayerCollider : MonoBehaviour
                 {
                     TutorialController.instance.CrystalGet = true;
                 }
-                else if (TutorialController.instance.CrystalGet_2 == true)
+                else if (TutorialController.instance.CrystalGet == true)
                 {
                     TutorialController.instance.CrystalGet_2 = true;
                 }

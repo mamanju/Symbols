@@ -8,7 +8,7 @@ public class TutorialTextController : MonoBehaviour
 {
     private Text tutorialText;
 
-    private string[] sentence = new string[10];
+    private string[] sentence = new string[12];
     private int sentenceNum;
     public int SentenceNum
     {
@@ -65,7 +65,7 @@ public class TutorialTextController : MonoBehaviour
 
         if (startCount == false) { return; }
 
-        text_speed -= Time.deltaTime;
+        text_speed -= Time.fixedDeltaTime;
 
         if (text_speed <= 0)
         {
@@ -85,9 +85,11 @@ public class TutorialTextController : MonoBehaviour
         sentence[5] = "これはこれは...スライム君ですね。\nやっちゃいましょ。\n○ボタンで攻撃できるよ！";
         sentence[6] = "スライムの色と同じ種類の\nクリスタルがゲットできるよ！";
         sentence[7] = "剣だけだじゃ飽きちゃうよね。\n新しい武器を作ろう！\n△ボタンで合成画面が開くよ！";
-        sentence[8] = "十字キーでクリスタルを選んで\n○ボタンで決定だよ！\n合成できる組み合わせだと表示が変わるよ";
+        sentence[8] = "十字キーでクリスタルを選んで\n○ボタンで決定だよ！";
+        sentence[9] = "合成できる組み合わせだと\n表示が変わるよ!\n×ボタンで合成画面が閉じるよ";
+        sentence[10] = "R1、L1で武器を切り替えられるよ";
+        sentence[11] = "チュートリアルを終了するよ！";
     }
-
     private void DisplaySentence()
     {
         GetComponent<Text>().text = sentence[sentenceNum].Substring(0, textNum);
