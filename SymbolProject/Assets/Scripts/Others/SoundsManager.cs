@@ -107,20 +107,17 @@ public class SoundsManager : MonoBehaviour
 
     public void PlaySE_player(int _num)
     {
-        seSources[0].clip = clips_SE_player[_num];
-        seSources[0].Play();
+        seSources[0].PlayOneShot(clips_SE_player[_num]);
     }
 
     public void PlaySE_enemy(int _num)
     {
-        seSources[0].clip = clips_SE_enemy[_num];
-        seSources[0].Play();
+        seSources[0].PlayOneShot(clips_SE_enemy[_num]);
     }
 
     public void PlaySE_gimmick(int _num)
     {
-        seSources[0].clip = clips_SE_gimmick[_num];
-        seSources[0].Play();
+        seSources[0].PlayOneShot(clips_SE_gimmick[_num]);
     }
 
     public void StopSE(int _num)

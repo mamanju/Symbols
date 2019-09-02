@@ -367,8 +367,7 @@ public class PlayerCtrl : MonoBehaviour
                 playerAnime.SetTrigger(key_Jump);
                 playerRb.velocity = new Vector3 (playerRb.velocity.x,
                     transform.up.y * jumpForce * Time.deltaTime, playerRb.velocity.z);
-                Debug.Log(new Vector3(playerRb.velocity.x,
-                    transform.up.y * jumpForce * Time.deltaTime, playerRb.velocity.z));
+                SoundsManager.instance.PlaySE_player(4);
                 downFlag = true;
             }
         }
@@ -440,6 +439,10 @@ public class PlayerCtrl : MonoBehaviour
     public void Attack(GameObject other)
     {
         DownDurable();
+        if(weaponNumber < 3)
+        {
+            SoundsManager.instance.PlaySE_player(weaponNumber);
+        }
         if (playerStatus.NowWeaponID == 5 && other.tag == "Enemy")
         {
             weaponAtaccks = cymbals.GetComponent<WeaponAtaccks>();

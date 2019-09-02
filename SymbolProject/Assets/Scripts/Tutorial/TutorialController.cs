@@ -31,18 +31,11 @@ public class TutorialController : MonoBehaviour
         set { crystalGet_2 = value; }
     }
 
-    private int boolNum;
-
-    private bool[] tutorial_Flag = new bool[12];
-    public void Tutorial_Flag(int i)
-    {
-        tutorial_Flag[i] = true;
-    }
-
-    public bool[] GetTutorial_Flag
-    {
-        get { return tutorial_Flag; }
-    }
+    private bool SetCeystal;
+    private bool SetEnemy;
+    
+    private bool[] passFlag = new bool[12];
+    private bool[] tutorial_Flag = new bool[13];
 
     public static TutorialController instance;
     // Start is called before the first frame update
@@ -51,132 +44,121 @@ public class TutorialController : MonoBehaviour
         instance = this;
         crystal.SetActive(false);
         slime_enemy.SetActive(false);
+        tutorial_Flag = tutorialTextController.GetTutorial_Flag;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( tutorial_Flag[0] == false && EndSentence() == true)
-        {
-            tutorial_Flag[0] = true;
-        }
-
-        if (tutorial_Flag[0] == false) { return; }
-        TextChange();
-
 
         //カメラ移動
-        if (Input.GetAxis("Horizontal_R") != 0 && tutorial_Flag[1] == false && EndSentence() == true)
+        TextChange(0);
+        if (Input.GetAxis("Horizontal_R") != 0)
         {
-            tutorial_Flag[1] = true;
+            passFlag[0] = true;
         }
-        TextChange();
-
-        if (tutorial_Flag[1] == false) { return; }
+        if (!passFlag[0]) { return; }
 
         //ジャンプ
-        if (Input.GetButtonDown("Cross") && tutorial_Flag[2] == false && EndSentence() == true)
+        TextChange(1);
+        if (Input.GetButtonDown("Cross"))
         {
-            tutorial_Flag[2] = true;
+            passFlag[1] = true;
         }
-        TextChange();
-
-        if (tutorial_Flag[2] == false) { return; }
+        if (!passFlag[1]) { return; }
 
         //移動
-        if (Input.GetAxis("Horizontal_L") != 0 && tutorial_Flag[3] == false && EndSentence() == true)
+        TextChange(2);
+        if (Input.GetAxis("Horizontal_L") != 0)
         {
-            tutorial_Flag[3] = true;
+            passFlag[2] = true;
+        }
+        if (!passFlag[2]) { return; }
+
+        //クリスタル取得
+        TextChange(3);
+        if (SetCeystal == false)
+        {
+            SetCeystal = true;
             crystal.SetActive(true);
         }
-        TextChange();
-
-        if (tutorial_Flag[3] == false) { return; }
-
-        //クリスタル取得
-        if (crystalGet == true && tutorial_Flag[4] == false && EndSentence() == true)
+        if (!crystalGet) { return; }
+        
+        //敵を倒す
+        TextChange(4);
+        if (SetEnemy == false)
         {
-            tutorial_Flag[4] = true;
+            SetEnemy = true;
             slime_enemy.SetActive(true);
         }
-        TextChange();
+        if (!enemyDown) { return; }
 
-        if (tutorial_Flag[4] == false) { return; }
-
-        //敵を倒す
-        if (enemyDown == true && tutorial_Flag[5] == false && EndSentence() == true)
-        {
-            tutorial_Flag[5] = true;
-        }
-
-        TextChange();
-
-        if (tutorial_Flag[5] == false) { return; }
-        
         //クリスタル取得
-        if (crystalGet_2 == true && tutorial_Flag[6] == false && EndSentence() == true)
-        {
-            tutorial_Flag[6] = true;
-        }
-        TextChange();
+        TextChange(5);
+        if (!crystalGet_2) { return; }
 
-        if (tutorial_Flag[6] == false) { return; }
-        
         //合成画面を開く
-        if (Input.GetButtonDown("Triangle") && tutorial_Flag[7] == false && EndSentence() == true)
+        TextChange(6);
+        if (Input.GetButtonDown("Triangle"))
         {
-            tutorial_Flag[7] = true;
+            passFlag[4] = true;
         }
-        TextChange();
+        if (!passFlag[4]) { return; }
 
-        if (tutorial_Flag[7] == false) { return; }
+        //クリスタル選択
+        TextChange(7);
+        if (Input.GetButtonDown("Circle"))
+        {
+            passFlag[5] = true;
+        }
+        if (!passFlag[5]) { return; }
 
         //合成
-        if (Input.GetButtonDown("Square") && tutorial_Flag[8] == false && EndSentence() == true)
+        TextChange(8);
+        if (Input.GetButtonDown("Square"))
         {
-            tutorial_Flag[8] = true;
+            passFlag[6] = true;
         }
-        TextChange();
-
-        if (tutorial_Flag[8] == false) { return; }
+        if (!passFlag[6]) { return; }
 
         //合成画面を閉じる
-        if (Input.GetButtonDown("Cross") && tutorial_Flag[9] == false && EndSentence() == true)
+        TextChange(9);
+        if (Input.GetButtonDown("Cross"))
         {
-            tutorial_Flag[9] = true;
+            passFlag[7] = true;
         }
-        TextChange();
-
-        if (tutorial_Flag[9] == false) { return; }
+        if (!passFlag[7]) { return; }
 
         //武器を切り替える
-        if (Input.GetButtonDown("R1") && tutorial_Flag[10] == false && EndSentence() == true)
+        TextChange(10);
+        if (Input.GetButtonDown("R1") || Input.GetButtonDown("L1"))
         {
-            tutorial_Flag[10] = true;
+            passFlag[8] = true;
         }
-        TextChange();
-        
-        if (tutorial_Flag[10] == false) { return; }
+        if (!passFlag[8]) { return; }
 
-        //チュートリアル終了
-        TextChange();
+        TextChange(11);
 
-
-        if (tutorial_Flag[11] == false) { return; }
-        TextChange();
-    }
-
-    public void TextChange()
-    {
-        if (tutorial_Flag[boolNum] == true && tutorial_Flag[boolNum + 1] == false)
+        //Scene切り替え
+        if (tutorial_Flag[12] == true)
         {
-            tutorialTextController.SentenceNum = boolNum + 1;
-            boolNum++;
+            Debug.Log("チュートリアル終わり");
         }
     }
 
-    private bool EndSentence()
+    public void TextChange(int _num)
     {
-        return TutorialTextController.instance.EndDisplay;
+        if (EndSentence() == false) { return; }
+        if (tutorial_Flag[_num] == true)
+        {
+            tutorialTextController.SentenceNum = _num + 1;
+            tutorialTextController.StartCount = true;
+            tutorialTextController.TextNum = 0;
+        }
+    }
+
+    public bool EndSentence()
+    {
+        return tutorialTextController.EndDisplay;
     }
 }
