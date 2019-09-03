@@ -3166,7 +3166,7 @@ PrefabInstance:
     - target: {fileID: 5694592024446471616, guid: 2ea6d1b1af956d44db3bd9282885cfeb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.85
+      value: 3.42
       objectReference: {fileID: 0}
     - target: {fileID: 5694592024446471616, guid: 2ea6d1b1af956d44db3bd9282885cfeb,
         type: 3}
@@ -4652,6 +4652,16 @@ PrefabInstance:
       propertyPath: climbTree
       value: 
       objectReference: {fileID: 1016499544}
+    - target: {fileID: 2397910637348921116, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076041466784789390, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
 --- !u!1001 &1158724326

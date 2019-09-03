@@ -35,7 +35,6 @@ public class SpearInfo : WeaponController
         Debug.Log("durable=" + durable);
         if (durable <= 0) { return; }
         base.BreakWeaponCheck(1);
-        Debug.Log("durable=" + durable);
         if (durable == 0)
         {
             player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
