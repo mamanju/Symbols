@@ -4622,6 +4622,36 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: firstBridge
+      value: 
+      objectReference: {fileID: 1279338615}
+    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: secondBridge
+      value: 
+      objectReference: {fileID: 1899011509}
+    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: crystal
+      value: 
+      objectReference: {fileID: 649039547}
+    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: bossGate
+      value: 
+      objectReference: {fileID: 434977158}
+    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: growTree
+      value: 
+      objectReference: {fileID: 362442463}
+    - target: {fileID: 1468222372467572559, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: climbTree
+      value: 
+      objectReference: {fileID: 1016499544}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
 --- !u!1001 &1158724326
@@ -4891,6 +4921,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 520122962}
     m_Modifications:
+    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
+        type: 3}
+      propertyPath: m_Name
+      value: FallTree
+      objectReference: {fileID: 0}
     - target: {fileID: 6575395601622927200, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4945,11 +4980,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
-        type: 3}
-      propertyPath: m_Name
-      value: FallTree
       objectReference: {fileID: 0}
     - target: {fileID: 3107513768360178691, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
@@ -6880,6 +6910,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 520122962}
     m_Modifications:
+    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
+        type: 3}
+      propertyPath: m_Name
+      value: FallTree
+      objectReference: {fileID: 0}
     - target: {fileID: 6575395601622927200, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6934,11 +6969,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6575395601622571840, guid: 0f7445b68ab445647953001838f5571d,
-        type: 3}
-      propertyPath: m_Name
-      value: FallTree
       objectReference: {fileID: 0}
     - target: {fileID: 3107513768360178691, guid: 0f7445b68ab445647953001838f5571d,
         type: 3}

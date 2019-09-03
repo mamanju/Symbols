@@ -27,6 +27,6 @@ public class Destination : MonoBehaviour
 
     void Update()
     {
-
+        cursor.LookAt(firstBridge);
     }
 }
