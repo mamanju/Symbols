@@ -39,7 +39,7 @@ public class EnemyController : EnemyManager
         {
             anim.SetInteger(key_Health, 0);
             DropCrystal();
-            SoundsManager.instance.PlaySE_enemy(1);
+            Enemy_SoundManager.instance.PlaySE_enemy(1);
             if (SceneManager.GetActiveScene().name == ("Tutorial"))
             {
                 TutorialController.instance.EnemyDown = true;
