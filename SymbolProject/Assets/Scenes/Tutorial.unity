@@ -339,7 +339,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips_BGM:
   - {fileID: 8300000, guid: f2a19e58042608841bca522c0ffa71c5, type: 3}
-  - {fileID: 8300000, guid: ea032c09fc31d734fbc860ddbafebdc5, type: 3}
   stop_speed: 1
 --- !u!82 &741043560
 AudioSource:
