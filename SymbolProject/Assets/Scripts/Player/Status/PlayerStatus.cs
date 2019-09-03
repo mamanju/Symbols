@@ -73,7 +73,7 @@ public class PlayerStatus : MonoBehaviour
         pCon = GetComponent<PlayerCtrl>();
         if (pCon.ShildFlag) { return; }
         hp -= _damage;
-        SoundsManager.instance.PlaySE_player(3);
+        Player_SoundManager.instance.PlaySE_player(3);
         if(hp == 0)
         {
             gameOverImage.GetComponent<PauseController>().GameOver();

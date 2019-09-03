@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossHP_Slider : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class BossHP_Slider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name != "BossStage")
+        {
+            transform.parent.gameObject.SetActive(false);
+        }
+
         slider = GetComponent<Slider>();
         bossHP = enemyController.Health;
         bossHP_Max = enemyController.Health;
