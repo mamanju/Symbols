@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_SoundManager : MonoBehaviour
 {
-    [Header("0.Sword,1.Spear,2.Ax,3.Damage,4.Jump")]
+    [Header("0.Sword,1.Spear,2.Ax,3.Damage,4.Jump,5.Cymbals")]
     [SerializeField]
     private AudioClip[] clips_SE_player;
 

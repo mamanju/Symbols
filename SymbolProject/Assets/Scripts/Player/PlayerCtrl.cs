@@ -440,7 +440,7 @@ public class PlayerCtrl : MonoBehaviour
     public void Attack(GameObject other)
     {
         //DownDurable();
-        if(weaponNumber < 3)
+        if(weaponNumber < 3 || weaponNumber == 5)
         {
             Player_SoundManager.instance.PlaySE_player(weaponNumber);
         }

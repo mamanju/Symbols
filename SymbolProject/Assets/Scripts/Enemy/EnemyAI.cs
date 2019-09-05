@@ -32,16 +32,34 @@ public class EnemyAI : MonoBehaviour
     private string key_Attack = "Attack";
     private string key_SAttack = "SAttack";
 
+    private float attackAnimTime;
+    private float resetAttackTime = 0.17f;
+    private bool isAttackAnim;
+
     void Start()
     {
         currentState = AIState.isIdle;
         waitCounter = waitAtPoint;
 
         anim = GetComponent<Animator>();
+        attackAnimTime = resetAttackTime;
     }
 
      void Update()
     {
+        if (isAttackAnim)
+        {
+            attackAnimTime -= Time.deltaTime; ;
+        }
+        if (attackAnimTime <= 0)
+        {
+            isAttackAnim = false;
+            attackAnimTime = resetAttackTime;
+            int attack = GetComponent<EnemyController>().GetAttack;
+            PlayerCtrl.instance.GetComponent<PlayerStatus>().DownHP(attack);
+            Enemy_SoundManager.instance.PlaySE_enemy(2);
+        }
+
             distancetoPlayer = Vector3.Distance(transform.position, PlayerCtrl.instance.transform.position);
        
             //敵の動きはswitchで設定
@@ -99,7 +117,7 @@ public class EnemyAI : MonoBehaviour
                     if (distancetoPlayer <= attackRange)
                     {
                         currentState = AIState.isAttacking;
-                        anim.SetTrigger(key_Attack);
+                        //anim.SetTrigger(key_Attack);
                         anim.SetBool(key_IsMoving, false);
 
 
@@ -132,10 +150,9 @@ public class EnemyAI : MonoBehaviour
                         {
                             anim.SetTrigger(key_Attack);
                             attackCounter = timeBetweenAttacks;
-                            int attack = GetComponent<EnemyController>().GetAttack;
-                            PlayerCtrl.instance.GetComponent<PlayerStatus>().DownHP(attack);
-                        Enemy_SoundManager.instance.PlaySE_enemy(2);
-                        }
+                            isAttackAnim = true;
+
+                    }
                         else
                         {
                             currentState = AIState.isIdle;
