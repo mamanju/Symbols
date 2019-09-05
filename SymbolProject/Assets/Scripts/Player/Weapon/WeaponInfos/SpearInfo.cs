@@ -37,7 +37,7 @@ public class SpearInfo : WeaponController
         base.BreakWeaponCheck(1);
         if (durable == 0)
         {
-            player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
+            player.GetComponent<PlayerController>().WeaponChangeLeft();
             player.GetComponent<WeaponManager>().DeleteWeapon(weaponID - 1);
             durable = durable_max;
         }
@@ -55,7 +55,7 @@ public class SpearInfo : WeaponController
 
     private void OnTriggerEnter(Collider other)
     {
-       player.GetComponent<PlayerCtrl>().Attack(other.gameObject);
+       player.GetComponent<PlayerController>().Attack(other.gameObject);
     
     }
 }

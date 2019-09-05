@@ -59,6 +59,5 @@ public class WeaponManager : MonoBehaviour
     {
         if(nowWeapon[_num] == 0) { return; }
         nowWeapon[_num]--;
-        Debug.Log("ｗｗｗｗ" + nowWeapon[_num]);
     }
 }

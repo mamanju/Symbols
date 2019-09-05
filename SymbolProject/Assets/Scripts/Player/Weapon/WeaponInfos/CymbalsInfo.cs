@@ -40,7 +40,7 @@ public class CymbalsInfo : WeaponController
         base.BreakWeaponCheck(1);
         if (durable <= 0)
         {
-            player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
+            player.GetComponent<PlayerController>().WeaponChangeLeft();
             player.GetComponent<WeaponManager>().DeleteWeapon(weaponID - 1);
             durable = durable_max;
         }

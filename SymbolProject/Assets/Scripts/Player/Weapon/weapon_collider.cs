@@ -36,7 +36,7 @@ public class weapon_collider : MonoBehaviour
     // シンバルのコライダ―のディレイ
     private float cymbalsTime;
 
-    private PlayerCtrl pControl;
+    private PlayerController pControl;
 
     [SerializeField]
     private float max_colliderTime = 0.5f;
@@ -211,7 +211,7 @@ public class weapon_collider : MonoBehaviour
     private void WeaponColliderTime()
     {
         // 今持っている武器の番号をPlayerCtrlから取得
-        nowWeapon = GetComponent<PlayerCtrl>().GetWeaponNumber;
+        nowWeapon = GetComponent<PlayerController>().GetWeaponNumber;
 
         if (nowWeapon == 0)
         {
@@ -242,6 +242,6 @@ public class weapon_collider : MonoBehaviour
     {
         if (nowWeapon != 5) { return; }
 
-        GetComponent<PlayerCtrl>().Attack(other.gameObject);
+        GetComponent<PlayerController>().Attack(other.gameObject);
     }
 }

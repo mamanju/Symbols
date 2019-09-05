@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponAtaccks : MonoBehaviour
 {
-    private PlayerCtrl pCon;
+    private PlayerController pCon;
 
     private GameObject player;
 
@@ -56,7 +56,7 @@ public class WeaponAtaccks : MonoBehaviour
         spearFlag = true;
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
-        player = PlayerCtrl.instance.gameObject;
+        player = PlayerController.instance.gameObject;
         rigidbody.AddForce(player.transform.forward * _startSpeed, ForceMode.Impulse);
         Vector3 dir = player.transform.eulerAngles;
         transform.localEulerAngles = new Vector3(dir.x + 90, dir.y, dir.z);
@@ -73,10 +73,10 @@ public class WeaponAtaccks : MonoBehaviour
         {
             player = SpearBox.GetComponent<SpearInfo>().Player;
             WeaponManager.NowWeapon[0]--;
-            player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
+            player.GetComponent<PlayerController>().WeaponChangeLeft();
         }
 
-        pCon = GameObject.Find("Player").GetComponent<PlayerCtrl>();
+        pCon = GameObject.Find("Player").GetComponent<PlayerController>();
         // 槍の投げる動作をできるようにする
         pCon.SecondSpearPreventFlag = true;
         Destroy(gameObject);
@@ -131,9 +131,7 @@ public class WeaponAtaccks : MonoBehaviour
             cymbalsFlag = false;
         }
     }
-
-    private GameObject enemy;
-
+    
     private bool stunFlag;
     public bool StunFlag
     {
@@ -143,20 +141,18 @@ public class WeaponAtaccks : MonoBehaviour
 
     public void CymbalsFalter(GameObject _enemy)
     {
-        //player = this.transform.parent.parent.gameObject;
+        player = this.transform.parent.GetComponent<GetPlayer>().Player;
         //Finder finder = player.GetComponent<Finder>();
 
         //if (finder.M_enemy.Count == 0) { return; }
         //for (int i = 0; i < finder.M_enemy.Count; i++)
-        enemy = _enemy;
-        enemy.GetComponent<Rigidbody>().isKinematic = true;
+        player.GetComponent<CymbalsTimeManager>().AddEnemy(_enemy);
         stunFlag = true;
-        
     }
 
-    public void CymbalsEnd()
+    public void CymbalsEnd(GameObject _enemy)
     {
         cymbalsFlag = false;
-        enemy.GetComponent<Rigidbody>().isKinematic = false;
+        _enemy.GetComponent<EnemyAI>().currentState = EnemyAI.AIState.isChasing;
     }
 }

@@ -56,11 +56,11 @@ public class EnemyAI : MonoBehaviour
             isAttackAnim = false;
             attackAnimTime = resetAttackTime;
             int attack = GetComponent<EnemyController>().GetAttack;
-            PlayerCtrl.instance.GetComponent<PlayerStatus>().DownHP(attack);
+            PlayerController.instance.GetComponent<PlayerStatus>().DownHP(attack);
             Enemy_SoundManager.instance.PlaySE_enemy(2);
         }
 
-            distancetoPlayer = Vector3.Distance(transform.position, PlayerCtrl.instance.transform.position);
+            distancetoPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
        
             //敵の動きはswitchで設定
             switch (currentState)
@@ -112,7 +112,7 @@ public class EnemyAI : MonoBehaviour
 
                 case AIState.isChasing:
                 
-                    agent.SetDestination(PlayerCtrl.instance.transform.position);
+                    agent.SetDestination(PlayerController.instance.transform.position);
                     
                     if (distancetoPlayer <= attackRange)
                     {
@@ -140,7 +140,7 @@ public class EnemyAI : MonoBehaviour
 
                 case AIState.isAttacking:
                 
-                    transform.LookAt(PlayerCtrl.instance.transform, Vector3.up);
+                    transform.LookAt(PlayerController.instance.transform, Vector3.up);
                     transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
 
                     attackCounter -= Time.deltaTime;

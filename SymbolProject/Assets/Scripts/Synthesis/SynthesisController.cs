@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SynthesisCtrl : MonoBehaviour
+public class SynthesisController : MonoBehaviour
 {
     //合成するところに入力されたクリスタル
     private GameObject[] matlCrystals = new GameObject[5];
@@ -70,7 +70,6 @@ public class SynthesisCtrl : MonoBehaviour
     void Update()
     {
         //入力された素材クリスタルの取得
-
         matlCount = this.transform.childCount;
         
         for (int i = 0; i < matlCount; i++)
@@ -93,7 +92,6 @@ public class SynthesisCtrl : MonoBehaviour
                     inputMatl[i] = inputMatl[i + 1];
                     inputMatl[i + 1] = a;
                     changeFlag++;
-                    Debug.Log(inputMatl[i]);
                 }
             }
             if (changeFlag == 0) { changeFin = true; };

@@ -15,12 +15,12 @@ public class GroundChecker : MonoBehaviour
     {
         if (other.tag == "Ground")
         {
-            player.GetComponent<PlayerCtrl>().GroundFlag = true;
+            player.GetComponent<PlayerController>().GroundFlag = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        player.GetComponent<PlayerCtrl>().GroundFlag = false;
+        player.GetComponent<PlayerController>().GroundFlag = false;
     }
 }

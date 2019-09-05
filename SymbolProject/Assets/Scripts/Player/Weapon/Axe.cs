@@ -39,7 +39,7 @@ public class Axe : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            PlayerController.instance.haveAxe = true;
+            //PlayerController.instance.haveAxe = true;
             transform.SetParent(PlayerController.instance.transform);
             GetComponent<Rigidbody>().isKinematic=true;
             if (!hit)
@@ -52,7 +52,7 @@ public class Axe : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
-        PlayerController.instance.haveAxe = false;
+        //PlayerController.instance.haveAxe = false;
     }
 
 }

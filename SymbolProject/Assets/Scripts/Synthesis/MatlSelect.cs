@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MatlBox : MonoBehaviour
+public class MatlSelect : MonoBehaviour
 {
     private GameObject[] itemBox = new GameObject[4];
     private int itemBoxCount;
@@ -82,6 +82,17 @@ public class MatlBox : MonoBehaviour
             }
         }
 
+        SetImage();
+
+        itemBox[selectNum].GetComponent<Button>().Select();
+
+
+        moveRightFlag = false;
+        moveLeftFlag = false;
+    }
+
+    public void SetImage()
+    {
         for (int i = 0; i < itemBox.Length; i++)
         {
             if (i == selectNum)
@@ -93,11 +104,5 @@ public class MatlBox : MonoBehaviour
                 itemBox[i].GetComponent<Image>().color = Color.clear;
             }
         }
-
-        itemBox[selectNum].GetComponent<Button>().Select();
-
-
-        moveRightFlag = false;
-        moveLeftFlag = false;
     }
 }

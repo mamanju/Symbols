@@ -27,7 +27,7 @@ public class MatlSet : MonoBehaviour
 
     public void OnSelect()
     {
-        if (setMatls.GetComponent<SynthesisCtrl>().EndFlag == true) { return; }
+        if (setMatls.GetComponent<SynthesisController>().EndFlag == true) { return; }
         MatlInfo thisMatlInfo = this.GetComponent<MatlInfo>();
         if (thisMatlInfo.matlList != MatlInfo.MatlList.empty)
         {

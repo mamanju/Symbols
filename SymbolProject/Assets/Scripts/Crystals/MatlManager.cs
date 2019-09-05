@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MatlManager : MonoBehaviour
 {
-    private static int[] nowMatl = new int[] { 0, 0, 0, 1 };
+    private static int[] nowMatl = new int[] { 2, 1, 0, 1 };
     public static int[] NowMatl
     {
         get { return nowMatl; }

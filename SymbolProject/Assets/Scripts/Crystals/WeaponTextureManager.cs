@@ -24,7 +24,7 @@ public class WeaponTextureManager : MonoBehaviour
     [SerializeField]
     private Sprite exclamation;
     [SerializeField]
-    private SynthesisCtrl synthesisCtrl;
+    private SynthesisController synthesisCtrl;
 
     private void Start()
     {
