@@ -22,6 +22,7 @@ AudioMixerController:
     - cfed9fb2cfbd7964886ea331f23be89e
     - 365c90b1fe8a003458c02bbba76743ed
     - dfe77ab9dd6493f42b21dfeb72904dfc
+    - 1c3b5208112ac1143a9e438ba8e46d20
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -38,6 +39,7 @@ AudioMixerGroupController:
   - {fileID: 243758601098735400}
   - {fileID: 243479693153899920}
   - {fileID: 243542958183629684}
+  - {fileID: 243012023044107236}
   m_Volume: 8d99c7fb9cce30446b91ab4ac127b445
   m_Pitch: a0ed03f692b4f5244a9354d24aae550a
   m_Effects:
@@ -71,7 +73,27 @@ AudioMixerSnapshotController:
   m_SnapshotID: 1368254d2a41f6a49b01874db5ec66d8
   m_FloatValues:
     ff60f9242d898f049a35720657606eff: -10.345207
+    0a0ef2d560ff5e145929278890c856fd: -9.833286
+    3f40a82e127d99e438ae1b3f8a0be41e: -0.002441872
   m_TransitionOverrides: {}
+--- !u!243 &243012023044107236
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Gimmick
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 1c3b5208112ac1143a9e438ba8e46d20
+  m_Children: []
+  m_Volume: 3f40a82e127d99e438ae1b3f8a0be41e
+  m_Pitch: afb5678376e6f8447863365b2e7f586f
+  m_Effects:
+  - {fileID: 244127123281602652}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &243479693153899920
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -126,6 +148,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &244127123281602652
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 20469426c8fe83245ac1e1b4b5c093a0
+  m_EffectName: Attenuation
+  m_MixLevel: 4d3fd956a2d62aa4e8bc3c3a16114780
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &244316284476191788
 AudioMixerEffectController:
   m_ObjectHideFlags: 3

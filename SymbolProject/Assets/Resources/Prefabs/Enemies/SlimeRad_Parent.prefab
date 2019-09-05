@@ -175,8 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips_SE_enemy:
+  - {fileID: 8300000, guid: 34059c4c7d7e08f41b83e1f32c8ec4b1, type: 3}
   - {fileID: 8300000, guid: 665a1e0bb0ddf394aac446b6eed4a5b9, type: 3}
-  - {fileID: 8300000, guid: 59b4ba5ae3020fb4ea7b385a2a13d9b0, type: 3}
   - {fileID: 8300000, guid: b8a813fe8dc223a469ecc0f17d446976, type: 3}
   - {fileID: 0}
   - {fileID: 0}

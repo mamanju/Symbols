@@ -48,6 +48,7 @@ public class EnemyController : EnemyManager
             return gameObject;
         }
         Health -= damage;
+        Enemy_SoundManager.instance.PlaySE_enemy(0);
         anim.SetTrigger("Damage");
         return null;
     }

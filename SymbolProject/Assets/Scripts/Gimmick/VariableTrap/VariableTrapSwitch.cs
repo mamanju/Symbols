@@ -11,6 +11,8 @@ public class VariableTrapSwitch : MonoBehaviour
     private float deleteTime = 2f;
 
     public void StopFire() {
+        GetComponent<AudioSource>().Play();
+
         for(int i = 0; i < Fires.transform.childCount; i++) {
             if (Fires.transform.GetChild(i).GetChild(0).GetComponent<VariableTrap>()) {
                 Debug.Log("OK");
