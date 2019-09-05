@@ -273,6 +273,7 @@ public class PlayerCtrl : MonoBehaviour
             playerAnime.SetTrigger(key_Attack);
             //GetComponent<weapon_collider>().OnCollider(weaponNumber);
             GetComponent<weapon_collider>().SetCollider_Flag = true;
+            DownDurable();
         }
 
 
@@ -438,7 +439,7 @@ public class PlayerCtrl : MonoBehaviour
     //武器の耐久値の減少
     public void Attack(GameObject other)
     {
-        DownDurable();
+        //DownDurable();
         if(weaponNumber < 3)
         {
             Player_SoundManager.instance.PlaySE_player(weaponNumber);

@@ -26,7 +26,6 @@ public class AxInfo : WeaponController
         base.BreakWeaponCheck(1);
         if (durable == 0)
         {
-            Debug.Log(player.GetComponent<PlayerCtrl>().GetWeaponNumber);
             player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
             player.GetComponent<WeaponManager>().DeleteWeapon(weaponID - 1);
             durable = durable_max;

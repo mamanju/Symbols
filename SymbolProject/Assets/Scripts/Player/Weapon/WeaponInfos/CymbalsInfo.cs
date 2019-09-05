@@ -18,7 +18,7 @@ public class CymbalsInfo : WeaponController
         attack = -1;
         durable = 5;
         durable_max = 5;
-        weaponID = 6;
+        weaponID = 5;
 
         player = transform.parent.GetComponent<GetPlayer>().Player;
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    private static int[] nowWeapon = new int[] { 1, 1, 1, 0, 1, 0, 0, 0, 0 };
+    private static int[] nowWeapon = new int[] { 1, 1, 1, 0, 3, 0, 0, 0, 0 };
     public static int[] NowWeapon
     {
         get { return nowWeapon; }
@@ -59,5 +59,6 @@ public class WeaponManager : MonoBehaviour
     {
         if(nowWeapon[_num] == 0) { return; }
         nowWeapon[_num]--;
+        Debug.Log("ｗｗｗｗ" + nowWeapon[_num]);
     }
 }
