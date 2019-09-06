@@ -8,7 +8,7 @@ public class TutorialTextController : MonoBehaviour
 {
     private Text tutorialText;
 
-    private string[] sentence = new string[13];
+    private string[] sentence = new string[14];
     private int sentenceNum;
     public int SentenceNum
     {
@@ -122,7 +122,8 @@ public class TutorialTextController : MonoBehaviour
         sentence[9] = "合成できる組み合わせだと\n表示が変わるよ!\n□ボタンで合成できるよ！";
         sentence[10] = "×ボタンで合成画面が閉じるよ";
         sentence[11] = "R1、L1で武器を切り替えられるよ\n武器にはそれぞれ個性があるよ！";
-        sentence[12] = "チュートリアルを終了するよ！";
+        sentence[12] = "OPTIONSで操作を確認できるよ！";
+        sentence[13] = "チュートリアルを終了するよ！";
     }
     private void DisplaySentence()
     {
