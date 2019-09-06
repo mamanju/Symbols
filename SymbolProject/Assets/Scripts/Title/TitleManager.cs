@@ -16,6 +16,6 @@ public class TitleManager : MonoBehaviour
     /// ステージセレクトへ遷移
     /// </summary>
     public void MoveSelect() {
-        SceneController.Instance.ChangeScene(SceneController.SceneName.StageFirst);
+        SceneController.Instance.ChangeScene(SceneController.SceneName.Tutorial);
     }
 }

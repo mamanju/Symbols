@@ -142,7 +142,7 @@ public class TutorialController : MonoBehaviour
         //Scene切り替え
         if (tutorial_Flag[12] == true)
         {
-            Debug.Log("チュートリアル終わり");
+            SceneController.Instance.ChangeScene(SceneController.SceneName.StageFirst);
         }
     }
 
