@@ -57,7 +57,14 @@ public class EnemyAI : MonoBehaviour
             attackAnimTime = resetAttackTime;
             int attack = GetComponent<EnemyController>().GetAttack;
             PlayerController.instance.GetComponent<PlayerStatus>().DownHP(attack);
-            Enemy_SoundManager.instance.PlaySE_enemy(2);
+            if (gameObject.name == "Boss")
+            {
+                Enemy_SoundManager.instance.PlaySE_enemy(5);
+            }
+            else
+            {
+                Enemy_SoundManager.instance.PlaySE_enemy(2);
+            }
         }
 
             distancetoPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
