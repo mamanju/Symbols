@@ -11,6 +11,7 @@ public class SceneController : SingletonMonoBehaviour<SceneController>
     public enum SceneName
     {
         Title,
+        Tutorial,
         StageSelect,
         StageFirst,
         StageSecond,
