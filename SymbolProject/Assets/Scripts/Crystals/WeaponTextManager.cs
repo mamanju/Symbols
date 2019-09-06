@@ -27,7 +27,7 @@ public class WeaponTextManager : MonoBehaviour
             {
                 childText.GetComponent<Text>().text = "×" + nowWeapon[i].ToString();
             }
-            else if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.sword)
+            else if (this.GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.empty)
             {
                 childText.GetComponent<Text>().text = "×0";
             }
