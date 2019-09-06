@@ -78,13 +78,13 @@ public class CamerCtrl : MonoBehaviour
             if (angle2 <= 0) { angle2 += 6.28319f; };
         }
         //上に移動
-        if (_verticalR > 0 || Input.GetKey(KeyCode.UpArrow))
+        if (_verticalR < 0 || Input.GetKey(KeyCode.UpArrow))
         {
             if (angle1 > 1.3f && cameraUp == true) { angle1 = 1.3f; cameraDown = false; }
             else if (angle1 < 1.3f) { angle1 += Time.deltaTime * speed; cameraUp = true; }
         }
         //下に移動
-        if (_verticalR < 0 || Input.GetKey(KeyCode.DownArrow))
+        if (_verticalR > 0 || Input.GetKey(KeyCode.DownArrow))
         {
            if (angle1 < 0.1f && cameraDown == true) { angle1 = 0.1f; cameraDown = false; }
             else if (angle1 >= 0.1f) { angle1 -= Time.deltaTime * speed; cameraUp = true; }

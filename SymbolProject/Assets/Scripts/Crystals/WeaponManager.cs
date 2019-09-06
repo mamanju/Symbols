@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    private int[] nowWeapon = new int[9];
-    public int[] NowWeapon
+    private static int[] nowWeapon = new int[] { 1, 1, 1, 0, 3, 0, 0, 0, 0 };
+    public static int[] NowWeapon
     {
         get { return nowWeapon; }
         set { nowWeapon = value; }
@@ -25,7 +25,6 @@ public class WeaponManager : MonoBehaviour
         {
             weaponBox[i] = weaponBoxes.transform.GetChild(i).gameObject;
         }
-        nowWeapon = new int[] { 3, 1, 1, 0, 1, 0, 0, 0, 0 };
     }
 
     void Update()

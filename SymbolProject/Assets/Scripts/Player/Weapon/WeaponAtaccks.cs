@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class WeaponAtaccks : MonoBehaviour
 {
+    private PlayerController pCon;
+
     private GameObject player;
 
     void Update()
     {
+        if (spearTimeFlag == false) { return; }
+
         if (spearTimeFlag == true)
         {
             spearTime -= Time.unscaledDeltaTime;
@@ -21,7 +25,7 @@ public class WeaponAtaccks : MonoBehaviour
         }
     }
 
-    public void AbnormalAttaks(int _num)
+    public void AbnormalAttaks(int _num , GameObject _enemy)
     {
         if(_num == 1)
         {
@@ -29,7 +33,7 @@ public class WeaponAtaccks : MonoBehaviour
         }
         if (_num == 5)
         {
-            CymbalsFalter();
+            CymbalsFalter(_enemy);
         }
     }
 
@@ -37,6 +41,7 @@ public class WeaponAtaccks : MonoBehaviour
     private float _startSpeed = 5.0f;
     private bool spearFlag = false;
     private bool spearTimeFlag = false;
+    private bool cymbalsFlag = false;
     private float spearTime = 5;
 
     private GameObject SpearBox;
@@ -51,9 +56,10 @@ public class WeaponAtaccks : MonoBehaviour
         spearFlag = true;
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
-        var direction = transform.forward;
-        direction.y += 1f;
-        rigidbody.AddForce(transform.up * _startSpeed, ForceMode.Impulse);
+        player = PlayerController.instance.gameObject;
+        rigidbody.AddForce(player.transform.forward * _startSpeed, ForceMode.Impulse);
+        Vector3 dir = player.transform.eulerAngles;
+        transform.localEulerAngles = new Vector3(dir.x + 90, dir.y, dir.z);
     }
 
     //槍が消えて個数が減ってどうのこうの
@@ -66,10 +72,13 @@ public class WeaponAtaccks : MonoBehaviour
         if (rigidbody.isKinematic == true)
         {
             player = SpearBox.GetComponent<SpearInfo>().Player;
-            player.GetComponent<WeaponManager>().NowWeapon[0]--;
-            player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
+            WeaponManager.NowWeapon[0]--;
+            player.GetComponent<PlayerController>().WeaponChangeLeft();
         }
 
+        pCon = GameObject.Find("Player").GetComponent<PlayerController>();
+        // 槍の投げる動作をできるようにする
+        pCon.SecondSpearPreventFlag = true;
         Destroy(gameObject);
         SpearBox.GetComponent<SpearInfo>().InstantiateSpear();
     }
@@ -92,8 +101,37 @@ public class WeaponAtaccks : MonoBehaviour
             }
             
         }
+
+        //if (cymbalsFlag)
+        //{
+        //    collision.gameObject.GetComponent<GrowTreeController>().GrowCount++;
+        //    if(collision.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
+        //    {
+        //        collision.gameObject.GetComponent<GrowTreeController>().GrowTree();
+        //    }
+
+        //}
     }
 
+    public void OnEnable()
+    {
+        cymbalsFlag = true;
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (GetComponent<CymbalsInfo>() && cymbalsFlag && other.tag == "GrowTree")
+        {
+            Debug.Log("苗");
+            other.gameObject.GetComponent<GrowTreeController>().GrowCount++;
+            if (other.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
+            {
+                other.gameObject.GetComponent<GrowTreeController>().GrowTree();
+            }
+            cymbalsFlag = false;
+        }
+    }
+    
     private bool stunFlag;
     public bool StunFlag
     {
@@ -101,16 +139,20 @@ public class WeaponAtaccks : MonoBehaviour
         set { stunFlag = value; }
     }
 
-    public void CymbalsFalter()
+    public void CymbalsFalter(GameObject _enemy)
     {
-        player = this.transform.parent.parent.gameObject;
-        Finder finder = player.GetComponent<Finder>();
+        player = this.transform.parent.GetComponent<GetPlayer>().Player;
+        //Finder finder = player.GetComponent<Finder>();
 
-        if (finder.M_enemy.Count == 0) { return; }
-        for (int i = 0; i < finder.M_enemy.Count; i++)
-        {
-            finder.M_enemy[i].GetComponent<Rigidbody>().isKinematic = true;
-            stunFlag = true;
-        }
+        //if (finder.M_enemy.Count == 0) { return; }
+        //for (int i = 0; i < finder.M_enemy.Count; i++)
+        player.GetComponent<CymbalsTimeManager>().AddEnemy(_enemy);
+        stunFlag = true;
+    }
+
+    public void CymbalsEnd(GameObject _enemy)
+    {
+        cymbalsFlag = false;
+        _enemy.GetComponent<EnemyAI>().currentState = EnemyAI.AIState.isChasing;
     }
 }

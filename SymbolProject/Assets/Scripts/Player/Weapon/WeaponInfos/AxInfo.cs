@@ -17,7 +17,6 @@ public class AxInfo : WeaponController
         weaponID = 2;
 
         player = transform.parent.GetComponent<GetPlayer>().Player;
-
     }
 
     public void DelWeaponDurable()
@@ -27,8 +26,7 @@ public class AxInfo : WeaponController
         base.BreakWeaponCheck(1);
         if (durable == 0)
         {
-            GameObject player = this.transform.parent.parent.gameObject;
-            player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
+            player.GetComponent<PlayerController>().WeaponChangeLeft();
             player.GetComponent<WeaponManager>().DeleteWeapon(weaponID - 1);
             durable = durable_max;
         }
@@ -36,10 +34,6 @@ public class AxInfo : WeaponController
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("斧");
-        if (other.transform.tag == "Enemy")
-        {
-            player.GetComponent<PlayerCtrl>().Attack();
-        }
+        player.GetComponent<PlayerController>().Attack(other.gameObject);
     }
 }

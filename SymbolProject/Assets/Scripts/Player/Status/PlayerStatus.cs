@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    private int hp = 20;
+    private static int hp = 20;
+
+    [SerializeField]
+    private GameObject gameOverImage;
+    public static int PlayerHp()
+    {
+        return hp;
+    }
+
     private int max_hp = 20;
     private int attack = 1;
     private KnockBack knockBack;
+    private PlayerController pCon;
 
     private int nowAttack;
     private int nowWeaponID;
@@ -17,11 +26,6 @@ public class PlayerStatus : MonoBehaviour
     }
     private int[] weaponAttacks = new int[10];
     
-    public int PlayerHp
-    {
-        get { return hp; }
-        set { hp = value; }
-    }
 
     public int PlayerMax_Hp()
     {
@@ -35,17 +39,17 @@ public class PlayerStatus : MonoBehaviour
 
     private void Start()
     {
-        weaponAttacks[0] = SwordInfo.attack + attack;
-        weaponAttacks[1] = SpearInfo.attack + attack;
-        weaponAttacks[2] = AxInfo.attack + attack;
-        weaponAttacks[3] = ShieldInfo.attack + attack;
-        weaponAttacks[5] = CymbalsInfo.attack + attack;
+        weaponAttacks[0] = 1 + attack;
+        weaponAttacks[1] = 2 + attack;
+        weaponAttacks[2] = 3 + attack;
+        weaponAttacks[3] = -1 + attack;
+        weaponAttacks[5] = -1 + attack;
 
         //完成する当たり使用するかも
-        //for (int i = 0; i < weaponAttacks.Length; i++)
-        //{
-        //
-        //}
+        for (int i = 0; i < 6; i++)
+        {
+        }
+            Debug.Log(AxInfo.attack);
         nowAttack = weaponAttacks[0];
     }
 
@@ -66,7 +70,14 @@ public class PlayerStatus : MonoBehaviour
     //HP減少
     public void DownHP(int _damage)
     {
+        pCon = GetComponent<PlayerController>();
+        if (pCon.ShildFlag) { return; }
         hp -= _damage;
+        Player_SoundManager.instance.PlaySE_player(3);
+        if(hp <= 0)
+        {
+            gameOverImage.GetComponent<PauseController>().GameOver();
+        }
         knockBack = GetComponent<KnockBack>();
         knockBack.Knockback();
     }

@@ -10,13 +10,17 @@ public class CymbalsInfo : WeaponController
     [SerializeField]
     private GameObject leftCymbal;
 
+    private GameObject player;
+
     void Start()
     {
         // シンバルの基本情報
         attack = -1;
         durable = 5;
         durable_max = 5;
-        weaponID = 6;
+        weaponID = 5;
+
+        player = transform.parent.GetComponent<GetPlayer>().Player;
     }
 
     private void OnEnable()
@@ -34,10 +38,9 @@ public class CymbalsInfo : WeaponController
         Debug.Log("durable=" + durable);
         if (durable <= 0) { return; }
         base.BreakWeaponCheck(1);
-        if (durable == 0)
+        if (durable <= 0)
         {
-            GameObject player = this.transform.parent.parent.gameObject;
-            player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
+            player.GetComponent<PlayerController>().WeaponChangeLeft();
             player.GetComponent<WeaponManager>().DeleteWeapon(weaponID - 1);
             durable = durable_max;
         }

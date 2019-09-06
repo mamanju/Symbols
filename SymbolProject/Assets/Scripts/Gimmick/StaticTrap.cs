@@ -29,7 +29,7 @@ public class StaticTrap : MonoBehaviour
         if (other.tag == "Player")
         {
             FireOn();
-            PlayerController.instance.playerhp--;
+            //PlayerController.instance.playerhp--;
         }
     }
 }

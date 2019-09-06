@@ -20,7 +20,7 @@ public class Minimap : MonoBehaviour
 
     private void LateUpdate()
     {
-        Screen.SetResolution(h, w, true, 60);
+        //Screen.SetResolution(h, w, true, 60);
         Vector3 newposition = player.position;
         newposition.y = transform.position.y;
         transform.position = newposition;

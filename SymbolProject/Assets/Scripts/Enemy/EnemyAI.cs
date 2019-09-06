@@ -10,8 +10,6 @@ public class EnemyAI : MonoBehaviour
 
     public NavMeshAgent agent;
 
-    //public Animator anim; 敵のアニメーションを作ってから、ここから設定する
-
     //敵の動きのリスト
     public enum AIState
     {
@@ -22,31 +20,58 @@ public class EnemyAI : MonoBehaviour
     public AIState currentState;
     public float waitAtPoint = 2f;
     private float waitCounter;
-    public float chaseRange;
-    public float attackRange = 1f;
-    public float timeBetweenAttacks = 2f;
+    public float chaseRange  = 4f;
+    public float attackRange = 2.7f;
+    public float timeBetweenAttacks = 3f;
     private float attackCounter;
+
+    private float distancetoPlayer;
+
+    private Animator anim;
+    private string key_IsMoving = "IsMoving";
+    private string key_Attack = "Attack";
+    private string key_SAttack = "SAttack";
+
+    private float attackAnimTime;
+    private float resetAttackTime = 0.17f;
+    private bool isAttackAnim;
 
     void Start()
     {
+        currentState = AIState.isIdle;
         waitCounter = waitAtPoint;
+
+        anim = GetComponent<Animator>();
+        attackAnimTime = resetAttackTime;
     }
 
      void Update()
     {
-        float distancetoPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
-
+        if (isAttackAnim)
         {
+            attackAnimTime -= Time.deltaTime; ;
+        }
+        if (attackAnimTime <= 0)
+        {
+            isAttackAnim = false;
+            attackAnimTime = resetAttackTime;
+            int attack = GetComponent<EnemyController>().GetAttack;
+            PlayerController.instance.GetComponent<PlayerStatus>().DownHP(attack);
+            Enemy_SoundManager.instance.PlaySE_enemy(2);
+        }
+
+            distancetoPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
+       
             //敵の動きはswitchで設定
             switch (currentState)
             {
                 case AIState.isIdle:
-                    //anim.SetBool("IsMoving", false); 敵のアニメーションを作ってから、ここから設定する
+                    anim.SetBool(key_IsMoving, false);
 
                     if (waitCounter > 0)
-                    {
-                        waitCounter -= Time.deltaTime;
-                    }
+                            {
+                                waitCounter -= Time.deltaTime;
+                            }
                     else
                     {
                         currentState = AIState.isPatrolling;
@@ -56,7 +81,7 @@ public class EnemyAI : MonoBehaviour
                     if (distancetoPlayer <= chaseRange)
                     {
                         currentState = AIState.isChasing;
-                        //anim.SetBool("isMoving", true);敵のアニメーションを作ってから、ここから設定する
+                        anim.SetBool(key_IsMoving, true);
                     }
 
                     break;
@@ -82,19 +107,19 @@ public class EnemyAI : MonoBehaviour
                         currentState = AIState.isChasing;
                     }
 
-                    //anim.SetBool("IsMoving", true);敵のアニメーションを作ってから、ここから設定する
-
+                    anim.SetBool(key_IsMoving, true);
                     break;
 
                 case AIState.isChasing:
-
+                
                     agent.SetDestination(PlayerController.instance.transform.position);
-
+                    
                     if (distancetoPlayer <= attackRange)
                     {
                         currentState = AIState.isAttacking;
-                        //anim.SetTrigger("Attack");敵のアニメーションを作ってから、ここから設定する
-                        //anim.SetBool("IsMoving", false);敵のアニメーションを作ってから、ここから設定する
+                        //anim.SetTrigger(key_Attack);
+                        anim.SetBool(key_IsMoving, false);
+
 
                         agent.velocity = Vector3.zero;
                         agent.isStopped = true;
@@ -114,7 +139,7 @@ public class EnemyAI : MonoBehaviour
                     break;
 
                 case AIState.isAttacking:
-
+                
                     transform.LookAt(PlayerController.instance.transform, Vector3.up);
                     transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
 
@@ -123,9 +148,11 @@ public class EnemyAI : MonoBehaviour
                     {
                         if (distancetoPlayer < attackRange)
                         {
-                            //anim.SetTrigger("Attack");敵のアニメーションを作ってから、ここから設定する
+                            anim.SetTrigger(key_Attack);
                             attackCounter = timeBetweenAttacks;
-                        }
+                            isAttackAnim = true;
+
+                    }
                         else
                         {
                             currentState = AIState.isIdle;
@@ -140,6 +167,4 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
-
-}
     

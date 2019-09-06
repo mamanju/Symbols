@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 9ab1e164eeb66a842bba3de67048c501
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: belt
+    100002: belt_clip
+    100004: belt_cord2
+    100006: belt_cord3
+    100008: beltset
+    100010: body
+    100012: chara
+    100014: controller
+    100016: cosi
+    100018: hair2
+    100020: hair_back
+    100022: hair_front
+    100024: hair_front_back
+    100026: hara
+    100028: hara 1
+    100030: hed
+    100032: hed 1
+    100034: hed1
+    100036: //RootNode
+    100038: joint
+    100040: kokan
+    100042: kokan 1
+    100044: kosi
+    100046: L_asisoko
+    100048: L_asisoko 1
+    100050: L_ear
+    100052: L_eye
+    100054: L_eye_dodai
+    100056: L_eye_hilight
+    100058: L_eye_huti
+    100060: L_eye_main
+    100062: L_Foot
+    100064: L_hand
+    100066: L_hand 1
+    100068: L_hiza
+    100070: L_hizi
+    100072: L_kata
+    100074: L_mayuge
+    100076: L_momo
+    100078: L_shoes
+    100080: L_shoes 1
+    100082: L_shoes_belt
+    100084: L_sune
+    100086: L_tekubi
+    100088: L_tekubi 1
+    100090: L_tumasaki
+    100092: L_tumasaki 1
+    100094: L_wrist_band
+    100096: mune
+    100098: neck
+    100100: neck 1
+    100102: neck 2
+    100104: null10
+    100106: null11
+    100108: null12
+    100110: null15
+    100112: null16
+    100114: null17
+    100116: null18
+    100118: null2
+    100120: null3
+    100122: null4
+    100124: null5
+    100126: null6
+    100128: null7
+    100130: null8
+    100132: null9
+    100134: pants
+    100136: pouch
+    100138: pouch_dodai
+    100140: pouch_huta
+    100142: R_asisoko
+    100144: R_asisoko 1
+    100146: R_ear
+    100148: R_eye
+    100150: R_eye_dodai
+    100152: R_eye_hilight
+    100154: R_eye_huti
+    100156: R_eye_main
+    100158: R_Foot
+    100160: R_hand
+    100162: R_hand 1
+    100164: R_hiza
+    100166: R_hizi
+    100168: R_kata
+    100170: R_mayuge
+    100172: R_momo
+    100174: R_shoes
+    100176: R_shoes 1
+    100178: R_shoes_belt
+    100180: R_sune
+    100182: R_tekubi
+    100184: R_tekubi 1
+    100186: R_tumasaki
+    100188: R_tumasaki1
+    100190: R_wrist_band
+    100192: shoulder_pad
+    100194: wear
+    400000: belt
+    400002: belt_clip
+    400004: belt_cord2
+    400006: belt_cord3
+    400008: beltset
+    400010: body
+    400012: chara
+    400014: controller
+    400016: cosi
+    400018: hair2
+    400020: hair_back
+    400022: hair_front
+    400024: hair_front_back
+    400026: hara
+    400028: hara 1
+    400030: hed
+    400032: hed 1
+    400034: hed1
+    400036: //RootNode
+    400038: joint
+    400040: kokan
+    400042: kokan 1
+    400044: kosi
+    400046: L_asisoko
+    400048: L_asisoko 1
+    400050: L_ear
+    400052: L_eye
+    400054: L_eye_dodai
+    400056: L_eye_hilight
+    400058: L_eye_huti
+    400060: L_eye_main
+    400062: L_Foot
+    400064: L_hand
+    400066: L_hand 1
+    400068: L_hiza
+    400070: L_hizi
+    400072: L_kata
+    400074: L_mayuge
+    400076: L_momo
+    400078: L_shoes
+    400080: L_shoes 1
+    400082: L_shoes_belt
+    400084: L_sune
+    400086: L_tekubi
+    400088: L_tekubi 1
+    400090: L_tumasaki
+    400092: L_tumasaki 1
+    400094: L_wrist_band
+    400096: mune
+    400098: neck
+    400100: neck 1
+    400102: neck 2
+    400104: null10
+    400106: null11
+    400108: null12
+    400110: null15
+    400112: null16
+    400114: null17
+    400116: null18
+    400118: null2
+    400120: null3
+    400122: null4
+    400124: null5
+    400126: null6
+    400128: null7
+    400130: null8
+    400132: null9
+    400134: pants
+    400136: pouch
+    400138: pouch_dodai
+    400140: pouch_huta
+    400142: R_asisoko
+    400144: R_asisoko 1
+    400146: R_ear
+    400148: R_eye
+    400150: R_eye_dodai
+    400152: R_eye_hilight
+    400154: R_eye_huti
+    400156: R_eye_main
+    400158: R_Foot
+    400160: R_hand
+    400162: R_hand 1
+    400164: R_hiza
+    400166: R_hizi
+    400168: R_kata
+    400170: R_mayuge
+    400172: R_momo
+    400174: R_shoes
+    400176: R_shoes 1
+    400178: R_shoes_belt
+    400180: R_sune
+    400182: R_tekubi
+    400184: R_tekubi 1
+    400186: R_tumasaki
+    400188: R_tumasaki1
+    400190: R_wrist_band
+    400192: shoulder_pad
+    400194: wear
+    2100000: syujinkou
+    2300000: belt
+    2300002: belt_clip
+    2300004: belt_cord2
+    2300006: belt_cord3
+    2300008: body
+    2300010: hair_back
+    2300012: hair_front
+    2300014: hair_front_back
+    2300016: hed1
+    2300018: L_ear
+    2300020: L_eye_dodai
+    2300022: L_eye_hilight
+    2300024: L_eye_huti
+    2300026: L_eye_main
+    2300028: L_hand
+    2300030: L_mayuge
+    2300032: L_shoes 1
+    2300034: L_shoes_belt
+    2300036: L_wrist_band
+    2300038: neck
+    2300040: pants
+    2300042: pouch_dodai
+    2300044: pouch_huta
+    2300046: R_ear
+    2300048: R_eye_dodai
+    2300050: R_eye_hilight
+    2300052: R_eye_huti
+    2300054: R_eye_main
+    2300056: R_hand
+    2300058: R_mayuge
+    2300060: R_shoes 1
+    2300062: R_shoes_belt
+    2300064: R_wrist_band
+    2300066: shoulder_pad
+    2300068: wear
+    3300000: belt
+    3300002: belt_clip
+    3300004: belt_cord2
+    3300006: belt_cord3
+    3300008: body
+    3300010: hair_back
+    3300012: hair_front
+    3300014: hair_front_back
+    3300016: hed1
+    3300018: L_ear
+    3300020: L_eye_dodai
+    3300022: L_eye_hilight
+    3300024: L_eye_huti
+    3300026: L_eye_main
+    3300028: L_hand
+    3300030: L_mayuge
+    3300032: L_shoes 1
+    3300034: L_shoes_belt
+    3300036: L_wrist_band
+    3300038: neck
+    3300040: pants
+    3300042: pouch_dodai
+    3300044: pouch_huta
+    3300046: R_ear
+    3300048: R_eye_dodai
+    3300050: R_eye_hilight
+    3300052: R_eye_huti
+    3300054: R_eye_main
+    3300056: R_hand
+    3300058: R_mayuge
+    3300060: R_shoes 1
+    3300062: R_shoes_belt
+    3300064: R_wrist_band
+    3300066: shoulder_pad
+    3300068: wear
+    4300000: hair_back
+    4300002: hair_front_back
+    4300004: hair_front
+    4300006: L_ear
+    4300008: R_ear
+    4300010: hed1
+    4300012: neck
+    4300014: L_eye_hilight
+    4300016: L_eye_main
+    4300018: L_eye_dodai
+    4300020: L_eye_huti
+    4300022: L_mayuge
+    4300024: R_eye_hilight
+    4300026: R_eye_main
+    4300028: R_eye_dodai
+    4300030: R_eye_huti
+    4300032: R_mayuge
+    4300034: shoulder_pad
+    4300036: belt
+    4300038: belt_clip
+    4300040: belt_cord2
+    4300042: belt_cord3
+    4300044: R_hand
+    4300046: R_wrist_band
+    4300048: L_hand
+    4300050: L_wrist_band
+    4300052: body
+    4300054: wear
+    4300056: pants
+    4300058: L_shoes_belt
+    4300060: L_shoes
+    4300062: R_shoes
+    4300064: R_shoes_belt
+    4300066: pouch_huta
+    4300068: pouch_dodai
+    7400000: idlingmotion
+    9500000: //RootNode
+    13700000: belt
+    13700002: belt_clip
+    13700004: belt_cord2
+    13700006: belt_cord3
+    13700008: body
+    13700010: hair_back
+    13700012: hair_front
+    13700014: hair_front_back
+    13700016: hed1
+    13700018: L_ear
+    13700020: L_eye_dodai
+    13700022: L_eye_hilight
+    13700024: L_eye_huti
+    13700026: L_eye_main
+    13700028: L_hand
+    13700030: L_mayuge
+    13700032: L_shoes 1
+    13700034: L_shoes_belt
+    13700036: L_wrist_band
+    13700038: neck
+    13700040: pants
+    13700042: pouch_dodai
+    13700044: pouch_huta
+    13700046: R_ear
+    13700048: R_eye_dodai
+    13700050: R_eye_hilight
+    13700052: R_eye_huti
+    13700054: R_eye_main
+    13700056: R_hand
+    13700058: R_mayuge
+    13700060: R_shoes 1
+    13700062: R_shoes_belt
+    13700064: R_wrist_band
+    13700066: shoulder_pad
+    13700068: wear
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idlingmotion
+      takeName: idlingmotion
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton:
+    - name: idlingmotion(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: chara
+      parentName: idlingmotion(Clone)
+      position: {x: 0.006968082, y: 0.8183232, z: -0.06984961}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hair2
+      parentName: chara
+      position: {x: -0.0067800935, y: 0.41481116, z: -0.0060008126}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hair_back
+      parentName: hair2
+      position: {x: -0.00018798828, y: -1.2331344, z: 0.07585043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hair_front_back
+      parentName: hair2
+      position: {x: -0.00018798828, y: -1.2331344, z: 0.07585043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hair_front
+      parentName: hair2
+      position: {x: -0.00018798828, y: -1.2331344, z: 0.07585043}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hed
+      parentName: chara
+      position: {x: -0.002513008, y: -0.8183232, z: -0.07683563}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ear
+      parentName: hed
+      position: {x: -0.004455074, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ear
+      parentName: hed
+      position: {x: -0.004455074, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hed1
+      parentName: hed
+      position: {x: -0.004455074, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: neck
+      parentName: hed
+      position: {x: -0.004455074, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye
+      parentName: hed
+      position: {x: -0.004455074, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye_hilight
+      parentName: L_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye_main
+      parentName: L_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye_dodai
+      parentName: L_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_eye_huti
+      parentName: L_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_mayuge
+      parentName: L_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye
+      parentName: hed
+      position: {x: -0.004455074, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye_hilight
+      parentName: R_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye_main
+      parentName: R_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye_dodai
+      parentName: R_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_eye_huti
+      parentName: R_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_mayuge
+      parentName: R_eye
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: beltset
+      parentName: R_mayuge
+      position: {x: -0, y: 0, z: -0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shoulder_pad
+      parentName: beltset
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: belt
+      parentName: beltset
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: belt_clip
+      parentName: beltset
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: belt_cord2
+      parentName: beltset
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: belt_cord3
+      parentName: beltset
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_hand
+      parentName: chara
+      position: {x: -0.006968082, y: -0.8183232, z: 0.06984961}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_wrist_band
+      parentName: chara
+      position: {x: -0.006968082, y: -0.8183232, z: 0.06984961}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_hand
+      parentName: chara
+      position: {x: -0.006968082, y: -0.8183232, z: 0.06984961}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_wrist_band
+      parentName: chara
+      position: {x: -0.006968082, y: -0.8183232, z: 0.06984961}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: body
+      parentName: chara
+      position: {x: -0.006968082, y: -0.8183232, z: 0.06984961}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wear
+      parentName: chara
+      position: {x: -0.006968082, y: -0.8183232, z: 0.06984961}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pants
+      parentName: chara
+      position: {x: -0.006968082, y: -0.8183232, z: 0.06984961}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_shoes
+      parentName: chara
+      position: {x: -0.006968082, y: -0.8183232, z: -0.07683563}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_shoes_belt
+      parentName: L_shoes
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_shoes 1
+      parentName: L_shoes
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_shoes
+      parentName: chara
+      position: {x: -0.006968082, y: -0.8183232, z: -0.07683563}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_shoes 1
+      parentName: R_shoes
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_shoes_belt
+      parentName: R_shoes
+      position: {x: -0, y: 0, z: 0.14668524}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pouch
+      parentName: chara
+      position: {x: 0.18545493, y: -0.37794188, z: 0.0125079565}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pouch_huta
+      parentName: pouch
+      position: {x: -0.19242302, y: -0.44038132, z: 0.05734166}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pouch_dodai
+      parentName: pouch
+      position: {x: -0.19242302, y: -0.44038132, z: 0.05734166}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: controller
+      parentName: idlingmotion(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: kosi
+      parentName: controller
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null2
+      parentName: kosi
+      position: {x: 0.00045662498, y: 0.45218977, z: -0.066876344}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: kokan 1
+      parentName: null2
+      position: {x: 6.938894e-20, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null3
+      parentName: kokan 1
+      position: {x: -0.0007178596, y: 0.14956957, z: -0.019568646}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hara 1
+      parentName: null3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null12
+      parentName: hara 1
+      position: {x: -0.001342113, y: 0.21032391, z: 0.020383757}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: neck 2
+      parentName: null12
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null10
+      parentName: hara 1
+      position: {x: 0.40940168, y: 0.15654531, z: 0.016160162}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_hand 1
+      parentName: null10
+      position: {x: -0.10461832, y: -0.18904158, z: 0.023176154}
+      rotation: {x: -0.1197178, y: -0.0738708, z: -0.52080613, w: 0.84200466}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null15
+      parentName: R_hand 1
+      position: {x: -0.0003525361, y: 0.00009178181, z: 0.0001025813}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_tekubi 1
+      parentName: null15
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null11
+      parentName: hara 1
+      position: {x: -0.41050437, y: 0.15654531, z: 0.016271656}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_hand 1
+      parentName: null11
+      position: {x: 0.089320265, y: -0.1765075, z: 0.02985643}
+      rotation: {x: -0.0711512, y: 0.04597525, z: 0.5407698, w: 0.83689415}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null16
+      parentName: L_hand 1
+      position: {x: -0.0000124093085, y: 0.00009178181, z: -0.000008913249}
+      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_tekubi 1
+      parentName: null16
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null4
+      parentName: kosi
+      position: {x: 0.08911661, y: 0, z: -0.06757855}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Foot
+      parentName: null4
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null17
+      parentName: R_Foot
+      position: {x: 0.000026211486, y: 0.19544767, z: 0.37654594}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_hiza
+      parentName: null17
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null5
+      parentName: R_hiza
+      position: {x: -0.08914283, y: -0.19544767, z: -0.30896738}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_asisoko 1
+      parentName: null5
+      position: {x: 0.08916332, y: 0.04785061, z: -0.06773897}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null8
+      parentName: R_asisoko 1
+      position: {x: -0.08916332, y: -0.04785061, z: 0.06773897}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_tumasaki
+      parentName: null8
+      position: {x: 0.09053458, y: 0.037460987, z: 0.055991396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null9
+      parentName: kosi
+      position: {x: -0.08879094, y: 0, z: -0.06757855}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Foot
+      parentName: null9
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null18
+      parentName: L_Foot
+      position: {x: -0.0003174724, y: 0.19544767, z: 0.37654594}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_hiza
+      parentName: null18
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null6
+      parentName: L_hiza
+      position: {x: 0.08910841, y: -0.19544767, z: -0.30896738}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_asisoko 1
+      parentName: null6
+      position: {x: -0.08910579, y: 0.04721631, z: -0.0584874}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: null7
+      parentName: L_asisoko 1
+      position: {x: 0.08910579, y: -0.04721631, z: 0.0584874}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_tumasaki 1
+      parentName: null7
+      position: {x: -0.08910579, y: 0.037460987, z: 0.055991396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint
+      parentName: idlingmotion(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: cosi
+      parentName: joint
+      position: {x: 0.00063247373, y: 0.45217255, z: -0.06681767}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: kokan
+      parentName: cosi
+      position: {x: -0.00004147522, y: 0.000029528748, z: -0.000020363717}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_momo
+      parentName: kokan
+      position: {x: 0.088551395, y: -0.08, z: -0.0009682631}
+      rotation: {x: -4.927889e-22, y: 0.0000005626051, z: 9.730153e-36, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_sune
+      parentName: R_momo
+      position: {x: 1.5987211e-16, y: -0.176751, z: 0.0374201}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_asisoko
+      parentName: R_sune
+      position: {x: 1.2434498e-16, y: -0.1477328, z: -0.0374201}
+      rotation: {x: 0, y: -0.0000005626051, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_tumasaki1
+      parentName: R_asisoko
+      position: {x: 0.000691109, y: -0.01044271, z: 0.12387996}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_momo
+      parentName: kokan
+      position: {x: -0.08973337, y: -0.08, z: -0.00096825656}
+      rotation: {x: -3.454746e-20, y: 0.00004507663, z: 2.5293679e-20, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_sune
+      parentName: L_momo
+      position: {x: 1.2434498e-16, y: -0.17675154, z: 0.037420068}
+      rotation: {x: -1.8391413e-15, y: -1.2347506e-30, z: 3.9048792e-31, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_asisoko
+      parentName: L_sune
+      position: {x: 1.2434498e-16, y: -0.14773263, z: -0.037420068}
+      rotation: {x: 0, y: -0.00004507663, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_tumasaki
+      parentName: L_asisoko
+      position: {x: 0.000052982152, y: -0.010021113, z: 0.123929895}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hara
+      parentName: kokan
+      position: {x: -0.0009739699, y: 0.14955537, z: -0.01965117}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mune
+      parentName: hara
+      position: {x: -0.000481172, y: 0.14605775, z: 0.01965117}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: neck 1
+      parentName: mune
+      position: {x: -0.0006857028, y: 0.06461245, z: 0.00037567146}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hed 1
+      parentName: neck 1
+      position: {x: 0.00067274534, y: 0.33476678, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_kata
+      parentName: mune
+      position: {x: 0.18830998, y: 0.01095, z: 0.03009}
+      rotation: {x: 0.046744112, y: -0.07215475, z: -0.4893104, w: 0.86786175}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_hizi
+      parentName: R_kata
+      position: {x: 0.11165, y: 0.0015299999, z: -0.041249998}
+      rotation: {x: -0.00034003545, y: -0.023910707, z: -0.0017043715, w: 0.9997126}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_tekubi
+      parentName: R_hizi
+      position: {x: 0.10982, y: -0.00193, z: 0.00781}
+      rotation: {x: -0.17758282, y: -0.06136727, z: -0.019936161, w: 0.98198825}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_kata
+      parentName: mune
+      position: {x: -0.18830878, y: 0.010953718, z: 0.030087039}
+      rotation: {x: 0.044911273, y: 0.06684323, z: 0.44728193, w: 0.8907603}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_hizi
+      parentName: L_kata
+      position: {x: -0.11164718, y: 0.0015322918, z: -0.041248865}
+      rotation: {x: -0.0009366149, y: 0.056699757, z: 0.0040613166, w: 0.99838257}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_tekubi
+      parentName: L_hizi
+      position: {x: -0.10982299, y: -0.0019273915, z: 0.007806359}
+      rotation: {x: -0.1533892, y: -0.018149802, z: 0.08436685, w: 0.9843905}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

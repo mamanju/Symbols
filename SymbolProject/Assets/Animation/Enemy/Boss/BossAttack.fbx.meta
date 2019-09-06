@@ -1,0 +1,382 @@
+fileFormatVersion: 2
+guid: ba57b93500c93b14a8df62cdf6f3223d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: All
+    100002: backhair
+    100004: belt
+    100006: belt 1
+    100008: belt_clip
+    100010: body
+    100012: body 1
+    100014: body2
+    100016: Boss1
+    100018: boss4
+    100020: //RootNode
+    100022: Central_in_mant
+    100024: Central_in_mant 1
+    100026: Central_in_mant 2
+    100028: Central_on_mant
+    100030: Central_on_mant 1
+    100032: Central_on_mant 2
+    100034: Central_under_mant
+    100036: Central_under_mant 1
+    100038: Central_under_mant 2
+    100040: Controller
+    100042: eri
+    100044: face
+    100046: hair
+    100048: hair_front_back
+    100050: hat
+    100052: hat_top
+    100054: hatena
+    100056: hatena_under
+    100058: head
+    100060: head 1
+    100062: head 2
+    100064: hed
+    100066: kokkan
+    100068: kokkan 1
+    100070: kokkan 2
+    100072: kosi
+    100074: kubi
+    100076: L_ear
+    100078: L_eye_bace1
+    100080: L_eye_line1
+    100082: L_eye_main
+    100084: L_eye_white
+    100086: L_hair_back
+    100088: L_hand
+    100090: L_mayu1
+    100092: L_shoes
+    100094: Left_hand
+    100096: Left_hiza
+    100098: Left_hizi
+    100100: Left_kakato
+    100102: Left_Kata
+    100104: Left_kata
+    100106: Left_Kata 1
+    100108: Left_kata_
+    100110: Left_kokan
+    100112: Left_Leg
+    100114: LeftArm
+    100116: LeftArm 1
+    100118: LeftLeg
+    100120: LeftLeg 1
+    100122: mant
+    100124: mant 1
+    100126: mant 2
+    100128: mant 3
+    100130: mask
+    100132: mask_belt
+    100134: mask_belt1
+    100136: mask_set1
+    100138: Mune
+    100140: mune
+    100142: Mune 1
+    100144: neck
+    100146: neckkk
+    100148: neckkk 1
+    100150: neckkk 2
+    100152: nemoto
+    100154: pant
+    100156: R_ear
+    100158: R_eye_bace
+    100160: R_eye_line
+    100162: R_eye_main
+    100164: R_eye_white
+    100166: R_hair_back
+    100168: R_mayu
+    100170: R_shoes
+    100172: right_hand
+    100174: right_hiza
+    100176: right_hizi
+    100178: right_kakato
+    100180: Right_Kata
+    100182: right_kata
+    100184: Right_Kata 1
+    100186: right_kata_
+    100188: right_kokan
+    100190: right_Leg
+    100192: RightArm
+    100194: RightArm 1
+    100196: RightLeg
+    100198: RightLeg 1
+    100200: saki
+    100202: scarf_top
+    100204: scarf_under
+    100206: tume_set1
+    400000: All
+    400002: backhair
+    400004: belt
+    400006: belt 1
+    400008: belt_clip
+    400010: body
+    400012: body 1
+    400014: body2
+    400016: Boss1
+    400018: boss4
+    400020: //RootNode
+    400022: Central_in_mant
+    400024: Central_in_mant 1
+    400026: Central_in_mant 2
+    400028: Central_on_mant
+    400030: Central_on_mant 1
+    400032: Central_on_mant 2
+    400034: Central_under_mant
+    400036: Central_under_mant 1
+    400038: Central_under_mant 2
+    400040: Controller
+    400042: eri
+    400044: face
+    400046: hair
+    400048: hair_front_back
+    400050: hat
+    400052: hat_top
+    400054: hatena
+    400056: hatena_under
+    400058: head
+    400060: head 1
+    400062: head 2
+    400064: hed
+    400066: kokkan
+    400068: kokkan 1
+    400070: kokkan 2
+    400072: kosi
+    400074: kubi
+    400076: L_ear
+    400078: L_eye_bace1
+    400080: L_eye_line1
+    400082: L_eye_main
+    400084: L_eye_white
+    400086: L_hair_back
+    400088: L_hand
+    400090: L_mayu1
+    400092: L_shoes
+    400094: Left_hand
+    400096: Left_hiza
+    400098: Left_hizi
+    400100: Left_kakato
+    400102: Left_Kata
+    400104: Left_kata
+    400106: Left_Kata 1
+    400108: Left_kata_
+    400110: Left_kokan
+    400112: Left_Leg
+    400114: LeftArm
+    400116: LeftArm 1
+    400118: LeftLeg
+    400120: LeftLeg 1
+    400122: mant
+    400124: mant 1
+    400126: mant 2
+    400128: mant 3
+    400130: mask
+    400132: mask_belt
+    400134: mask_belt1
+    400136: mask_set1
+    400138: Mune
+    400140: mune
+    400142: Mune 1
+    400144: neck
+    400146: neckkk
+    400148: neckkk 1
+    400150: neckkk 2
+    400152: nemoto
+    400154: pant
+    400156: R_ear
+    400158: R_eye_bace
+    400160: R_eye_line
+    400162: R_eye_main
+    400164: R_eye_white
+    400166: R_hair_back
+    400168: R_mayu
+    400170: R_shoes
+    400172: right_hand
+    400174: right_hiza
+    400176: right_hizi
+    400178: right_kakato
+    400180: Right_Kata
+    400182: right_kata
+    400184: Right_Kata 1
+    400186: right_kata_
+    400188: right_kokan
+    400190: right_Leg
+    400192: RightArm
+    400194: RightArm 1
+    400196: RightLeg
+    400198: RightLeg 1
+    400200: saki
+    400202: scarf_top
+    400204: scarf_under
+    400206: tume_set1
+    2100000: boss3
+    4300000: mant
+    4300002: R_mayu
+    4300004: hair
+    4300006: L_ear
+    4300008: L_eye_bace1
+    4300010: L_eye_line1
+    4300012: L_mayu1
+    4300014: L_eye_white
+    4300016: hat_top
+    4300018: L_eye_main
+    4300020: backhair
+    4300022: R_ear
+    4300024: hair_front_back
+    4300026: L_hair_back
+    4300028: R_hair_back
+    4300030: face
+    4300032: R_eye_bace
+    4300034: R_eye_line
+    4300036: R_eye_main
+    4300038: hat
+    4300040: R_eye_white
+    4300042: neck
+    4300044: belt_clip
+    4300046: belt
+    4300048: L_hand
+    4300050: body
+    4300052: body2
+    4300054: eri
+    4300056: scarf_top
+    4300058: scarf_under
+    4300060: pant
+    4300062: R_shoes
+    4300064: L_shoes
+    4300066: saki
+    4300068: nemoto
+    4300070: mask_belt
+    4300072: mask_belt1
+    4300074: hatena
+    4300076: hatena_under
+    4300078: mask
+    7400000: bossattack1
+    9500000: //RootNode
+    13700000: backhair
+    13700002: belt 1
+    13700004: belt_clip
+    13700006: body 1
+    13700008: body2
+    13700010: eri
+    13700012: face
+    13700014: hair
+    13700016: hair_front_back
+    13700018: hat
+    13700020: hat_top
+    13700022: hatena
+    13700024: hatena_under
+    13700026: L_ear
+    13700028: L_eye_bace1
+    13700030: L_eye_line1
+    13700032: L_eye_main
+    13700034: L_eye_white
+    13700036: L_hair_back
+    13700038: L_hand
+    13700040: L_mayu1
+    13700042: L_shoes
+    13700044: mant
+    13700046: mask
+    13700048: mask_belt
+    13700050: mask_belt1
+    13700052: neck
+    13700054: nemoto
+    13700056: pant
+    13700058: R_ear
+    13700060: R_eye_bace
+    13700062: R_eye_line
+    13700064: R_eye_main
+    13700066: R_eye_white
+    13700068: R_hair_back
+    13700070: R_mayu
+    13700072: R_shoes
+    13700074: saki
+    13700076: scarf_top
+    13700078: scarf_under
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

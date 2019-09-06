@@ -17,8 +17,8 @@ public class BossChange : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.GetComponent<PlayerCtrl>()) {
-            SceneController.Instance.ChangeScene(SceneController.SceneName.Title);
+        if (other.GetComponent<PlayerController>()) {
+            SceneController.Instance.ChangeScene(SceneController.SceneName.BossStage);
         }
     }
 }

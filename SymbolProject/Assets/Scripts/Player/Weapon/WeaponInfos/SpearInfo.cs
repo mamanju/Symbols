@@ -28,7 +28,6 @@ public class SpearInfo : WeaponController
         weaponID = 1;
 
         player = transform.parent.GetComponent<GetPlayer>().Player;
-
     }
 
     public void DelWeaponDurable()
@@ -36,11 +35,9 @@ public class SpearInfo : WeaponController
         Debug.Log("durable=" + durable);
         if (durable <= 0) { return; }
         base.BreakWeaponCheck(1);
-        Debug.Log("durable=" + durable);
         if (durable == 0)
         {
-            GameObject player = this.transform.parent.parent.gameObject;
-            player.GetComponent<PlayerCtrl>().WeaponChangeLeft();
+            player.GetComponent<PlayerController>().WeaponChangeLeft();
             player.GetComponent<WeaponManager>().DeleteWeapon(weaponID - 1);
             durable = durable_max;
         }
@@ -58,10 +55,7 @@ public class SpearInfo : WeaponController
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("槍");
-        if (other.transform.tag == "Enemy")
-        {
-            player.GetComponent<PlayerCtrl>().Attack();
-        }
+       player.GetComponent<PlayerController>().Attack(other.gameObject);
+    
     }
 }

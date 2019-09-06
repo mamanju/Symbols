@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class MatlManager : MonoBehaviour
 {
-    private int[] nowMatl = new int[4];
-    public int[] NowMatl
+    private static int[] nowMatl = new int[] { 2, 1, 0, 1 };
+    public static int[] NowMatl
     {
         get { return nowMatl; }
         set { nowMatl = value; }
@@ -27,8 +27,6 @@ public class MatlManager : MonoBehaviour
         {
             matlBox[i] = matlBoxes.transform.GetChild(i).gameObject;
         }
-        //Debug用
-        nowMatl = new int[] { 10, 1, 6, 2 };
     }
 
     void Update()

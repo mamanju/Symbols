@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerWeaponManager : MonoBehaviour
 {
     private GameObject nowWeapon;
+
     [SerializeField]
     private GameObject[] weapons = new GameObject[10];
 

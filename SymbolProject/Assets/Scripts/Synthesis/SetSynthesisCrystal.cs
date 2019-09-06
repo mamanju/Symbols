@@ -45,7 +45,7 @@ public class SetSynthesisCrystal : MonoBehaviour
     void Update()
     {
         if (GetComponent<WeaponInfo>().weaponList == WeaponInfo.WeaponList.empty) { return; }
-        if (synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag == false){ return; }
+        if (synthesisBoxes.GetComponent<SynthesisController>().EndFlag == false){ return; }
         else
         {
             timeCount -= Time.unscaledDeltaTime;
@@ -63,7 +63,7 @@ public class SetSynthesisCrystal : MonoBehaviour
                 if ((int)this.GetComponent<WeaponInfo>().weaponList == i && endWeaponMove == false)
                 {
                     Debug.Log(i);
-                    player.GetComponent<WeaponManager>().NowWeapon[i - 1]++;
+                    WeaponManager.NowWeapon[i - 1]++;
                     endWeaponMove = true;
                     weaponBox[i - 1].GetComponent<WeaponInfo>().weaponList
                         = ((WeaponInfo.WeaponList)Enum.ToObject(typeof(WeaponInfo.WeaponList), i));
@@ -75,8 +75,8 @@ public class SetSynthesisCrystal : MonoBehaviour
                 this.GetComponent<WeaponInfo>().weaponList = WeaponInfo.WeaponList.empty;
                 weaponMove = false;
                 endWeaponMove = false;
-                synthesisBoxes.GetComponent<SynthesisCtrl>().EndFlag = false;
-                synthesisBoxes.GetComponent<SynthesisCtrl>().StartSynthesis = true;
+                synthesisBoxes.GetComponent<SynthesisController>().EndFlag = false;
+                synthesisBoxes.GetComponent<SynthesisController>().StartSynthesis = true;
             }
         }
     }

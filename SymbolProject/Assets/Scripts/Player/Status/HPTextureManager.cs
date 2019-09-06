@@ -31,7 +31,7 @@ public class HPTextureManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HP = player.GetComponent<PlayerStatus>().PlayerHp;
+        HP = PlayerStatus.PlayerHp();
         if(HP == 0)
         {
             for(int i = 0; i < 10; i++)

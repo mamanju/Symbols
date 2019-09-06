@@ -24,10 +24,6 @@ public class SwordInfo : WeaponController
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("剣");
-        if (other.transform.tag == "Enemy")
-        {
-            player.GetComponent<PlayerCtrl>().Attack();
-        }
+       player.GetComponent<PlayerController>().Attack(other.gameObject);
     }
 }
