@@ -35,7 +35,7 @@ public class TutorialController : MonoBehaviour
     private bool SetEnemy;
     
     private bool[] passFlag = new bool[12];
-    private bool[] tutorial_Flag = new bool[13];
+    private bool[] tutorial_Flag = new bool[14];
 
     public static TutorialController instance;
     // Start is called before the first frame update
@@ -139,8 +139,10 @@ public class TutorialController : MonoBehaviour
 
         TextChange(11);
 
+        TextChange(12);
+
         //Scene切り替え
-        if (tutorial_Flag[12] == true)
+        if (tutorial_Flag[13] == true)
         {
             SceneController.Instance.ChangeScene(SceneController.SceneName.StageFirst);
         }

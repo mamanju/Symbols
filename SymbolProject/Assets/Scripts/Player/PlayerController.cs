@@ -511,7 +511,6 @@ public class PlayerController : MonoBehaviour
         // 木登り判定
         if (col.GetComponent<ClimbTreeController>() && !col.GetComponent<ClimbTreeController>().ClimbFlag)
         {
-            col.GetComponent<ClimbTreeController>().ClimbFlag = true;
             playerAnime.SetTrigger(key_Climb);
             col.GetComponent<ClimbTreeController>().Climb(gameObject);
         }
