@@ -74,8 +74,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private PlayerStatus playerStatus;
     
-    //ノックバック
+    // ノックバック
     private KnockBack knockBack;
+
+    // 攻撃連打防止用
+    private bool attackFlag = true;
+    public bool AttackFlag
+    {
+        set { attackFlag = value; }
+    }
 
     // 木登り用
     private BoxCollider boxCollider;
@@ -267,8 +274,9 @@ public class PlayerController : MonoBehaviour
         }
 
         //攻撃
-        if ((Input.GetKeyDown(KeyCode.V) || Input.GetButtonDown("Circle")) && weaponNumber != 3)
+        if ((Input.GetButtonDown("Circle")) && weaponNumber != 3 && attackFlag)
         {
+            attackFlag = false;
             playerAnime.SetTrigger(key_Attack);
             //GetComponent<weapon_collider>().OnCollider(weaponNumber);
             GetComponent<weapon_collider>().SetCollider_Flag = true;
