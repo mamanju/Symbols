@@ -10,6 +10,13 @@ public class WeaponAtaccks : MonoBehaviour
 
     void Update()
     {
+        // シンバルのコライダーのActive判定
+        if (GetComponent<CymbalsInfo>() && GetComponent<SphereCollider>().enabled)
+        {
+            Debug.Log("Call");
+            cymbalsFlag = true;
+        }
+
         if (spearTimeFlag == false) { return; }
 
         if (spearTimeFlag == true)
@@ -23,6 +30,8 @@ public class WeaponAtaccks : MonoBehaviour
             //Destroy(gameObject);
             SpearEnd();
         }
+
+        
     }
 
     public void AbnormalAttaks(int _num , GameObject _enemy)
@@ -101,37 +110,30 @@ public class WeaponAtaccks : MonoBehaviour
             }
             
         }
-
-        //if (cymbalsFlag)
-        //{
-        //    collision.gameObject.GetComponent<GrowTreeController>().GrowCount++;
-        //    if(collision.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
-        //    {
-        //        collision.gameObject.GetComponent<GrowTreeController>().GrowTree();
-        //    }
-
-        //}
-    }
-
-    public void OnEnable()
-    {
-        cymbalsFlag = true;
     }
 
     public void OnTriggerStay(Collider other)
     {
-        if (GetComponent<CymbalsInfo>() && cymbalsFlag && other.tag == "GrowTree")
+        CymbalsCheck(other);
+    }
+
+    private void CymbalsCheck(Collider col)
+    {
+        if (GetComponent<CymbalsInfo>() && cymbalsFlag && col.tag == "GrowTree")
         {
             Debug.Log("苗");
-            other.gameObject.GetComponent<GrowTreeController>().GrowCount++;
-            if (other.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
+            col.gameObject.GetComponent<GrowTreeController>().GrowCount++;
+            Debug.Log("Count" + col.gameObject.GetComponent<GrowTreeController>().GrowCount);
+            if (col.gameObject.GetComponent<GrowTreeController>().GrowCount >= 3)
             {
-                other.gameObject.GetComponent<GrowTreeController>().GrowTree();
+                col.gameObject.GetComponent<GrowTreeController>().GrowTree();
             }
             cymbalsFlag = false;
+            GetComponent<SphereCollider>().enabled = false;
         }
     }
-    
+
+
     private bool stunFlag;
     public bool StunFlag
     {
