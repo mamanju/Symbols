@@ -1735,7 +1735,7 @@ GameObject:
   - component: {fileID: 2169706575297823078}
   - component: {fileID: 2169706574673601580}
   - component: {fileID: 2169706574673601589}
-  - component: {fileID: 9181239352857341891}
+  - component: {fileID: 9148503624342840499}
   - component: {fileID: 8387909339681567811}
   - component: {fileID: 2169706574673601586}
   - component: {fileID: 2169706574673601576}
@@ -1801,7 +1801,7 @@ CapsuleCollider:
   m_Height: 1.7364941
   m_Direction: 1
   m_Center: {x: 0, y: 0.8179064, z: -0.03916633}
---- !u!114 &9181239352857341891
+--- !u!114 &9148503624342840499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2169706575297731846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dd791de2fcc757449481c3a31a73513, type: 3}
+  m_Script: {fileID: 11500000, guid: 35c1e0afffb7a6f48b3134547f17755f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 170
@@ -1822,7 +1822,7 @@ MonoBehaviour:
   playerStatus: {fileID: 2169706574673601585}
   spear: {fileID: 999741023612393518}
   cymbals: {fileID: 6109297729088738981}
-  spearThrowTime: 1.4
+  spearThrowTime: 2
 --- !u!114 &8387909339681567811
 MonoBehaviour:
   m_ObjectHideFlags: 0
