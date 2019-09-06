@@ -833,6 +833,16 @@ PrefabInstance:
       propertyPath: nowWeapon_S
       value: 
       objectReference: {fileID: 606676665}
+    - target: {fileID: 5330930925866024533, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: synthesisGUI
+      value: 
+      objectReference: {fileID: 293225987}
+    - target: {fileID: 5330930925866024533, guid: aae0e75300eba994391b8c46e75f4a32,
+        type: 3}
+      propertyPath: nowWeapon_S
+      value: 
+      objectReference: {fileID: 606676665}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae0e75300eba994391b8c46e75f4a32, type: 3}
 --- !u!1 &1552169546 stripped
