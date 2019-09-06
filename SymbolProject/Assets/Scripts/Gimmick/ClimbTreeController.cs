@@ -27,6 +27,8 @@ public class ClimbTreeController : MonoBehaviour
     /// </summary>
     public void Climb(GameObject player)
     {
+        Debug.Log("call");
+        // StartCoroutine(ClimbCoroutine(player));
         if (!climbFlag)
         {
             StartCoroutine(ClimbCoroutine(player));
@@ -35,18 +37,17 @@ public class ClimbTreeController : MonoBehaviour
 
     private IEnumerator ClimbCoroutine(GameObject player)
     {
-        //var eSystem = GameObject.FindObjectOfType<EventSystem>();
-        //eSystem.enabled = false;
-        // アニメーション再生
+        climbFlag = true;
+
+        Time.timeScale = 0;
 
         // 再生から指定された時間後、フェードイン
         FadePanelManager.instance.FadeIn();
-        yield return new WaitForSeconds(fadeStartTime);
+        yield return new WaitForSecondsRealtime(fadeStartTime);
         player.transform.position = climbPos.transform.position;
         FadePanelManager.instance.FadeOut();
-        yield return new WaitForSeconds(fadeStartTime);
         climbFlag = false;
-        //eSystem.enabled = true;
+        Time.timeScale = 1;
 
         yield return null;
     }

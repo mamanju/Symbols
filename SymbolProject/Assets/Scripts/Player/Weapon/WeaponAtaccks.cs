@@ -13,7 +13,6 @@ public class WeaponAtaccks : MonoBehaviour
         // シンバルのコライダーのActive判定
         if (GetComponent<CymbalsInfo>() && GetComponent<SphereCollider>().enabled)
         {
-            Debug.Log("Call");
             cymbalsFlag = true;
         }
 

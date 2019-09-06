@@ -86,6 +86,5 @@ public class FadePanelManager : SingletonMonoBehaviour<FadePanelManager>
             alfa -= 0.01f;
             yield return null;
         }
-        FadePanel.gameObject.SetActive(false);
     }
 }
