@@ -116,6 +116,7 @@ public class PlayerController : MonoBehaviour
     // 攻撃アニメーション
     private string key_Weapon = "Weapons";
     private string key_Attack = "Attack";
+    private string key_ShildAttack = "ShildAttack";
     private string key_AnimeBack = "AnimeBack";
     private string key_SpearThrow = "SpearThrow";
     private string key_ShildLoop = "ShildLoop";
@@ -261,14 +262,17 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButton("Circle"))
             {
                 // shildFlagがtrueの時はダメージを受けない
+                Debug.Log("押した");
                 shildFlag = true;
-                playerAnime.SetTrigger(key_Attack);
+                playerAnime.SetBool(key_ShildAttack, true);
                 playerAnime.SetBool(key_ShildLoop, true);
             }
 
             if (Input.GetButtonUp("Circle"))
             {
+                Debug.Log("離した");
                 shildFlag = false;
+                playerAnime.SetBool(key_ShildAttack, false);
                 playerAnime.SetBool(key_ShildLoop, false);
             }
         }
@@ -280,7 +284,7 @@ public class PlayerController : MonoBehaviour
             playerAnime.SetTrigger(key_Attack);
             //GetComponent<weapon_collider>().OnCollider(weaponNumber);
             GetComponent<weapon_collider>().SetCollider_Flag = true;
-            DownDurable();
+            //DownDurable();
         }
 
 
