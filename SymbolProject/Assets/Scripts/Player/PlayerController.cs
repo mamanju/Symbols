@@ -505,4 +505,15 @@ public class PlayerController : MonoBehaviour
             climbFlag = false;
         }
     }
+
+    private void OnTriggerStay(Collider col)
+    {
+        // 木登り判定
+        if (col.GetComponent<ClimbTreeController>() && !col.GetComponent<ClimbTreeController>().ClimbFlag)
+        {
+            col.GetComponent<ClimbTreeController>().ClimbFlag = true;
+            playerAnime.SetTrigger(key_Climb);
+            col.GetComponent<ClimbTreeController>().Climb(gameObject);
+        }
+    }
 }
