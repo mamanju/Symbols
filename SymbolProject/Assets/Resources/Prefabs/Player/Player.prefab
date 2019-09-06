@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2169706575297731846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35c1e0afffb7a6f48b3134547f17755f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dd791de2fcc757449481c3a31a73513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 170
@@ -5611,11 +5611,6 @@ PrefabInstance:
       propertyPath: leftCymbal
       value: 
       objectReference: {fileID: 3866107714564352141}
-    - target: {fileID: 4547669500754915147, guid: 95835514a598d824f9a4438a03cbadfe,
-        type: 3}
-      propertyPath: m_Radius
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4991336047851452111, guid: 95835514a598d824f9a4438a03cbadfe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5625,6 +5620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547669500754915147, guid: 95835514a598d824f9a4438a03cbadfe,
+        type: 3}
+      propertyPath: m_Radius
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95835514a598d824f9a4438a03cbadfe, type: 3}
