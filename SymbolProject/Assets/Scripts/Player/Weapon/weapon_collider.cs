@@ -65,7 +65,6 @@ public class weapon_collider : MonoBehaviour
 
     private bool spherecolliderFlag = false;
 
-
     private int num;
 
     void Start()
@@ -191,9 +190,11 @@ public class weapon_collider : MonoBehaviour
         colliderTime -= Time.deltaTime;
         if (colliderTime <= 0)
         {
+            colliderFlag = false;
             OffCollider(num);
             colliderTime = max_colliderTime;
-            colliderFlag = false;
+            PlayerController.instance.DownDurable();
+            PlayerController.instance.AttackFlag = true;
         }
     }
 
@@ -202,9 +203,11 @@ public class weapon_collider : MonoBehaviour
         colliderTime -= Time.deltaTime;
         if (colliderTime <= 0)
         {
+            spherecolliderFlag = false;
             OffSphereCollider(num);
             colliderTime = max_colliderTime;
-            spherecolliderFlag = false;
+            PlayerController.instance.DownDurable();
+            PlayerController.instance.AttackFlag = true;
         }
     }
 
