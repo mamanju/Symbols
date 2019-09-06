@@ -41,6 +41,7 @@ public class CutTreeController : MonoBehaviour
         if (!fallFlag) { return; }
         fallFlag = false;
         StartCoroutine(CutreeCoroutine());
+        transform.parent.GetComponent<BoxCollider>().enabled = false;
     }
 
     /// <summary>
