@@ -17,6 +17,7 @@ TagManager:
   - Terrain
   - ClimbTree
   - GrowTree
+  - FallTree
   layers:
   - Default
   - TransparentFX

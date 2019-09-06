@@ -29,19 +29,19 @@ public class Guide : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "")
+        if (other.tag == "FallTree")
         {
-            // この木は斧を使えば切れそうだ
+            Debug.Log("この木は斧を使えば切れそうだ");
         }
 
         if (other.tag == "ClimbTree")
         {
-            // この木は□ボタンで登れそうだ
+            Debug.Log("この木は□ボタンで登れそうだ");
         }
 
         if (other.tag == "FireSwitch")
         {
-            // あのクリスタルは槍を使えば破壊出来そうだ
+            Debug.Log("あのクリスタルは槍を使えば破壊出来そうだ");
         }
     }
 }

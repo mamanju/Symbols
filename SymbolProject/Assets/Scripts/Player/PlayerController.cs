@@ -227,11 +227,11 @@ public class PlayerController : MonoBehaviour
         if (Time.timeScale == 0) { return; }
         
         //武器切り替え
-        if (Input.GetButtonDown("R1") || Input.GetKeyDown(KeyCode.L))
+        if (Input.GetButtonDown("R1") && attackFlag || Input.GetKeyDown(KeyCode.L))
         {
             WeaponChangeRight();
         }
-        if (Input.GetButtonDown("L1") || Input.GetKeyDown(KeyCode.K))
+        if (Input.GetButtonDown("L1") && attackFlag || Input.GetKeyDown(KeyCode.K))
         {
             WeaponChangeLeft();
         }
@@ -262,7 +262,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButton("Circle"))
             {
                 // shildFlagがtrueの時はダメージを受けない
-                Debug.Log("押した");
+                attackFlag = false;
                 shildFlag = true;
                 playerAnime.SetBool(key_ShildAttack, true);
                 playerAnime.SetBool(key_ShildLoop, true);
@@ -270,10 +270,11 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButtonUp("Circle"))
             {
-                Debug.Log("離した");
                 shildFlag = false;
                 playerAnime.SetBool(key_ShildAttack, false);
                 playerAnime.SetBool(key_ShildLoop, false);
+                DownDurable();
+                attackFlag = true;
             }
         }
 
@@ -282,9 +283,7 @@ public class PlayerController : MonoBehaviour
         {
             attackFlag = false;
             playerAnime.SetTrigger(key_Attack);
-            //GetComponent<weapon_collider>().OnCollider(weaponNumber);
             GetComponent<weapon_collider>().SetCollider_Flag = true;
-            //DownDurable();
         }
 
 
