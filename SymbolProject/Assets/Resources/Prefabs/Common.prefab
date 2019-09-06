@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4042902077438354420}
   - component: {fileID: 2099544918140315468}
   - component: {fileID: 5292784378577325248}
-  - component: {fileID: 5565357871638005027}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -75,19 +74,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &5565357871638005027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2502454634360190925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62dd8ba48db6fc4438324468d7fd54e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FadePanel: {fileID: 0}
 --- !u!1 &2810713763915277568
 GameObject:
   m_ObjectHideFlags: 0

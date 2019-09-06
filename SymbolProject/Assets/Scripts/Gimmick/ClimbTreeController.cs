@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// 木を登る処理
@@ -15,6 +16,12 @@ public class ClimbTreeController : MonoBehaviour
 
     private bool climbFlag = false;
 
+    public bool ClimbFlag
+    {
+        get { return climbFlag; }
+        set { climbFlag = value; }
+    }
+
     /// <summary>
     /// 木を登る
     /// </summary>
@@ -28,7 +35,8 @@ public class ClimbTreeController : MonoBehaviour
 
     private IEnumerator ClimbCoroutine(GameObject player)
     {
-        climbFlag = true;
+        //var eSystem = GameObject.FindObjectOfType<EventSystem>();
+        //eSystem.enabled = false;
         // アニメーション再生
 
         // 再生から指定された時間後、フェードイン
@@ -38,6 +46,8 @@ public class ClimbTreeController : MonoBehaviour
         FadePanelManager.instance.FadeOut();
         yield return new WaitForSeconds(fadeStartTime);
         climbFlag = false;
+        //eSystem.enabled = true;
+
         yield return null;
     }
 }
